@@ -234,7 +234,14 @@ CREATE TABLE sale_detail (
 
 
 
+-- -- -- -- -- PROCEDURES -- -- -- -- --
 
+CREATE PROCEDURE staff_insert_account @staff_id INT
+AS
+
+    SELECT (citizen_id_number,birthday) FROM staff WHERE id = @staff_id;
+    INSERT INTO account(	
+GO;
 
 -- Các thủ tục không thể được sử dụng trong câu lệnh SELECT trong khi hàm có thể được nhúng trong câu lệnh SELECT. Bởi vì một thủ tục có thể trả về nhiều tập kết quả nên nó không phù hợp để sử dụng trong câu lệnh SELECT.
 -- Các thủ tục lưu trữ không thể được sử dụng trong các câu lệnh WHERE / HAVING / SELECT trong khi hàm thì có thể.

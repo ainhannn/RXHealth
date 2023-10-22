@@ -1,21 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DTO
 {
-    internal class Product
+    public class Product
     {
-        private int id;
-        private string code;
-        private string name;
-        private string category;
-        private string manufacturer;
-        private string madeIn;
-        private byte expiry;
-        private string unit;
-        private string subunit;
+        public ProductInfo Information { get; set; }
+        public List<ProductBatch> Batches { get; set; } = new List<ProductBatch>();
+        public string Stack { get; set; }
+        public int Number { get; set; }
+        public int NumberSubunit { get; set; }
+        public int NumberAboutToExpire { get; set; }
+        public float Rate { get; set; }
+        public bool IsOnSale { get; set; }
+        public Product() { }
+        public Product(ProductInfo information, List<ProductBatch> batches, string stack, int number, int numberSubunit, int numberAboutToExpire, float rate, bool isOnSale)
+        {
+            Information = information;
+            Batches = batches;
+            Stack = stack;
+            Number = number;
+            NumberSubunit = numberSubunit;
+            NumberAboutToExpire = numberAboutToExpire;
+            Rate = rate;
+            IsOnSale = isOnSale;
+        }
     }
 }

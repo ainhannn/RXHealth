@@ -45,7 +45,7 @@ namespace DAL
         public static bool Insert(Unit e)
         {
             string sql = string.Format(
-                "INSER INTO {0}(name,subunit_id,number_each_unit) " +
+                "INSERT INTO {0}(name,subunit_id,number_each_unit) " +
                 "VALUE ('{1}',{2},{3})", dbTableName, e.Name, e.Subunit.Id, e.Number);
             return ExecuteNonQuery(sql) > 0;
         }

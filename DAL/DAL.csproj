@@ -93,14 +93,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StaffDAO.cs" />
+    <Compile Include="ProviderDAO.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="AccountDAO.cs" />
     <Compile Include="UnitDAO.cs" />
     <Compile Include="CountryDAO.cs" />
     <Compile Include="IngredientDAO.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="CategoryDAO.cs" />
     <Compile Include="ManufacturerDAO.cs" />
-    <Compile Include="ProductDAO.cs" />
+    <Compile Include="ProductInfoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -34,7 +34,7 @@ namespace DAL
 
         public static bool Insert(Country e)
         {
-            string sql = string.Format("INSER INTO {0}(name) VALUE ('{1}')", dbTableName, e.Name);
+            string sql = string.Format("INSERT INTO {0}(name) VALUE ('{1}')", dbTableName, e.Name);
             return ExecuteNonQuery(sql) > 0;
         }
         
