@@ -6,9 +6,9 @@ INSERT INTO account (username,password,role) VALUES
     ('staff','123',2),
     ('guest','123',3);
 INSERT INTO staff (nickname,citizen_id_number,fullname,birthday,qualification,contact_number,account_id) VALUES
-    ('Calcifer','080303007273','Trần Thụy Ái Nhân','2003-10-06','Đang học Đại học','0857288009',1),
-    ('Chanh','080000000000','Nguyễn Vủ Quốc Lâm','2003-10-08','Đang học Đại học','0941545482',2),
-    ('NLHN','080303000000','Ngô Lê Huệ Ngân','2003-02-17','Đang học Đại học','0869037600',3);
+    ('Calcifer','003121410361','Trần Thụy Ái Nhân','2003-10-06','Đang học Đại học','0857288009',1),
+    ('Chanh','003121410292','Nguyễn Vủ Quốc Lâm','2003-10-08','Đang học Đại học','0941545482',2),
+    ('NLHN','003121410339','Ngô Lê Huệ Ngân','2003-02-17','Đang học Đại học','0869037600',3);
 INSERT INTO customer (name,contact_number) VALUES
     ('Guest', ''),
     ('Duy Khang', '0358808913'),
@@ -69,9 +69,10 @@ INSERT INTO unit (name) VALUES
     ('gói 10miếng'),
     ('ống 5ml'),
     ('ống 10ml'),
-    ('miếng');
+    ('miếng'),
+    ('cái');
 INSERT INTO unit (name,number_each_unit,subunit_id) VALUES
-    ('hộp 60viên',30,1);
+    ('hộp 30viên',30,1),
     ('hộp 2gói',30,3);
 INSERT INTO product_info (code,name,category_id,manufacturer_id,expiry,unit_id,storage_condition,note) VALUES
     ('VD-22387-15','Salonpas',2,1,36,8,
