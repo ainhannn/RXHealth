@@ -39,3 +39,7 @@ C:\Users\Calcifer\Documents\Project\HealthRX\DAL\bin\Debug\System.Memory.xml
 C:\Users\Calcifer\Documents\Project\HealthRX\DAL\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Calcifer\Documents\Project\HealthRX\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Calcifer\Documents\Project\HealthRX\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\obj\Debug\DAL.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\obj\Debug\DAL.pdb

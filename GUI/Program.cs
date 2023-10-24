@@ -16,10 +16,10 @@ namespace GUI
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            new DBConnection().ExecuteNonQuery("INSERT INTO COUNTRY(name) VALUE ('Test')");
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
+            //new DBConnection().ExecuteNonQuery("INSERT INTO COUNTRY(name) VALUE ('Test')");
         }
     }
 }
