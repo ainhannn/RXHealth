@@ -2,6 +2,20 @@
 USE pharmacy;
 DELIMITER //
 -- -- -- -- -- PROCEDURES -- -- -- -- --
+CREATE PROCEDURE account_login(user VARCHAR(16), pass VARCHAR(16))
+BEGIN
+    DECLARE acc_id INT;
+    DECLARE role_number INT;
+
+    IF EXISTS(SELECT id FROM account WHERE username=user AND password=pass) THEN 
+        SELECT id INTO acc_id FROM account WHERE username=user AND password=pass;
+        SELECT role INTO role_number FROM account WHERE id=acc_id;
+        SELECT acc_id, user, role_number;
+    ELSE
+        SELECT null, null, null;
+    END IF;
+END//
+
 CREATE PROCEDURE staff_insert_account(staff_id INT, role_number INT)
 BEGIN
     DECLARE user VARCHAR(16);
