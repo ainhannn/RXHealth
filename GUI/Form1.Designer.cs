@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.doubleBitmapControl1 = new BunifuAnimatorNS.DoubleBitmapControl();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -41,30 +40,17 @@
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(288, 143);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(56, 48);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(200, 225);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(135, 117);
             this.bunifuGradientPanel1.TabIndex = 0;
-            // 
-            // doubleBitmapControl1
-            // 
-            this.doubleBitmapControl1.Location = new System.Drawing.Point(573, 225);
-            this.doubleBitmapControl1.Name = "doubleBitmapControl1";
-            this.doubleBitmapControl1.Size = new System.Drawing.Size(75, 23);
-            this.doubleBitmapControl1.TabIndex = 1;
-            this.doubleBitmapControl1.Text = "doubleBitmapControl1";
-            this.doubleBitmapControl1.Visible = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.doubleBitmapControl1);
+            this.ClientSize = new System.Drawing.Size(282, 253);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
@@ -72,7 +58,6 @@
         #endregion
 
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
-        private BunifuAnimatorNS.DoubleBitmapControl doubleBitmapControl1;
     }
 }
 
