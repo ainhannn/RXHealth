@@ -10,11 +10,11 @@ namespace DAL
 
         public static Account Login(Account e) //inp (username,pass) out (id,username,role)
         {
-            string sql = string.Format("SELECT (id,username,role) FROM {0} WHERE username='{1}' AND password='{2}'", dbTableName, e.Username, e.Password);
+            string sql = string.Format("CALL {0}_login('{1}','{2}')", dbTableName, e.Username, e.Password);
             var table = ExecuteReader(sql);
             try
             {
-                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][3]));
+                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][2]));
             } catch { return null; }
         }
         public static bool UpdatePassword(Account current, string newPassword) //inp (username,pass,newpass) out (status)
