@@ -15,10 +15,12 @@ namespace GUI
         private void login_Click(object sender, EventArgs e)
         {
             if (username.Text == "Tên đăng nhập")
+            {
                 if (password.Text == "Mật khẩu")
                     MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                     MessageBox.Show("Vui lòng nhập tên đăng nhập.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else if (password.Text == "Mật khẩu")
                 MessageBox.Show("Vui lòng nhập mật khẩu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -99,6 +101,17 @@ namespace GUI
             buttonPath.CloseAllFigures();
 
             button.Region = new Region(buttonPath);
+        }
+
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (MessageBox.Show("Bạn có muốn thoát khỏi ứng dụng?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    Application.Exit();
+            }
+            else if (e.KeyCode == Keys.Enter)
+                login.PerformClick();
         }
     }
 }

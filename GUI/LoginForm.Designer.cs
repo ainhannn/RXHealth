@@ -98,7 +98,7 @@
             this.btntoggle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btntoggle.TabIndex = 13;
             this.btntoggle.TabStop = false;
-            this.btntoggle.Click += new System.EventHandler(this.exit_Click);
+            this.btntoggle.Click += new System.EventHandler(this.btntoggle_Click);
             // 
             // exit
             // 
@@ -112,7 +112,7 @@
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit.TabIndex = 12;
             this.exit.TabStop = false;
-            this.exit.Click += new System.EventHandler(this.login_Click);
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // login
             // 
@@ -267,9 +267,11 @@
             this.ClientSize = new System.Drawing.Size(500, 700);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btntoggle)).EndInit();
