@@ -47,5 +47,10 @@ namespace GUI
             if (alphaBlendTextBox2.Text == "Mật khẩu")
                 alphaBlendTextBox2.Text = "";
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
