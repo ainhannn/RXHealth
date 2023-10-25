@@ -21,7 +21,7 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             //thông báo lỗi chưa viết
-            MessageBox.Show("");
+            MessageBox.Show("failed");
         }
 
         private void alphaBlendTextBox1_Leave(object sender, EventArgs e)

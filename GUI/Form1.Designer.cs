@@ -85,6 +85,7 @@
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::GUI.Properties.Resources.reject;
             this.pictureBox4.Location = new System.Drawing.Point(446, 12);
             this.pictureBox4.Name = "pictureBox4";
