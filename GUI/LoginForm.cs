@@ -5,21 +5,21 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (alphaBlendTextBox1.Text == "Tên đăng nhập")
-                if (alphaBlendTextBox2.Text == "Mật khẩu")
+            if (username.Text == "Tên đăng nhập")
+                if (password.Text == "Mật khẩu")
                     MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                     MessageBox.Show("Vui lòng nhập tên đăng nhập.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if (alphaBlendTextBox2.Text == "Mật khẩu")
+            else if (password.Text == "Mật khẩu")
                 MessageBox.Show("Vui lòng nhập mật khẩu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
@@ -35,31 +35,31 @@ namespace GUI
 
         private void alphaBlendTextBox1_Leave(object sender, EventArgs e)
         {
-            if (alphaBlendTextBox1.Text == "")
-                alphaBlendTextBox1.Text = "Tên đăng nhập";
+            if (username.Text == "")
+                username.Text = "Tên đăng nhập";
         }
 
         private void alphaBlendTextBox1_Enter(object sender, EventArgs e)
         {
-            if (alphaBlendTextBox1.Text == "Tên đăng nhập")
-                alphaBlendTextBox1.Text = "";
+            if (username.Text == "Tên đăng nhập")
+                username.Text = "";
         }
 
         private void alphaBlendTextBox2_Leave(object sender, EventArgs e)
         {
-            if (alphaBlendTextBox2.Text == "")
+            if (password.Text == "")
             {
-                alphaBlendTextBox2.Text = "Mật khẩu";
-                alphaBlendTextBox2.PasswordChar = '\0';
+                password.Text = "Mật khẩu";
+                password.PasswordChar = '\0';
             }
         }
 
         private void alphaBlendTextBox2_Enter(object sender, EventArgs e)
         {
-            if (alphaBlendTextBox2.Text == "Mật khẩu")
+            if (password.Text == "Mật khẩu")
             {
-                alphaBlendTextBox2.Text = "";
-                alphaBlendTextBox2.PasswordChar = '●';
+                password.Text = "";
+                password.PasswordChar = '●';
             }
         }
 
@@ -70,17 +70,17 @@ namespace GUI
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            if (alphaBlendTextBox2.PasswordChar == '●')
+            if (password.PasswordChar == '●')
             {
-                pictureBox5.Image = Properties.Resources.hidden;
-                alphaBlendTextBox2.PasswordChar = '\0';
+                btntoggle.Image = Properties.Resources.hidden;
+                password.PasswordChar = '\0';
             }
             else
             {
-                pictureBox5.Image = Properties.Resources.view;
-                alphaBlendTextBox2.PasswordChar = '●';
+                btntoggle.Image = Properties.Resources.view;
+                password.PasswordChar = '●';
             }
-            alphaBlendTextBox2.Focus();
+            password.Focus();
             this.Focus();
         }
 
@@ -104,14 +104,14 @@ namespace GUI
         private void Form1_Load(object sender, EventArgs e)
         {
             KeyPress += new KeyPressEventHandler(Form1_KeyPress);
-            AcceptButton = button1;
+            AcceptButton = login;
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Return)
             {
-                button1.PerformClick();
+                login.PerformClick();
             }
         }
     }
