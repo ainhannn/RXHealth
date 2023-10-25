@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
@@ -22,11 +15,11 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             if (alphaBlendTextBox1.Text == "Tên đăng nhập")
-                if(alphaBlendTextBox2.Text == "Mật khẩu")
+                if (alphaBlendTextBox2.Text == "Mật khẩu")
                     MessageBox.Show("Vui lòng nhập tên đăng nhập và mật khẩu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                     MessageBox.Show("Vui lòng nhập tên đăng nhập.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if(alphaBlendTextBox2.Text == "Mật khẩu")
+            else if (alphaBlendTextBox2.Text == "Mật khẩu")
                 MessageBox.Show("Vui lòng nhập mật khẩu.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
@@ -87,12 +80,13 @@ namespace GUI
                 pictureBox5.Image = Properties.Resources.view;
                 alphaBlendTextBox2.PasswordChar = '●';
             }
+            alphaBlendTextBox2.Focus();
             this.Focus();
         }
 
         private void button1_Paint(object sender, PaintEventArgs e)
         {
-            int borderRadius = 70;
+            int borderRadius = 75;
 
             System.Windows.Forms.Button button = (System.Windows.Forms.Button)sender;
             GraphicsPath buttonPath = new GraphicsPath();
@@ -105,6 +99,20 @@ namespace GUI
             buttonPath.CloseAllFigures();
 
             button.Region = new Region(buttonPath);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            KeyPress += new KeyPressEventHandler(Form1_KeyPress);
+            AcceptButton = button1;
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Return)
+            {
+                button1.PerformClick();
+            }
         }
     }
 }
