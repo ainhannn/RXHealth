@@ -12,7 +12,7 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void login_Click(object sender, EventArgs e)
         {
             if (username.Text == "Tên đăng nhập")
                 if (password.Text == "Mật khẩu")
@@ -33,19 +33,19 @@ namespace GUI
             }
         }
 
-        private void alphaBlendTextBox1_Leave(object sender, EventArgs e)
+        private void username_Leave(object sender, EventArgs e)
         {
             if (username.Text == "")
                 username.Text = "Tên đăng nhập";
         }
 
-        private void alphaBlendTextBox1_Enter(object sender, EventArgs e)
+        private void username_Enter(object sender, EventArgs e)
         {
             if (username.Text == "Tên đăng nhập")
                 username.Text = "";
         }
 
-        private void alphaBlendTextBox2_Leave(object sender, EventArgs e)
+        private void password_Leave(object sender, EventArgs e)
         {
             if (password.Text == "")
             {
@@ -54,7 +54,7 @@ namespace GUI
             }
         }
 
-        private void alphaBlendTextBox2_Enter(object sender, EventArgs e)
+        private void password_Enter(object sender, EventArgs e)
         {
             if (password.Text == "Mật khẩu")
             {
@@ -63,12 +63,12 @@ namespace GUI
             }
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void btntoggle_Click(object sender, EventArgs e)
         {
             if (password.PasswordChar == '●')
             {
@@ -81,10 +81,10 @@ namespace GUI
                 password.PasswordChar = '●';
             }
             password.Focus();
-            this.Focus();
+            Focus();
         }
 
-        private void button1_Paint(object sender, PaintEventArgs e)
+        private void login_Paint(object sender, PaintEventArgs e)
         {
             int borderRadius = 75;
 
@@ -99,20 +99,6 @@ namespace GUI
             buttonPath.CloseAllFigures();
 
             button.Region = new Region(buttonPath);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            KeyPress += new KeyPressEventHandler(Form1_KeyPress);
-            AcceptButton = login;
-        }
-
-        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Return)
-            {
-                login.PerformClick();
-            }
         }
     }
 }

@@ -98,7 +98,7 @@
             this.btntoggle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btntoggle.TabIndex = 13;
             this.btntoggle.TabStop = false;
-            this.btntoggle.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.btntoggle.Click += new System.EventHandler(this.exit_Click);
             // 
             // exit
             // 
@@ -112,7 +112,7 @@
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit.TabIndex = 12;
             this.exit.TabStop = false;
-            this.exit.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.exit.Click += new System.EventHandler(this.login_Click);
             // 
             // login
             // 
@@ -123,6 +123,8 @@
             this.login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.login.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
             this.login.FlatAppearance.BorderSize = 0;
+            this.login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumVioletRed;
+            this.login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumVioletRed;
             this.login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login.Font = new System.Drawing.Font("Cascadia Code", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login.ForeColor = System.Drawing.Color.White;
@@ -132,8 +134,8 @@
             this.login.TabIndex = 11;
             this.login.Text = "Đăng nhập";
             this.login.UseVisualStyleBackColor = false;
-            this.login.Click += new System.EventHandler(this.button1_Click);
-            this.login.Paint += new System.Windows.Forms.PaintEventHandler(this.button1_Paint);
+            this.login.Click += new System.EventHandler(this.login_Click);
+            this.login.Paint += new System.Windows.Forms.PaintEventHandler(this.login_Paint);
             // 
             // forgot
             // 
@@ -215,8 +217,8 @@
             this.password.Size = new System.Drawing.Size(351, 47);
             this.password.TabIndex = 4;
             this.password.Text = "Mật khẩu";
-            this.password.Enter += new System.EventHandler(this.alphaBlendTextBox2_Enter);
-            this.password.Leave += new System.EventHandler(this.alphaBlendTextBox2_Leave);
+            this.password.Enter += new System.EventHandler(this.password_Enter);
+            this.password.Leave += new System.EventHandler(this.password_Leave);
             // 
             // usericon
             // 
@@ -257,8 +259,8 @@
             this.username.Size = new System.Drawing.Size(351, 47);
             this.username.TabIndex = 1;
             this.username.Text = "Tên đăng nhập";
-            this.username.Enter += new System.EventHandler(this.alphaBlendTextBox1_Enter);
-            this.username.Leave += new System.EventHandler(this.alphaBlendTextBox1_Leave);
+            this.username.Enter += new System.EventHandler(this.username_Enter);
+            this.username.Leave += new System.EventHandler(this.username_Leave);
             // 
             // LoginForm
             // 
@@ -268,8 +270,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Form";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btntoggle)).EndInit();
