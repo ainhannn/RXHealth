@@ -44,7 +44,6 @@ namespace GLB
         }
         public static bool checkIsEnglish(string e)
         {
-            LoadEnv();
             string pattern = Env.GetString("RegUsername");
             Regex regex = new Regex(pattern);
             return regex.IsMatch(e);

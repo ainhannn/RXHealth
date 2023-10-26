@@ -13,6 +13,7 @@ namespace GUI
     {
         public LoginForm()
         {
+            HandleGlobal.LoadEnv();
             InitializeComponent();
         }
 
@@ -23,9 +24,9 @@ namespace GUI
                 return "Vui lòng nhập đầy đủ thông tin";
             }
             return HandleGlobal.checkIsEnglish(username) ?
-                         (username.Length > Env.GetInt("minLength_name") ?
+                         (username.Length > 5 ?
                          (HandleGlobal.checkIsEnglish(password) ?
-                         (password.Length > Env.GetInt("minLength_pass") ?
+                         (password.Length > 7 ?
                          ""
                          : "Mật khẩu tối thiểu chứa 8 ký tự")
                          : "Vui lòng kiểm tra lại Mật khẩu ( A-Z,a-z,0-9,_ )")
@@ -58,10 +59,17 @@ namespace GUI
             }
             else
             {
-                string name = AccountBLL.Login(new Account(username, password)).Username;
-                MessageBox.Show("Xin chào " + name, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                inputName.Text = "";
-                inputPass.Text = "";
+                Account account = AccountBLL.Login(new Account(username, password));
+                if(account == null)
+                {
+                    MessageBox.Show("Tài khoản không tồn tại ", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Xin chào " + account.Username, "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                inputName.Text = "Tên đăng nhập";
+                inputPass.Text = "Mật khẩu";
             }
         }
 
