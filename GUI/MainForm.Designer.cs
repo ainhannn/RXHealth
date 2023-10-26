@@ -32,11 +32,11 @@ namespace GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Sidebar = new System.Windows.Forms.Panel();
-            this.Header = new System.Windows.Forms.Panel();
-            this.Main = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Header = new System.Windows.Forms.Panel();
+            this.Main = new System.Windows.Forms.Panel();
             this.Sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,23 +51,6 @@ namespace GUI
             this.Sidebar.Name = "Sidebar";
             this.Sidebar.Size = new System.Drawing.Size(500, 647);
             this.Sidebar.TabIndex = 0;
-            // 
-            // Header
-            // 
-            this.Header.BackColor = System.Drawing.Color.White;
-            this.Header.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Header.Location = new System.Drawing.Point(500, 0);
-            this.Header.Name = "Header";
-            this.Header.Size = new System.Drawing.Size(598, 60);
-            this.Header.TabIndex = 1;
-            // 
-            // Main
-            // 
-            this.Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Main.Location = new System.Drawing.Point(500, 60);
-            this.Main.Name = "Main";
-            this.Main.Size = new System.Drawing.Size(598, 587);
-            this.Main.TabIndex = 2;
             // 
             // panel1
             // 
@@ -102,6 +85,23 @@ namespace GUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // Header
+            // 
+            this.Header.BackColor = System.Drawing.Color.White;
+            this.Header.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Header.Location = new System.Drawing.Point(500, 0);
+            this.Header.Name = "Header";
+            this.Header.Size = new System.Drawing.Size(598, 60);
+            this.Header.TabIndex = 1;
+            // 
+            // Main
+            // 
+            this.Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Main.Location = new System.Drawing.Point(500, 60);
+            this.Main.Name = "Main";
+            this.Main.Size = new System.Drawing.Size(598, 587);
+            this.Main.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -114,7 +114,7 @@ namespace GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "HOME";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Sidebar.ResumeLayout(false);

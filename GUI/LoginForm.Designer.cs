@@ -157,7 +157,7 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Cascadia Code", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(137, 194);
+            this.title.Location = new System.Drawing.Point(125, 194);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(250, 57);
             this.title.TabIndex = 8;
@@ -171,9 +171,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.logo.BackColor = System.Drawing.Color.Transparent;
             this.logo.Image = global::GUI.Properties.Resources.RXlogo;
-            this.logo.Location = new System.Drawing.Point(159, 32);
+            this.logo.Location = new System.Drawing.Point(170, 32);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(182, 206);
+            this.logo.Size = new System.Drawing.Size(160, 160);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 7;
             this.logo.TabStop = false;
@@ -269,10 +269,11 @@
             this.ClientSize = new System.Drawing.Size(500, 700);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login Form";
+            this.Text = "LOGIN";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyDown);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();

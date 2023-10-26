@@ -50,3 +50,9 @@ C:\Users\Calcifer\Documents\Project\HealthRX\GUI\bin\Debug\MySql.Data.xml
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\GUI.exe
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\Bunifu_UI_v1.52.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\AlphaBlendTextBox.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.LoginForm.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.MainForm.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
