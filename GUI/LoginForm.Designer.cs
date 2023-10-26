@@ -40,10 +40,10 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.pwdicon = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.password = new ZBobb.AlphaBlendTextBox();
+            this.inputPass = new ZBobb.AlphaBlendTextBox();
             this.usericon = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.username = new ZBobb.AlphaBlendTextBox();
+            this.inputName = new ZBobb.AlphaBlendTextBox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btntoggle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
@@ -69,10 +69,10 @@
             this.bunifuGradientPanel1.Controls.Add(this.logo);
             this.bunifuGradientPanel1.Controls.Add(this.pwdicon);
             this.bunifuGradientPanel1.Controls.Add(this.panel2);
-            this.bunifuGradientPanel1.Controls.Add(this.password);
+            this.bunifuGradientPanel1.Controls.Add(this.inputPass);
             this.bunifuGradientPanel1.Controls.Add(this.usericon);
             this.bunifuGradientPanel1.Controls.Add(this.panel1);
-            this.bunifuGradientPanel1.Controls.Add(this.username);
+            this.bunifuGradientPanel1.Controls.Add(this.inputName);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.DodgerBlue;
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
@@ -83,7 +83,6 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(500, 700);
             this.bunifuGradientPanel1.TabIndex = 0;
-            this.bunifuGradientPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bunifuGradientPanel1_MouseDown);
             // 
             // btntoggle
             // 
@@ -143,7 +142,6 @@
             this.forgot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.forgot.AutoSize = true;
             this.forgot.BackColor = System.Drawing.Color.Transparent;
-            this.forgot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.forgot.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgot.ForeColor = System.Drawing.Color.White;
             this.forgot.Location = new System.Drawing.Point(328, 460);
@@ -203,24 +201,25 @@
             this.panel2.Size = new System.Drawing.Size(385, 3);
             this.panel2.TabIndex = 5;
             // 
-            // password
+            // inputPass
             // 
-            this.password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.inputPass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.password.BackAlpha = 0;
-            this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.password.ForeColor = System.Drawing.Color.White;
-            this.password.Location = new System.Drawing.Point(93, 407);
-            this.password.Multiline = true;
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(351, 47);
-            this.password.TabIndex = 4;
-            this.password.Text = "Mật khẩu";
-            this.password.Enter += new System.EventHandler(this.password_Enter);
-            this.password.Leave += new System.EventHandler(this.password_Leave);
+            this.inputPass.BackAlpha = 0;
+            this.inputPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.inputPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputPass.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputPass.ForeColor = System.Drawing.Color.White;
+            this.inputPass.Location = new System.Drawing.Point(93, 407);
+            this.inputPass.Multiline = true;
+            this.inputPass.Name = "inputPass";
+            this.inputPass.Size = new System.Drawing.Size(351, 47);
+            this.inputPass.TabIndex = 4;
+            this.inputPass.Text = "Mật khẩu";
+            this.inputPass.TextChanged += new System.EventHandler(this.input_Onchange);
+            this.inputPass.Enter += new System.EventHandler(this.password_Enter);
+            this.inputPass.Leave += new System.EventHandler(this.password_Leave);
             // 
             // usericon
             // 
@@ -245,31 +244,31 @@
             this.panel1.Size = new System.Drawing.Size(385, 3);
             this.panel1.TabIndex = 2;
             // 
-            // username
+            // inputName
             // 
-            this.username.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.inputName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.username.BackAlpha = 0;
-            this.username.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.ForeColor = System.Drawing.Color.White;
-            this.username.Location = new System.Drawing.Point(94, 288);
-            this.username.Multiline = true;
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(351, 47);
-            this.username.TabIndex = 1;
-            this.username.Text = "Tên đăng nhập";
-            this.username.Enter += new System.EventHandler(this.username_Enter);
-            this.username.Leave += new System.EventHandler(this.username_Leave);
+            this.inputName.BackAlpha = 0;
+            this.inputName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.inputName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inputName.Font = new System.Drawing.Font("Cascadia Code", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputName.ForeColor = System.Drawing.Color.White;
+            this.inputName.Location = new System.Drawing.Point(94, 288);
+            this.inputName.Multiline = true;
+            this.inputName.Name = "inputName";
+            this.inputName.Size = new System.Drawing.Size(351, 47);
+            this.inputName.TabIndex = 1;
+            this.inputName.Text = "Tên đăng nhập";
+            this.inputName.TextChanged += new System.EventHandler(this.input_Onchange);
+            this.inputName.Enter += new System.EventHandler(this.username_Enter);
+            this.inputName.Leave += new System.EventHandler(this.username_Leave);
             // 
             // LoginForm
             // 
             this.ClientSize = new System.Drawing.Size(500, 700);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -290,12 +289,12 @@
 
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
-        private ZBobb.AlphaBlendTextBox username;
+        private ZBobb.AlphaBlendTextBox inputName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox usericon;
         private System.Windows.Forms.PictureBox pwdicon;
         private System.Windows.Forms.Panel panel2;
-        private ZBobb.AlphaBlendTextBox password;
+        private ZBobb.AlphaBlendTextBox inputPass;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label forgot;
