@@ -83,6 +83,7 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(500, 700);
             this.bunifuGradientPanel1.TabIndex = 0;
+            this.bunifuGradientPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.bunifuGradientPanel1_MouseDown);
             // 
             // btntoggle
             // 
@@ -142,6 +143,7 @@
             this.forgot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.forgot.AutoSize = true;
             this.forgot.BackColor = System.Drawing.Color.Transparent;
+            this.forgot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.forgot.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgot.ForeColor = System.Drawing.Color.White;
             this.forgot.Location = new System.Drawing.Point(328, 460);
@@ -267,6 +269,7 @@
             this.ClientSize = new System.Drawing.Size(500, 700);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
