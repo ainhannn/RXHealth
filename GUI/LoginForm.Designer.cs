@@ -157,7 +157,7 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("Cascadia Code", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(125, 194);
+            this.title.Location = new System.Drawing.Point(148, 194);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(250, 57);
             this.title.TabIndex = 8;
@@ -166,14 +166,11 @@
             // 
             // logo
             // 
-            this.logo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.logo.BackColor = System.Drawing.Color.Transparent;
             this.logo.Image = global::GUI.Properties.Resources.RXlogo;
-            this.logo.Location = new System.Drawing.Point(170, 32);
+            this.logo.Location = new System.Drawing.Point(195, 81);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(160, 160);
+            this.logo.Size = new System.Drawing.Size(110, 110);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 7;
             this.logo.TabStop = false;

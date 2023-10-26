@@ -16,9 +16,15 @@ namespace GUI
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void MainForm_Load(object sender, System.EventArgs e)
+        private void Header_MouseDown(object sender, MouseEventArgs e)
         {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 8);
+        }
 
+        private void close_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
