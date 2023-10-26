@@ -24,9 +24,9 @@ namespace GUI
                 return "Vui lòng nhập đầy đủ thông tin";
             }
             return HandleGlobal.checkIsEnglish(username) ?
-                         (username.Length > 5 ?
+                         (username.Length > Env.GetInt("minLenght_name") ?
                          (HandleGlobal.checkIsEnglish(password) ?
-                         (password.Length > 7 ?
+                         (password.Length > Env.GetInt("minLenght_pass") ?
                          ""
                          : "Mật khẩu tối thiểu chứa 8 ký tự")
                          : "Vui lòng kiểm tra lại Mật khẩu ( A-Z,a-z,0-9,_ )")
