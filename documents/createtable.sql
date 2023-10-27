@@ -172,7 +172,7 @@ CREATE TABLE inventory_detail (
 );
 CREATE TABLE product_batch (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    local_code CHAR(9) UNIQUE NOT NULL,
+    local_code CHAR(13) UNIQUE NOT NULL, 
     import_invoice_id INT NOT NULL,
     product_id INT NOT NULL,
     manufacture_date DATETIME,
@@ -226,14 +226,3 @@ CREATE TABLE sale_detail (
     CONSTRAINT fk_sale_batch FOREIGN KEY (product_batch_id) REFERENCES product_batch(id),
     CONSTRAINT fk_sale_unit FOREIGN KEY (unit_id) REFERENCES unit(id)
 );						
-
--- -- -- -- -- TRIGGERS -- -- -- -- --
--- tu sinh ma hoa don 
--- tu tao product AFTER INSERT product_info
--- tu cap nhat gia ban chan = nhap * (1+rate), le = round(chan / unit.number_each_unit)
--- ngày trả nợ mặc định: Ngày 1 của tháng tiếp theo 
-
-
-
-
-
