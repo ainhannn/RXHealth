@@ -5,6 +5,7 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
+        private bool isMaximized = true;
         public MainForm()
         {
             InitializeComponent();
@@ -25,6 +26,25 @@ namespace GUI
         private void close_Click(object sender, System.EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void minimize_Click(object sender, System.EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void restore_Click(object sender, System.EventArgs e)
+        {
+            if (isMaximized)
+            {
+                WindowState = FormWindowState.Normal;
+                isMaximized = false;
+            }
+            else
+            {
+                WindowState = FormWindowState.Maximized;
+                isMaximized = true;
+            }
         }
     }
 }

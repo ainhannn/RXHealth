@@ -37,11 +37,11 @@ namespace DAL
         }
         public static Account Select(int id)
         {
-            string sql = string.Format("SELECT (id,username,role) FROM {0} WHERE id={1}", dbTableName, id);
+            string sql = string.Format("SELECT id,username,role FROM {0} WHERE id={1}", dbTableName, id);
             var table = ExecuteReader(sql);
             try
             {
-                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][3]));
+                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][2]));
             }
             catch { return null; }
         }
