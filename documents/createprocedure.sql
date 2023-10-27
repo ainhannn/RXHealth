@@ -39,6 +39,7 @@ BEGIN
     WHERE staff.id=staff_id;
 END//
 
+
 -- Các thủ tục không thể được sử dụng trong câu lệnh SELECT trong khi hàm có thể được nhúng trong câu lệnh SELECT. Bởi vì một thủ tục có thể trả về nhiều tập kết quả nên nó không phù hợp để sử dụng trong câu lệnh SELECT.
 -- Các thủ tục lưu trữ không thể được sử dụng trong các câu lệnh WHERE / HAVING / SELECT trong khi hàm thì có thể.
 -- Một ngoại lệ có thể được xử lý bằng try-catch trong thủ tục lưu trữ, đối với hàm thì không thể.
