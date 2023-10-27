@@ -1,11 +1,11 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class MainForm : Form
     {
-        private bool isMaximized = true;
         public MainForm()
         {
             InitializeComponent();
@@ -35,16 +35,45 @@ namespace GUI
 
         private void restore_Click(object sender, System.EventArgs e)
         {
-            if (isMaximized)
-            {
+            if (WindowState == FormWindowState.Maximized)
                 WindowState = FormWindowState.Normal;
-                isMaximized = false;
+            else
+                WindowState = FormWindowState.Maximized;
+        }
+
+        private void CollapseMenu()
+        {
+            if (Sidebar.Width > 200)
+            {
+                Sidebar.Width = 150;
+                logo.Visible = false;
+                label1.Visible = false;
+                menu.Dock = DockStyle.Top;
+                foreach (Button menuButton in Sidebar.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "";
+                    menuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                    menuButton.Padding = new Padding(0,10,0,10);
+                }
             }
             else
             {
-                WindowState = FormWindowState.Maximized;
-                isMaximized = true;
+                Sidebar.Width = 400;
+                logo.Visible = true;
+                label1.Visible = true;
+                menu.Dock = DockStyle.None;
+                foreach (Button menuButton in Sidebar.Controls.OfType<Button>())
+                {
+                    menuButton.Text = "                " + menuButton.Tag.ToString();
+                    menuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                    menuButton.Padding = new Padding(25,0,0,0);
+                }
             }
+        }
+
+        private void menu_Click(object sender, System.EventArgs e)
+        {
+            CollapseMenu();
         }
     }
 }
