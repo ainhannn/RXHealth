@@ -273,9 +273,6 @@
     <Folder Include="components\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\more.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\dashboard.png" />
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +304,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\customer-service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main-menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\production.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\herb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\take-medicines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drugs.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

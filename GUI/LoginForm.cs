@@ -81,7 +81,7 @@ namespace GUI
             //    {
             //        MessageBox.Show("Xin chào " + account.Username, "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
             new MainForm().Show();
-            this.Hide();
+            Hide();
             //    }
             //    inputName.Text = "Tên đăng nhập";
             //    inputPass.Text = "Mật khẩu";
