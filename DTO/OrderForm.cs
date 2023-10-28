@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Versioning;
 
 namespace DTO
 {
-    public class OrderForm
+    public class OrderForm : FormInvoice
     {
-        public int Id { get; }
-        public string Code { get; }
-        public DateTime FormDate { get; set; } = DateTime.Now;
-        public string StaffNickName { get; set; }
         public Provider Provider { get; set; }
+        public List<OrderDetail> Details { get; set; } = new List<OrderDetail>();
         public int TotalNumber
         {
             get {
@@ -19,19 +15,14 @@ namespace DTO
                 return t;
             }
         }
-        public List<OrderDetail> Details { get; set; } = new List<OrderDetail>();
-
+        
         public OrderForm() { }
-        public OrderForm(int id, string code)
+        public OrderForm(int id, string code) : base(id, code) { }
+
+        public OrderForm(int id, string code, DateTime dateInit, string staffNickName, Provider provider, List<OrderDetail> details) : base(id, code, dateInit, staffNickName)
         {
-            Id = id;
-            Code = code;
-        }
-        public OrderForm(int id, string code, DateTime formDate, string staffNickName, Provider provider) : this(id, code)
-        {
-            FormDate = formDate;
-            StaffNickName = staffNickName;
             Provider = provider;
+            Details = details;
         }
         public void AddDetails(OrderDetail detail) => Details.Add(detail);
     }

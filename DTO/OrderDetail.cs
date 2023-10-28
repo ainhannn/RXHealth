@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace DTO
+﻿namespace DTO
 {
     public class OrderDetail
     {
-        public ProductInfo Product { get; set; }
+        public string Barcode { get; set; }
+        public string Name { get; set; }
+        public Unit Unit { get; set; }
         public int Number { get; set; }
-        public OrderDetail(ProductInfo product, int number)
+        public OrderDetail() { }
+        public OrderDetail(string barcode, string name, Unit unit, int number)
         {
-            Product = product;
+            Barcode = barcode;
+            Name = name;
+            Unit = unit;
             Number = number;
         }
     }

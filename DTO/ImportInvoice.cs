@@ -3,13 +3,10 @@ using System.Collections.Generic;
 
 namespace DTO
 {
-    public class ImportInvoice
+    public class ImportInvoice : FormInvoice
     {
-        public int Id { get; }
-        public string Code { get; }
-        public DateTime InvoiceDate { get; set; } = DateTime.Now;
-        public string StaffNickName { get; set; }
         public Provider Provider { get; set; }
+        public List<ImportDetail> Details { get; set; } = new List<ImportDetail>();
         public int TotalNumber 
         {
             get
@@ -28,19 +25,15 @@ namespace DTO
                 return t;
             }
         }
-        public List<ImportDetail> Details { get; set; } = new List<ImportDetail>();
-
+        
         public ImportInvoice() { }
-        public ImportInvoice(int id, string code)
+        public ImportInvoice(int id, string code) : base(id, code) { }
+        public ImportInvoice(int id, string code, DateTime dateInit, string staffNickName) : base(id, code, dateInit, staffNickName) { }
+
+        public ImportInvoice(int id, string code, DateTime dateInit, string staffNickName, Provider provider, List<ImportDetail> details) : base(id, code, dateInit, staffNickName)
         {
-            Id = id;
-            Code = code;
-        }
-        public ImportInvoice(int id, string code, DateTime invoiceDate, string staffNickName, Provider provider) : this(id, code)
-        {
-            InvoiceDate = invoiceDate;
-            StaffNickName = staffNickName;
             Provider = provider;
+            Details = details;
         }
         public void AddDetail(ImportDetail detail) => Details.Add(detail);
     }
