@@ -192,9 +192,16 @@
     <Compile Include="DateTimeCycle.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="Account.cs" />
+    <Compile Include="SaleDetail.cs" />
+    <Compile Include="ExportDetail.cs" />
+    <Compile Include="SaleInvoice.cs" />
     <Compile Include="ImportDetail.cs" />
+    <Compile Include="ExportInvoice.cs" />
+    <Compile Include="InventoryForm.cs" />
     <Compile Include="ImportInvoice.cs" />
+    <Compile Include="InventoryDetail.cs" />
     <Compile Include="OrderDetail.cs" />
+    <Compile Include="FormInvoice.cs" />
     <Compile Include="OrderForm.cs" />
     <Compile Include="PaymentInvoice.cs" />
     <Compile Include="Product.cs" />

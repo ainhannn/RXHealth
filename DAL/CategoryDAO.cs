@@ -29,7 +29,7 @@ namespace DAL
         {
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1}", dbTableName, id);
             var table = ExecuteReader(sql);
-            return ConvertToDTO(table[table.Count - 1]);
+            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
         public static bool Insert(Category e)
         {

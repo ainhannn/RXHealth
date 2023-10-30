@@ -11,7 +11,7 @@ namespace DTO
         public DateTime Birthday { get; set; }
         public bool GenderIsMale { get; set; }
         public string Qualification { get; set; }
-        public string Phone { get; set; }
+        public string ContactNumber { get; set; }
         public string Address { get; set; }
         public Account Account { get; set; }
         public DateTime StartDate { get; set; } = DateTime.Now;
@@ -21,7 +21,7 @@ namespace DTO
             Id = id;
             Nickname = nickname;
         }
-        public Staff(int id, string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string phone, string address, Account account, DateTime startDate, DateTime resignationDate)
+        public Staff(int id, string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string contactNumber, string address, Account account, DateTime startDate, DateTime resignationDate)
         {
             Nickname = nickname;
             CitizenId = citizenId;
@@ -29,7 +29,7 @@ namespace DTO
             Birthday = birthday;
             GenderIsMale = genderIsMale;
             Qualification = qualification;
-            Phone = phone;
+            ContactNumber = contactNumber;
             Address = address;
             Account = account;
             StartDate = startDate;
@@ -39,7 +39,7 @@ namespace DTO
         {
             Nickname = nickname;
         }
-        public Staff(string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string phone, string address, Account account, DateTime startDate)
+        public Staff(string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string contactNumber, string address, Account account, DateTime startDate)
         {
             Nickname = nickname;
             CitizenId = citizenId;
@@ -47,7 +47,7 @@ namespace DTO
             Birthday = birthday;
             GenderIsMale = genderIsMale;
             Qualification = qualification;
-            Phone = phone;
+            ContactNumber = contactNumber;
             Address = address;
             Account = account;
             StartDate = startDate;

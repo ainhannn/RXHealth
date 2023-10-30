@@ -4,38 +4,29 @@ using DTO;
 
 namespace DAL
 {
-    public class ProviderDAO : DBConnection
+    public class CustomerDAO : DBConnection
     {
-        private static readonly string dbTableName = "provider";
+        private static readonly string dbTableName = "customer";
 
-        private static Provider ConvertToDTO(List<object> row)
+        private static Customer ConvertToDTO(List<object> row)
         {
             try
             {
-                DateTimeCycle timeCycle = null;
-                if (row[5] != null && row[6] != null)
-                {
-                    timeCycle.Current = Convert.ToDateTime(row[5]);
-                    timeCycle.Cycle = Convert.ToString(row[6]);
-                }
-
-                return new Provider(
+                return new Customer(
                     Convert.ToInt16(row[0]),
                     Convert.ToString(row[1]),
                     Convert.ToString(row[2]),
-                    Convert.ToString(row[3]),
-                    Convert.ToDouble(row[4]),
-                    timeCycle
+                    Convert.ToInt16(row[3]) 
                 );
             }
             catch { return null; }
         }
 
-        public static List<Provider> SelectAll()
+        public static List<Customer> SelectAll()
         {
             string sql = string.Format("SELECT * FROM {0}", dbTableName);
             var table = ExecuteReader(sql);
-            var list = new List<Provider>();
+            var list = new List<Customer>();
             foreach (var row in table)
             {
                 list.Add(ConvertToDTO(row));
@@ -43,11 +34,11 @@ namespace DAL
             return list;
         }
 
-        public static Provider Select(int id)
+        public static Customer Select(int id)
         {
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1}", dbTableName, id);
             var table = ExecuteReader(sql);
-            return ConvertToDTO(table[table.Count - 1]);
+            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
 
         public static bool Insert(Provider e)

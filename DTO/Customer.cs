@@ -1,22 +1,25 @@
-﻿namespace DTO
+﻿using System.Collections.Generic;
+
+namespace DTO
 {
     public class Customer
     {
         public int Id { get; }
         public string Name { get; set; }
-        public string Phone { get; set; }
+        public string ContactNumber { get; set; }
         public int Point { get; set; } = 0;
-        public Customer(int id, string name, string phone, int point)
+        public List<SaleDetail> PurchaseHistory { get; set; } = new List<SaleDetail>();
+        public Customer(int id, string name, string contactNumber, int point)
         {
             Id = id;
             Name = name;
-            Phone = phone;
+            ContactNumber = contactNumber;
             Point = point;
         }
-        public Customer(string name, string phone)
+        public Customer(string name, string contactNumber)
         {
             Name = name;
-            Phone = phone;
+            ContactNumber = contactNumber;
         }
     }
 }
