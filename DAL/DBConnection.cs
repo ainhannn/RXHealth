@@ -12,7 +12,7 @@ namespace DAL
         private static string password = "";
         protected static MySqlConnection conn;
 
-        private static bool Open()
+        protected static bool Open()
         {
             try
             {
@@ -28,7 +28,7 @@ namespace DAL
             }
         }
 
-        private static void Close()
+        protected static void Close()
         {
             try
             {
@@ -52,6 +52,8 @@ namespace DAL
                 try
                 {
                     var cmd = new MySqlCommand(sql, conn);
+                    //var cmd = conn.CreateCommand();
+                    //cmd.CommandText = sql;
                     var rd = cmd.ExecuteReader();
                     int size = rd.FieldCount;
                     while (rd.Read())
@@ -98,7 +100,7 @@ namespace DAL
             return null;
         }
 
-        // -1 if have error else an interger number of rows changed 
+        // -1 if have error else an integer number of rows changed 
         protected static int ExecuteNonQuery(string sql)
         {
             if (Open())

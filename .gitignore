@@ -1,3 +1,7 @@
 .env
 packages
 documents
+GUI/TestForm.cs
+GUI/TestForm.Designer.cs
+GUI/TestForm.resx
+GUI/Program.cs

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using DTO;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
 
 namespace DAL
 {
@@ -11,16 +13,18 @@ namespace DAL
         {
             try
             {
-                ProductInfo obj = new ProductInfo(Convert.ToInt16(row[0]), Convert.ToString(row[1]));
-                obj.Name = Convert.ToString(row[2]);
-                obj.Category = CategoryDAO.Select(Convert.ToInt16(row[3]));
-                obj.Manufacturer = ManufacturerDAO.Select(Convert.ToInt16(row[4]));
-                obj.MadeIn = CountryDAO.Select(Convert.ToInt16(row[5]));
-                obj.Expiry = Convert.ToByte(row[6]);
-                obj.Unit = UnitDAO.Select(Convert.ToInt16(row[7]));
-                obj.StorageCondition = Convert.ToString(row[8]);
-                obj.Note = Convert.ToString(row[9]);
-                obj.Image = Convert.ToString(row[10]);
+                ProductInfo obj = new ProductInfo(Convert.ToInt16(row[0]), Convert.ToString(row[1]))
+                {
+                    Name = Convert.ToString(row[2]),
+                    Category = CategoryDAO.Select(Convert.ToInt16(row[3])),
+                    Manufacturer = ManufacturerDAO.Select(Convert.ToInt16(row[4])),
+                    MadeIn = CountryDAO.Select(Convert.ToInt16(row[5])),
+                    Expiry = Convert.ToByte(row[6]),
+                    Unit = UnitDAO.Select(Convert.ToInt16(row[7])),
+                    StorageCondition = Convert.ToString(row[8]),
+                    Note = Convert.ToString(row[9]),
+                    Image = Convert.ToString(row[10])
+                };
 
                 var table = ExecuteReader("SELECT * FROM product_extra_ingredient WHERE product_id = " + obj.Id);
                 foreach (var r in table)
@@ -50,6 +54,13 @@ namespace DAL
             return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
 
+        public static ProductInfo Select(string barCode)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE code = '{1}' AND is_existing = 'true'", dbTableName, barCode);
+            var table = ExecuteReader(sql);
+            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
+        }
+
         //public static List<ProductInfo> Search(string key)
         //{
         //    return new List<ProductInfo>();
@@ -57,23 +68,65 @@ namespace DAL
 
         public static bool Insert(ProductInfo e)
         {
-            // viet lai ham transaction tren db goi len
-            string sql = string.Format(
-                "INSERT INTO {0}(name,category_id,manufacturer_id,made_in,expiry,unit_id,storage_condition,note,image) " +
-                "VALUE ('{1}',{2},{3},{4},{5},{6},'{7}','{8}','{9}')", dbTableName, e.Name, e.Category.Id, e.Manufacturer.Id, e.MadeIn.Id, e.Expiry, e.Unit.Id, e.StorageCondition, e.Note, e.Image);
-            return ExecuteNonQuery(sql) > 0;
-        }
-        
-        public static bool Delete(int id)
-        {
-            string sql = string.Format("DELETE FROM product_extra_ingredient WHERE id = {1}; " +
-                "DELETE FROM {0} WHERE id = {1}", dbTableName, id);
-            return ExecuteNonQuery(sql) != -1;
+            if (Open())
+            {
+                var trans = conn.BeginTransaction();
+                var cmd = new MySqlCommand
+                {
+                    Connection = conn,
+                    Transaction = trans
+                };
+                //var cmd = conn.CreateCommand();
+                //cmd.Transaction = trans;
+
+                try
+                {  
+                    cmd.CommandText = 
+                        "INSERT INTO {0}(code,name,category_id,manufacturer_id,made_in,expiry,unit_id,storage_condition,note,image) " +
+                        "VALUES (@code,@name,@category_id,@manufacturer_id,@made_in,@expiry,@unit_id,@storage_condition,@note,@image)";
+                    cmd.Parameters.AddWithValue("@code", e.Code);
+                    cmd.Parameters.AddWithValue("@name", e.Name);
+                    cmd.Parameters.AddWithValue("@category_id", e.Category.Id);
+                    cmd.Parameters.AddWithValue("@manufacturer_id", e.Manufacturer.Id);
+                    cmd.Parameters.AddWithValue("@made_in", e.MadeIn);
+                    cmd.Parameters.AddWithValue("@expiry", e.Expiry);
+                    cmd.Parameters.AddWithValue("@unit_id", e.Unit.Id);
+                    cmd.Parameters.AddWithValue("@storage_condition", e.StorageCondition);
+                    cmd.Parameters.AddWithValue("@note", e.Note);
+                    cmd.Parameters.AddWithValue("@image", e.Image);
+
+                    cmd.ExecuteNonQuery();
+
+                    var sql = string.Format("");
+                    cmd.CommandText = "";
+                    cmd.ExecuteNonQuery();
+
+                    trans.Commit();
+                    return true;
+                }
+                catch 
+                {
+                    trans.Rollback();
+                    return false; 
+                }
+                finally { Close(); }
+            }
+            return false;
         }
 
         public static bool Update(ProductInfo e)
         {
-            string sql = string.Format(""); // code here
+            string sql = string.Format("CALL product_info_insert('{1}',{2},{3},{4},{5},{6},'{7}','{8}','{9}')",
+                dbTableName,
+                e.Name,
+                e.Category.Id,
+                e.Manufacturer.Id,
+                e.MadeIn.Id,
+                e.Expiry,
+                e.Unit.Id,
+                e.StorageCondition,
+                e.Note,
+                e.Image);
             return ExecuteNonQuery(sql) > 0;
         }
     }

@@ -74,9 +74,9 @@ namespace DAL
                 e.StartDate.ToString("yyyy-MM-dd"));
             return ExecuteNonQuery(sql) > 0;
         }
-        public static bool InsertAccount(int staffId)
+        public static bool InsertAccount(int staffId, int role)
         {
-            string sql = string.Format("EXEC staff_insert_account @staff_id={0}", staffId);
+            string sql = string.Format("CALL {0}_insert_account({1},{2})", dbTableName, staffId, role);
             return ExecuteNonQuery(sql) > 0;
         }
         public static bool Delete(int id)
