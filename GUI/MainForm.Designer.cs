@@ -32,22 +32,15 @@ namespace GUI
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Sidebar = new System.Windows.Forms.Panel();
-            this.invenMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.cateMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.pnl = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Header = new System.Windows.Forms.Panel();
-            this.formTitle = new System.Windows.Forms.Label();
-            this.close = new System.Windows.Forms.Button();
-            this.minimize = new System.Windows.Forms.Button();
-            this.restore = new System.Windows.Forms.Button();
             this.staff = new System.Windows.Forms.Button();
             this.sell = new System.Windows.Forms.Button();
+            this.invenMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.inventory = new System.Windows.Forms.Button();
             this.invenImp = new System.Windows.Forms.Button();
             this.invenChk = new System.Windows.Forms.Button();
             this.setting = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
+            this.cateMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.category = new System.Windows.Forms.Button();
             this.cateCate = new System.Windows.Forms.Button();
             this.cateIngre = new System.Windows.Forms.Button();
@@ -55,15 +48,22 @@ namespace GUI
             this.cateProvi = new System.Windows.Forms.Button();
             this.cateCus = new System.Windows.Forms.Button();
             this.statistic = new System.Windows.Forms.Button();
+            this.pnl = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.Header = new System.Windows.Forms.Panel();
+            this.formTitle = new System.Windows.Forms.Label();
+            this.close = new System.Windows.Forms.Button();
+            this.minimize = new System.Windows.Forms.Button();
+            this.restore = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.Sidebar.SuspendLayout();
             this.invenMenu.SuspendLayout();
             this.cateMenu.SuspendLayout();
             this.pnl.SuspendLayout();
-            this.Header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.Header.SuspendLayout();
             this.SuspendLayout();
             // 
             // Sidebar
@@ -79,94 +79,6 @@ namespace GUI
             this.Sidebar.Controls.Add(this.pnl);
             resources.ApplyResources(this.Sidebar, "Sidebar");
             this.Sidebar.Name = "Sidebar";
-            // 
-            // invenMenu
-            // 
-            this.invenMenu.Controls.Add(this.inventory);
-            this.invenMenu.Controls.Add(this.invenImp);
-            this.invenMenu.Controls.Add(this.invenChk);
-            resources.ApplyResources(this.invenMenu, "invenMenu");
-            this.invenMenu.Name = "invenMenu";
-            // 
-            // cateMenu
-            // 
-            this.cateMenu.Controls.Add(this.category);
-            this.cateMenu.Controls.Add(this.cateCate);
-            this.cateMenu.Controls.Add(this.cateIngre);
-            this.cateMenu.Controls.Add(this.cateDrug);
-            this.cateMenu.Controls.Add(this.cateProvi);
-            this.cateMenu.Controls.Add(this.cateCus);
-            resources.ApplyResources(this.cateMenu, "cateMenu");
-            this.cateMenu.Name = "cateMenu";
-            // 
-            // pnl
-            // 
-            this.pnl.BackColor = System.Drawing.Color.RoyalBlue;
-            this.pnl.Controls.Add(this.menu);
-            this.pnl.Controls.Add(this.label1);
-            this.pnl.Controls.Add(this.logo);
-            resources.ApplyResources(this.pnl, "pnl");
-            this.pnl.Name = "pnl";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
-            // 
-            // Header
-            // 
-            this.Header.BackColor = System.Drawing.Color.White;
-            this.Header.Controls.Add(this.formTitle);
-            this.Header.Controls.Add(this.close);
-            this.Header.Controls.Add(this.minimize);
-            this.Header.Controls.Add(this.restore);
-            resources.ApplyResources(this.Header, "Header");
-            this.Header.Name = "Header";
-            this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
-            // 
-            // formTitle
-            // 
-            resources.ApplyResources(this.formTitle, "formTitle");
-            this.formTitle.BackColor = System.Drawing.Color.Transparent;
-            this.formTitle.ForeColor = System.Drawing.Color.Navy;
-            this.formTitle.Name = "formTitle";
-            // 
-            // close
-            // 
-            resources.ApplyResources(this.close, "close");
-            this.close.BackColor = System.Drawing.Color.Crimson;
-            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.FlatAppearance.BorderSize = 0;
-            this.close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.close.Image = global::GUI.Properties.Resources.close;
-            this.close.Name = "close";
-            this.close.UseVisualStyleBackColor = false;
-            this.close.Click += new System.EventHandler(this.close_Click);
-            // 
-            // minimize
-            // 
-            resources.ApplyResources(this.minimize, "minimize");
-            this.minimize.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.FlatAppearance.BorderSize = 0;
-            this.minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.minimize.Image = global::GUI.Properties.Resources.minimize1;
-            this.minimize.Name = "minimize";
-            this.minimize.UseVisualStyleBackColor = false;
-            this.minimize.Click += new System.EventHandler(this.minimize_Click);
-            // 
-            // restore
-            // 
-            resources.ApplyResources(this.restore, "restore");
-            this.restore.BackColor = System.Drawing.Color.RoyalBlue;
-            this.restore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.restore.FlatAppearance.BorderSize = 0;
-            this.restore.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.restore.Image = global::GUI.Properties.Resources.minimize;
-            this.restore.Name = "restore";
-            this.restore.UseVisualStyleBackColor = false;
-            this.restore.Click += new System.EventHandler(this.restore_Click);
             // 
             // staff
             // 
@@ -193,6 +105,14 @@ namespace GUI
             this.sell.Tag = "Bán Hàng";
             this.sell.UseVisualStyleBackColor = false;
             this.sell.Click += new System.EventHandler(this.sell_Click);
+            // 
+            // invenMenu
+            // 
+            this.invenMenu.Controls.Add(this.inventory);
+            this.invenMenu.Controls.Add(this.invenImp);
+            this.invenMenu.Controls.Add(this.invenChk);
+            resources.ApplyResources(this.invenMenu, "invenMenu");
+            this.invenMenu.Name = "invenMenu";
             // 
             // inventory
             // 
@@ -258,6 +178,17 @@ namespace GUI
             this.logout.Tag = "Đăng Xuất";
             this.logout.UseVisualStyleBackColor = false;
             this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
+            // cateMenu
+            // 
+            this.cateMenu.Controls.Add(this.category);
+            this.cateMenu.Controls.Add(this.cateCate);
+            this.cateMenu.Controls.Add(this.cateIngre);
+            this.cateMenu.Controls.Add(this.cateDrug);
+            this.cateMenu.Controls.Add(this.cateProvi);
+            this.cateMenu.Controls.Add(this.cateCus);
+            resources.ApplyResources(this.cateMenu, "cateMenu");
+            this.cateMenu.Name = "cateMenu";
             // 
             // category
             // 
@@ -350,6 +281,15 @@ namespace GUI
             this.statistic.UseVisualStyleBackColor = false;
             this.statistic.Click += new System.EventHandler(this.statistic_Click);
             // 
+            // pnl
+            // 
+            this.pnl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnl.Controls.Add(this.menu);
+            this.pnl.Controls.Add(this.label1);
+            this.pnl.Controls.Add(this.logo);
+            resources.ApplyResources(this.pnl, "pnl");
+            this.pnl.Name = "pnl";
+            // 
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.RoyalBlue;
@@ -361,12 +301,72 @@ namespace GUI
             this.menu.UseVisualStyleBackColor = false;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Name = "label1";
+            // 
             // logo
             // 
             resources.ApplyResources(this.logo, "logo");
             this.logo.Image = global::GUI.Properties.Resources.RXlogo;
             this.logo.Name = "logo";
             this.logo.TabStop = false;
+            // 
+            // Header
+            // 
+            this.Header.BackColor = System.Drawing.Color.White;
+            this.Header.Controls.Add(this.formTitle);
+            this.Header.Controls.Add(this.close);
+            this.Header.Controls.Add(this.minimize);
+            this.Header.Controls.Add(this.restore);
+            resources.ApplyResources(this.Header, "Header");
+            this.Header.Name = "Header";
+            this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
+            // 
+            // formTitle
+            // 
+            resources.ApplyResources(this.formTitle, "formTitle");
+            this.formTitle.BackColor = System.Drawing.Color.Transparent;
+            this.formTitle.ForeColor = System.Drawing.Color.Navy;
+            this.formTitle.Name = "formTitle";
+            // 
+            // close
+            // 
+            resources.ApplyResources(this.close, "close");
+            this.close.BackColor = System.Drawing.Color.Crimson;
+            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.close.FlatAppearance.BorderSize = 0;
+            this.close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.close.Image = global::GUI.Properties.Resources.close;
+            this.close.Name = "close";
+            this.close.UseVisualStyleBackColor = false;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            // 
+            // minimize
+            // 
+            resources.ApplyResources(this.minimize, "minimize");
+            this.minimize.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.minimize.FlatAppearance.BorderSize = 0;
+            this.minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.minimize.Image = global::GUI.Properties.Resources.minimize1;
+            this.minimize.Name = "minimize";
+            this.minimize.UseVisualStyleBackColor = false;
+            this.minimize.Click += new System.EventHandler(this.minimize_Click);
+            // 
+            // restore
+            // 
+            resources.ApplyResources(this.restore, "restore");
+            this.restore.BackColor = System.Drawing.Color.RoyalBlue;
+            this.restore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.restore.FlatAppearance.BorderSize = 0;
+            this.restore.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.restore.Image = global::GUI.Properties.Resources.minimize;
+            this.restore.Name = "restore";
+            this.restore.UseVisualStyleBackColor = false;
+            this.restore.Click += new System.EventHandler(this.restore_Click);
             // 
             // button8
             // 
@@ -396,9 +396,9 @@ namespace GUI
             this.cateMenu.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }

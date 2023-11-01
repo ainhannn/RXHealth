@@ -25,13 +25,13 @@ namespace GUI
 
         private void Header_MouseDown(object sender, MouseEventArgs e)
         {
-            if (WindowState == FormWindowState.Maximized)
-            {
-                restore.Image = Properties.Resources.maximize;
-                ResetMenu();
-            } else restore.Image = Properties.Resources.minimize;
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 8);
+            if (WindowState == FormWindowState.Maximized)
+            {
+                restore.Image = Properties.Resources.minimize;
+                ResetMenu();
+            } else restore.Image = Properties.Resources.maximize;
         }
 
         private void close_Click(object sender, System.EventArgs e)
@@ -101,6 +101,8 @@ namespace GUI
 
         private void ResetMenu()
         {
+            if(Sidebar.Width > 200)
+                CollapseMenu();
             if (cateMenu.Height > 100)
                 CollapseCateMenu();
             if (invenMenu.Height > 100)
