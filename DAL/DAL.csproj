@@ -235,6 +235,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerDAO.cs" />
+    <Compile Include="ProductDAO.cs" />
+    <Compile Include="ProductBatchDAO.cs" />
     <Compile Include="StaffDAO.cs" />
     <Compile Include="ProviderDAO.cs" />
     <Compile Include="AccountDAO.cs" />

@@ -1,80 +1,140 @@
 ﻿using System;
 using System.Collections.Generic;
 using DTO;
+using Google.Protobuf.WellKnownTypes;
 
 namespace DAL
 {
-    public class ProductInfoDAO : DBConnection
+    public class ProductDAO : DBConnection
     {
-        private static string dbTableName = "product_info";
-        private static ProductInfo ConvertToDTO(List<object> row)
+        private static string dbTableName = "product";
+        private static Product ConvertToDTO(List<object> row)
         {
             try
             {
-                ProductInfo obj = new ProductInfo(Convert.ToInt16(row[0]), Convert.ToString(row[1]));
-                obj.Name = Convert.ToString(row[2]);
-                obj.Category = CategoryDAO.Select(Convert.ToInt16(row[3]));
-                obj.Manufacturer = ManufacturerDAO.Select(Convert.ToInt16(row[4]));
-                obj.MadeIn = CountryDAO.Select(Convert.ToInt16(row[5]));
-                obj.Expiry = Convert.ToByte(row[6]);
-                obj.Unit = UnitDAO.Select(Convert.ToInt16(row[7]));
-                obj.StorageCondition = Convert.ToString(row[8]);
-                obj.Note = Convert.ToString(row[9]);
-                obj.Image = Convert.ToString(row[10]);
-
-                var table = ExecuteReader("SELECT * FROM product_extra_ingredient WHERE product_id = " + obj.Id);
-                foreach (var r in table)
+                Product obj = new Product()
                 {
-                    obj.AddIngredient(IngredientDAO.Select(Convert.ToInt16(r[1])), (float)r[2]);
+                    Information = ProductInfoDAO.Select(Convert.ToInt16(row[0])),
+                    Stack = Convert.ToString(row[1]),
+                    NumberSoldOut = Convert.ToInt16(row[2]),
+                    Number = Convert.ToInt16(row[3]),
+                    NumberSubunit = Convert.ToInt16(row[4]),
+                    NumberAboutToExpire = Convert.ToInt16(row[5]),
+                    Rate = Convert.ToInt16(row[6]),
+                    IsOnSale = Convert.ToBoolean(row[7])
+                };
+                var list = ProductBatchDAO.Select(obj.Information.Id);
+                foreach (var e in list)
+                {
+                    obj.AddProductBatch(e);
                 }
                 return obj;
             } catch { return null; }
         }
 
-        public static List<ProductInfo> SelectAll()
+        public static List<Product> SelectAll()
         {
             string sql = string.Format("SELECT * FROM {0} WHERE is_existing = 'true'", dbTableName);
             var table = ExecuteReader(sql);
-            var list = new List<ProductInfo>();
+            var list = new List<Product>();
             foreach (var row in table) 
             {
                 list.Add(ConvertToDTO(row));
             }
             return list;
         }
+        public static List<Product> SelectAllSale()
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE is_existing = 'true' AND is_on_sale = 'true'", dbTableName);
+            var table = ExecuteReader(sql);
+            var list = new List<Product>();
+            foreach (var row in table)
+            {
+                list.Add(ConvertToDTO(row));
+            }
+            return list;
+        }
 
-        public static ProductInfo Select(int id)
+        public static Product Select(int id)
         {
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1} AND is_existing = 'true'", dbTableName, id);
             var table = ExecuteReader(sql);
-            return ConvertToDTO(table[table.Count - 1]);
+            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
 
-        //public static List<ProductInfo> Search(string key)
-        //{
-        //    return new List<ProductInfo>();
-        //}
-
-        public static bool Insert(ProductInfo e)
+        public static Product Select(string barCode)
         {
-            // viet lai ham transaction tren db goi len
-            string sql = string.Format(
-                "INSER INTO {0}(name,category_id,manufacturer_id,made_in,expiry,unit_id,storage_condition,note,image) " +
-                "VALUE ('{1}',{2},{3},{4},{5},{6},'{7}','{8}','{9}')", dbTableName, e.Name, e.Category.Id, e.Manufacturer.Id, e.MadeIn.Id, e.Expiry, e.Unit.Id, e.StorageCondition, e.Note, e.Image);
-            return ExecuteNonQuery(sql) > 0;
+            if (string.IsNullOrEmpty(barCode)) { return null; }
+            var info = ProductInfoDAO.Select(barCode);
+            return info != null ? Select(info.Id) : null;
+        }
+
+        public static List<Product> AdvancedSearch(Dictionary<string, string> conditions)
+        {
+            var list = new List<Product>();
+            //foreach (var condition in conditions) 
+            //{
+            //    string value = "";
+            //    if (conditions.TryGetValue(condition.Key,out value ))
+            //    {
+            //        Console.WriteLine("For key = \"tif\", value = {0}.", value);
+            //    }
+
+            //}
+            return list;
+        }
+        public static bool Insert(Product e)
+        {
+            if (ProductInfoDAO.Insert(e.Information)) 
+            {
+                e.Information = ProductInfoDAO.Select(e.Information.Barcode);
+                string sql = string.Format(
+                    "UPDATE SET stack = '{2}', rate = {3}, is_on_sale = '{4}' " +
+                    "FROM {0} WHERE id = {1}", dbTableName, e.Information.Id, e.Stack, e.Rate, e.IsOnSale);
+                return ExecuteNonQuery(sql) > 0;
+            }
+            return false;
         }
         
         public static bool Delete(int id)
         {
-            string sql = string.Format("DELETE FROM product_extra_ingredient WHERE id = {1}; " +
-                "DELETE FROM {0} WHERE id = {1}", dbTableName, id);
+            string sql = string.Format(
+                "UPDATE SET is_existing = 'false' FROM {0} WHERE id = {1}; " +
+                "INSERT INTO trash_tmp VALUE ({1});", dbTableName, id);
             return ExecuteNonQuery(sql) != -1;
         }
 
-        public static bool Update(ProductInfo e)
+        public static bool Recover(int id)
         {
-            string sql = string.Format(""); // code here
-            return ExecuteNonQuery(sql) > 0;
+            string sql = string.Format(
+                "UPDATE SET is_existing = 'true' FROM {0} WHERE id = {1}; " +
+                "DELETE FROM trash_tmp WHERE id = {1};", dbTableName, id); 
+            return ExecuteNonQuery(sql) != -1;
         }
+
+        public static bool DeleteTrash(int id)
+        {
+            string sql = string.Format("DELETE FROM trash_tmp WHERE id = {0};", id);
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool EmptyTrash()
+        {
+            string sql = string.Format("DELETE FROM trash_tmp");
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool Update(Product e)
+        {
+            string sql = string.Format("UPDATE SET " +
+                "stack = '{2}', " +
+                "rate = {3}, " +
+                "is_on_sale = '{4}' " +
+                "FROM {0} WHERE id = {1}", dbTableName, e.Information.Id, e.Stack, e.Rate, e.IsOnSale);
+            return ExecuteNonQuery(sql) != -1 && ProductInfoDAO.Update(e.Information);
+        }
+        
+        public static bool UpdateBatch(ProductBatch e) => ProductBatchDAO.Update(e);
+        
     }
 }
