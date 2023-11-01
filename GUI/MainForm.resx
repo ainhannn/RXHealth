@@ -904,7 +904,7 @@
     <value>238, 70</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>HEALTH</value>

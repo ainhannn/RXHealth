@@ -1,5 +1,12 @@
-﻿using System.Linq;
+﻿using Spire.Xls;
+using Spire.Xls.Core;
+using System;
+using System.Drawing.Printing;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace GUI
 {
@@ -13,9 +20,15 @@ namespace GUI
         private void FormStaff_Activated(object sender, System.EventArgs e)
         {
             foreach (TextBox textBox in form.Controls.OfType<TextBox>())
+            {
+                textBox.Text = "";
                 textBox.Enabled = false;
+            }
             foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                 dateBox.Enabled = false;
+            foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
+                genderBox.Enabled = false;
+            GetTable();
         }
 
         private void FormStaff_Resize(object sender, System.EventArgs e)
@@ -26,9 +39,9 @@ namespace GUI
                     textBox.Width = 200;
                 foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                     dateBox.Width = 200;
-                if (Height > 850)
+                if (Height > 950)
                 {
-                    table.Height = 400;
+                    table.Height = 500;
                     form.Visible = true;
                     table.Dock = DockStyle.Bottom;
                 }
@@ -50,9 +63,9 @@ namespace GUI
                     textBox.Width = 100;
                 foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                     dateBox.Width = 100;
-                if (Height > 850)
+                if (Height > 950)
                 {
-                    table.Height = 400;
+                    table.Height = 500;
                     form.Visible = true;
                     table.Dock = DockStyle.Bottom;
                 }
@@ -78,9 +91,14 @@ namespace GUI
         private void create_Click(object sender, System.EventArgs e)
         {
             foreach (TextBox textBox in form.Controls.OfType<TextBox>())
+            {
                 textBox.Enabled = true;
+                textBox.Text = "";
+            }
             foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                 dateBox.Enabled = true;
+            foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
+                genderBox.Enabled = true;
         }
 
         private void update_Click(object sender, System.EventArgs e)
@@ -89,14 +107,21 @@ namespace GUI
                 textBox.Enabled = true;
             foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                 dateBox.Enabled = true;
+            foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
+                genderBox.Enabled = true;
         }
 
         private void delete_Click(object sender, System.EventArgs e)
         {
             foreach (TextBox textBox in form.Controls.OfType<TextBox>())
+            {
+                textBox.Text = "";
                 textBox.Enabled = false;
+            }
             foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                 dateBox.Enabled = false;
+            foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
+                genderBox.Enabled = false;
         }
 
         private void save_Click(object sender, System.EventArgs e)
@@ -105,6 +130,109 @@ namespace GUI
                 textBox.Enabled = false;
             foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                 dateBox.Enabled = false;
+            foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
+                genderBox.Enabled = false;
+        }
+
+        //Thao tác lấy dữ liệu với từng dòng, t đặt tên các textbox là (inp + tên) á hoặc m cứ xài theo foreach load index
+        private void table_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                DataGridViewRow selectedRow = table.Rows[e.RowIndex];
+                inpAccount.Text = selectedRow.Cells["Account"].Value != null ? selectedRow.Cells["Account"].Value.ToString() : "";
+                btnAccount.Text = inpAccount.Text == "" ? "Cấp tài khoản" : "Khôi phục mật khẩu";
+            }
+        }
+
+        //Lấy dữ liệu ở đây nha hoặc m tự đóng gói cục khác cũng được, t tạo mẫu test th :>
+        private void GetTable()
+        {
+            table.Rows.Add("", "", "", "", "", "", "", "", "", "", "");
+        }
+
+        private void print_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                Workbook workbook = new Workbook();
+                workbook.LoadFromFile(@"..\..\..\documents\...xlsx"); // Đảm bảo sửa đúng đường dẫn tới tệp Excel
+
+                PageSetup pageSetup = workbook.Worksheets[0].PageSetup;
+                pageSetup.IsFitToPage = true;
+
+                PrintDialog dialog = new PrintDialog();
+                dialog.AllowCurrentPage = true;
+                dialog.AllowSomePages = true;
+                dialog.AllowSelection = true;
+                dialog.UseEXDialog = true;
+                dialog.PrinterSettings.Duplex = Duplex.Simplex;
+                workbook.PrintDialog = dialog;
+                PrintDocument printDocument = workbook.PrintDocument;
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    printDocument.Print();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void download_Click(object sender, System.EventArgs e)
+        {
+            // Đường dẫn tới tệp Excel gốc
+            string sourceFilePath = @"..\..\..\documents\...xls";
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files|*.xlsx";
+            saveFileDialog.FileName = "DHT.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string savePath = saveFileDialog.FileName;
+                try
+                {
+                    File.Copy(sourceFilePath, savePath, true);
+                    MessageBox.Show("Tải tệp Excel thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void upload_Click(object sender, System.EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            openFileDialog.Title = "Chọn tệp Excel để tải lên";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFilePath = openFileDialog.FileName;
+                string targetDirectory = @"..\..\..\documents";
+
+                try
+                {
+                    string targetFilePath = Path.Combine(targetDirectory, Path.GetFileName(selectedFilePath));
+                    File.Copy(selectedFilePath, targetFilePath);
+
+                    // Xử lý tệp Excel đã chọn ở đây
+                    Workbook workbook = new Workbook();
+                    workbook.LoadFromFile(selectedFilePath);
+
+                    // Thực hiện xử lý với dữ liệu từ tệp Excel
+
+                    MessageBox.Show("Tải lên và lưu tệp Excel thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
