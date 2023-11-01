@@ -47,7 +47,7 @@ namespace DAL
         {
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1} AND is_existing = 'true'", dbTableName, id);
             var table = ExecuteReader(sql);
-            return ConvertToDTO(table[table.Count - 1]);
+            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
 
         //public static List<ProductInfo> Search(string key)

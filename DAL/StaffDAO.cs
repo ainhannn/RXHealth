@@ -19,7 +19,7 @@ namespace DAL
                     Birthday = Convert.ToDateTime(row[4]),
                     GenderIsMale = Convert.ToBoolean(row[5]),
                     Qualification = Convert.ToString(row[6]),
-                    Phone = Convert.ToString(row[7]),
+                    ContactNumber = Convert.ToString(row[7]),
                     Address = Convert.ToString(row[8]),
                     Account = row[9] != null ? AccountDAO.Select(Convert.ToInt16(row[9])) : null,
                     StartDate = Convert.ToDateTime(row[10]),
@@ -55,7 +55,7 @@ namespace DAL
         {
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1}", dbTableName, id);
             var table = ExecuteReader(sql);
-            return ConvertToDTO(table[table.Count - 1]);
+            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
         public static bool Insert(Staff e)
         {
@@ -69,7 +69,7 @@ namespace DAL
                 e.Birthday.ToString("yyyy-MM-dd"), 
                 e.GenderIsMale,
                 e.Qualification,
-                e.Phone,
+                e.ContactNumber,
                 e.Address,
                 e.StartDate.ToString("yyyy-MM-dd"));
             return ExecuteNonQuery(sql) > 0;
@@ -95,7 +95,7 @@ namespace DAL
                 "qualification='{6}', " +
                 "contact_number='{7}', " +
                 "address='{8}' " +
-                "WHERE id = {1}", dbTableName, e.CitizenId, e.FullName, e.Birthday.ToString("yyyy-MM-dd"), e.GenderIsMale, e.Qualification, e.Phone, e.Address);
+                "WHERE id = {1}", dbTableName, e.CitizenId, e.FullName, e.Birthday.ToString("yyyy-MM-dd"), e.GenderIsMale, e.Qualification, e.ContactNumber, e.Address);
             return ExecuteNonQuery(sql) > 0;
         }
         public static bool UpdateStatus(int id, DateTime resignationDate)
