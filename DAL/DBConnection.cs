@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 
 namespace DAL
 {
     public class DBConnection
     {
-        private static string server = "localhost";
-        private static string database = "PHARMACY";
-        private static string user = "root";
-        private static string password = "";
+        private static readonly string server = "localhost";
+        private static readonly string database = "PHARMACY";
+        private static readonly string user = "root";
+        private static readonly string password = "";
         protected static MySqlConnection conn;
 
         protected static bool Open()
@@ -32,10 +33,7 @@ namespace DAL
         {
             try
             {
-                if (conn != null)
-                {
-                    conn.Close();
-                }
+                conn?.Close();
             }
             catch (MySqlException ex)
             {
@@ -66,14 +64,8 @@ namespace DAL
                         table.Add(row);
                     }
                 }
-                catch (MySqlException ex)
-                {
-                    return table;
-                }
-                finally
-                {
-                    Close();
-                }
+                catch {  return table; }
+                finally { Close(); }
             }
             return table;
         }
@@ -88,14 +80,8 @@ namespace DAL
                     var cmd = new MySqlCommand(sql, conn);
                     return cmd.ExecuteScalar();
                 }
-                catch (MySqlException ex)
-                {
-                    return null;
-                }
-                finally
-                {
-                    Close();
-                }
+                catch { return null; }
+                finally { Close(); }
             }
             return null;
         }
@@ -110,14 +96,8 @@ namespace DAL
                     var cmd = new MySqlCommand(sql, conn);
                     return cmd.ExecuteNonQuery();
                 }
-                catch (MySqlException ex)
-                {
-                    return -1;
-                }
-                finally
-                {
-                    Close();
-                }
+                catch { return -1; }
+                finally { Close(); }
             }
             return -1;
         }

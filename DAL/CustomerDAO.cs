@@ -67,7 +67,7 @@ namespace DAL
             string sql = string.Format("UPDATE {0} SET " +
                 "name = '{2}', " +
                 "contact_number = '{3}' " +
-                "WHERE id = {1}", dbTableName, e.Id, e.Name, e.ContactNumber, e.Address);
+                "WHERE id = {1}", dbTableName, e.Id, e.Name, e.ContactNumber);
             return ExecuteNonQuery(sql) > 0;
         }
     }

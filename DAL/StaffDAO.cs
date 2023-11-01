@@ -6,7 +6,7 @@ namespace DAL
 {
     public class StaffDAO : DBConnection
     {
-        private static string dbTableName = "staff";
+        private static readonly string dbTableName = "staff";
 
         private static Staff ConvertToDTO(List<object> row)
         {

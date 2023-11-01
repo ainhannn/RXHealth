@@ -18,7 +18,7 @@
         }
         public InventoryDetail(Product product)
         {
-            Barcode = product.Information.Code;
+            Barcode = product.Information.Barcode;
             Name = product.Information.Name;
             Unit = product.Information.Unit;
             NumberOnSystem = product.Number;

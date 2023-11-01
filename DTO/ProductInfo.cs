@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DTO
 {
     public class ProductInfo
     {
         public int Id { get; }
-        public string Code { get; }
+        public string Barcode { get; }
         public string Name { get; set; }
         public Category Category { get; set; }
         public Dictionary<Ingredient, float> ActiveIngredient { get; set; }
@@ -16,16 +17,16 @@ namespace DTO
         public string StorageCondition { get; set; }
         public string Note { get; set; }
         public string Image { get; set; }
-        public ProductInfo(int id, string code)
+        public ProductInfo(int id, string barcode)
         {
             Id = id;
-            Code = code;
+            Barcode = barcode;
             ActiveIngredient = new Dictionary<Ingredient, float>();
         }
-        public ProductInfo(int id, string code, string name, Category category, Dictionary<Ingredient,float> activeIngredient, Manufacturer manufacturer, Country madeIn, byte expiry, Unit unit, string storageCondition, string note, string image)
+        public ProductInfo(int id, string barcode, string name, Category category, Dictionary<Ingredient,float> activeIngredient, Manufacturer manufacturer, Country madeIn, byte expiry, Unit unit, string storageCondition, string note, string image)
         {
             Id = id;
-            Code = code;
+            Barcode = barcode;
             Name = name;
             Category = category;
             ActiveIngredient = activeIngredient;
@@ -52,6 +53,29 @@ namespace DTO
             Image = image;
         }
         public void AddIngredient(Ingredient e, float dosage) { ActiveIngredient.Add(e, dosage); }
-        
+
+        public override string ToString()
+        {
+            string rs = "[";
+            rs += Id + " - ";
+            rs += Barcode + " - ";
+            rs += Name + " - ";
+            rs += Category.Name + " - ";
+            var igd = "{";
+            foreach (var item in ActiveIngredient)
+            {
+                igd += item.Key.Name + ":" + item.Value;
+                igd += item.Key.Name.Equals(ActiveIngredient.Keys.Last()) ? "" : ", ";
+            }
+            igd += "}";
+            rs += igd;
+            rs += Manufacturer.Name + " - ";
+            rs += MadeIn.Name + " - ";
+            rs += Expiry + " - ";
+            rs += Unit.Name + (Unit.Subunit != null ? ("/" + Unit.Subunit.Name) : "") + " - ";
+            rs += StorageCondition + " - ";
+            rs += Note + " - ";
+            return rs;
+        }
     }
 }
