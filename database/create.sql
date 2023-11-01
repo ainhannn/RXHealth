@@ -142,6 +142,7 @@ CREATE TABLE import_detail (
 CREATE TABLE product (
     id INT PRIMARY KEY,
     stack VARCHAR(10),
+    number_sold_out INT DEFAULT 0,
     total_number INT DEFAULT 0,
     total_subunit_number INT DEFAULT 0,
     about_to_expire_number INT DEFAULT 0,
@@ -226,3 +227,157 @@ CREATE TABLE sale_detail (
     CONSTRAINT fk_sale_batch FOREIGN KEY (product_batch_id) REFERENCES product_batch(id),
     CONSTRAINT fk_sale_unit FOREIGN KEY (unit_id) REFERENCES unit(id)
 );						
+
+DELIMITER //
+-- -- -- -- -- TRIGGERS -- -- -- -- --
+CREATE TRIGGER auto_product_init
+        AFTER INSERT ON product_info 
+        FOR EACH ROW
+BEGIN
+    DECLARE pid INT;
+    SET pid = NEW.id;
+    INSERT INTO product(id) VALUES (pid);
+END//
+
+CREATE TRIGGER auto_product_local_code
+        BEFORE INSERT ON product_batch 
+        FOR EACH ROW
+BEGIN
+    DECLARE code VARCHAR(13);
+    DECLARE pid VARCHAR(5);
+    DECLARE timeid VARCHAR(6);
+    DECLARE num INT;
+       
+    SELECT LPAD(id,5,0) INTO pid
+    FROM product WHERE id = NEW.product_id;
+
+    SELECT DATE_FORMAT(date_time,"%d%m%y") INTO timeid 
+    FROM import_invoice WHERE id = NEW.import_invoice_id;
+
+    SET code = CONCAT('P',pid,timeid,'%');
+    SELECT COUNT(id) INTO num
+    FROM product_batch WHERE local_code LIKE code;
+    
+    SET code = CONCAT('P',pid,timeid,CHAR(ASCII('A')+num));
+    SET NEW.local_code = code;
+END//
+
+CREATE TRIGGER auto_import_code
+        BEFORE INSERT ON import_invoice 
+        FOR EACH ROW
+BEGIN
+    DECLARE newid INT;
+
+    SELECT auto_increment INTO newid
+    FROM information_schema.tables 
+    WHERE table_name = 'import_invoice' AND table_schema = 'pharmacy';
+
+    SET NEW.code = CONCAT('IM',LPAD(newid,5,0));
+END//
+
+CREATE TRIGGER auto_export_code
+        BEFORE INSERT ON export_invoice 
+        FOR EACH ROW
+BEGIN
+    DECLARE newid INT;
+
+    SELECT auto_increment INTO newid
+    FROM information_schema.tables 
+    WHERE table_name = 'export_invoice' AND table_schema = 'pharmacy';
+
+    SET NEW.code = CONCAT('EX',LPAD(newid,5,0));
+END//
+
+CREATE TRIGGER auto_inventory_code
+        BEFORE INSERT ON inventory_form 
+        FOR EACH ROW
+BEGIN
+    DECLARE newid INT;
+
+    SELECT auto_increment INTO newid
+    FROM information_schema.tables 
+    WHERE table_name = 'inventory_invoice' AND table_schema = 'pharmacy';
+
+    SET NEW.code = CONCAT('IN',LPAD(newid,5,0));
+END//
+
+CREATE TRIGGER auto_order_code
+        BEFORE INSERT ON order_form 
+        FOR EACH ROW
+BEGIN
+    DECLARE newid INT;
+
+    SELECT auto_increment INTO newid
+    FROM information_schema.tables 
+    WHERE table_name = 'order_form' AND table_schema = 'pharmacy';
+
+    SET NEW.code = CONCAT('OR',LPAD(newid,5,0));
+END//
+
+CREATE TRIGGER auto_payment_code
+        BEFORE INSERT ON payment_invoice 
+        FOR EACH ROW
+BEGIN
+    DECLARE newid INT;
+
+    SELECT auto_increment INTO newid
+    FROM information_schema.tables 
+    WHERE table_name = 'payment_invoice' AND table_schema = 'pharmacy';
+
+    SET NEW.code = CONCAT('PA',LPAD(newid,5,0));
+END//
+
+CREATE TRIGGER auto_sale_code
+        BEFORE INSERT ON sale_invoice 
+        FOR EACH ROW
+BEGIN
+    DECLARE newid INT;
+
+    SELECT auto_increment INTO newid
+    FROM information_schema.tables 
+    WHERE table_name = 'sale_invoice' AND table_schema = 'pharmacy';
+
+    SET NEW.code = CONCAT('SA',LPAD(newid,5,0));
+END//
+
+
+
+-- -- -- -- -- PROCEDURES -- -- -- -- --
+CREATE PROCEDURE account_login(user VARCHAR(16), pass VARCHAR(16))
+BEGIN
+    DECLARE acc_id INT;
+    DECLARE role_number INT;
+
+    IF EXISTS(SELECT id FROM account WHERE username=user AND password=pass) THEN 
+        SELECT id INTO acc_id FROM account WHERE username=user AND password=pass;
+        SELECT role INTO role_number FROM account WHERE id=acc_id;
+        SELECT acc_id, user, role_number;
+    ELSE
+        SELECT null, null, null;
+    END IF;
+END//
+
+CREATE PROCEDURE staff_insert_account(staff_id INT, role_number INT)
+BEGIN
+    DECLARE user VARCHAR(16);
+    DECLARE pass VARCHAR(16);
+    DECLARE acc_id VARCHAR(16);
+    
+    SELECT citizen_id_number INTO user
+    FROM staff WHERE staff.id=staff_id;
+    
+    SELECT DATE_FORMAT(birthday,"%d%m%Y") INTO pass
+    FROM staff WHERE staff.id=staff_id;
+    
+    INSERT INTO account(username,password,role)
+    VALUES (user, pass, role_number);
+    
+    SELECT account.id INTO acc_id
+    FROM account WHERE username=user AND password=pass;
+
+    UPDATE staff
+    SET account_id=acc_id
+    WHERE staff.id=staff_id;
+END//
+DELIMITER;
+
