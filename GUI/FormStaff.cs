@@ -1,10 +1,7 @@
 ﻿using Spire.Xls;
-using Spire.Xls.Core;
 using System;
-using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 using TextBox = System.Windows.Forms.TextBox;
 
@@ -153,62 +150,19 @@ namespace GUI
 
         private void print_Click(object sender, System.EventArgs e)
         {
-            try
-            {
-                Workbook workbook = new Workbook();
-                workbook.LoadFromFile(@"..\..\..\documents\...xlsx"); // Đảm bảo sửa đúng đường dẫn tới tệp Excel
-
-                PageSetup pageSetup = workbook.Worksheets[0].PageSetup;
-                pageSetup.IsFitToPage = true;
-
-                PrintDialog dialog = new PrintDialog();
-                dialog.AllowCurrentPage = true;
-                dialog.AllowSomePages = true;
-                dialog.AllowSelection = true;
-                dialog.UseEXDialog = true;
-                dialog.PrinterSettings.Duplex = Duplex.Simplex;
-                workbook.PrintDialog = dialog;
-                PrintDocument printDocument = workbook.PrintDocument;
-
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    printDocument.Print();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            new Handle().Print("tên excel.xsl"); // sửa tên
         }
 
         private void download_Click(object sender, System.EventArgs e)
         {
-            // Đường dẫn tới tệp Excel gốc
-            string sourceFilePath = @"..\..\..\documents\...xls";
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Files|*.xlsx";
-            saveFileDialog.FileName = "DHT.xlsx";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string savePath = saveFileDialog.FileName;
-                try
-                {
-                    File.Copy(sourceFilePath, savePath, true);
-                    MessageBox.Show("Tải tệp Excel thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            new Handle().Download("tên excel.xsl"); // sửa tên
         }
 
         private void upload_Click(object sender, System.EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
-            openFileDialog.Title = "Chọn tệp Excel để tải lên";
+            openFileDialog.Title = "Select an Excel file to upload";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {

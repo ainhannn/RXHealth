@@ -194,6 +194,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Handle.cs" />
     <Compile Include="FormSell.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,9 +298,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="components\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\dashboard.png" />
   </ItemGroup>
