@@ -31,67 +31,50 @@ namespace GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.Main = new System.Windows.Forms.Panel();
-            this.setting = new System.Windows.Forms.Button();
             this.Sidebar = new System.Windows.Forms.Panel();
             this.invenMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.inventory = new System.Windows.Forms.Button();
             this.cateMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.sell = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.statistic = new System.Windows.Forms.Button();
-            this.logout = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.category = new System.Windows.Forms.Button();
             this.pnl = new System.Windows.Forms.Panel();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.menu = new System.Windows.Forms.Button();
-            this.restore = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Panel();
-            this.minimize = new System.Windows.Forms.Button();
+            this.formTitle = new System.Windows.Forms.Label();
             this.close = new System.Windows.Forms.Button();
+            this.minimize = new System.Windows.Forms.Button();
+            this.restore = new System.Windows.Forms.Button();
+            this.staff = new System.Windows.Forms.Button();
+            this.sell = new System.Windows.Forms.Button();
+            this.inventory = new System.Windows.Forms.Button();
+            this.invenImp = new System.Windows.Forms.Button();
+            this.invenChk = new System.Windows.Forms.Button();
+            this.setting = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
+            this.category = new System.Windows.Forms.Button();
+            this.cateCate = new System.Windows.Forms.Button();
+            this.cateIngre = new System.Windows.Forms.Button();
+            this.cateDrug = new System.Windows.Forms.Button();
+            this.cateProvi = new System.Windows.Forms.Button();
+            this.cateCus = new System.Windows.Forms.Button();
+            this.statistic = new System.Windows.Forms.Button();
+            this.menu = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.button8 = new System.Windows.Forms.Button();
             this.Sidebar.SuspendLayout();
             this.invenMenu.SuspendLayout();
             this.cateMenu.SuspendLayout();
             this.pnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.Header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Main
-            // 
-            resources.ApplyResources(this.Main, "Main");
-            this.Main.Name = "Main";
-            // 
-            // setting
-            // 
-            this.setting.BackColor = System.Drawing.Color.RoyalBlue;
-            this.setting.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.setting, "setting");
-            this.setting.FlatAppearance.BorderSize = 0;
-            this.setting.ForeColor = System.Drawing.Color.White;
-            this.setting.Image = global::GUI.Properties.Resources.settings_gears;
-            this.setting.Name = "setting";
-            this.setting.Tag = "Cài Đặt";
-            this.setting.UseVisualStyleBackColor = false;
             // 
             // Sidebar
             // 
             this.Sidebar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.Sidebar.Controls.Add(this.button1);
-            this.Sidebar.Controls.Add(this.invenMenu);
-            this.Sidebar.Controls.Add(this.cateMenu);
+            this.Sidebar.Controls.Add(this.staff);
             this.Sidebar.Controls.Add(this.sell);
+            this.Sidebar.Controls.Add(this.invenMenu);
             this.Sidebar.Controls.Add(this.setting);
             this.Sidebar.Controls.Add(this.logout);
+            this.Sidebar.Controls.Add(this.cateMenu);
             this.Sidebar.Controls.Add(this.statistic);
             this.Sidebar.Controls.Add(this.pnl);
             resources.ApplyResources(this.Sidebar, "Sidebar");
@@ -100,46 +83,116 @@ namespace GUI
             // invenMenu
             // 
             this.invenMenu.Controls.Add(this.inventory);
-            this.invenMenu.Controls.Add(this.button16);
-            this.invenMenu.Controls.Add(this.button17);
+            this.invenMenu.Controls.Add(this.invenImp);
+            this.invenMenu.Controls.Add(this.invenChk);
             resources.ApplyResources(this.invenMenu, "invenMenu");
             this.invenMenu.Name = "invenMenu";
             // 
-            // button1
+            // cateMenu
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::GUI.Properties.Resources.team_management;
-            this.button1.Name = "button1";
-            this.button1.Tag = "Nhân Sự";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cateMenu.Controls.Add(this.category);
+            this.cateMenu.Controls.Add(this.cateCate);
+            this.cateMenu.Controls.Add(this.cateIngre);
+            this.cateMenu.Controls.Add(this.cateDrug);
+            this.cateMenu.Controls.Add(this.cateProvi);
+            this.cateMenu.Controls.Add(this.cateCus);
+            resources.ApplyResources(this.cateMenu, "cateMenu");
+            this.cateMenu.Name = "cateMenu";
             // 
-            // button17
+            // pnl
             // 
-            this.button17.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button17.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button17, "button17");
-            this.button17.FlatAppearance.BorderSize = 0;
-            this.button17.ForeColor = System.Drawing.Color.White;
-            this.button17.Image = global::GUI.Properties.Resources.quality_control;
-            this.button17.Name = "button17";
-            this.button17.Tag = "";
-            this.button17.UseVisualStyleBackColor = false;
+            this.pnl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pnl.Controls.Add(this.menu);
+            this.pnl.Controls.Add(this.label1);
+            this.pnl.Controls.Add(this.logo);
+            resources.ApplyResources(this.pnl, "pnl");
+            this.pnl.Name = "pnl";
             // 
-            // button16
+            // label1
             // 
-            this.button16.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button16.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button16, "button16");
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.ForeColor = System.Drawing.Color.White;
-            this.button16.Image = global::GUI.Properties.Resources.import;
-            this.button16.Name = "button16";
-            this.button16.Tag = "";
-            this.button16.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Name = "label1";
+            // 
+            // Header
+            // 
+            this.Header.BackColor = System.Drawing.Color.White;
+            this.Header.Controls.Add(this.formTitle);
+            this.Header.Controls.Add(this.close);
+            this.Header.Controls.Add(this.minimize);
+            this.Header.Controls.Add(this.restore);
+            resources.ApplyResources(this.Header, "Header");
+            this.Header.Name = "Header";
+            this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
+            // 
+            // formTitle
+            // 
+            resources.ApplyResources(this.formTitle, "formTitle");
+            this.formTitle.BackColor = System.Drawing.Color.Transparent;
+            this.formTitle.ForeColor = System.Drawing.Color.Navy;
+            this.formTitle.Name = "formTitle";
+            // 
+            // close
+            // 
+            resources.ApplyResources(this.close, "close");
+            this.close.BackColor = System.Drawing.Color.Crimson;
+            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.close.FlatAppearance.BorderSize = 0;
+            this.close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.close.Image = global::GUI.Properties.Resources.close;
+            this.close.Name = "close";
+            this.close.UseVisualStyleBackColor = false;
+            this.close.Click += new System.EventHandler(this.close_Click);
+            // 
+            // minimize
+            // 
+            resources.ApplyResources(this.minimize, "minimize");
+            this.minimize.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.minimize.FlatAppearance.BorderSize = 0;
+            this.minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.minimize.Image = global::GUI.Properties.Resources.minimize1;
+            this.minimize.Name = "minimize";
+            this.minimize.UseVisualStyleBackColor = false;
+            this.minimize.Click += new System.EventHandler(this.minimize_Click);
+            // 
+            // restore
+            // 
+            resources.ApplyResources(this.restore, "restore");
+            this.restore.BackColor = System.Drawing.Color.RoyalBlue;
+            this.restore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.restore.FlatAppearance.BorderSize = 0;
+            this.restore.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.restore.Image = global::GUI.Properties.Resources.minimize;
+            this.restore.Name = "restore";
+            this.restore.UseVisualStyleBackColor = false;
+            this.restore.Click += new System.EventHandler(this.restore_Click);
+            // 
+            // staff
+            // 
+            this.staff.BackColor = System.Drawing.Color.RoyalBlue;
+            this.staff.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.staff, "staff");
+            this.staff.FlatAppearance.BorderSize = 0;
+            this.staff.ForeColor = System.Drawing.Color.White;
+            this.staff.Image = global::GUI.Properties.Resources.team_management;
+            this.staff.Name = "staff";
+            this.staff.Tag = "Nhân Sự";
+            this.staff.UseVisualStyleBackColor = false;
+            this.staff.Click += new System.EventHandler(this.staff_Click);
+            // 
+            // sell
+            // 
+            this.sell.BackColor = System.Drawing.Color.RoyalBlue;
+            this.sell.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.sell, "sell");
+            this.sell.FlatAppearance.BorderSize = 0;
+            this.sell.ForeColor = System.Drawing.Color.White;
+            this.sell.Image = global::GUI.Properties.Resources.trolley;
+            this.sell.Name = "sell";
+            this.sell.Tag = "Bán Hàng";
+            this.sell.UseVisualStyleBackColor = false;
+            this.sell.Click += new System.EventHandler(this.sell_Click);
             // 
             // inventory
             // 
@@ -154,52 +207,44 @@ namespace GUI
             this.inventory.UseVisualStyleBackColor = false;
             this.inventory.Click += new System.EventHandler(this.inventory_Click);
             // 
-            // cateMenu
+            // invenImp
             // 
-            this.cateMenu.Controls.Add(this.category);
-            this.cateMenu.Controls.Add(this.button13);
-            this.cateMenu.Controls.Add(this.button14);
-            this.cateMenu.Controls.Add(this.button3);
-            this.cateMenu.Controls.Add(this.button4);
-            this.cateMenu.Controls.Add(this.button5);
-            resources.ApplyResources(this.cateMenu, "cateMenu");
-            this.cateMenu.Name = "cateMenu";
+            this.invenImp.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.invenImp.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.invenImp, "invenImp");
+            this.invenImp.FlatAppearance.BorderSize = 0;
+            this.invenImp.ForeColor = System.Drawing.Color.White;
+            this.invenImp.Image = global::GUI.Properties.Resources.import;
+            this.invenImp.Name = "invenImp";
+            this.invenImp.Tag = "";
+            this.invenImp.UseVisualStyleBackColor = false;
+            this.invenImp.Click += new System.EventHandler(this.invenImp_Click);
             // 
-            // sell
+            // invenChk
             // 
-            this.sell.BackColor = System.Drawing.Color.RoyalBlue;
-            this.sell.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.sell, "sell");
-            this.sell.FlatAppearance.BorderSize = 0;
-            this.sell.ForeColor = System.Drawing.Color.White;
-            this.sell.Image = global::GUI.Properties.Resources.trolley;
-            this.sell.Name = "sell";
-            this.sell.Tag = "Bán Hàng";
-            this.sell.UseVisualStyleBackColor = false;
+            this.invenChk.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.invenChk.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.invenChk, "invenChk");
+            this.invenChk.FlatAppearance.BorderSize = 0;
+            this.invenChk.ForeColor = System.Drawing.Color.White;
+            this.invenChk.Image = global::GUI.Properties.Resources.quality_control;
+            this.invenChk.Name = "invenChk";
+            this.invenChk.Tag = "";
+            this.invenChk.UseVisualStyleBackColor = false;
+            this.invenChk.Click += new System.EventHandler(this.invenChk_Click);
             // 
-            // button5
+            // setting
             // 
-            this.button5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button5, "button5");
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::GUI.Properties.Resources.customer_service;
-            this.button5.Name = "button5";
-            this.button5.Tag = "";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // statistic
-            // 
-            this.statistic.BackColor = System.Drawing.Color.RoyalBlue;
-            this.statistic.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.statistic, "statistic");
-            this.statistic.FlatAppearance.BorderSize = 0;
-            this.statistic.ForeColor = System.Drawing.Color.White;
-            this.statistic.Image = global::GUI.Properties.Resources.dashboard;
-            this.statistic.Name = "statistic";
-            this.statistic.Tag = "Hoạt Động";
-            this.statistic.UseVisualStyleBackColor = false;
+            this.setting.BackColor = System.Drawing.Color.RoyalBlue;
+            this.setting.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.setting, "setting");
+            this.setting.FlatAppearance.BorderSize = 0;
+            this.setting.ForeColor = System.Drawing.Color.White;
+            this.setting.Image = global::GUI.Properties.Resources.settings_gears;
+            this.setting.Name = "setting";
+            this.setting.Tag = "Cài Đặt";
+            this.setting.UseVisualStyleBackColor = false;
+            this.setting.Click += new System.EventHandler(this.setting_Click);
             // 
             // logout
             // 
@@ -214,54 +259,6 @@ namespace GUI
             this.logout.UseVisualStyleBackColor = false;
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::GUI.Properties.Resources.take_medicines;
-            this.button4.Name = "button4";
-            this.button4.Tag = "";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::GUI.Properties.Resources.drugs;
-            this.button3.Name = "button3";
-            this.button3.Tag = "";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button14.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button14, "button14");
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Image = global::GUI.Properties.Resources.herb;
-            this.button14.Name = "button14";
-            this.button14.Tag = "";
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.button13, "button13");
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Image = global::GUI.Properties.Resources.production;
-            this.button13.Name = "button13";
-            this.button13.Tag = "Bán Hàng";
-            this.button13.UseVisualStyleBackColor = false;
-            // 
             // category
             // 
             this.category.BackColor = System.Drawing.Color.RoyalBlue;
@@ -275,84 +272,101 @@ namespace GUI
             this.category.UseVisualStyleBackColor = false;
             this.category.Click += new System.EventHandler(this.category_Click);
             // 
-            // pnl
+            // cateCate
             // 
-            this.pnl.BackColor = System.Drawing.Color.RoyalBlue;
-            this.pnl.Controls.Add(this.menu);
-            this.pnl.Controls.Add(this.label1);
-            this.pnl.Controls.Add(this.logo);
-            resources.ApplyResources(this.pnl, "pnl");
-            this.pnl.Name = "pnl";
+            this.cateCate.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.cateCate.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.cateCate, "cateCate");
+            this.cateCate.FlatAppearance.BorderSize = 0;
+            this.cateCate.ForeColor = System.Drawing.Color.White;
+            this.cateCate.Image = global::GUI.Properties.Resources.production;
+            this.cateCate.Name = "cateCate";
+            this.cateCate.Tag = "Bán Hàng";
+            this.cateCate.UseVisualStyleBackColor = false;
+            this.cateCate.Click += new System.EventHandler(this.cateCate_Click);
             // 
-            // logo
+            // cateIngre
             // 
-            this.logo.Image = global::GUI.Properties.Resources.RXlogo;
-            resources.ApplyResources(this.logo, "logo");
-            this.logo.Name = "logo";
-            this.logo.TabStop = false;
+            this.cateIngre.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.cateIngre.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.cateIngre, "cateIngre");
+            this.cateIngre.FlatAppearance.BorderSize = 0;
+            this.cateIngre.ForeColor = System.Drawing.Color.White;
+            this.cateIngre.Image = global::GUI.Properties.Resources.herb;
+            this.cateIngre.Name = "cateIngre";
+            this.cateIngre.Tag = "";
+            this.cateIngre.UseVisualStyleBackColor = false;
+            this.cateIngre.Click += new System.EventHandler(this.cateIngre_Click);
             // 
-            // label1
+            // cateDrug
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
+            this.cateDrug.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.cateDrug.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.cateDrug, "cateDrug");
+            this.cateDrug.FlatAppearance.BorderSize = 0;
+            this.cateDrug.ForeColor = System.Drawing.Color.White;
+            this.cateDrug.Image = global::GUI.Properties.Resources.drugs;
+            this.cateDrug.Name = "cateDrug";
+            this.cateDrug.Tag = "";
+            this.cateDrug.UseVisualStyleBackColor = false;
+            this.cateDrug.Click += new System.EventHandler(this.cateDrug_Click);
+            // 
+            // cateProvi
+            // 
+            this.cateProvi.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.cateProvi.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.cateProvi, "cateProvi");
+            this.cateProvi.FlatAppearance.BorderSize = 0;
+            this.cateProvi.ForeColor = System.Drawing.Color.White;
+            this.cateProvi.Image = global::GUI.Properties.Resources.take_medicines;
+            this.cateProvi.Name = "cateProvi";
+            this.cateProvi.Tag = "";
+            this.cateProvi.UseVisualStyleBackColor = false;
+            this.cateProvi.Click += new System.EventHandler(this.cateProvi_Click);
+            // 
+            // cateCus
+            // 
+            this.cateCus.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.cateCus.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.cateCus, "cateCus");
+            this.cateCus.FlatAppearance.BorderSize = 0;
+            this.cateCus.ForeColor = System.Drawing.Color.White;
+            this.cateCus.Image = global::GUI.Properties.Resources.customer_service;
+            this.cateCus.Name = "cateCus";
+            this.cateCus.Tag = "";
+            this.cateCus.UseVisualStyleBackColor = false;
+            this.cateCus.Click += new System.EventHandler(this.cateCus_Click);
+            // 
+            // statistic
+            // 
+            this.statistic.BackColor = System.Drawing.Color.RoyalBlue;
+            this.statistic.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.statistic, "statistic");
+            this.statistic.FlatAppearance.BorderSize = 0;
+            this.statistic.ForeColor = System.Drawing.Color.White;
+            this.statistic.Image = global::GUI.Properties.Resources.dashboard;
+            this.statistic.Name = "statistic";
+            this.statistic.Tag = "Hoạt Động";
+            this.statistic.UseVisualStyleBackColor = false;
+            this.statistic.Click += new System.EventHandler(this.statistic_Click);
             // 
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.RoyalBlue;
             this.menu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menu.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.menu, "menu");
+            this.menu.FlatAppearance.BorderSize = 0;
             this.menu.Image = global::GUI.Properties.Resources.main_menu;
             this.menu.Name = "menu";
             this.menu.UseVisualStyleBackColor = false;
             this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
-            // restore
+            // logo
             // 
-            resources.ApplyResources(this.restore, "restore");
-            this.restore.BackColor = System.Drawing.Color.RoyalBlue;
-            this.restore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.restore.FlatAppearance.BorderSize = 0;
-            this.restore.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.restore.Image = global::GUI.Properties.Resources.minimize;
-            this.restore.Name = "restore";
-            this.restore.UseVisualStyleBackColor = false;
-            this.restore.Click += new System.EventHandler(this.restore_Click);
-            // 
-            // Header
-            // 
-            this.Header.BackColor = System.Drawing.Color.White;
-            this.Header.Controls.Add(this.close);
-            this.Header.Controls.Add(this.minimize);
-            this.Header.Controls.Add(this.restore);
-            resources.ApplyResources(this.Header, "Header");
-            this.Header.Name = "Header";
-            this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
-            // 
-            // minimize
-            // 
-            resources.ApplyResources(this.minimize, "minimize");
-            this.minimize.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.minimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.minimize.FlatAppearance.BorderSize = 0;
-            this.minimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.minimize.Image = global::GUI.Properties.Resources.minimize1;
-            this.minimize.Name = "minimize";
-            this.minimize.UseVisualStyleBackColor = false;
-            this.minimize.Click += new System.EventHandler(this.minimize_Click);
-            // 
-            // close
-            // 
-            resources.ApplyResources(this.close, "close");
-            this.close.BackColor = System.Drawing.Color.Crimson;
-            this.close.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.close.FlatAppearance.BorderSize = 0;
-            this.close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.close.Image = global::GUI.Properties.Resources.close;
-            this.close.Name = "close";
-            this.close.UseVisualStyleBackColor = false;
-            this.close.Click += new System.EventHandler(this.close_Click);
+            resources.ApplyResources(this.logo, "logo");
+            this.logo.Image = global::GUI.Properties.Resources.RXlogo;
+            this.logo.Name = "logo";
+            this.logo.TabStop = false;
             // 
             // button8
             // 
@@ -368,45 +382,30 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.Main);
+            this.ControlBox = false;
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.DoubleBuffered = true;
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.Sidebar.ResumeLayout(false);
             this.invenMenu.ResumeLayout(false);
             this.cateMenu.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.Header.ResumeLayout(false);
+            this.Header.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel Main;
         private System.Windows.Forms.Button setting;
         private System.Windows.Forms.Panel Sidebar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.FlowLayoutPanel invenMenu;
-        private System.Windows.Forms.Button inventory;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.FlowLayoutPanel cateMenu;
-        private System.Windows.Forms.Button category;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button sell;
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Button statistic;
@@ -419,5 +418,18 @@ namespace GUI
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.Button minimize;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button staff;
+        private System.Windows.Forms.FlowLayoutPanel cateMenu;
+        private System.Windows.Forms.Button category;
+        private System.Windows.Forms.Button cateCate;
+        private System.Windows.Forms.Button cateIngre;
+        private System.Windows.Forms.Button cateDrug;
+        private System.Windows.Forms.Button cateProvi;
+        private System.Windows.Forms.Button cateCus;
+        private System.Windows.Forms.FlowLayoutPanel invenMenu;
+        private System.Windows.Forms.Button inventory;
+        private System.Windows.Forms.Button invenImp;
+        private System.Windows.Forms.Button invenChk;
+        private System.Windows.Forms.Label formTitle;
     }
 }

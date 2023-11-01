@@ -117,71 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Main.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;staff.Name" xml:space="preserve">
+    <value>staff</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Main.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 81</value>
+  <data name="&gt;&gt;staff.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Main.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="&gt;&gt;staff.Parent" xml:space="preserve">
+    <value>Sidebar</value>
   </data>
-  <data name="Main.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 779</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Main.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Main.Name" xml:space="preserve">
-    <value>Main</value>
-  </data>
-  <data name="&gt;&gt;Main.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Main.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Main.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;staff.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="setting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="&gt;&gt;sell.Name" xml:space="preserve">
+    <value>sell</value>
   </data>
-  <data name="setting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;sell.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="setting.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
+  <data name="&gt;&gt;sell.Parent" xml:space="preserve">
+    <value>Sidebar</value>
   </data>
-  <data name="setting.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;sell.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="setting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;invenMenu.Name" xml:space="preserve">
+    <value>invenMenu</value>
   </data>
-  <data name="setting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 730</value>
+  <data name="&gt;&gt;invenMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="setting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="&gt;&gt;invenMenu.Parent" xml:space="preserve">
+    <value>Sidebar</value>
   </data>
-  <data name="setting.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>29, 0, 0, 0</value>
-  </data>
-  <data name="setting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
-  </data>
-  <data name="setting.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="setting.Text" xml:space="preserve">
-    <value>                Cài Đặt</value>
-  </data>
-  <data name="setting.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="&gt;&gt;invenMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;setting.Name" xml:space="preserve">
     <value>setting</value>
@@ -193,55 +163,655 @@
     <value>Sidebar</value>
   </data>
   <data name="&gt;&gt;setting.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
-  <data name="button1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="&gt;&gt;logout.Name" xml:space="preserve">
+    <value>logout</value>
   </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
-  </data>
-  <data name="button1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 340</value>
-  </data>
-  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="button1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>29, 0, 0, 0</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>                Nhân Sự</value>
-  </data>
-  <data name="button1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;logout.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;logout.Parent" xml:space="preserve">
     <value>Sidebar</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;logout.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Name" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;statistic.Name" xml:space="preserve">
+    <value>statistic</value>
+  </data>
+  <data name="&gt;&gt;statistic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statistic.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;statistic.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pnl.Name" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;pnl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;pnl.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Sidebar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Sidebar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Sidebar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Sidebar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 844</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Sidebar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;Sidebar.Name" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;Sidebar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Sidebar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Sidebar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;inventory.Name" xml:space="preserve">
+    <value>inventory</value>
+  </data>
+  <data name="&gt;&gt;inventory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;inventory.Parent" xml:space="preserve">
+    <value>invenMenu</value>
+  </data>
+  <data name="&gt;&gt;inventory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;invenImp.Name" xml:space="preserve">
+    <value>invenImp</value>
+  </data>
+  <data name="&gt;&gt;invenImp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;invenImp.Parent" xml:space="preserve">
+    <value>invenMenu</value>
+  </data>
+  <data name="&gt;&gt;invenImp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;invenChk.Name" xml:space="preserve">
+    <value>invenChk</value>
+  </data>
+  <data name="&gt;&gt;invenChk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;invenChk.Parent" xml:space="preserve">
+    <value>invenMenu</value>
+  </data>
+  <data name="&gt;&gt;invenChk.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="invenMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="invenMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 210</value>
+  </data>
+  <data name="invenMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="invenMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 65</value>
+  </data>
+  <data name="invenMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;invenMenu.Name" xml:space="preserve">
+    <value>invenMenu</value>
+  </data>
+  <data name="&gt;&gt;invenMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;invenMenu.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;invenMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;category.Name" xml:space="preserve">
+    <value>category</value>
+  </data>
+  <data name="&gt;&gt;category.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;category.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;category.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cateCate.Name" xml:space="preserve">
+    <value>cateCate</value>
+  </data>
+  <data name="&gt;&gt;cateCate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateCate.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateCate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cateIngre.Name" xml:space="preserve">
+    <value>cateIngre</value>
+  </data>
+  <data name="&gt;&gt;cateIngre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateIngre.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateIngre.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cateDrug.Name" xml:space="preserve">
+    <value>cateDrug</value>
+  </data>
+  <data name="&gt;&gt;cateDrug.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateDrug.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateDrug.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cateProvi.Name" xml:space="preserve">
+    <value>cateProvi</value>
+  </data>
+  <data name="&gt;&gt;cateProvi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateProvi.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateProvi.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cateCus.Name" xml:space="preserve">
+    <value>cateCus</value>
+  </data>
+  <data name="&gt;&gt;cateCus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateCus.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateCus.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cateMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="cateMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 145</value>
+  </data>
+  <data name="cateMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="cateMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 65</value>
+  </data>
+  <data name="cateMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Name" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;menu.Name" xml:space="preserve">
+    <value>menu</value>
+  </data>
+  <data name="&gt;&gt;menu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menu.Parent" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;menu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;logo.Name" xml:space="preserve">
+    <value>logo</value>
+  </data>
+  <data name="&gt;&gt;logo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logo.Parent" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;logo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 80</value>
+  </data>
+  <data name="pnl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnl.Name" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;pnl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;pnl.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 45pt, style=Bold</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 0</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>238, 70</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>HEALTH</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;formTitle.Name" xml:space="preserve">
+    <value>formTitle</value>
+  </data>
+  <data name="&gt;&gt;formTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;formTitle.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;formTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;close.Name" xml:space="preserve">
+    <value>close</value>
+  </data>
+  <data name="&gt;&gt;close.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;close.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;close.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;minimize.Name" xml:space="preserve">
+    <value>minimize</value>
+  </data>
+  <data name="&gt;&gt;minimize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minimize.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;minimize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;restore.Name" xml:space="preserve">
+    <value>restore</value>
+  </data>
+  <data name="&gt;&gt;restore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;restore.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;restore.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Header.Location" type="System.Drawing.Point, System.Drawing">
+    <value>367, 0</value>
+  </data>
+  <data name="Header.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Header.Size" type="System.Drawing.Size, System.Drawing">
+    <value>893, 81</value>
+  </data>
+  <data name="Header.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;Header.Name" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;Header.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Header.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Header.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="formTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="formTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="formTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 30pt, style=Bold</value>
+  </data>
+  <data name="formTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="formTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="formTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="formTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 54</value>
+  </data>
+  <data name="formTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;formTitle.Name" xml:space="preserve">
+    <value>formTitle</value>
+  </data>
+  <data name="&gt;&gt;formTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;formTitle.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;formTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="close.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="close.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="close.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="close.Location" type="System.Drawing.Point, System.Drawing">
+    <value>855, 0</value>
+  </data>
+  <data name="close.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="close.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 24</value>
+  </data>
+  <data name="close.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;close.Name" xml:space="preserve">
+    <value>close</value>
+  </data>
+  <data name="&gt;&gt;close.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;close.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;close.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="minimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="minimize.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="minimize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="minimize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>780, 0</value>
+  </data>
+  <data name="minimize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="minimize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 24</value>
+  </data>
+  <data name="minimize.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;minimize.Name" xml:space="preserve">
+    <value>minimize</value>
+  </data>
+  <data name="&gt;&gt;minimize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minimize.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;minimize.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="restore.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="restore.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="restore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="restore.Location" type="System.Drawing.Point, System.Drawing">
+    <value>818, 0</value>
+  </data>
+  <data name="restore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="restore.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 24</value>
+  </data>
+  <data name="restore.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;restore.Name" xml:space="preserve">
+    <value>restore</value>
+  </data>
+  <data name="&gt;&gt;restore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;restore.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;restore.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="staff.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="staff.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="staff.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="staff.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="staff.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="staff.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 340</value>
+  </data>
+  <data name="staff.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="staff.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>29, 0, 0, 0</value>
+  </data>
+  <data name="staff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 65</value>
+  </data>
+  <data name="staff.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="staff.Text" xml:space="preserve">
+    <value>                Nhân Sự</value>
+  </data>
+  <data name="staff.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;staff.Name" xml:space="preserve">
+    <value>staff</value>
+  </data>
+  <data name="&gt;&gt;staff.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;staff.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;staff.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sell.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="sell.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="sell.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="sell.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="sell.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="sell.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 275</value>
+  </data>
+  <data name="sell.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="sell.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>29, 0, 0, 0</value>
+  </data>
+  <data name="sell.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 65</value>
+  </data>
+  <data name="sell.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="sell.Text" xml:space="preserve">
+    <value>                Bán Hàng</value>
+  </data>
+  <data name="sell.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;sell.Name" xml:space="preserve">
+    <value>sell</value>
+  </data>
+  <data name="&gt;&gt;sell.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sell.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;sell.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="inventory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -291,128 +861,197 @@
   <data name="&gt;&gt;inventory.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button16.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="invenImp.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="button16.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="invenImp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button16.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="invenImp.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
   </data>
-  <data name="button16.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="invenImp.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="button16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="invenImp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button16.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="invenImp.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 65</value>
   </data>
-  <data name="button16.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="invenImp.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="button16.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="invenImp.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>75, 0, 0, 0</value>
   </data>
-  <data name="button16.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="invenImp.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 65</value>
   </data>
-  <data name="button16.TabIndex" type="System.Int32, mscorlib">
+  <data name="invenImp.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="button16.Text" xml:space="preserve">
+  <data name="invenImp.Text" xml:space="preserve">
     <value>                Nhập Kho</value>
   </data>
-  <data name="button16.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="invenImp.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;button16.Name" xml:space="preserve">
-    <value>button16</value>
+  <data name="&gt;&gt;invenImp.Name" xml:space="preserve">
+    <value>invenImp</value>
   </data>
-  <data name="&gt;&gt;button16.Type" xml:space="preserve">
+  <data name="&gt;&gt;invenImp.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button16.Parent" xml:space="preserve">
+  <data name="&gt;&gt;invenImp.Parent" xml:space="preserve">
     <value>invenMenu</value>
   </data>
-  <data name="&gt;&gt;button16.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;invenImp.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button17.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="invenChk.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="button17.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="invenChk.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button17.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="invenChk.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
   </data>
-  <data name="button17.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="invenChk.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="button17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="invenChk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button17.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="invenChk.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 130</value>
   </data>
-  <data name="button17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="invenChk.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="button17.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="invenChk.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>75, 0, 0, 0</value>
   </data>
-  <data name="button17.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="invenChk.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 65</value>
   </data>
-  <data name="button17.TabIndex" type="System.Int32, mscorlib">
+  <data name="invenChk.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="button17.Text" xml:space="preserve">
+  <data name="invenChk.Text" xml:space="preserve">
     <value>                Kiểm Kho</value>
   </data>
-  <data name="button17.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="invenChk.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;button17.Name" xml:space="preserve">
-    <value>button17</value>
+  <data name="&gt;&gt;invenChk.Name" xml:space="preserve">
+    <value>invenChk</value>
   </data>
-  <data name="&gt;&gt;button17.Type" xml:space="preserve">
+  <data name="&gt;&gt;invenChk.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button17.Parent" xml:space="preserve">
+  <data name="&gt;&gt;invenChk.Parent" xml:space="preserve">
     <value>invenMenu</value>
   </data>
-  <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;invenChk.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="invenMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="setting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
-  <data name="invenMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 275</value>
+  <data name="setting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="invenMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="setting.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="setting.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="setting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="setting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 714</value>
+  </data>
+  <data name="setting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="invenMenu.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="setting.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>29, 0, 0, 0</value>
+  </data>
+  <data name="setting.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 65</value>
   </data>
-  <data name="invenMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="setting.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;invenMenu.Name" xml:space="preserve">
-    <value>invenMenu</value>
+  <data name="setting.Text" xml:space="preserve">
+    <value>                Cài Đặt</value>
   </data>
-  <data name="&gt;&gt;invenMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="setting.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;invenMenu.Parent" xml:space="preserve">
+  <data name="&gt;&gt;setting.Name" xml:space="preserve">
+    <value>setting</value>
+  </data>
+  <data name="&gt;&gt;setting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;setting.Parent" xml:space="preserve">
     <value>Sidebar</value>
   </data>
-  <data name="&gt;&gt;invenMenu.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;setting.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="logout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="logout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="logout.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="logout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="logout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="logout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 779</value>
+  </data>
+  <data name="logout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="logout.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>29, 0, 0, 0</value>
+  </data>
+  <data name="logout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 65</value>
+  </data>
+  <data name="logout.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="logout.Text" xml:space="preserve">
+    <value>                Đăng Xuất</value>
+  </data>
+  <data name="logout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;logout.Name" xml:space="preserve">
+    <value>logout</value>
+  </data>
+  <data name="&gt;&gt;logout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logout.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;logout.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="category.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -462,367 +1101,244 @@
   <data name="&gt;&gt;category.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button13.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="cateCate.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="button13.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="cateCate.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button13.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="cateCate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
   </data>
-  <data name="button13.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateCate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="button13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cateCate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button13.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cateCate.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 65</value>
   </data>
-  <data name="button13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateCate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="button13.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateCate.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>75, 0, 0, 0</value>
   </data>
-  <data name="button13.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cateCate.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 65</value>
   </data>
-  <data name="button13.TabIndex" type="System.Int32, mscorlib">
+  <data name="cateCate.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="button13.Text" xml:space="preserve">
+  <data name="cateCate.Text" xml:space="preserve">
     <value>                Ngành Hàng</value>
   </data>
-  <data name="button13.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateCate.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;button13.Name" xml:space="preserve">
-    <value>button13</value>
+  <data name="&gt;&gt;cateCate.Name" xml:space="preserve">
+    <value>cateCate</value>
   </data>
-  <data name="&gt;&gt;button13.Type" xml:space="preserve">
+  <data name="&gt;&gt;cateCate.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button13.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cateCate.Parent" xml:space="preserve">
     <value>cateMenu</value>
   </data>
-  <data name="&gt;&gt;button13.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cateCate.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button14.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="cateIngre.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="button14.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="cateIngre.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button14.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="cateIngre.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
   </data>
-  <data name="button14.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateIngre.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="button14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cateIngre.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button14.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cateIngre.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 130</value>
   </data>
-  <data name="button14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateIngre.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="button14.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateIngre.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>75, 0, 0, 0</value>
   </data>
-  <data name="button14.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cateIngre.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 65</value>
   </data>
-  <data name="button14.TabIndex" type="System.Int32, mscorlib">
+  <data name="cateIngre.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="button14.Text" xml:space="preserve">
+  <data name="cateIngre.Text" xml:space="preserve">
     <value>                Hoạt Chất</value>
   </data>
-  <data name="button14.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateIngre.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;button14.Name" xml:space="preserve">
-    <value>button14</value>
+  <data name="&gt;&gt;cateIngre.Name" xml:space="preserve">
+    <value>cateIngre</value>
   </data>
-  <data name="&gt;&gt;button14.Type" xml:space="preserve">
+  <data name="&gt;&gt;cateIngre.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button14.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cateIngre.Parent" xml:space="preserve">
     <value>cateMenu</value>
   </data>
-  <data name="&gt;&gt;button14.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cateIngre.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="button3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="cateDrug.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="button3.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="cateDrug.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="cateDrug.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
   </data>
-  <data name="button3.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateDrug.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cateDrug.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cateDrug.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 195</value>
   </data>
-  <data name="button3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateDrug.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="button3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateDrug.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>75, 0, 0, 0</value>
   </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cateDrug.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 65</value>
   </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+  <data name="cateDrug.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="button3.Text" xml:space="preserve">
+  <data name="cateDrug.Text" xml:space="preserve">
     <value>                Sản Phẩm</value>
   </data>
-  <data name="button3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateDrug.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
+  <data name="&gt;&gt;cateDrug.Name" xml:space="preserve">
+    <value>cateDrug</value>
   </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+  <data name="&gt;&gt;cateDrug.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cateDrug.Parent" xml:space="preserve">
     <value>cateMenu</value>
   </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cateDrug.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="button4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="cateProvi.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="button4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="cateProvi.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="cateProvi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
   </data>
-  <data name="button4.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateProvi.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="button4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cateProvi.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cateProvi.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 260</value>
   </data>
-  <data name="button4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateProvi.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="button4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateProvi.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>75, 0, 0, 0</value>
   </data>
-  <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cateProvi.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 65</value>
   </data>
-  <data name="button4.TabIndex" type="System.Int32, mscorlib">
+  <data name="cateProvi.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="button4.Text" xml:space="preserve">
+  <data name="cateProvi.Text" xml:space="preserve">
     <value>                Nhà Cung Cấp</value>
   </data>
-  <data name="button4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateProvi.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;button4.Name" xml:space="preserve">
-    <value>button4</value>
+  <data name="&gt;&gt;cateProvi.Name" xml:space="preserve">
+    <value>cateProvi</value>
   </data>
-  <data name="&gt;&gt;button4.Type" xml:space="preserve">
+  <data name="&gt;&gt;cateProvi.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cateProvi.Parent" xml:space="preserve">
     <value>cateMenu</value>
   </data>
-  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cateProvi.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="button5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="cateCus.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="button5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="cateCus.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="cateCus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
   </data>
-  <data name="button5.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateCus.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="button5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cateCus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cateCus.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 325</value>
   </data>
-  <data name="button5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateCus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="button5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="cateCus.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>75, 0, 0, 0</value>
   </data>
-  <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cateCus.Size" type="System.Drawing.Size, System.Drawing">
     <value>367, 65</value>
   </data>
-  <data name="button5.TabIndex" type="System.Int32, mscorlib">
+  <data name="cateCus.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="button5.Text" xml:space="preserve">
+  <data name="cateCus.Text" xml:space="preserve">
     <value>                Khách Hàng</value>
   </data>
-  <data name="button5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="cateCus.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="&gt;&gt;button5.Name" xml:space="preserve">
-    <value>button5</value>
+  <data name="&gt;&gt;cateCus.Name" xml:space="preserve">
+    <value>cateCus</value>
   </data>
-  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+  <data name="&gt;&gt;cateCus.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cateCus.Parent" xml:space="preserve">
     <value>cateMenu</value>
   </data>
-  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="cateMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="cateMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 210</value>
-  </data>
-  <data name="cateMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="cateMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
-  </data>
-  <data name="cateMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;cateMenu.Name" xml:space="preserve">
-    <value>cateMenu</value>
-  </data>
-  <data name="&gt;&gt;cateMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cateMenu.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;cateMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="sell.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="sell.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="sell.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
-  </data>
-  <data name="sell.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="sell.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="sell.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 145</value>
-  </data>
-  <data name="sell.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="sell.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>29, 0, 0, 0</value>
-  </data>
-  <data name="sell.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
-  </data>
-  <data name="sell.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="sell.Text" xml:space="preserve">
-    <value>                Bán Hàng</value>
-  </data>
-  <data name="sell.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;sell.Name" xml:space="preserve">
-    <value>sell</value>
-  </data>
-  <data name="&gt;&gt;sell.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sell.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;sell.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="logout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="logout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="logout.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
-  </data>
-  <data name="logout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="logout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="logout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 795</value>
-  </data>
-  <data name="logout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="logout.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>29, 0, 0, 0</value>
-  </data>
-  <data name="logout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
-  </data>
-  <data name="logout.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="logout.Text" xml:space="preserve">
-    <value>                Đăng Xuất</value>
-  </data>
-  <data name="logout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;logout.Name" xml:space="preserve">
-    <value>logout</value>
-  </data>
-  <data name="&gt;&gt;logout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;logout.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;logout.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;cateCus.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="statistic.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -873,6 +1389,9 @@
   <data name="&gt;&gt;statistic.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="menu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
   <data name="menu.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -906,41 +1425,8 @@
   <data name="&gt;&gt;menu.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 45pt, style=Bold</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 5</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 70</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>HEALTH</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>pnl</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="logo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="logo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -974,186 +1460,6 @@
   </data>
   <data name="&gt;&gt;logo.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="pnl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="pnl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="pnl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="pnl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 80</value>
-  </data>
-  <data name="pnl.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pnl.Name" xml:space="preserve">
-    <value>pnl</value>
-  </data>
-  <data name="&gt;&gt;pnl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnl.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;pnl.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="Sidebar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="Sidebar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="Sidebar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="Sidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 860</value>
-  </data>
-  <data name="Sidebar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Sidebar.Name" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;Sidebar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Sidebar.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Sidebar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="restore.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="restore.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="restore.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="restore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>725, 0</value>
-  </data>
-  <data name="restore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="restore.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 24</value>
-  </data>
-  <data name="restore.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;restore.Name" xml:space="preserve">
-    <value>restore</value>
-  </data>
-  <data name="&gt;&gt;restore.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;restore.Parent" xml:space="preserve">
-    <value>Header</value>
-  </data>
-  <data name="&gt;&gt;restore.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="close.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="close.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="close.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>762, 0</value>
-  </data>
-  <data name="close.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 24</value>
-  </data>
-  <data name="close.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;close.Name" xml:space="preserve">
-    <value>close</value>
-  </data>
-  <data name="&gt;&gt;close.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;close.Parent" xml:space="preserve">
-    <value>Header</value>
-  </data>
-  <data name="&gt;&gt;close.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="minimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="minimize.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="minimize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="minimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>687, 0</value>
-  </data>
-  <data name="minimize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="minimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 24</value>
-  </data>
-  <data name="minimize.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;minimize.Name" xml:space="preserve">
-    <value>minimize</value>
-  </data>
-  <data name="&gt;&gt;minimize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;minimize.Parent" xml:space="preserve">
-    <value>Header</value>
-  </data>
-  <data name="&gt;&gt;minimize.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="Header.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 0</value>
-  </data>
-  <data name="Header.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="Header.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 81</value>
-  </data>
-  <data name="Header.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Header.Name" xml:space="preserve">
-    <value>Header</value>
-  </data>
-  <data name="&gt;&gt;Header.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Header.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Header.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="button8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
@@ -1198,7 +1504,10 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1167, 860</value>
+    <value>1260, 844</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 1pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1715,17 +2024,17 @@
         V+WlCfHxUgZ5OMIA/j/mAzMyUnTvRwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>600, 340</value>
+    <value>920, 355</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>HOME</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

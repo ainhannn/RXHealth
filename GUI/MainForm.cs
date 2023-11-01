@@ -8,13 +8,13 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
-        private bool isResizing = false;
-        private int borderSize = 100;
-        private Size formSize;
+        FormSell fmSell;
+        FormStaff fmStaff;
         public MainForm()
         {
             InitializeComponent();
             CollapseMenu();
+            SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -25,100 +25,13 @@ namespace GUI
 
         private void Header_MouseDown(object sender, MouseEventArgs e)
         {
+            if (WindowState == FormWindowState.Maximized)
+            {
+                restore.Image = Properties.Resources.maximize;
+                ResetMenu();
+            } else restore.Image = Properties.Resources.minimize;
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 8);
-            if (Sidebar.Width > 200)
-                CollapseMenu();
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            const int WM_NCCALCSIZE = 0x0083;
-            const int WM_SYSCOMMAND = 0x0112;
-            const int SC_MINIMIZE = 0xF020;
-            const int SC_RESTORE = 0xF120;
-            const int WM_NCHITTEST = 0x0084;
-            const int HTCLIENT = 1;
-            const int HTLEFT = 10;
-            const int HTRIGHT = 11;
-            const int HTTOP = 12;
-            const int HTTOPLEFT = 13;
-            const int HTTOPRIGHT = 14;
-            const int HTBOTTOM = 15;
-            const int HTBOTTOMLEFT = 16;
-            const int HTBOTTOMRIGHT = 17;
-
-            if (m.Msg == WM_NCHITTEST)
-            {
-                base.WndProc(ref m);
-
-                if (WindowState == FormWindowState.Normal)
-                {
-                    Point screenPoint = new Point(m.LParam.ToInt32());
-                    Point clientPoint = PointToClient(screenPoint);
-
-                    if (clientPoint.X <= borderSize && clientPoint.Y <= borderSize)
-                        m.Result = (IntPtr)HTTOPLEFT;
-                    else if (clientPoint.X >= Width - borderSize && clientPoint.Y <= borderSize)
-                        m.Result = (IntPtr)HTTOPRIGHT;
-                    else if (clientPoint.X <= borderSize && clientPoint.Y >= Height - borderSize)
-                        m.Result = (IntPtr)HTBOTTOMLEFT;
-                    else if (clientPoint.X >= Width - borderSize && clientPoint.Y >= Height - borderSize)
-                        m.Result = (IntPtr)HTBOTTOMRIGHT;
-                    else if (clientPoint.Y <= borderSize)
-                        m.Result = (IntPtr)HTTOP;
-                    else if (clientPoint.Y >= Height - borderSize)
-                        m.Result = (IntPtr)HTBOTTOM;
-                    else if (clientPoint.X <= borderSize)
-                        m.Result = (IntPtr)HTLEFT;
-                    else if (clientPoint.X >= Width - borderSize)
-                        m.Result = (IntPtr)HTRIGHT;
-                    else
-                        m.Result = (IntPtr)HTCLIENT;
-                }
-                return;
-            }
-
-            if (m.Msg == WM_NCCALCSIZE && m.WParam.ToInt32() == 1)
-            {
-                return;
-            }
-
-            if (m.Msg == WM_SYSCOMMAND)
-            {
-                int wParam = (m.WParam.ToInt32() & 0xFFF0);
-                if (wParam == SC_MINIMIZE)
-                    formSize = ClientSize;
-                if (wParam == SC_RESTORE)
-                    Size = formSize;
-            }
-
-            base.WndProc(ref m);
-        }
-
-        private Point lastMousePosition = Point.Empty;
-        private void MainForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            if(e.Button == MouseButtons.Left)
-            {
-                lastMousePosition = e.Location;
-                isResizing = true;
-            }
-        }
-
-        private void MainForm_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isResizing)
-            {
-                int deltaX = e.X - lastMousePosition.X;
-                int deltaY = e.Y - lastMousePosition.Y;
-                Size = new Size(Width + deltaX, Height + deltaY);
-            }
-        }
-
-        private void MainForm_MouseUp(object sender, MouseEventArgs e)
-        {
-            isResizing = false;
         }
 
         private void close_Click(object sender, System.EventArgs e)
@@ -135,10 +48,10 @@ namespace GUI
         {
             if (WindowState == FormWindowState.Maximized)
             {
+                ResetMenu();
                 WindowState = FormWindowState.Normal;
+                Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - Height) / 2);
                 restore.Image = Properties.Resources.maximize;
-                if(Sidebar.Width > 200)
-                    CollapseMenu();
             }
             else
             {
@@ -175,16 +88,23 @@ namespace GUI
                     menuButton.Padding = new Padding(29,0,0,0);
                 }
             }
+        }
+
+        private void menu_Click(object sender, System.EventArgs e)
+        {
+            CollapseMenu();
             if (cateMenu.Height > 100)
                 CollapseCateMenu();
             if (invenMenu.Height > 100)
                 CollapseInvenMenu();
         }
 
-        private void menu_Click(object sender, System.EventArgs e)
+        private void ResetMenu()
         {
-            CollapseMenu();
-            cateMenu.Height = invenMenu.Height = 65;
+            if (cateMenu.Height > 100)
+                CollapseCateMenu();
+            if (invenMenu.Height > 100)
+                CollapseInvenMenu();
         }
 
         private void logout_Click(object sender, System.EventArgs e)
@@ -196,8 +116,10 @@ namespace GUI
             }
         }
 
-        private void category_Click(object sender, System.EventArgs e)
+        private void category_Click(object sender, EventArgs e)
         {
+            SetDefaultColorButton();
+            category.BackColor = Color.Navy;
             if (Sidebar.Width < 200)
                 CollapseMenu();
             CollapseCateMenu();
@@ -205,7 +127,7 @@ namespace GUI
 
         private void CollapseCateMenu()
         {
-            if (invenMenu.Height > 190)
+            if (WindowState != FormWindowState.Maximized)
                 invenMenu.Height = 65;
             if (cateMenu.Height < 100)
                 cateMenu.Height = 390;
@@ -215,6 +137,8 @@ namespace GUI
 
         private void inventory_Click(object sender, System.EventArgs e)
         {
+            SetDefaultColorButton();
+            inventory.BackColor = Color.Navy;
             if (Sidebar.Width < 200)
                 CollapseMenu();
             CollapseInvenMenu();
@@ -222,7 +146,7 @@ namespace GUI
 
         private void CollapseInvenMenu()
         {
-            if (cateMenu.Height > 380)
+            if (WindowState != FormWindowState.Maximized)
                 cateMenu.Height = 65;
             if (invenMenu.Height > 190)
                 invenMenu.Height = 65;
@@ -239,7 +163,7 @@ namespace GUI
                 invenMenu.Visible = true;
                 menu.Enabled = true;
             }
-            else if (Height > 794)
+            else if (Height > 795)
             {
                 setting.Visible = false;
                 cateMenu.Visible = true;
@@ -255,10 +179,131 @@ namespace GUI
             else
             {
                 invenMenu.Visible = false;
-                if (Sidebar.Width > 200)
-                    CollapseMenu();
+                ResetMenu();
                 menu.Enabled = false;
             }
+        }
+
+        private void SetDefaultColorButton()
+        {
+            statistic.BackColor = Color.RoyalBlue;
+            category.BackColor = Color.RoyalBlue;
+            sell.BackColor = Color.RoyalBlue;
+            cateCate.BackColor = Color.CornflowerBlue;
+            cateIngre.BackColor = Color.CornflowerBlue;
+            cateDrug.BackColor = Color.CornflowerBlue;
+            cateProvi.BackColor = Color.CornflowerBlue;
+            cateCus.BackColor = Color.CornflowerBlue;
+            inventory.BackColor = Color.RoyalBlue;
+            invenImp.BackColor = Color.CornflowerBlue;
+            invenChk.BackColor = Color.CornflowerBlue;
+            staff.BackColor = Color.RoyalBlue;
+            setting.BackColor = Color.RoyalBlue;
+        }
+
+        private void statistic_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            statistic.BackColor = Color.Navy;
+        }
+
+        private void cateCate_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            cateCate.BackColor = Color.LightSteelBlue;
+            category.BackColor = Color.Navy;
+        }
+
+        private void cateIngre_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            cateIngre.BackColor = Color.LightSteelBlue;
+            category.BackColor = Color.Navy;
+        }
+
+        private void cateDrug_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            cateDrug.BackColor = Color.LightSteelBlue;
+            category.BackColor = Color.Navy;
+        }
+
+        private void cateProvi_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            cateProvi.BackColor = Color.LightSteelBlue;
+            category.BackColor = Color.Navy;
+        }
+
+        private void cateCus_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            cateCus.BackColor = Color.LightSteelBlue;
+            category.BackColor = Color.Navy;
+        }
+
+        private void invenImp_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            invenImp.BackColor = Color.LightSteelBlue;
+            inventory.BackColor = Color.Navy;
+        }
+
+        private void invenChk_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            invenChk.BackColor = Color.LightSteelBlue;
+            inventory.BackColor = Color.Navy;
+        }
+
+        private void sell_Click(object sender, EventArgs e)
+        {
+            formTitle.Text = "Quản Lý Bán Hàng";
+            SetDefaultColorButton();
+            sell.BackColor = Color.Navy;
+            if (fmSell == null)
+            {
+                fmSell = new FormSell();
+                fmSell.FormClosed += FormSell_FormClosed;
+                fmSell.MdiParent = this;
+                fmSell.Dock = DockStyle.Fill;
+                fmSell.Show();
+            }
+            else
+                fmSell.Activate();
+        }
+
+        private void FormSell_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            fmSell = null;
+        }
+
+        private void staff_Click(object sender, EventArgs e)
+        {
+            formTitle.Text = "Quản Lý Nhân Sự";
+            SetDefaultColorButton();
+            staff.BackColor = Color.Navy;
+            if(fmStaff == null)
+            {
+                fmStaff = new FormStaff();
+                fmStaff.FormClosed += FormStaff_FormClosed;
+                fmStaff.MdiParent = this;
+                fmStaff.Dock = DockStyle.Fill;
+                fmStaff.Show();
+            }
+            else
+                fmStaff.Activate();
+        }
+
+        private void FormStaff_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            fmStaff = null;
+        }
+
+        private void setting_Click(object sender, EventArgs e)
+        {
+            SetDefaultColorButton();
+            setting.BackColor = Color.Navy;
         }
     }
 }
