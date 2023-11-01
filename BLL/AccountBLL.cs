@@ -14,9 +14,9 @@ namespace BLL
     {
         private static bool Validation(Account e)
         {
-            bool rsName = HandleGlobal.checkIsEnglish(e.Username) && e.Username.Length > Env.GetInt("minLength_name") ? true : false;
-            bool rsPass = HandleGlobal.checkIsEnglish(e.Password) && e.Password.Length > Env.GetInt("minLength_pass") ? true : false;
-            return rsName && rsPass ? true : false;
+            bool rsName = HandleGlobal.checkIsEnglish(e.Username) && e.Username.Length > Env.GetInt("minLength_name");
+            bool rsPass = HandleGlobal.checkIsEnglish(e.Password) && e.Password.Length > Env.GetInt("minLength_pass");
+            return rsName && rsPass;
         }
         public static Account Login(Account e)
         {

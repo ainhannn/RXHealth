@@ -23,6 +23,7 @@ namespace DTO
         }
         public Staff(int id, string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string contactNumber, string address, Account account, DateTime startDate, DateTime resignationDate)
         {
+            Id = id;
             Nickname = nickname;
             CitizenId = citizenId;
             FullName = fullName;

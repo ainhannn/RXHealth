@@ -8,7 +8,7 @@ namespace DAL
 {
     public class ProductInfoDAO : DBConnection
     {
-        private static string dbTableName = "product_info";
+        private static readonly string dbTableName = "product_info";
         private static ProductInfo ConvertToDTO(List<object> row)
         {
             try

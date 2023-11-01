@@ -7,7 +7,7 @@ namespace DAL
 {
     public class ProductDAO : DBConnection
     {
-        private static string dbTableName = "product";
+        private static readonly string dbTableName = "product";
         private static Product ConvertToDTO(List<object> row)
         {
             try
