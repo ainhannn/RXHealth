@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DTO;
+using Google.Protobuf.WellKnownTypes;
 
 namespace DAL
 {
@@ -68,21 +69,58 @@ namespace DAL
             return info != null ? Select(info.Id) : null;
         }
 
-        //public static List<ProductInfo> Search(string key)
-        //{
-        //    return new List<ProductInfo>();
-        //}
+        public static List<Product> AdvancedSearch(Dictionary<string, string> conditions)
+        {
+            var list = new List<Product>();
+            //foreach (var condition in conditions) 
+            //{
+            //    string value = "";
+            //    if (conditions.TryGetValue(condition.Key,out value ))
+            //    {
+            //        Console.WriteLine("For key = \"tif\", value = {0}.", value);
+            //    }
 
+            //}
+            return list;
+        }
         public static bool Insert(Product e)
         {
-            ProductInfoDAO.Insert(e.Information);
-            string sql = string.Format("CALL {0}_insert('{1}',{2},{3},{4},{5},{6},'{7}','{8}','{9}')", dbTableName, e.Name, e.Category.Id, e.Manufacturer.Id, e.MadeIn.Id, e.Expiry, e.Unit.Id, e.StorageCondition, e.Note, e.Image);
-            return ExecuteNonQuery(sql) > 0;
+            if (ProductInfoDAO.Insert(e.Information)) 
+            {
+                e.Information = ProductInfoDAO.Select(e.Information.Barcode);
+                string sql = string.Format(
+                    "UPDATE SET stack = '{2}', rate = {3}, is_on_sale = '{4}' " +
+                    "FROM {0} WHERE id = {1}", dbTableName, e.Information.Id, e.Stack, e.Rate, e.IsOnSale);
+                return ExecuteNonQuery(sql) > 0;
+            }
+            return false;
         }
         
         public static bool Delete(int id)
         {
-            string sql = string.Format("UPDATE SET is_existing = 'false' FROM {0} WHERE id = {1}", dbTableName, id);
+            string sql = string.Format(
+                "UPDATE SET is_existing = 'false' FROM {0} WHERE id = {1}; " +
+                "INSERT INTO trash_tmp VALUE ({1});", dbTableName, id);
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool Recover(int id)
+        {
+            string sql = string.Format(
+                "UPDATE SET is_existing = 'true' FROM {0} WHERE id = {1}; " +
+                "DELETE FROM trash_tmp WHERE id = {1};", dbTableName, id); 
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool DeleteTrash(int id)
+        {
+            string sql = string.Format("DELETE FROM trash_tmp WHERE id = {0};", id);
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool EmptyTrash()
+        {
+            string sql = string.Format("DELETE FROM trash_tmp");
             return ExecuteNonQuery(sql) != -1;
         }
 
@@ -95,7 +133,7 @@ namespace DAL
                 "FROM {0} WHERE id = {1}", dbTableName, e.Information.Id, e.Stack, e.Rate, e.IsOnSale);
             return ExecuteNonQuery(sql) != -1 && ProductInfoDAO.Update(e.Information);
         }
-
+        
         public static bool UpdateBatch(ProductBatch e) => ProductBatchDAO.Update(e);
         
     }

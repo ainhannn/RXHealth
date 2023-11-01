@@ -11,24 +11,11 @@ namespace DAL
         {
             try
             {
-                ProductInfo obj = new ProductInfo(Convert.ToInt16(row[0]), Convert.ToString(row[1]))
+                ProductBatch obj = new ProductBatch(Convert.ToInt16(row[0]), Convert.ToString(row[1]))
                 {
-                    Name = Convert.ToString(row[2]),
-                    Category = CategoryDAO.Select(Convert.ToInt16(row[3])),
-                    Manufacturer = ManufacturerDAO.Select(Convert.ToInt16(row[4])),
-                    MadeIn = CountryDAO.Select(Convert.ToInt16(row[5])),
-                    Expiry = Convert.ToByte(row[6]),
-                    Unit = UnitDAO.Select(Convert.ToInt16(row[7])),
-                    StorageCondition = Convert.ToString(row[8]),
-                    Note = Convert.ToString(row[9]),
-                    Image = Convert.ToString(row[10])
+
                 };
 
-                var table = ExecuteReader("SELECT * FROM product_extra_ingredient WHERE product_id = " + obj.Id);
-                foreach (var r in table)
-                {
-                    obj.AddIngredient(IngredientDAO.Select(Convert.ToInt16(r[1])), (float)r[2]);
-                }
                 return obj;
             } catch { return null; }
         }

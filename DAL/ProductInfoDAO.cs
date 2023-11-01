@@ -32,7 +32,8 @@ namespace DAL
                     obj.AddIngredient(IngredientDAO.Select(Convert.ToInt16(r[1])), (float)r[2]);
                 }
                 return obj;
-            } catch { return null; }
+            }
+            catch { return null; }
         }
 
         public static List<ProductInfo> SelectAll()
@@ -40,7 +41,7 @@ namespace DAL
             string sql = string.Format("SELECT * FROM {0} WHERE is_existing = 'true'", dbTableName);
             var table = ExecuteReader(sql);
             var list = new List<ProductInfo>();
-            foreach (var row in table) 
+            foreach (var row in table)
             {
                 list.Add(ConvertToDTO(row));
             }
@@ -61,10 +62,10 @@ namespace DAL
             return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
 
-        //public static List<ProductInfo> Search(string key)
-        //{
-        //    return new List<ProductInfo>();
-        //}
+        public static List<ProductInfo> AdvancedSearch(Dictionary<string, string> conditions)
+        {
+            return new List<ProductInfo>();
+        }
 
         public static bool Insert(ProductInfo e)
         {
@@ -80,11 +81,11 @@ namespace DAL
                 //cmd.Transaction = trans;
 
                 try
-                {  
-                    cmd.CommandText = 
-                        "INSERT INTO {0}(code,name,category_id,manufacturer_id,made_in,expiry,unit_id,storage_condition,note,image) " +
+                {
+                    cmd.CommandText =
+                        "INSERT INTO product_info(code,name,category_id,manufacturer_id,made_in,expiry,unit_id,storage_condition,note,image) " +
                         "VALUES (@code,@name,@category_id,@manufacturer_id,@made_in,@expiry,@unit_id,@storage_condition,@note,@image)";
-                    cmd.Parameters.AddWithValue("@code", e.Code);
+                    cmd.Parameters.AddWithValue("@code", e.Barcode);
                     cmd.Parameters.AddWithValue("@name", e.Name);
                     cmd.Parameters.AddWithValue("@category_id", e.Category.Id);
                     cmd.Parameters.AddWithValue("@manufacturer_id", e.Manufacturer.Id);
@@ -94,20 +95,25 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@storage_condition", e.StorageCondition);
                     cmd.Parameters.AddWithValue("@note", e.Note);
                     cmd.Parameters.AddWithValue("@image", e.Image);
-
                     cmd.ExecuteNonQuery();
 
-                    var sql = string.Format("");
-                    cmd.CommandText = "";
-                    cmd.ExecuteNonQuery();
+                    int id = Select(e.Barcode).Id;
+                    foreach (var i in e.ActiveIngredient)
+                    {
+                        cmd.CommandText = "INSERT INTO product_extra_ingredient VALUES (@product_id,@ingredient_id,@dosage)";
+                        cmd.Parameters.AddWithValue("@product_id", id);
+                        cmd.Parameters.AddWithValue("@ingredient_id", i.Key.Id);
+                        cmd.Parameters.AddWithValue("@dosage", i.Value);
+                        cmd.ExecuteNonQuery();
+                    }
 
                     trans.Commit();
                     return true;
                 }
-                catch 
+                catch
                 {
                     trans.Rollback();
-                    return false; 
+                    return false;
                 }
                 finally { Close(); }
             }
@@ -116,18 +122,66 @@ namespace DAL
 
         public static bool Update(ProductInfo e)
         {
-            string sql = string.Format("CALL product_info_insert('{1}',{2},{3},{4},{5},{6},'{7}','{8}','{9}')",
-                dbTableName,
-                e.Name,
-                e.Category.Id,
-                e.Manufacturer.Id,
-                e.MadeIn.Id,
-                e.Expiry,
-                e.Unit.Id,
-                e.StorageCondition,
-                e.Note,
-                e.Image);
-            return ExecuteNonQuery(sql) > 0;
+            if (Open())
+            {
+                var trans = conn.BeginTransaction();
+                var cmd = new MySqlCommand
+                {
+                    Connection = conn,
+                    Transaction = trans
+                };
+                //var cmd = conn.CreateCommand();
+                //cmd.Transaction = trans;
+
+                try
+                {
+                    cmd.CommandText = "UPDATE product_info SET" +
+                        "name=@name," +
+                        "category_id=@category_id," +
+                        "manufacturer_id=@manufacturer_id," +
+                        "made_in=@made_in," +
+                        "expiry=@expiry," +
+                        "unit_id=@unit_id," +
+                        "storage_condition=@storage_condition," +
+                        "note=@note," +
+                        "image=@image WHERE id=@id)";
+                    cmd.Parameters.AddWithValue("@id", e.Id);
+                    cmd.Parameters.AddWithValue("@name", e.Name);
+                    cmd.Parameters.AddWithValue("@category_id", e.Category.Id);
+                    cmd.Parameters.AddWithValue("@manufacturer_id", e.Manufacturer.Id);
+                    cmd.Parameters.AddWithValue("@made_in", e.MadeIn);
+                    cmd.Parameters.AddWithValue("@expiry", e.Expiry);
+                    cmd.Parameters.AddWithValue("@unit_id", e.Unit.Id);
+                    cmd.Parameters.AddWithValue("@storage_condition", e.StorageCondition);
+                    cmd.Parameters.AddWithValue("@note", e.Note);
+                    cmd.Parameters.AddWithValue("@image", e.Image);
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = "DELETE FROM product_extra_ingredient WHERE product_id=" + Convert.ToString(e.Id);
+                    cmd.ExecuteNonQuery();
+
+                    int id = Select(e.Barcode).Id;
+                    foreach (var i in e.ActiveIngredient)
+                    {
+                        cmd.CommandText = "INSERT INTO product_extra_ingredient VALUES (@product_id,@ingredient_id,@dosage)";
+                        cmd.Parameters.AddWithValue("@product_id", id);
+                        cmd.Parameters.AddWithValue("@ingredient_id", i.Key.Id);
+                        cmd.Parameters.AddWithValue("@dosage", i.Value);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    trans.Commit();
+                    return true;
+                }
+                catch
+                {
+                    trans.Rollback();
+                    return false;
+                }
+                finally { Close(); }
+            }
+            return false;
         }
+
     }
 }
