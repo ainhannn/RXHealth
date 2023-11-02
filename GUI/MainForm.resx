@@ -135,7 +135,7 @@
     <value>NoControl</value>
   </data>
   <data name="staff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 340</value>
+    <value>0, 800</value>
   </data>
   <data name="staff.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -144,7 +144,7 @@
     <value>29, 0, 0, 0</value>
   </data>
   <data name="staff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
+    <value>370, 65</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="staff.TabIndex" type="System.Int32, mscorlib">
@@ -184,7 +184,7 @@
     <value>NoControl</value>
   </data>
   <data name="sell.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 275</value>
+    <value>0, 735</value>
   </data>
   <data name="sell.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -193,7 +193,7 @@
     <value>29, 0, 0, 0</value>
   </data>
   <data name="sell.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
+    <value>370, 65</value>
   </data>
   <data name="sell.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -364,13 +364,13 @@
     <value>Top</value>
   </data>
   <data name="invenMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 210</value>
+    <value>0, 540</value>
   </data>
   <data name="invenMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="invenMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
+    <value>370, 195</value>
   </data>
   <data name="invenMenu.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -403,7 +403,7 @@
     <value>NoControl</value>
   </data>
   <data name="setting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 714</value>
+    <value>0, 863</value>
   </data>
   <data name="setting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -412,7 +412,7 @@
     <value>29, 0, 0, 0</value>
   </data>
   <data name="setting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
+    <value>370, 65</value>
   </data>
   <data name="setting.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -451,7 +451,7 @@
     <value>NoControl</value>
   </data>
   <data name="logout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 779</value>
+    <value>0, 928</value>
   </data>
   <data name="logout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -460,7 +460,7 @@
     <value>29, 0, 0, 0</value>
   </data>
   <data name="logout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
+    <value>370, 65</value>
   </data>
   <data name="logout.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -508,7 +508,7 @@
     <value>29, 0, 0, 0</value>
   </data>
   <data name="category.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
+    <value>370, 65</value>
   </data>
   <data name="category.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -781,7 +781,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="cateMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
+    <value>370, 395</value>
   </data>
   <data name="cateMenu.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -823,7 +823,7 @@
     <value>29, 0, 0, 0</value>
   </data>
   <data name="statistic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 65</value>
+    <value>370, 65</value>
   </data>
   <data name="statistic.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -856,7 +856,7 @@
     <value>NoControl</value>
   </data>
   <data name="menu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>292, 0</value>
+    <value>295, 0</value>
   </data>
   <data name="menu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -967,7 +967,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="pnl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 80</value>
+    <value>370, 80</value>
   </data>
   <data name="pnl.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -994,7 +994,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="Sidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 844</value>
+    <value>370, 993</value>
   </data>
   <data name="Sidebar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1057,7 +1057,7 @@
     <value>NoControl</value>
   </data>
   <data name="close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>855, 0</value>
+    <value>852, 0</value>
   </data>
   <data name="close.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1090,7 +1090,7 @@
     <value>NoControl</value>
   </data>
   <data name="minimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>780, 0</value>
+    <value>777, 0</value>
   </data>
   <data name="minimize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1123,7 +1123,7 @@
     <value>NoControl</value>
   </data>
   <data name="restore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>818, 0</value>
+    <value>815, 0</value>
   </data>
   <data name="restore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1150,13 +1150,13 @@
     <value>Top</value>
   </data>
   <data name="Header.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 0</value>
+    <value>370, 0</value>
   </data>
   <data name="Header.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="Header.Size" type="System.Drawing.Size, System.Drawing">
-    <value>893, 81</value>
+    <value>890, 81</value>
   </data>
   <data name="Header.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1216,7 +1216,7 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1260, 844</value>
+    <value>1260, 993</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 1pt</value>

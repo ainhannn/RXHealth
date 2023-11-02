@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace GUI
 {
@@ -13,7 +14,7 @@ namespace GUI
         public MainForm()
         {
             InitializeComponent();
-            CollapseMenu();
+            ResetMenu();
             SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
@@ -68,11 +69,23 @@ namespace GUI
                 logo.Visible = false;
                 label1.Visible = false;
                 menu.Dock = DockStyle.Top;
-                foreach (Button menuButton in Sidebar.Controls.OfType<Button>())
+                foreach (Button btn in Sidebar.Controls.OfType<Button>())
                 {
-                    menuButton.Text = "";
-                    menuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                    menuButton.Padding = new Padding(0);
+                    btn.Text = "";
+                    btn.ImageAlign = ContentAlignment.MiddleCenter;
+                    btn.Padding = new Padding(0);
+                }
+                foreach (Button btn in cateMenu.Controls.OfType<Button>())
+                {
+                    btn.Text = "";
+                    btn.ImageAlign = ContentAlignment.MiddleCenter;
+                    btn.Padding = new Padding(0);
+                }
+                foreach (Button btn in cateMenu.Controls.OfType<Button>())
+                {
+                    btn.Text = "";
+                    btn.ImageAlign = ContentAlignment.MiddleCenter;
+                    btn.Padding = new Padding(0);
                 }
             }
             else
@@ -80,23 +93,33 @@ namespace GUI
                 Sidebar.Width = 370;
                 logo.Visible = true;
                 label1.Visible = true;
-                menu.Dock = DockStyle.None;
-                foreach (Button menuButton in Sidebar.Controls.OfType<Button>())
+                menu.Dock = DockStyle.Right;
+                foreach (Button btn in Sidebar.Controls.OfType<Button>())
                 {
-                    menuButton.Text = "                " + menuButton.Tag.ToString();
-                    menuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                    menuButton.Padding = new Padding(29,0,0,0);
+                    btn.Text = "                " + btn.Tag.ToString();
+                    btn.ImageAlign = ContentAlignment.MiddleLeft;
+                    btn.Padding = new Padding(29,0,0,0);
                 }
+                foreach (Button btn in cateMenu.Controls.OfType<Button>())
+                {
+                    btn.Text = "                " + btn.Tag.ToString();
+                    btn.ImageAlign = ContentAlignment.MiddleLeft;
+                    btn.Padding = new Padding(75, 0, 0, 0);
+                }
+                foreach (Button btn in invenMenu.Controls.OfType<Button>())
+                {
+                    btn.Text = "                " + btn.Tag.ToString();
+                    btn.ImageAlign = ContentAlignment.MiddleLeft;
+                    btn.Padding = new Padding(75, 0, 0, 0);
+                }
+                category.Padding = new Padding(29, 0, 0, 0);
+                inventory.Padding = new Padding(29, 0, 0, 0);
             }
         }
 
         private void menu_Click(object sender, System.EventArgs e)
         {
             CollapseMenu();
-            if (cateMenu.Height > 100)
-                CollapseCateMenu();
-            if (invenMenu.Height > 100)
-                CollapseInvenMenu();
         }
 
         private void ResetMenu()

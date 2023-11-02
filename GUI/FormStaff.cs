@@ -9,6 +9,8 @@ namespace GUI
 {
     public partial class FormStaff : Form
     {
+        Handle handle = new Handle();
+
         public FormStaff()
         {
             InitializeComponent();
@@ -147,23 +149,21 @@ namespace GUI
         {
             table.Rows.Add("", "", "", "", "", "", "", "", "", "", "");
         }
-
+        
         private void print_Click(object sender, System.EventArgs e)
         {
-            new Handle().Print("tên excel.xsl"); // sửa tên
+            handle.Print("tên excel.xsl"); // sửa tên
         }
 
         private void download_Click(object sender, System.EventArgs e)
         {
-            new Handle().Download("tên excel.xsl"); // sửa tên
+            handle.Download("tên excel.xsl"); // sửa tên
         }
 
         private void upload_Click(object sender, System.EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
-            openFileDialog.Title = "Select an Excel file to upload";
-
+            handle.Upload(openFileDialog);
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedFilePath = openFileDialog.FileName;

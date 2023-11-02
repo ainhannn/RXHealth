@@ -123,7 +123,7 @@ namespace GUI
             this.inventory.ForeColor = System.Drawing.Color.White;
             this.inventory.Image = global::GUI.Properties.Resources.stock;
             this.inventory.Name = "inventory";
-            this.inventory.Tag = "";
+            this.inventory.Tag = "Kho";
             this.inventory.UseVisualStyleBackColor = false;
             this.inventory.Click += new System.EventHandler(this.inventory_Click);
             // 
@@ -136,7 +136,7 @@ namespace GUI
             this.invenImp.ForeColor = System.Drawing.Color.White;
             this.invenImp.Image = global::GUI.Properties.Resources.import;
             this.invenImp.Name = "invenImp";
-            this.invenImp.Tag = "";
+            this.invenImp.Tag = "Nhập Kho";
             this.invenImp.UseVisualStyleBackColor = false;
             this.invenImp.Click += new System.EventHandler(this.invenImp_Click);
             // 
@@ -149,7 +149,7 @@ namespace GUI
             this.invenChk.ForeColor = System.Drawing.Color.White;
             this.invenChk.Image = global::GUI.Properties.Resources.quality_control;
             this.invenChk.Name = "invenChk";
-            this.invenChk.Tag = "";
+            this.invenChk.Tag = "Kiểm Kho";
             this.invenChk.UseVisualStyleBackColor = false;
             this.invenChk.Click += new System.EventHandler(this.invenChk_Click);
             // 
@@ -199,7 +199,7 @@ namespace GUI
             this.category.ForeColor = System.Drawing.Color.White;
             this.category.Image = global::GUI.Properties.Resources.categorization;
             this.category.Name = "category";
-            this.category.Tag = "";
+            this.category.Tag = "Danh Mục";
             this.category.UseVisualStyleBackColor = false;
             this.category.Click += new System.EventHandler(this.category_Click);
             // 
@@ -212,7 +212,7 @@ namespace GUI
             this.cateCate.ForeColor = System.Drawing.Color.White;
             this.cateCate.Image = global::GUI.Properties.Resources.production;
             this.cateCate.Name = "cateCate";
-            this.cateCate.Tag = "Bán Hàng";
+            this.cateCate.Tag = "Ngành Hàng";
             this.cateCate.UseVisualStyleBackColor = false;
             this.cateCate.Click += new System.EventHandler(this.cateCate_Click);
             // 
@@ -225,7 +225,7 @@ namespace GUI
             this.cateIngre.ForeColor = System.Drawing.Color.White;
             this.cateIngre.Image = global::GUI.Properties.Resources.herb;
             this.cateIngre.Name = "cateIngre";
-            this.cateIngre.Tag = "";
+            this.cateIngre.Tag = "Hoạt Chất";
             this.cateIngre.UseVisualStyleBackColor = false;
             this.cateIngre.Click += new System.EventHandler(this.cateIngre_Click);
             // 
@@ -238,7 +238,7 @@ namespace GUI
             this.cateDrug.ForeColor = System.Drawing.Color.White;
             this.cateDrug.Image = global::GUI.Properties.Resources.drugs;
             this.cateDrug.Name = "cateDrug";
-            this.cateDrug.Tag = "";
+            this.cateDrug.Tag = "Sản Phẩm";
             this.cateDrug.UseVisualStyleBackColor = false;
             this.cateDrug.Click += new System.EventHandler(this.cateDrug_Click);
             // 
@@ -251,7 +251,7 @@ namespace GUI
             this.cateProvi.ForeColor = System.Drawing.Color.White;
             this.cateProvi.Image = global::GUI.Properties.Resources.take_medicines;
             this.cateProvi.Name = "cateProvi";
-            this.cateProvi.Tag = "";
+            this.cateProvi.Tag = "Nhà Cung Cấp";
             this.cateProvi.UseVisualStyleBackColor = false;
             this.cateProvi.Click += new System.EventHandler(this.cateProvi_Click);
             // 
@@ -264,7 +264,7 @@ namespace GUI
             this.cateCus.ForeColor = System.Drawing.Color.White;
             this.cateCus.Image = global::GUI.Properties.Resources.customer_service;
             this.cateCus.Name = "cateCus";
-            this.cateCus.Tag = "";
+            this.cateCus.Tag = "Khách Hàng";
             this.cateCus.UseVisualStyleBackColor = false;
             this.cateCus.Click += new System.EventHandler(this.cateCus_Click);
             // 
