@@ -9,8 +9,6 @@ namespace GUI
 {
     public partial class FormStaff : Form
     {
-        Handle handle = new Handle();
-
         public FormStaff()
         {
             InitializeComponent();
@@ -27,26 +25,26 @@ namespace GUI
                 dateBox.Enabled = false;
             foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
                 genderBox.Enabled = false;
-            GetTable();
+            GetTable(); //lấy dữ liệu bảng
         }
 
         private void FormStaff_Resize(object sender, System.EventArgs e)
         {
-            if (Width > 1150)
+            if (Width > 1300)
             {
                 foreach (TextBox textBox in form.Controls.OfType<TextBox>())
-                    textBox.Width = 200;
+                    textBox.Width = 250;
                 foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
-                    dateBox.Width = 200;
-                if (Height > 950)
+                    dateBox.Width = 250;
+                if (Height > 970)
                 {
                     table.Height = 500;
                     form.Visible = true;
                     table.Dock = DockStyle.Bottom;
                 }
-                else if (Height > 730)
+                else if (Height > 890)
                 {
-                    table.Height = 250;
+                    table.Height = 400;
                     form.Visible = true;
                     table.Dock = DockStyle.Bottom;
                 }
@@ -56,21 +54,21 @@ namespace GUI
                     table.Dock = DockStyle.Fill;
                 }
             }
-            else if (Width > 930)
+            else if (Width > 1200)
             {
                 foreach (TextBox textBox in form.Controls.OfType<TextBox>())
-                    textBox.Width = 100;
+                    textBox.Width = 200;
                 foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
-                    dateBox.Width = 100;
-                if (Height > 950)
+                    dateBox.Width = 200;
+                if (Height > 970)
                 {
                     table.Height = 500;
                     form.Visible = true;
                     table.Dock = DockStyle.Bottom;
                 }
-                else if (Height > 730)
+                else if (Height > 890)
                 {
-                    table.Height = 250;
+                    table.Height = 400;
                     form.Visible = true;
                     table.Dock = DockStyle.Bottom;
                 }
@@ -152,18 +150,18 @@ namespace GUI
         
         private void print_Click(object sender, System.EventArgs e)
         {
-            handle.Print("tên excel.xsl"); // sửa tên
+            HandleGUI.Print("tên excel.xsl"); // sửa tên
         }
 
         private void download_Click(object sender, System.EventArgs e)
         {
-            handle.Download("tên excel.xsl"); // sửa tên
+            HandleGUI.Download("tên excel.xsl"); // sửa tên
         }
 
         private void upload_Click(object sender, System.EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            handle.Upload(openFileDialog);
+            HandleGUI.Upload(openFileDialog);
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedFilePath = openFileDialog.FileName;
@@ -186,6 +184,18 @@ namespace GUI
                 {
                     MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            if (btnAccount.Text == "Khôi phục mật khẩu")
+            {
+                
+            }
+            else
+            {
+
             }
         }
     }

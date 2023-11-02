@@ -71,6 +71,9 @@
     <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="itext.barcodes, Version=8.0.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\itext.8.0.2\lib\net461\itext.barcodes.dll</HintPath>
     </Reference>
@@ -154,6 +157,7 @@
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -180,6 +184,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -194,18 +199,79 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Handle.cs" />
-    <Compile Include="FormSell.cs">
+    <Compile Include="Components\Navigate.cs" />
+    <Compile Include="Forms\FormAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSell.Designer.cs">
+    <Compile Include="Forms\FormAccount.Designer.cs">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCateCate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCateCate.Designer.cs">
+      <DependentUpon>FormCateCate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCateCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCateCus.Designer.cs">
+      <DependentUpon>FormCateCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCateDrug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCateDrug.Designer.cs">
+      <DependentUpon>FormCateDrug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCateIngre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCateIngre.Designer.cs">
+      <DependentUpon>FormCateIngre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCateProvi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCateProvi.Designer.cs">
+      <DependentUpon>FormCateProvi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormInvenChk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInvenChk.Designer.cs">
+      <DependentUpon>FormInvenChk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormInvenImp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInvenImp.Designer.cs">
+      <DependentUpon>FormInvenImp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\HandleGUI.cs" />
+    <Compile Include="Forms\FormSell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSell.Designer.cs">
       <DependentUpon>FormSell.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStaff.cs">
+    <Compile Include="Forms\FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStaff.Designer.cs">
+    <Compile Include="Forms\FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStaff.Designer.cs">
       <DependentUpon>FormStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStatistic.Designer.cs">
+      <DependentUpon>FormStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -221,10 +287,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormSell.resx">
+    <EmbeddedResource Include="Forms\FormAccount.resx">
+      <DependentUpon>FormAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSell.resx">
       <DependentUpon>FormSell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStaff.resx">
+    <EmbeddedResource Include="Forms\FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
@@ -298,7 +367,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\dashboard.png" />
   </ItemGroup>
@@ -379,6 +447,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

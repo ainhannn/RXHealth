@@ -5,13 +5,14 @@ using BLL;
 using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class LoginForm : Form
     {
+        public static string username;
+
         public LoginForm()
         {
             HandleGlobal.LoadEnv();
@@ -48,21 +49,15 @@ namespace GUI
             input.SelectionLength = 0;
         }
 
-        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-
-        [DllImport("user32.dll", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
         private void bunifuGradientPanel1_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 8);
+            HandleGUI.ReleaseCapture();
+            HandleGUI.SendMessage(this.Handle, 0x112, 0xf012, 8);
         }
 
         private void login_Click(object sender, EventArgs e)
         {
-            //string username = inputName.Text;
+            username = inputName.Text;
             //string password = inputPass.Text;
             //string rs = caseValidate(username, password);
             //// (1) != "" --> check input false | (2) == "" --> check input true and login

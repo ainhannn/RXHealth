@@ -53,6 +53,9 @@ namespace GUI
             this.label1 = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.Header = new System.Windows.Forms.Panel();
+            this.pnlAccount = new System.Windows.Forms.Panel();
+            this.avatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.username = new System.Windows.Forms.Label();
             this.formTitle = new System.Windows.Forms.Label();
             this.close = new System.Windows.Forms.Button();
             this.minimize = new System.Windows.Forms.Button();
@@ -64,6 +67,8 @@ namespace GUI
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.Header.SuspendLayout();
+            this.pnlAccount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).BeginInit();
             this.SuspendLayout();
             // 
             // Sidebar
@@ -123,7 +128,7 @@ namespace GUI
             this.inventory.ForeColor = System.Drawing.Color.White;
             this.inventory.Image = global::GUI.Properties.Resources.stock;
             this.inventory.Name = "inventory";
-            this.inventory.Tag = "Kho";
+            this.inventory.Tag = "Quản Lý Kho";
             this.inventory.UseVisualStyleBackColor = false;
             this.inventory.Click += new System.EventHandler(this.inventory_Click);
             // 
@@ -317,6 +322,7 @@ namespace GUI
             // Header
             // 
             this.Header.BackColor = System.Drawing.Color.White;
+            this.Header.Controls.Add(this.pnlAccount);
             this.Header.Controls.Add(this.formTitle);
             this.Header.Controls.Add(this.close);
             this.Header.Controls.Add(this.minimize);
@@ -324,6 +330,36 @@ namespace GUI
             resources.ApplyResources(this.Header, "Header");
             this.Header.Name = "Header";
             this.Header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
+            // 
+            // pnlAccount
+            // 
+            this.pnlAccount.Controls.Add(this.avatar);
+            this.pnlAccount.Controls.Add(this.username);
+            resources.ApplyResources(this.pnlAccount, "pnlAccount");
+            this.pnlAccount.Name = "pnlAccount";
+            this.pnlAccount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
+            // 
+            // avatar
+            // 
+            this.avatar.BackColor = System.Drawing.Color.Transparent;
+            this.avatar.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.avatar, "avatar");
+            this.avatar.FillColor = System.Drawing.Color.Transparent;
+            this.avatar.Image = global::GUI.Properties.Resources.account;
+            this.avatar.ImageRotate = 0F;
+            this.avatar.Name = "avatar";
+            this.avatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.avatar.TabStop = false;
+            this.avatar.Click += new System.EventHandler(this.username_Click);
+            // 
+            // username
+            // 
+            resources.ApplyResources(this.username, "username");
+            this.username.BackColor = System.Drawing.Color.Transparent;
+            this.username.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.username.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.username.Name = "username";
+            this.username.Click += new System.EventHandler(this.username_Click);
             // 
             // formTitle
             // 
@@ -385,6 +421,7 @@ namespace GUI
             this.ControlBox = false;
             this.Controls.Add(this.Header);
             this.Controls.Add(this.Sidebar);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.Name = "MainForm";
@@ -399,6 +436,9 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.Header.ResumeLayout(false);
             this.Header.PerformLayout();
+            this.pnlAccount.ResumeLayout(false);
+            this.pnlAccount.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -431,5 +471,8 @@ namespace GUI
         private System.Windows.Forms.Button invenImp;
         private System.Windows.Forms.Button invenChk;
         private System.Windows.Forms.Label formTitle;
+        private System.Windows.Forms.Label username;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox avatar;
+        private System.Windows.Forms.Panel pnlAccount;
     }
 }

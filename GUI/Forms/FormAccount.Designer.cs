@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class FormSell
+    partial class FormAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,18 @@
         {
             this.SuspendLayout();
             // 
-            // FormSell
+            // FormAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.ControlBox = false;
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormSell";
-            this.Text = "FormSell";
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormAccount";
+            this.Text = "FormAccount";
             this.ResumeLayout(false);
 
         }

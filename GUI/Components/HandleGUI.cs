@@ -3,14 +3,19 @@ using System.Windows.Forms;
 using System;
 using Spire.Xls;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace GUI
 {
-    internal class Handle
+    class HandleGUI
     {
-        public Handle() { }
+        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+        public extern static void ReleaseCapture();
 
-        public void Print(string path)
+        [DllImport("user32.dll", EntryPoint = "SendMessage")]
+        public extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        public static void Print(string path)
         {
             try
             {
@@ -40,7 +45,7 @@ namespace GUI
             }
         }
 
-        public void Download(string path)
+        public static void Download(string path)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Excel Files|*.xlsx";
@@ -61,7 +66,7 @@ namespace GUI
             }
         }
 
-        public void Upload(OpenFileDialog openFileDialog)
+        public static void Upload(OpenFileDialog openFileDialog)
         {
             openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
             openFileDialog.Title = "Select an Excel file to upload";

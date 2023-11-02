@@ -247,7 +247,7 @@
     <value>5</value>
   </data>
   <data name="inventory.Text" xml:space="preserve">
-    <value>                Kho</value>
+    <value>                Quản Lý Kho</value>
   </data>
   <data name="inventory.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -403,7 +403,7 @@
     <value>NoControl</value>
   </data>
   <data name="setting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 863</value>
+    <value>0, 859</value>
   </data>
   <data name="setting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -451,7 +451,7 @@
     <value>NoControl</value>
   </data>
   <data name="logout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 928</value>
+    <value>0, 924</value>
   </data>
   <data name="logout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -994,7 +994,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="Sidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 993</value>
+    <value>370, 989</value>
   </data>
   <data name="Sidebar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1010,6 +1010,99 @@
   </data>
   <data name="&gt;&gt;Sidebar.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="avatar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="avatar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="avatar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>865, 0</value>
+  </data>
+  <data name="avatar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="avatar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 54</value>
+  </data>
+  <data name="avatar.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="avatar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;avatar.Name" xml:space="preserve">
+    <value>avatar</value>
+  </data>
+  <data name="&gt;&gt;avatar.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;avatar.Parent" xml:space="preserve">
+    <value>pnlAccount</value>
+  </data>
+  <data name="&gt;&gt;avatar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="username.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="username.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="username.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 28pt, style=Bold</value>
+  </data>
+  <data name="username.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="username.Location" type="System.Drawing.Point, System.Drawing">
+    <value>919, 0</value>
+  </data>
+  <data name="username.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 51</value>
+  </data>
+  <data name="username.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="username.Text" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="&gt;&gt;username.Name" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="&gt;&gt;username.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;username.Parent" xml:space="preserve">
+    <value>pnlAccount</value>
+  </data>
+  <data name="&gt;&gt;username.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pnlAccount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="pnlAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="pnlAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1114, 54</value>
+  </data>
+  <data name="pnlAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;pnlAccount.Name" xml:space="preserve">
+    <value>pnlAccount</value>
+  </data>
+  <data name="&gt;&gt;pnlAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlAccount.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;pnlAccount.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="formTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1045,7 +1138,7 @@
     <value>Header</value>
   </data>
   <data name="&gt;&gt;formTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="close.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1057,7 +1150,7 @@
     <value>NoControl</value>
   </data>
   <data name="close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>852, 0</value>
+    <value>1076, 0</value>
   </data>
   <data name="close.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1078,7 +1171,7 @@
     <value>Header</value>
   </data>
   <data name="&gt;&gt;close.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="minimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1090,7 +1183,7 @@
     <value>NoControl</value>
   </data>
   <data name="minimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>777, 0</value>
+    <value>1001, 0</value>
   </data>
   <data name="minimize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1111,7 +1204,7 @@
     <value>Header</value>
   </data>
   <data name="&gt;&gt;minimize.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="restore.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1123,7 +1216,7 @@
     <value>NoControl</value>
   </data>
   <data name="restore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>815, 0</value>
+    <value>1039, 0</value>
   </data>
   <data name="restore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1144,7 +1237,7 @@
     <value>Header</value>
   </data>
   <data name="&gt;&gt;restore.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="Header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -1156,7 +1249,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="Header.Size" type="System.Drawing.Size, System.Drawing">
-    <value>890, 81</value>
+    <value>1114, 81</value>
   </data>
   <data name="Header.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1216,10 +1309,10 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1260, 993</value>
+    <value>1484, 989</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 1pt</value>
+    <value>Microsoft Sans Serif, 15pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

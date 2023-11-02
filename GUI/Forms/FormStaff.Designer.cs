@@ -97,7 +97,7 @@ namespace GUI
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1256, 77);
+            this.panel3.Size = new System.Drawing.Size(1500, 77);
             this.panel3.TabIndex = 1;
             // 
             // button8
@@ -140,7 +140,7 @@ namespace GUI
             this.download.ForeColor = System.Drawing.Color.White;
             this.download.Image = ((System.Drawing.Image)(resources.GetObject("download.Image")));
             this.download.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.download.Location = new System.Drawing.Point(1066, 13);
+            this.download.Location = new System.Drawing.Point(1310, 13);
             this.download.Margin = new System.Windows.Forms.Padding(5);
             this.download.Name = "download";
             this.download.Size = new System.Drawing.Size(50, 50);
@@ -161,7 +161,7 @@ namespace GUI
             this.print.ForeColor = System.Drawing.Color.White;
             this.print.Image = ((System.Drawing.Image)(resources.GetObject("print.Image")));
             this.print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.print.Location = new System.Drawing.Point(1186, 13);
+            this.print.Location = new System.Drawing.Point(1430, 13);
             this.print.Margin = new System.Windows.Forms.Padding(5);
             this.print.Name = "print";
             this.print.Size = new System.Drawing.Size(50, 50);
@@ -182,7 +182,7 @@ namespace GUI
             this.upload.ForeColor = System.Drawing.Color.White;
             this.upload.Image = ((System.Drawing.Image)(resources.GetObject("upload.Image")));
             this.upload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.upload.Location = new System.Drawing.Point(1126, 13);
+            this.upload.Location = new System.Drawing.Point(1370, 13);
             this.upload.Margin = new System.Windows.Forms.Padding(5);
             this.upload.Name = "upload";
             this.upload.Size = new System.Drawing.Size(50, 50);
@@ -216,7 +216,8 @@ namespace GUI
             this.table.Location = new System.Drawing.Point(0, 494);
             this.table.Name = "table";
             this.table.RowTemplate.Height = 24;
-            this.table.Size = new System.Drawing.Size(1256, 400);
+            this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.Size = new System.Drawing.Size(1500, 400);
             this.table.TabIndex = 1;
             this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             // 
@@ -322,14 +323,14 @@ namespace GUI
             this.form.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form.Location = new System.Drawing.Point(0, 77);
             this.form.Name = "form";
-            this.form.Size = new System.Drawing.Size(1256, 417);
+            this.form.Size = new System.Drawing.Size(1500, 417);
             this.form.TabIndex = 1;
             // 
             // inpGenderFemale
             // 
             this.inpGenderFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpGenderFemale.AutoSize = true;
-            this.inpGenderFemale.Location = new System.Drawing.Point(1077, 110);
+            this.inpGenderFemale.Location = new System.Drawing.Point(1321, 110);
             this.inpGenderFemale.Name = "inpGenderFemale";
             this.inpGenderFemale.Size = new System.Drawing.Size(55, 29);
             this.inpGenderFemale.TabIndex = 113;
@@ -341,7 +342,7 @@ namespace GUI
             // 
             this.inpGenderMale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpGenderMale.AutoSize = true;
-            this.inpGenderMale.Location = new System.Drawing.Point(988, 110);
+            this.inpGenderMale.Location = new System.Drawing.Point(1207, 110);
             this.inpGenderMale.Name = "inpGenderMale";
             this.inpGenderMale.Size = new System.Drawing.Size(71, 29);
             this.inpGenderMale.TabIndex = 112;
@@ -352,10 +353,12 @@ namespace GUI
             // inpBirthday
             // 
             this.inpBirthday.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.inpBirthday.Location = new System.Drawing.Point(575, 109);
+            this.inpBirthday.CustomFormat = "dd-MM-yyyy";
+            this.inpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.inpBirthday.Location = new System.Drawing.Point(672, 109);
+            this.inpBirthday.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpBirthday.Name = "inpBirthday";
-            this.inpBirthday.Size = new System.Drawing.Size(200, 30);
+            this.inpBirthday.Size = new System.Drawing.Size(250, 30);
             this.inpBirthday.TabIndex = 111;
             // 
             // btnAccount
@@ -367,7 +370,7 @@ namespace GUI
             this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.btnAccount.ForeColor = System.Drawing.Color.White;
             this.btnAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAccount.Location = new System.Drawing.Point(73, 273);
+            this.btnAccount.Location = new System.Drawing.Point(48, 273);
             this.btnAccount.Margin = new System.Windows.Forms.Padding(5);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(242, 50);
@@ -375,23 +378,28 @@ namespace GUI
             this.btnAccount.Tag = "";
             this.btnAccount.Text = "Cấp tài khoản";
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // inpResignationDate
             // 
             this.inpResignationDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.inpResignationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.inpResignationDate.Location = new System.Drawing.Point(988, 218);
+            this.inpResignationDate.CustomFormat = "dd-MM-yyyy";
+            this.inpResignationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.inpResignationDate.Location = new System.Drawing.Point(1207, 218);
+            this.inpResignationDate.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpResignationDate.Name = "inpResignationDate";
-            this.inpResignationDate.Size = new System.Drawing.Size(200, 30);
+            this.inpResignationDate.Size = new System.Drawing.Size(250, 30);
             this.inpResignationDate.TabIndex = 109;
             // 
             // inpStartDate
             // 
             this.inpStartDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.inpStartDate.Location = new System.Drawing.Point(575, 218);
+            this.inpStartDate.CustomFormat = "dd-MM-yyyy";
+            this.inpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.inpStartDate.Location = new System.Drawing.Point(672, 218);
+            this.inpStartDate.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpStartDate.Name = "inpStartDate";
-            this.inpStartDate.Size = new System.Drawing.Size(200, 30);
+            this.inpStartDate.Size = new System.Drawing.Size(250, 30);
             this.inpStartDate.TabIndex = 108;
             // 
             // label1
@@ -399,7 +407,7 @@ namespace GUI
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(825, 221);
+            this.label1.Location = new System.Drawing.Point(1044, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 106;
@@ -409,84 +417,84 @@ namespace GUI
             // 
             this.inpAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpAddress.Location = new System.Drawing.Point(988, 164);
-            this.inpAddress.MaximumSize = new System.Drawing.Size(200, 30);
+            this.inpAddress.Location = new System.Drawing.Point(1207, 164);
+            this.inpAddress.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpAddress.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpAddress.Name = "inpAddress";
-            this.inpAddress.Size = new System.Drawing.Size(200, 30);
+            this.inpAddress.Size = new System.Drawing.Size(250, 30);
             this.inpAddress.TabIndex = 105;
             // 
             // inpCitizenId
             // 
             this.inpCitizenId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpCitizenId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpCitizenId.Location = new System.Drawing.Point(988, 52);
-            this.inpCitizenId.MaximumSize = new System.Drawing.Size(200, 30);
+            this.inpCitizenId.Location = new System.Drawing.Point(1207, 52);
+            this.inpCitizenId.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpCitizenId.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpCitizenId.Name = "inpCitizenId";
-            this.inpCitizenId.Size = new System.Drawing.Size(200, 30);
+            this.inpCitizenId.Size = new System.Drawing.Size(250, 30);
             this.inpCitizenId.TabIndex = 103;
             // 
             // inpContactNumber
             // 
             this.inpContactNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpContactNumber.Location = new System.Drawing.Point(575, 164);
-            this.inpContactNumber.MaximumSize = new System.Drawing.Size(200, 30);
+            this.inpContactNumber.Location = new System.Drawing.Point(672, 164);
+            this.inpContactNumber.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpContactNumber.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpContactNumber.Name = "inpContactNumber";
-            this.inpContactNumber.Size = new System.Drawing.Size(200, 30);
+            this.inpContactNumber.Size = new System.Drawing.Size(250, 30);
             this.inpContactNumber.TabIndex = 101;
             // 
             // inpNickname
             // 
             this.inpNickname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpNickname.Location = new System.Drawing.Point(575, 52);
-            this.inpNickname.MaximumSize = new System.Drawing.Size(200, 30);
+            this.inpNickname.Location = new System.Drawing.Point(672, 52);
+            this.inpNickname.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpNickname.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpNickname.Name = "inpNickname";
-            this.inpNickname.Size = new System.Drawing.Size(200, 30);
+            this.inpNickname.Size = new System.Drawing.Size(250, 30);
             this.inpNickname.TabIndex = 99;
             // 
             // inpAccount
             // 
             this.inpAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpAccount.Location = new System.Drawing.Point(184, 218);
-            this.inpAccount.MaximumSize = new System.Drawing.Size(200, 30);
+            this.inpAccount.Location = new System.Drawing.Point(159, 218);
+            this.inpAccount.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpAccount.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpAccount.Name = "inpAccount";
-            this.inpAccount.Size = new System.Drawing.Size(200, 30);
+            this.inpAccount.Size = new System.Drawing.Size(250, 30);
             this.inpAccount.TabIndex = 98;
             // 
             // inpQualification
             // 
             this.inpQualification.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpQualification.Location = new System.Drawing.Point(184, 164);
-            this.inpQualification.MaximumSize = new System.Drawing.Size(200, 30);
+            this.inpQualification.Location = new System.Drawing.Point(159, 164);
+            this.inpQualification.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpQualification.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpQualification.Name = "inpQualification";
-            this.inpQualification.Size = new System.Drawing.Size(200, 30);
+            this.inpQualification.Size = new System.Drawing.Size(250, 30);
             this.inpQualification.TabIndex = 97;
             // 
             // inpFullName
             // 
             this.inpFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpFullName.Location = new System.Drawing.Point(184, 109);
-            this.inpFullName.MaximumSize = new System.Drawing.Size(200, 30);
+            this.inpFullName.Location = new System.Drawing.Point(159, 109);
+            this.inpFullName.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpFullName.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpFullName.Name = "inpFullName";
-            this.inpFullName.Size = new System.Drawing.Size(200, 30);
+            this.inpFullName.Size = new System.Drawing.Size(250, 30);
             this.inpFullName.TabIndex = 96;
             // 
             // inpId
             // 
             this.inpId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpId.Location = new System.Drawing.Point(184, 52);
-            this.inpId.MaximumSize = new System.Drawing.Size(200, 30);
+            this.inpId.Location = new System.Drawing.Point(159, 52);
+            this.inpId.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpId.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpId.Name = "inpId";
-            this.inpId.Size = new System.Drawing.Size(200, 30);
+            this.inpId.Size = new System.Drawing.Size(250, 30);
             this.inpId.TabIndex = 93;
             // 
             // label11
@@ -494,7 +502,7 @@ namespace GUI
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label11.Location = new System.Drawing.Point(825, 167);
+            this.label11.Location = new System.Drawing.Point(1044, 167);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 25);
             this.label11.TabIndex = 92;
@@ -505,7 +513,7 @@ namespace GUI
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label10.Location = new System.Drawing.Point(825, 112);
+            this.label10.Location = new System.Drawing.Point(1044, 112);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 25);
             this.label10.TabIndex = 91;
@@ -516,7 +524,7 @@ namespace GUI
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label9.Location = new System.Drawing.Point(825, 55);
+            this.label9.Location = new System.Drawing.Point(1044, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(137, 25);
             this.label9.TabIndex = 90;
@@ -527,7 +535,7 @@ namespace GUI
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label8.Location = new System.Drawing.Point(440, 221);
+            this.label8.Location = new System.Drawing.Point(537, 221);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 25);
             this.label8.TabIndex = 89;
@@ -538,7 +546,7 @@ namespace GUI
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label7.Location = new System.Drawing.Point(440, 167);
+            this.label7.Location = new System.Drawing.Point(537, 167);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 25);
             this.label7.TabIndex = 88;
@@ -549,7 +557,7 @@ namespace GUI
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label6.Location = new System.Drawing.Point(440, 112);
+            this.label6.Location = new System.Drawing.Point(537, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 25);
             this.label6.TabIndex = 87;
@@ -560,7 +568,7 @@ namespace GUI
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label5.Location = new System.Drawing.Point(440, 55);
+            this.label5.Location = new System.Drawing.Point(537, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 25);
             this.label5.TabIndex = 86;
@@ -570,7 +578,7 @@ namespace GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label4.Location = new System.Drawing.Point(68, 221);
+            this.label4.Location = new System.Drawing.Point(43, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 25);
             this.label4.TabIndex = 85;
@@ -580,7 +588,7 @@ namespace GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label3.Location = new System.Drawing.Point(68, 167);
+            this.label3.Location = new System.Drawing.Point(43, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 25);
             this.label3.TabIndex = 84;
@@ -590,7 +598,7 @@ namespace GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label2.Location = new System.Drawing.Point(68, 112);
+            this.label2.Location = new System.Drawing.Point(43, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 25);
             this.label2.TabIndex = 83;
@@ -601,7 +609,7 @@ namespace GUI
             this.lblId.AutoSize = true;
             this.lblId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblId.Location = new System.Drawing.Point(68, 55);
+            this.lblId.Location = new System.Drawing.Point(43, 55);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(31, 25);
             this.lblId.TabIndex = 82;
@@ -609,7 +617,7 @@ namespace GUI
             // 
             // save
             // 
-            this.save.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.save.BackColor = System.Drawing.Color.RoyalBlue;
             this.save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.save.FlatAppearance.BorderSize = 0;
@@ -618,7 +626,7 @@ namespace GUI
             this.save.ForeColor = System.Drawing.Color.White;
             this.save.Image = global::GUI.Properties.Resources.save;
             this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.save.Location = new System.Drawing.Point(923, 346);
+            this.save.Location = new System.Drawing.Point(1020, 346);
             this.save.Margin = new System.Windows.Forms.Padding(5);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(50, 50);
@@ -630,7 +638,7 @@ namespace GUI
             // 
             // delete
             // 
-            this.delete.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.delete.BackColor = System.Drawing.Color.RoyalBlue;
             this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delete.FlatAppearance.BorderSize = 0;
@@ -639,7 +647,7 @@ namespace GUI
             this.delete.ForeColor = System.Drawing.Color.White;
             this.delete.Image = global::GUI.Properties.Resources.trash;
             this.delete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.delete.Location = new System.Drawing.Point(710, 346);
+            this.delete.Location = new System.Drawing.Point(807, 346);
             this.delete.Margin = new System.Windows.Forms.Padding(5);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(50, 50);
@@ -651,7 +659,7 @@ namespace GUI
             // 
             // update
             // 
-            this.update.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.update.BackColor = System.Drawing.Color.RoyalBlue;
             this.update.Cursor = System.Windows.Forms.Cursors.Hand;
             this.update.FlatAppearance.BorderSize = 0;
@@ -660,7 +668,7 @@ namespace GUI
             this.update.ForeColor = System.Drawing.Color.White;
             this.update.Image = global::GUI.Properties.Resources.compose;
             this.update.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.update.Location = new System.Drawing.Point(497, 346);
+            this.update.Location = new System.Drawing.Point(594, 346);
             this.update.Margin = new System.Windows.Forms.Padding(5);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(50, 50);
@@ -672,7 +680,7 @@ namespace GUI
             // 
             // create
             // 
-            this.create.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.create.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.create.BackColor = System.Drawing.Color.RoyalBlue;
             this.create.Cursor = System.Windows.Forms.Cursors.Hand;
             this.create.FlatAppearance.BorderSize = 0;
@@ -681,7 +689,7 @@ namespace GUI
             this.create.ForeColor = System.Drawing.Color.White;
             this.create.Image = ((System.Drawing.Image)(resources.GetObject("create.Image")));
             this.create.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.create.Location = new System.Drawing.Point(284, 346);
+            this.create.Location = new System.Drawing.Point(381, 346);
             this.create.Margin = new System.Windows.Forms.Padding(5);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(50, 50);
@@ -694,7 +702,7 @@ namespace GUI
             // FormStaff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1256, 894);
+            this.ClientSize = new System.Drawing.Size(1500, 894);
             this.ControlBox = false;
             this.Controls.Add(this.form);
             this.Controls.Add(this.table);
