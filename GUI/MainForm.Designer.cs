@@ -50,7 +50,6 @@ namespace GUI
             this.statistic = new System.Windows.Forms.Button();
             this.pnl = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.Header = new System.Windows.Forms.Panel();
             this.pnlAccount = new System.Windows.Forms.Panel();
@@ -61,6 +60,7 @@ namespace GUI
             this.minimize = new System.Windows.Forms.Button();
             this.restore = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.Sidebar.SuspendLayout();
             this.invenMenu.SuspendLayout();
             this.cateMenu.SuspendLayout();
@@ -289,8 +289,8 @@ namespace GUI
             // pnl
             // 
             this.pnl.BackColor = System.Drawing.Color.RoyalBlue;
-            this.pnl.Controls.Add(this.menu);
             this.pnl.Controls.Add(this.label1);
+            this.pnl.Controls.Add(this.menu);
             this.pnl.Controls.Add(this.logo);
             resources.ApplyResources(this.pnl, "pnl");
             this.pnl.Name = "pnl";
@@ -305,12 +305,6 @@ namespace GUI
             this.menu.Name = "menu";
             this.menu.UseVisualStyleBackColor = false;
             this.menu.Click += new System.EventHandler(this.menu_Click);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
             // 
             // logo
             // 
@@ -413,6 +407,12 @@ namespace GUI
             this.button8.Name = "button8";
             this.button8.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Name = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -427,6 +427,7 @@ namespace GUI
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.Sidebar.ResumeLayout(false);
             this.invenMenu.ResumeLayout(false);
@@ -451,7 +452,6 @@ namespace GUI
         private System.Windows.Forms.Button statistic;
         private System.Windows.Forms.Panel pnl;
         private System.Windows.Forms.Button menu;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Button restore;
         private System.Windows.Forms.Panel Header;
@@ -474,5 +474,6 @@ namespace GUI
         private System.Windows.Forms.Label username;
         private Guna.UI2.WinForms.Guna2CirclePictureBox avatar;
         private System.Windows.Forms.Panel pnlAccount;
+        private System.Windows.Forms.Label label1;
     }
 }

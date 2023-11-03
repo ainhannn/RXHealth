@@ -216,6 +216,477 @@
   <data name="&gt;&gt;sell.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;inventory.Name" xml:space="preserve">
+    <value>inventory</value>
+  </data>
+  <data name="&gt;&gt;inventory.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;inventory.Parent" xml:space="preserve">
+    <value>invenMenu</value>
+  </data>
+  <data name="&gt;&gt;inventory.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;invenImp.Name" xml:space="preserve">
+    <value>invenImp</value>
+  </data>
+  <data name="&gt;&gt;invenImp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;invenImp.Parent" xml:space="preserve">
+    <value>invenMenu</value>
+  </data>
+  <data name="&gt;&gt;invenImp.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;invenChk.Name" xml:space="preserve">
+    <value>invenChk</value>
+  </data>
+  <data name="&gt;&gt;invenChk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;invenChk.Parent" xml:space="preserve">
+    <value>invenMenu</value>
+  </data>
+  <data name="&gt;&gt;invenChk.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="invenMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="invenMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 540</value>
+  </data>
+  <data name="invenMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="invenMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 195</value>
+  </data>
+  <data name="invenMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;invenMenu.Name" xml:space="preserve">
+    <value>invenMenu</value>
+  </data>
+  <data name="&gt;&gt;invenMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;invenMenu.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;invenMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="setting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="setting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="setting.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="setting.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="setting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="setting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 859</value>
+  </data>
+  <data name="setting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="setting.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>29, 0, 0, 0</value>
+  </data>
+  <data name="setting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 65</value>
+  </data>
+  <data name="setting.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="setting.Text" xml:space="preserve">
+    <value>                Cài Đặt</value>
+  </data>
+  <data name="setting.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;setting.Name" xml:space="preserve">
+    <value>setting</value>
+  </data>
+  <data name="&gt;&gt;setting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;setting.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;setting.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="logout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="logout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="logout.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="logout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="logout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="logout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 924</value>
+  </data>
+  <data name="logout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="logout.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>29, 0, 0, 0</value>
+  </data>
+  <data name="logout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 65</value>
+  </data>
+  <data name="logout.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="logout.Text" xml:space="preserve">
+    <value>                Đăng Xuất</value>
+  </data>
+  <data name="logout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;logout.Name" xml:space="preserve">
+    <value>logout</value>
+  </data>
+  <data name="&gt;&gt;logout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logout.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;logout.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;category.Name" xml:space="preserve">
+    <value>category</value>
+  </data>
+  <data name="&gt;&gt;category.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;category.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;category.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cateCate.Name" xml:space="preserve">
+    <value>cateCate</value>
+  </data>
+  <data name="&gt;&gt;cateCate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateCate.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateCate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cateIngre.Name" xml:space="preserve">
+    <value>cateIngre</value>
+  </data>
+  <data name="&gt;&gt;cateIngre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateIngre.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateIngre.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cateDrug.Name" xml:space="preserve">
+    <value>cateDrug</value>
+  </data>
+  <data name="&gt;&gt;cateDrug.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateDrug.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateDrug.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cateProvi.Name" xml:space="preserve">
+    <value>cateProvi</value>
+  </data>
+  <data name="&gt;&gt;cateProvi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateProvi.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateProvi.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cateCus.Name" xml:space="preserve">
+    <value>cateCus</value>
+  </data>
+  <data name="&gt;&gt;cateCus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateCus.Parent" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateCus.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="cateMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="cateMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 145</value>
+  </data>
+  <data name="cateMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="cateMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 395</value>
+  </data>
+  <data name="cateMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Name" xml:space="preserve">
+    <value>cateMenu</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;cateMenu.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="statistic.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="statistic.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="statistic.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="statistic.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="statistic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="statistic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="statistic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="statistic.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>29, 0, 0, 0</value>
+  </data>
+  <data name="statistic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 65</value>
+  </data>
+  <data name="statistic.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="statistic.Text" xml:space="preserve">
+    <value>                Hoạt Động</value>
+  </data>
+  <data name="statistic.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;statistic.Name" xml:space="preserve">
+    <value>statistic</value>
+  </data>
+  <data name="&gt;&gt;statistic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statistic.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;statistic.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Black, 35pt, style=Bold</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 0</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 62</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>HEALTH</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="menu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="menu.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="menu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="menu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 0</value>
+  </data>
+  <data name="menu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="menu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 8</value>
+  </data>
+  <data name="menu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 80</value>
+  </data>
+  <data name="menu.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;menu.Name" xml:space="preserve">
+    <value>menu</value>
+  </data>
+  <data name="&gt;&gt;menu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menu.Parent" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;menu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="logo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="logo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="logo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="logo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="logo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>12, 12, 11, 12</value>
+  </data>
+  <data name="logo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 80</value>
+  </data>
+  <data name="logo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="logo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;logo.Name" xml:space="preserve">
+    <value>logo</value>
+  </data>
+  <data name="&gt;&gt;logo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logo.Parent" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;logo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="pnl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="pnl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="pnl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 80</value>
+  </data>
+  <data name="pnl.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;pnl.Name" xml:space="preserve">
+    <value>pnl</value>
+  </data>
+  <data name="&gt;&gt;pnl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnl.Parent" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;pnl.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Sidebar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Sidebar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Sidebar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="Sidebar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>370, 989</value>
+  </data>
+  <data name="Sidebar.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Sidebar.Name" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="&gt;&gt;Sidebar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Sidebar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Sidebar.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="inventory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
@@ -359,129 +830,6 @@
   </data>
   <data name="&gt;&gt;invenChk.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="invenMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="invenMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 540</value>
-  </data>
-  <data name="invenMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="invenMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 195</value>
-  </data>
-  <data name="invenMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;invenMenu.Name" xml:space="preserve">
-    <value>invenMenu</value>
-  </data>
-  <data name="&gt;&gt;invenMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;invenMenu.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;invenMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="setting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="setting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="setting.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
-  </data>
-  <data name="setting.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="setting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="setting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 859</value>
-  </data>
-  <data name="setting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="setting.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>29, 0, 0, 0</value>
-  </data>
-  <data name="setting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 65</value>
-  </data>
-  <data name="setting.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="setting.Text" xml:space="preserve">
-    <value>                Cài Đặt</value>
-  </data>
-  <data name="setting.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;setting.Name" xml:space="preserve">
-    <value>setting</value>
-  </data>
-  <data name="&gt;&gt;setting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;setting.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;setting.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="logout.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="logout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="logout.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
-  </data>
-  <data name="logout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="logout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="logout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 924</value>
-  </data>
-  <data name="logout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="logout.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>29, 0, 0, 0</value>
-  </data>
-  <data name="logout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 65</value>
-  </data>
-  <data name="logout.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="logout.Text" xml:space="preserve">
-    <value>                Đăng Xuất</value>
-  </data>
-  <data name="logout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;logout.Name" xml:space="preserve">
-    <value>logout</value>
-  </data>
-  <data name="&gt;&gt;logout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;logout.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;logout.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="category.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -771,245 +1119,140 @@
   <data name="&gt;&gt;cateCus.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="cateMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="&gt;&gt;pnlAccount.Name" xml:space="preserve">
+    <value>pnlAccount</value>
   </data>
-  <data name="cateMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 145</value>
+  <data name="&gt;&gt;pnlAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cateMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+  <data name="&gt;&gt;pnlAccount.Parent" xml:space="preserve">
+    <value>Header</value>
   </data>
-  <data name="cateMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 395</value>
-  </data>
-  <data name="cateMenu.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;cateMenu.Name" xml:space="preserve">
-    <value>cateMenu</value>
-  </data>
-  <data name="&gt;&gt;cateMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cateMenu.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;cateMenu.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="statistic.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="statistic.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="statistic.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
-  </data>
-  <data name="statistic.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="statistic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="statistic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="statistic.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="statistic.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>29, 0, 0, 0</value>
-  </data>
-  <data name="statistic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 65</value>
-  </data>
-  <data name="statistic.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="statistic.Text" xml:space="preserve">
-    <value>                Hoạt Động</value>
-  </data>
-  <data name="statistic.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;statistic.Name" xml:space="preserve">
-    <value>statistic</value>
-  </data>
-  <data name="&gt;&gt;statistic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;statistic.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;statistic.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="menu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="menu.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="menu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="menu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 0</value>
-  </data>
-  <data name="menu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="menu.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 8</value>
-  </data>
-  <data name="menu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 80</value>
-  </data>
-  <data name="menu.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;menu.Name" xml:space="preserve">
-    <value>menu</value>
-  </data>
-  <data name="&gt;&gt;menu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menu.Parent" xml:space="preserve">
-    <value>pnl</value>
-  </data>
-  <data name="&gt;&gt;menu.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pnlAccount.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;formTitle.Name" xml:space="preserve">
+    <value>formTitle</value>
   </data>
-  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 45pt, style=Bold</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 0</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 70</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>HEALTH</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;formTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>pnl</value>
+  <data name="&gt;&gt;formTitle.Parent" xml:space="preserve">
+    <value>Header</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;formTitle.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="logo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+  <data name="&gt;&gt;close.Name" xml:space="preserve">
+    <value>close</value>
   </data>
-  <data name="logo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;close.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="logo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;close.Parent" xml:space="preserve">
+    <value>Header</value>
   </data>
-  <data name="logo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="logo.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>12, 12, 11, 12</value>
-  </data>
-  <data name="logo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 80</value>
-  </data>
-  <data name="logo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="logo.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;logo.Name" xml:space="preserve">
-    <value>logo</value>
-  </data>
-  <data name="&gt;&gt;logo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;logo.Parent" xml:space="preserve">
-    <value>pnl</value>
-  </data>
-  <data name="&gt;&gt;logo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;close.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="pnl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="&gt;&gt;minimize.Name" xml:space="preserve">
+    <value>minimize</value>
+  </data>
+  <data name="&gt;&gt;minimize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;minimize.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;minimize.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;restore.Name" xml:space="preserve">
+    <value>restore</value>
+  </data>
+  <data name="&gt;&gt;restore.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;restore.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;restore.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="pnl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="Header.Location" type="System.Drawing.Point, System.Drawing">
+    <value>370, 0</value>
   </data>
-  <data name="pnl.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="Header.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="pnl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 80</value>
+  <data name="Header.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1214, 81</value>
   </data>
-  <data name="pnl.TabIndex" type="System.Int32, mscorlib">
+  <data name="Header.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;pnl.Name" xml:space="preserve">
-    <value>pnl</value>
+  <data name="&gt;&gt;Header.Name" xml:space="preserve">
+    <value>Header</value>
   </data>
-  <data name="&gt;&gt;pnl.Type" xml:space="preserve">
+  <data name="&gt;&gt;Header.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pnl.Parent" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;pnl.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="Sidebar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="Sidebar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="Sidebar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="Sidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 989</value>
-  </data>
-  <data name="Sidebar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Sidebar.Name" xml:space="preserve">
-    <value>Sidebar</value>
-  </data>
-  <data name="&gt;&gt;Sidebar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Sidebar.Parent" xml:space="preserve">
+  <data name="&gt;&gt;Header.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;Sidebar.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;Header.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;avatar.Name" xml:space="preserve">
+    <value>avatar</value>
+  </data>
+  <data name="&gt;&gt;avatar.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;avatar.Parent" xml:space="preserve">
+    <value>pnlAccount</value>
+  </data>
+  <data name="&gt;&gt;avatar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;username.Name" xml:space="preserve">
+    <value>username</value>
+  </data>
+  <data name="&gt;&gt;username.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;username.Parent" xml:space="preserve">
+    <value>pnlAccount</value>
+  </data>
+  <data name="&gt;&gt;username.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="pnlAccount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="pnlAccount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="pnlAccount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1214, 54</value>
+  </data>
+  <data name="pnlAccount.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;pnlAccount.Name" xml:space="preserve">
+    <value>pnlAccount</value>
+  </data>
+  <data name="&gt;&gt;pnlAccount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlAccount.Parent" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="&gt;&gt;pnlAccount.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="avatar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -1018,7 +1261,7 @@
     <value>NoControl</value>
   </data>
   <data name="avatar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>865, 0</value>
+    <value>965, 0</value>
   </data>
   <data name="avatar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1057,7 +1300,7 @@
     <value>NoControl</value>
   </data>
   <data name="username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>919, 0</value>
+    <value>1019, 0</value>
   </data>
   <data name="username.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 51</value>
@@ -1079,30 +1322,6 @@
   </data>
   <data name="&gt;&gt;username.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="pnlAccount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="pnlAccount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 27</value>
-  </data>
-  <data name="pnlAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1114, 54</value>
-  </data>
-  <data name="pnlAccount.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;pnlAccount.Name" xml:space="preserve">
-    <value>pnlAccount</value>
-  </data>
-  <data name="&gt;&gt;pnlAccount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnlAccount.Parent" xml:space="preserve">
-    <value>Header</value>
-  </data>
-  <data name="&gt;&gt;pnlAccount.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="formTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1150,7 +1369,7 @@
     <value>NoControl</value>
   </data>
   <data name="close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1076, 0</value>
+    <value>1176, 0</value>
   </data>
   <data name="close.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1183,7 +1402,7 @@
     <value>NoControl</value>
   </data>
   <data name="minimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1001, 0</value>
+    <value>1101, 0</value>
   </data>
   <data name="minimize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1216,7 +1435,7 @@
     <value>NoControl</value>
   </data>
   <data name="restore.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1039, 0</value>
+    <value>1139, 0</value>
   </data>
   <data name="restore.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1238,33 +1457,6 @@
   </data>
   <data name="&gt;&gt;restore.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="Header.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="Header.Location" type="System.Drawing.Point, System.Drawing">
-    <value>370, 0</value>
-  </data>
-  <data name="Header.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="Header.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1114, 81</value>
-  </data>
-  <data name="Header.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Header.Name" xml:space="preserve">
-    <value>Header</value>
-  </data>
-  <data name="&gt;&gt;Header.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Header.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Header.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="button8.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 16.2pt, style=Bold</value>
@@ -1309,7 +1501,7 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1484, 989</value>
+    <value>1584, 989</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15pt</value>

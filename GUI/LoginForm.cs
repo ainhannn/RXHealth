@@ -12,6 +12,7 @@ namespace GUI
     public partial class LoginForm : Form
     {
         public static string username;
+        public static int role;
 
         public LoginForm()
         {
@@ -51,8 +52,8 @@ namespace GUI
 
         private void bunifuGradientPanel1_MouseDown(object sender, MouseEventArgs e)
         {
-            HandleGUI.ReleaseCapture();
-            HandleGUI.SendMessage(this.Handle, 0x112, 0xf012, 8);
+            Xls.ReleaseCapture();
+            Xls.SendMessage(this.Handle, 0x112, 0xf012, 8);
         }
 
         private void login_Click(object sender, EventArgs e)

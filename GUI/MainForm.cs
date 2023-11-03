@@ -30,10 +30,40 @@ namespace GUI
             username.Text = LoginForm.username;
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if(LoginForm.role == 0)
+            {
+                foreach (Button btn in Sidebar.Controls.OfType<Button>())
+                    btn.Visible = true;
+                foreach (Button btn in cateMenu.Controls.OfType<Button>())
+                    btn.Visible = true;
+                foreach (Button btn in invenMenu.Controls.OfType<Button>())
+                    btn.Visible = true;
+            }
+            else if(LoginForm.role == 1)
+            {
+                foreach (Button btn in Sidebar.Controls.OfType<Button>())
+                    btn.Visible = true;
+                foreach (Button btn in cateMenu.Controls.OfType<Button>())
+                    btn.Visible = true;
+                foreach (Button btn in invenMenu.Controls.OfType<Button>())
+                    btn.Visible = true;
+            }
+            else if(LoginForm.role == 2)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
         private void Header_MouseDown(object sender, MouseEventArgs e)
         {
-            HandleGUI.ReleaseCapture();
-            HandleGUI.SendMessage(Handle, 0x112, 0xf012, 8);
+            Xls.ReleaseCapture();
+            Xls.SendMessage(Handle, 0x112, 0xf012, 8);
             if (WindowState == FormWindowState.Maximized)
             {
                 restore.Image = Properties.Resources.minimize;
@@ -307,7 +337,7 @@ namespace GUI
         {
             SetDefault();
             sell.BackColor = Color.Navy;
-            Navigate.Form(formTitle, "Quản Lý Bán Hàng", fmSell, new FormSell(), this);
+            Navigate.Form(formTitle, "Lập Hóa Đơn Bán", fmSell, new FormSell(), this);
         }
 
         private void staff_Click(object sender, EventArgs e)

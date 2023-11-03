@@ -248,7 +248,7 @@
     <Compile Include="Forms\FormInvenImp.Designer.cs">
       <DependentUpon>FormInvenImp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\HandleGUI.cs" />
+    <Compile Include="Components\Xls.cs" />
     <Compile Include="Forms\FormSell.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,6 +450,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

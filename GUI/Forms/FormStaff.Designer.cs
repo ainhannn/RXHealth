@@ -31,12 +31,17 @@ namespace GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStaff));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.inpSearch = new System.Windows.Forms.TextBox();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.filterDate = new System.Windows.Forms.DateTimePicker();
             this.download = new System.Windows.Forms.Button();
             this.print = new System.Windows.Forms.Button();
             this.upload = new System.Windows.Forms.Button();
+            this.pnlSearch = new System.Windows.Forms.Panel();
+            this.search = new System.Windows.Forms.Button();
+            this.inpSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,11 +52,19 @@ namespace GUI
             this.Qualification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ResignationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.refresh = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
             this.form = new System.Windows.Forms.Panel();
+            this.inpRole = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.inpGenderFemale = new System.Windows.Forms.RadioButton();
+            this.save = new System.Windows.Forms.Button();
             this.inpGenderMale = new System.Windows.Forms.RadioButton();
             this.inpBirthday = new System.Windows.Forms.DateTimePicker();
             this.btnAccount = new System.Windows.Forms.Button();
@@ -77,56 +90,52 @@ namespace GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.save = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.create = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
+            this.panel1.SuspendLayout();
             this.form.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Controls.Add(this.button8);
-            this.panel3.Controls.Add(this.inpSearch);
+            this.panel3.Controls.Add(this.lblFilter);
+            this.panel3.Controls.Add(this.filterDate);
             this.panel3.Controls.Add(this.download);
             this.panel3.Controls.Add(this.print);
             this.panel3.Controls.Add(this.upload);
+            this.panel3.Controls.Add(this.pnlSearch);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1500, 77);
+            this.panel3.Size = new System.Drawing.Size(1600, 77);
             this.panel3.TabIndex = 1;
             // 
-            // button8
+            // lblFilter
             // 
-            this.button8.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button8.Location = new System.Drawing.Point(280, 13);
-            this.button8.Margin = new System.Windows.Forms.Padding(5);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(50, 50);
-            this.button8.TabIndex = 22;
-            this.button8.Tag = "";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = false;
+            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblFilter.ForeColor = System.Drawing.Color.White;
+            this.lblFilter.Location = new System.Drawing.Point(657, 26);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(131, 25);
+            this.lblFilter.TabIndex = 111;
+            this.lblFilter.Text = "Ngày vào làm";
             // 
-            // inpSearch
+            // filterDate
             // 
-            this.inpSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inpSearch.Location = new System.Drawing.Point(20, 23);
-            this.inpSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.inpSearch.Name = "inpSearch";
-            this.inpSearch.Size = new System.Drawing.Size(250, 30);
-            this.inpSearch.TabIndex = 21;
+            this.filterDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.filterDate.CustomFormat = "dd-MM-yyyy";
+            this.filterDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.filterDate.Location = new System.Drawing.Point(794, 23);
+            this.filterDate.MaximumSize = new System.Drawing.Size(500, 30);
+            this.filterDate.Name = "filterDate";
+            this.filterDate.Size = new System.Drawing.Size(150, 30);
+            this.filterDate.TabIndex = 109;
             // 
             // download
             // 
@@ -140,7 +149,7 @@ namespace GUI
             this.download.ForeColor = System.Drawing.Color.White;
             this.download.Image = ((System.Drawing.Image)(resources.GetObject("download.Image")));
             this.download.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.download.Location = new System.Drawing.Point(1310, 13);
+            this.download.Location = new System.Drawing.Point(1410, 13);
             this.download.Margin = new System.Windows.Forms.Padding(5);
             this.download.Name = "download";
             this.download.Size = new System.Drawing.Size(50, 50);
@@ -161,7 +170,7 @@ namespace GUI
             this.print.ForeColor = System.Drawing.Color.White;
             this.print.Image = ((System.Drawing.Image)(resources.GetObject("print.Image")));
             this.print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.print.Location = new System.Drawing.Point(1430, 13);
+            this.print.Location = new System.Drawing.Point(1530, 13);
             this.print.Margin = new System.Windows.Forms.Padding(5);
             this.print.Name = "print";
             this.print.Size = new System.Drawing.Size(50, 50);
@@ -182,7 +191,7 @@ namespace GUI
             this.upload.ForeColor = System.Drawing.Color.White;
             this.upload.Image = ((System.Drawing.Image)(resources.GetObject("upload.Image")));
             this.upload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.upload.Location = new System.Drawing.Point(1370, 13);
+            this.upload.Location = new System.Drawing.Point(1470, 13);
             this.upload.Margin = new System.Windows.Forms.Padding(5);
             this.upload.Name = "upload";
             this.upload.Size = new System.Drawing.Size(50, 50);
@@ -192,11 +201,67 @@ namespace GUI
             this.upload.UseVisualStyleBackColor = false;
             this.upload.Click += new System.EventHandler(this.upload_Click);
             // 
+            // pnlSearch
+            // 
+            this.pnlSearch.BackColor = System.Drawing.Color.White;
+            this.pnlSearch.Controls.Add(this.search);
+            this.pnlSearch.Controls.Add(this.inpSearch);
+            this.pnlSearch.Location = new System.Drawing.Point(29, 13);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(50, 50);
+            this.pnlSearch.TabIndex = 112;
+            this.pnlSearch.MouseLeave += new System.EventHandler(this.pnlSearch_MouseLeave);
+            this.pnlSearch.MouseHover += new System.EventHandler(this.search_MouseHover);
+            // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.RoyalBlue;
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Dock = System.Windows.Forms.DockStyle.Right;
+            this.search.FlatAppearance.BorderSize = 0;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.search.ForeColor = System.Drawing.Color.White;
+            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
+            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search.Location = new System.Drawing.Point(0, 0);
+            this.search.Margin = new System.Windows.Forms.Padding(5);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(50, 50);
+            this.search.TabIndex = 22;
+            this.search.Tag = "";
+            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.search.UseVisualStyleBackColor = false;
+            this.search.MouseHover += new System.EventHandler(this.search_MouseHover);
+            // 
+            // inpSearch
+            // 
+            this.inpSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inpSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inpSearch.Location = new System.Drawing.Point(8, 14);
+            this.inpSearch.Margin = new System.Windows.Forms.Padding(0);
+            this.inpSearch.Name = "inpSearch";
+            this.inpSearch.Size = new System.Drawing.Size(237, 23);
+            this.inpSearch.TabIndex = 21;
+            this.inpSearch.Enter += new System.EventHandler(this.search_MouseHover);
+            this.inpSearch.Leave += new System.EventHandler(this.pnlSearch_MouseLeave);
+            this.inpSearch.MouseHover += new System.EventHandler(this.search_MouseHover);
+            // 
             // table
             // 
+            this.table.AllowUserToAddRows = false;
+            this.table.AllowUserToDeleteRows = false;
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -208,16 +273,18 @@ namespace GUI
             this.Qualification,
             this.ContactNumber,
             this.Address,
+            this.Role,
             this.Account,
             this.StartDate,
-            this.ResignationDate});
+            this.ResignationDate,
+            this.selectDelete});
             this.table.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.table.EnableHeadersVisualStyles = false;
-            this.table.Location = new System.Drawing.Point(0, 494);
+            this.table.Location = new System.Drawing.Point(0, 594);
             this.table.Name = "table";
             this.table.RowTemplate.Height = 24;
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.Size = new System.Drawing.Size(1500, 400);
+            this.table.Size = new System.Drawing.Size(1600, 300);
             this.table.TabIndex = 1;
             this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             // 
@@ -225,72 +292,154 @@ namespace GUI
             // 
             this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // Nickname
             // 
             this.Nickname.HeaderText = "Tên Hiển Thị";
             this.Nickname.MaxInputLength = 16;
             this.Nickname.Name = "Nickname";
+            this.Nickname.ReadOnly = true;
             // 
             // CitizenId
             // 
             this.CitizenId.HeaderText = "CMND /CCCD";
             this.CitizenId.MaxInputLength = 12;
             this.CitizenId.Name = "CitizenId";
+            this.CitizenId.ReadOnly = true;
             // 
             // FullName
             // 
             this.FullName.HeaderText = "Họ Và Tên";
             this.FullName.MaxInputLength = 50;
             this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
             // 
             // Birthday
             // 
             this.Birthday.HeaderText = "Ngày Sinh";
             this.Birthday.Name = "Birthday";
+            this.Birthday.ReadOnly = true;
             // 
             // GenderIsMale
             // 
             this.GenderIsMale.HeaderText = "Giới Tính";
             this.GenderIsMale.Name = "GenderIsMale";
+            this.GenderIsMale.ReadOnly = true;
             // 
             // Qualification
             // 
             this.Qualification.HeaderText = "Bằng Cấp";
             this.Qualification.MaxInputLength = 50;
             this.Qualification.Name = "Qualification";
+            this.Qualification.ReadOnly = true;
             // 
             // ContactNumber
             // 
             this.ContactNumber.HeaderText = "SĐT";
             this.ContactNumber.MaxInputLength = 12;
             this.ContactNumber.Name = "ContactNumber";
+            this.ContactNumber.ReadOnly = true;
             // 
             // Address
             // 
             this.Address.HeaderText = "Địa Chỉ";
             this.Address.MaxInputLength = 100;
             this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Role
+            // 
+            this.Role.HeaderText = "Chức Vụ";
+            this.Role.Name = "Role";
+            this.Role.ReadOnly = true;
             // 
             // Account
             // 
             this.Account.HeaderText = "Tài Khoản";
             this.Account.MaxInputLength = 16;
             this.Account.Name = "Account";
+            this.Account.ReadOnly = true;
             // 
             // StartDate
             // 
             this.StartDate.HeaderText = "Bắt Đầu";
             this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
             // 
             // ResignationDate
             // 
             this.ResignationDate.HeaderText = "Nghỉ Việc";
             this.ResignationDate.Name = "ResignationDate";
+            this.ResignationDate.ReadOnly = true;
+            // 
+            // selectDelete
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = false;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
+            this.selectDelete.HeaderText = "Xóa";
+            this.selectDelete.Name = "selectDelete";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.refresh);
+            this.panel1.Controls.Add(this.delete);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 544);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1600, 50);
+            this.panel1.TabIndex = 1;
+            // 
+            // refresh
+            // 
+            this.refresh.BackColor = System.Drawing.Color.Transparent;
+            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.refresh.FlatAppearance.BorderSize = 0;
+            this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refresh.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.refresh.ForeColor = System.Drawing.Color.White;
+            this.refresh.Image = global::GUI.Properties.Resources.refresh;
+            this.refresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.refresh.Location = new System.Drawing.Point(1500, 0);
+            this.refresh.Margin = new System.Windows.Forms.Padding(5);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(50, 50);
+            this.refresh.TabIndex = 114;
+            this.refresh.Tag = "";
+            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refresh.UseVisualStyleBackColor = false;
+            // 
+            // delete
+            // 
+            this.delete.BackColor = System.Drawing.Color.Transparent;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.delete.ForeColor = System.Drawing.Color.White;
+            this.delete.Image = global::GUI.Properties.Resources.trash;
+            this.delete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.delete.Location = new System.Drawing.Point(1550, 0);
+            this.delete.Margin = new System.Windows.Forms.Padding(5);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(50, 50);
+            this.delete.TabIndex = 80;
+            this.delete.Tag = "";
+            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // form
             // 
+            this.form.Controls.Add(this.inpRole);
+            this.form.Controls.Add(this.label12);
             this.form.Controls.Add(this.inpGenderFemale);
+            this.form.Controls.Add(this.save);
             this.form.Controls.Add(this.inpGenderMale);
             this.form.Controls.Add(this.inpBirthday);
             this.form.Controls.Add(this.btnAccount);
@@ -316,21 +465,39 @@ namespace GUI
             this.form.Controls.Add(this.label3);
             this.form.Controls.Add(this.label2);
             this.form.Controls.Add(this.lblId);
-            this.form.Controls.Add(this.save);
-            this.form.Controls.Add(this.delete);
             this.form.Controls.Add(this.update);
             this.form.Controls.Add(this.create);
             this.form.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form.Location = new System.Drawing.Point(0, 77);
             this.form.Name = "form";
-            this.form.Size = new System.Drawing.Size(1500, 417);
-            this.form.TabIndex = 1;
+            this.form.Size = new System.Drawing.Size(1600, 467);
+            this.form.TabIndex = 2;
+            // 
+            // inpRole
+            // 
+            this.inpRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.inpRole.FormattingEnabled = true;
+            this.inpRole.Location = new System.Drawing.Point(1307, 271);
+            this.inpRole.Name = "inpRole";
+            this.inpRole.Size = new System.Drawing.Size(250, 33);
+            this.inpRole.TabIndex = 116;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label12.Location = new System.Drawing.Point(1144, 275);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 25);
+            this.label12.TabIndex = 114;
+            this.label12.Text = "Chức vụ";
             // 
             // inpGenderFemale
             // 
             this.inpGenderFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpGenderFemale.AutoSize = true;
-            this.inpGenderFemale.Location = new System.Drawing.Point(1321, 110);
+            this.inpGenderFemale.Location = new System.Drawing.Point(1421, 110);
             this.inpGenderFemale.Name = "inpGenderFemale";
             this.inpGenderFemale.Size = new System.Drawing.Size(55, 29);
             this.inpGenderFemale.TabIndex = 113;
@@ -338,11 +505,32 @@ namespace GUI
             this.inpGenderFemale.Text = "Nữ";
             this.inpGenderFemale.UseVisualStyleBackColor = true;
             // 
+            // save
+            // 
+            this.save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.save.BackColor = System.Drawing.Color.RoyalBlue;
+            this.save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.save.FlatAppearance.BorderSize = 0;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.save.ForeColor = System.Drawing.Color.White;
+            this.save.Image = global::GUI.Properties.Resources.save;
+            this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.save.Location = new System.Drawing.Point(867, 385);
+            this.save.Margin = new System.Windows.Forms.Padding(5);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(50, 50);
+            this.save.TabIndex = 81;
+            this.save.Tag = "";
+            this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
             // inpGenderMale
             // 
             this.inpGenderMale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpGenderMale.AutoSize = true;
-            this.inpGenderMale.Location = new System.Drawing.Point(1207, 110);
+            this.inpGenderMale.Location = new System.Drawing.Point(1307, 110);
             this.inpGenderMale.Name = "inpGenderMale";
             this.inpGenderMale.Size = new System.Drawing.Size(71, 29);
             this.inpGenderMale.TabIndex = 112;
@@ -355,7 +543,7 @@ namespace GUI
             this.inpBirthday.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpBirthday.CustomFormat = "dd-MM-yyyy";
             this.inpBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.inpBirthday.Location = new System.Drawing.Point(672, 109);
+            this.inpBirthday.Location = new System.Drawing.Point(722, 109);
             this.inpBirthday.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpBirthday.Name = "inpBirthday";
             this.inpBirthday.Size = new System.Drawing.Size(250, 30);
@@ -385,7 +573,7 @@ namespace GUI
             this.inpResignationDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpResignationDate.CustomFormat = "dd-MM-yyyy";
             this.inpResignationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.inpResignationDate.Location = new System.Drawing.Point(1207, 218);
+            this.inpResignationDate.Location = new System.Drawing.Point(1307, 218);
             this.inpResignationDate.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpResignationDate.Name = "inpResignationDate";
             this.inpResignationDate.Size = new System.Drawing.Size(250, 30);
@@ -396,7 +584,7 @@ namespace GUI
             this.inpStartDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpStartDate.CustomFormat = "dd-MM-yyyy";
             this.inpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.inpStartDate.Location = new System.Drawing.Point(672, 218);
+            this.inpStartDate.Location = new System.Drawing.Point(722, 218);
             this.inpStartDate.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpStartDate.Name = "inpStartDate";
             this.inpStartDate.Size = new System.Drawing.Size(250, 30);
@@ -407,7 +595,7 @@ namespace GUI
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(1044, 221);
+            this.label1.Location = new System.Drawing.Point(1144, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 106;
@@ -417,7 +605,7 @@ namespace GUI
             // 
             this.inpAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpAddress.Location = new System.Drawing.Point(1207, 164);
+            this.inpAddress.Location = new System.Drawing.Point(1307, 164);
             this.inpAddress.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpAddress.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpAddress.Name = "inpAddress";
@@ -428,7 +616,7 @@ namespace GUI
             // 
             this.inpCitizenId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpCitizenId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpCitizenId.Location = new System.Drawing.Point(1207, 52);
+            this.inpCitizenId.Location = new System.Drawing.Point(1307, 52);
             this.inpCitizenId.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpCitizenId.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpCitizenId.Name = "inpCitizenId";
@@ -439,7 +627,7 @@ namespace GUI
             // 
             this.inpContactNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpContactNumber.Location = new System.Drawing.Point(672, 164);
+            this.inpContactNumber.Location = new System.Drawing.Point(722, 164);
             this.inpContactNumber.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpContactNumber.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpContactNumber.Name = "inpContactNumber";
@@ -450,7 +638,7 @@ namespace GUI
             // 
             this.inpNickname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpNickname.Location = new System.Drawing.Point(672, 52);
+            this.inpNickname.Location = new System.Drawing.Point(722, 52);
             this.inpNickname.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpNickname.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpNickname.Name = "inpNickname";
@@ -502,7 +690,7 @@ namespace GUI
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label11.Location = new System.Drawing.Point(1044, 167);
+            this.label11.Location = new System.Drawing.Point(1144, 167);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 25);
             this.label11.TabIndex = 92;
@@ -513,7 +701,7 @@ namespace GUI
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label10.Location = new System.Drawing.Point(1044, 112);
+            this.label10.Location = new System.Drawing.Point(1144, 112);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 25);
             this.label10.TabIndex = 91;
@@ -524,7 +712,7 @@ namespace GUI
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label9.Location = new System.Drawing.Point(1044, 55);
+            this.label9.Location = new System.Drawing.Point(1144, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(137, 25);
             this.label9.TabIndex = 90;
@@ -535,7 +723,7 @@ namespace GUI
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label8.Location = new System.Drawing.Point(537, 221);
+            this.label8.Location = new System.Drawing.Point(587, 221);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 25);
             this.label8.TabIndex = 89;
@@ -546,7 +734,7 @@ namespace GUI
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label7.Location = new System.Drawing.Point(537, 167);
+            this.label7.Location = new System.Drawing.Point(587, 167);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 25);
             this.label7.TabIndex = 88;
@@ -557,7 +745,7 @@ namespace GUI
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label6.Location = new System.Drawing.Point(537, 112);
+            this.label6.Location = new System.Drawing.Point(587, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 25);
             this.label6.TabIndex = 87;
@@ -568,7 +756,7 @@ namespace GUI
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label5.Location = new System.Drawing.Point(537, 55);
+            this.label5.Location = new System.Drawing.Point(587, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 25);
             this.label5.TabIndex = 86;
@@ -615,48 +803,6 @@ namespace GUI
             this.lblId.TabIndex = 82;
             this.lblId.Text = "ID";
             // 
-            // save
-            // 
-            this.save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.save.BackColor = System.Drawing.Color.RoyalBlue;
-            this.save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Image = global::GUI.Properties.Resources.save;
-            this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.save.Location = new System.Drawing.Point(1020, 346);
-            this.save.Margin = new System.Windows.Forms.Padding(5);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(50, 50);
-            this.save.TabIndex = 81;
-            this.save.Tag = "";
-            this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
-            // 
-            // delete
-            // 
-            this.delete.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.delete.BackColor = System.Drawing.Color.RoyalBlue;
-            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.delete.FlatAppearance.BorderSize = 0;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.delete.ForeColor = System.Drawing.Color.White;
-            this.delete.Image = global::GUI.Properties.Resources.trash;
-            this.delete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.delete.Location = new System.Drawing.Point(807, 346);
-            this.delete.Margin = new System.Windows.Forms.Padding(5);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(50, 50);
-            this.delete.TabIndex = 80;
-            this.delete.Tag = "";
-            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
             // update
             // 
             this.update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -668,7 +814,7 @@ namespace GUI
             this.update.ForeColor = System.Drawing.Color.White;
             this.update.Image = global::GUI.Properties.Resources.compose;
             this.update.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.update.Location = new System.Drawing.Point(594, 346);
+            this.update.Location = new System.Drawing.Point(702, 385);
             this.update.Margin = new System.Windows.Forms.Padding(5);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(50, 50);
@@ -689,7 +835,7 @@ namespace GUI
             this.create.ForeColor = System.Drawing.Color.White;
             this.create.Image = ((System.Drawing.Image)(resources.GetObject("create.Image")));
             this.create.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.create.Location = new System.Drawing.Point(381, 346);
+            this.create.Location = new System.Drawing.Point(537, 385);
             this.create.Margin = new System.Windows.Forms.Padding(5);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(50, 50);
@@ -702,9 +848,10 @@ namespace GUI
             // FormStaff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1500, 894);
+            this.ClientSize = new System.Drawing.Size(1600, 894);
             this.ControlBox = false;
             this.Controls.Add(this.form);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.table);
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
@@ -718,7 +865,10 @@ namespace GUI
             this.Resize += new System.EventHandler(this.FormStaff_Resize);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.pnlSearch.ResumeLayout(false);
+            this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.form.ResumeLayout(false);
             this.form.PerformLayout();
             this.ResumeLayout(false);
@@ -728,40 +878,17 @@ namespace GUI
         #endregion
 
         private Panel panel3;
-        private Button button8;
+        private Button search;
         private TextBox inpSearch;
         private Button download;
         private Button print;
         private Button upload;
         private DataGridView table;
-        private Panel form;
-        private Label label11;
-        private Label label10;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label lblId;
-        private Button save;
         private Button delete;
-        private Button update;
-        private Button create;
-        private TextBox inpAddress;
-        private TextBox inpCitizenId;
-        private TextBox inpContactNumber;
-        private TextBox inpNickname;
-        private TextBox inpAccount;
-        private TextBox inpQualification;
-        private TextBox inpFullName;
-        private TextBox inpId;
-        private Label label1;
-        private DateTimePicker inpResignationDate;
-        private DateTimePicker inpStartDate;
-        private Button btnAccount;
+        private Button refresh;
+        private DateTimePicker filterDate;
+        private Label lblFilter;
+        private Panel panel1;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nickname;
         private DataGridViewTextBoxColumn CitizenId;
@@ -774,8 +901,40 @@ namespace GUI
         private DataGridViewTextBoxColumn Account;
         private DataGridViewTextBoxColumn StartDate;
         private DataGridViewTextBoxColumn ResignationDate;
+        private DataGridViewCheckBoxColumn selectDelete;
+        private Panel form;
         private RadioButton inpGenderFemale;
+        private Button save;
         private RadioButton inpGenderMale;
         private DateTimePicker inpBirthday;
+        private Button btnAccount;
+        private DateTimePicker inpResignationDate;
+        private DateTimePicker inpStartDate;
+        private Label label1;
+        private TextBox inpAddress;
+        private TextBox inpCitizenId;
+        private TextBox inpContactNumber;
+        private TextBox inpNickname;
+        private TextBox inpAccount;
+        private TextBox inpQualification;
+        private TextBox inpFullName;
+        private TextBox inpId;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label lblId;
+        private Button update;
+        private Button create;
+        private ComboBox inpRole;
+        private Label label12;
+        private Panel pnlSearch;
+        private DataGridViewTextBoxColumn Role;
     }
 }
