@@ -46,7 +46,8 @@ CREATE TABLE account (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(16) UNIQUE NOT NULL,
     password VARCHAR(16) NOT NULL,
-    role TINYINT DEFAULT 3
+    role TINYINT DEFAULT 3,
+    avatar TEXT
 );
 CREATE TABLE staff (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -347,13 +348,15 @@ CREATE PROCEDURE account_login(user VARCHAR(16), pass VARCHAR(16))
 BEGIN
     DECLARE acc_id INT;
     DECLARE role_number INT;
+    DECLARE avt TEXT;
 
     IF EXISTS(SELECT id FROM account WHERE username=user AND password=pass) THEN 
         SELECT id INTO acc_id FROM account WHERE username=user AND password=pass;
         SELECT role INTO role_number FROM account WHERE id=acc_id;
-        SELECT acc_id, user, role_number;
+        SELECT avatar INTO avt FROM account WHERE id=acc_id;
+        SELECT acc_id, user, role_number, avt;
     ELSE
-        SELECT null, null, null;
+        SELECT null, null, null, null;
     END IF;
 END//
 

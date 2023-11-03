@@ -14,7 +14,7 @@ namespace DAL
             var table = ExecuteReader(sql);
             try
             {
-                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][2]));
+                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][2]), Convert.ToString(table[0][3]));
             } catch { return null; }
         }
         public static bool UpdatePassword(Account current, string newPassword) //inp (username,pass,newpass) out (status)
@@ -41,7 +41,7 @@ namespace DAL
             var table = ExecuteReader(sql);
             try
             {
-                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][2]));
+                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][2]), Convert.ToString(table[0][3]));
             }
             catch { return null; }
         }
