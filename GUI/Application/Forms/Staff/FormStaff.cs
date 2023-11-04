@@ -20,9 +20,15 @@ namespace GUI
                 textBox.Enabled = false;
             }
             foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
+            {
                 dateBox.Enabled = false;
+                dateBox.Value = DateTime.Now;
+            }
             foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
+            {
                 genderBox.Enabled = false;
+                genderBox.Checked = false;
+            }
             inpTitle.Enabled = false;
             inpTitle.SelectedIndex = 0;
         }
