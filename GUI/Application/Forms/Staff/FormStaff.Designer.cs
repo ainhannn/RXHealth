@@ -34,7 +34,9 @@ namespace GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.download = new System.Windows.Forms.Button();
+            this.lblFilter = new System.Windows.Forms.Label();
             this.print = new System.Windows.Forms.Button();
             this.upload = new System.Windows.Forms.Button();
             this.pnlSearch = new System.Windows.Forms.Panel();
@@ -90,8 +92,6 @@ namespace GUI
             this.lblId = new System.Windows.Forms.Label();
             this.update = new System.Windows.Forms.Button();
             this.create = new System.Windows.Forms.Button();
-            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
-            this.lblFilter = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
@@ -114,6 +114,21 @@ namespace GUI
             this.panel3.Size = new System.Drawing.Size(1600, 77);
             this.panel3.TabIndex = 1;
             // 
+            // comboBoxFilter
+            // 
+            this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilter.FormattingEnabled = true;
+            this.comboBoxFilter.Items.AddRange(new object[] {
+            "",
+            "Bán hàng",
+            "Quản kho",
+            "Kế toán"});
+            this.comboBoxFilter.Location = new System.Drawing.Point(789, 22);
+            this.comboBoxFilter.Name = "comboBoxFilter";
+            this.comboBoxFilter.Size = new System.Drawing.Size(120, 33);
+            this.comboBoxFilter.TabIndex = 118;
+            // 
             // download
             // 
             this.download.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -135,6 +150,18 @@ namespace GUI
             this.download.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.download.UseVisualStyleBackColor = false;
             this.download.Click += new System.EventHandler(this.download_Click);
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblFilter.ForeColor = System.Drawing.Color.White;
+            this.lblFilter.Location = new System.Drawing.Point(691, 26);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(92, 25);
+            this.lblFilter.TabIndex = 117;
+            this.lblFilter.Text = "Chức vụ";
             // 
             // print
             // 
@@ -257,11 +284,11 @@ namespace GUI
             this.selectDelete});
             this.table.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.table.EnableHeadersVisualStyles = false;
-            this.table.Location = new System.Drawing.Point(0, 594);
+            this.table.Location = new System.Drawing.Point(0, 444);
             this.table.Name = "table";
             this.table.RowTemplate.Height = 24;
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.Size = new System.Drawing.Size(1600, 300);
+            this.table.Size = new System.Drawing.Size(1600, 450);
             this.table.TabIndex = 1;
             this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             // 
@@ -365,7 +392,7 @@ namespace GUI
             this.panel1.Controls.Add(this.refresh);
             this.panel1.Controls.Add(this.delete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 544);
+            this.panel1.Location = new System.Drawing.Point(0, 394);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1600, 50);
             this.panel1.TabIndex = 1;
@@ -447,7 +474,7 @@ namespace GUI
             this.form.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form.Location = new System.Drawing.Point(0, 77);
             this.form.Name = "form";
-            this.form.Size = new System.Drawing.Size(1600, 467);
+            this.form.Size = new System.Drawing.Size(1600, 317);
             this.form.TabIndex = 2;
             // 
             // inpTitle
@@ -458,9 +485,8 @@ namespace GUI
             this.inpTitle.Items.AddRange(new object[] {
             "",
             "Bán hàng",
-            "Thủ kho",
-            "Kế toán",
-            "Quản lý"});
+            "Quản kho",
+            "Kế toán"});
             this.inpTitle.Location = new System.Drawing.Point(1307, 271);
             this.inpTitle.Name = "inpTitle";
             this.inpTitle.Size = new System.Drawing.Size(250, 33);
@@ -500,7 +526,7 @@ namespace GUI
             this.save.ForeColor = System.Drawing.Color.White;
             this.save.Image = global::GUI.Properties.Resources.save;
             this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.save.Location = new System.Drawing.Point(867, 385);
+            this.save.Location = new System.Drawing.Point(831, 236);
             this.save.Margin = new System.Windows.Forms.Padding(5);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(50, 50);
@@ -798,7 +824,7 @@ namespace GUI
             this.update.ForeColor = System.Drawing.Color.White;
             this.update.Image = global::GUI.Properties.Resources.compose;
             this.update.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.update.Location = new System.Drawing.Point(702, 385);
+            this.update.Location = new System.Drawing.Point(679, 236);
             this.update.Margin = new System.Windows.Forms.Padding(5);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(50, 50);
@@ -819,7 +845,7 @@ namespace GUI
             this.create.ForeColor = System.Drawing.Color.White;
             this.create.Image = ((System.Drawing.Image)(resources.GetObject("create.Image")));
             this.create.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.create.Location = new System.Drawing.Point(537, 385);
+            this.create.Location = new System.Drawing.Point(527, 236);
             this.create.Margin = new System.Windows.Forms.Padding(5);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(50, 50);
@@ -828,34 +854,6 @@ namespace GUI
             this.create.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.create.UseVisualStyleBackColor = false;
             this.create.Click += new System.EventHandler(this.create_Click);
-            // 
-            // comboBoxFilter
-            // 
-            this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Items.AddRange(new object[] {
-            "",
-            "Bán hàng",
-            "Thủ kho",
-            "Kế toán",
-            "Quản lý"});
-            this.comboBoxFilter.Location = new System.Drawing.Point(728, 22);
-            this.comboBoxFilter.Name = "comboBoxFilter";
-            this.comboBoxFilter.Size = new System.Drawing.Size(250, 33);
-            this.comboBoxFilter.TabIndex = 118;
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.lblFilter.ForeColor = System.Drawing.Color.White;
-            this.lblFilter.Location = new System.Drawing.Point(623, 26);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(92, 25);
-            this.lblFilter.TabIndex = 117;
-            this.lblFilter.Text = "Chức vụ";
             // 
             // FormStaff
             // 
