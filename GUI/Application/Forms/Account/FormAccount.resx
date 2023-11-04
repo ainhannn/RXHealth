@@ -117,4 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="panel2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lblNickname.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="editNickname.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="avatar.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="create.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCh8QGA1l05lmAAAAvElEQVRIS+2VSw6DMAxEs4RrVHCf
+        fuj9F9AbtGzTGRyLGkUUKYnEIk96G2KNF8GOO4r3/glfcIJD+JwHBLbwA5U3bMJxOgjrllhLF47TQVgv
+        mYY+HKfDMMk01AYrDJNMw4kaoJj/+WXHG9zCb7FatdVwTugMc8PBfLABx78UIxtwt5RiaTDA3z2TC+6r
+        u95DA2MXpcYu+QpjterxZYjiOsn7MEwyDbXBCsKKP5llH32CQE4818oIZUL/4twXbjyLYwLzIDQAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
 </root>

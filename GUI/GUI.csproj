@@ -199,16 +199,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Forms\Account\FormAccountHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Account\FormAccountStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Application\Forms\Staff\FormStaffHandle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\Forms\Staff\FormStaffStyle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Transactions\FormBuy.cs">
+    <Compile Include="Application\Forms\Transactions\Buy\FormBuy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Transactions\FormBuy.Designer.cs">
+    <Compile Include="Application\Forms\Transactions\Buy\FormBuy.Designer.cs">
       <DependentUpon>FormBuy.cs</DependentUpon>
     </Compile>
     <Compile Include="Application\MainFormHandle.cs">
@@ -268,10 +274,10 @@
       <DependentUpon>FormInvenImp.cs</DependentUpon>
     </Compile>
     <Compile Include="Handle\Xls.cs" />
-    <Compile Include="Application\Forms\Transactions\FormSell.cs">
+    <Compile Include="Application\Forms\Transactions\Sell\FormSell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Transactions\FormSell.Designer.cs">
+    <Compile Include="Application\Forms\Transactions\Sell\FormSell.Designer.cs">
       <DependentUpon>FormSell.cs</DependentUpon>
     </Compile>
     <Compile Include="Application\Forms\Setting\FormSetting.cs">
@@ -315,10 +321,10 @@
     <EmbeddedResource Include="Application\Forms\Account\FormAccount.resx">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Application\Forms\Transactions\FormBuy.resx">
+    <EmbeddedResource Include="Application\Forms\Transactions\Buy\FormBuy.resx">
       <DependentUpon>FormBuy.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Application\Forms\Transactions\FormSell.resx">
+    <EmbeddedResource Include="Application\Forms\Transactions\Sell\FormSell.resx">
       <DependentUpon>FormSell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Staff\FormStaff.resx">
@@ -487,6 +493,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\transfer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

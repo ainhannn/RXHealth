@@ -180,7 +180,7 @@ namespace GUI
                 setting.Visible = false;
                 cateMenu.Visible = true;
                 invenMenu.Visible = false;
-                transacMenu.Visible = LoginForm.role % 2 != 0;
+                transacMenu.Visible = LoginForm.role == 2 || LoginForm.role == 3;
                 menu.Enabled = true;
             }
             else if (Height > 615)
@@ -210,7 +210,7 @@ namespace GUI
             else
             {
                 setting.Visible = LoginForm.role == 0;
-                transacMenu.Visible = LoginForm.role % 2 != 0;
+                transacMenu.Visible = LoginForm.role == 2 || LoginForm.role == 3;
                 menu.Enabled = false;
                 ResetMenu();
             }

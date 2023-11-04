@@ -33,8 +33,6 @@ namespace GUI
                 invenMenu.Visible = false;
                 foreach (Button btn in transacMenu.Controls.OfType<Button>())
                     btn.Visible = false;
-                buy.Visible = true;
-                buy.BackColor = Color.RoyalBlue;
             }
             else if (LoginForm.role == 2) // Warehouse Manager
             {
@@ -49,6 +47,8 @@ namespace GUI
                     btn.Visible = true;
                 foreach (Button btn in transacMenu.Controls.OfType<Button>())
                     btn.Visible = false;
+                buy.Visible = true;
+                buy.BackColor = Color.RoyalBlue;
             }
             else if (LoginForm.role == 3) // Saler
             {
