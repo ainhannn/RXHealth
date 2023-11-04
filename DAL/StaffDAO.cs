@@ -76,7 +76,7 @@ namespace DAL
         }
         public static bool InsertAccount(int staffId, int role)
         {
-            string sql = string.Format("CALL {0}_insert_account({1},{2})", dbTableName, staffId, role);
+            string sql = string.Format("CALL insert_account({0},{1})", staffId, role);
             return ExecuteNonQuery(sql) > 0;
         }
         public static bool Delete(int id)

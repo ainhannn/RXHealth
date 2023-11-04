@@ -6,10 +6,10 @@ using Org.BouncyCastle.Crypto.Generators;
 
 namespace DAL
 {
-    public class ProductInfoDAO : DBConnection
+    public partial class ProductDAO : DBConnection
     {
-        private static readonly string dbTableName = "product_info";
-        private static ProductInfo ConvertToDTO(List<object> row)
+        private static readonly string dbInfoTableName = "product_info";
+        private static ProductInfo ConvertToInfoDTO(List<object> row)
         {
             try
             {
@@ -36,38 +36,32 @@ namespace DAL
             catch { return null; }
         }
 
-        public static List<ProductInfo> SelectAll()
+        //public static List<ProductInfo> SelectAll()
+        //{
+        //    string sql = string.Format("SELECT * FROM {0} WHERE is_existing = true", dbTableName);
+        //    var table = ExecuteReader(sql);
+        //    var list = new List<ProductInfo>();
+        //    foreach (var row in table)
+        //    {
+        //        list.Add(ConvertToDTO(row));
+        //    }
+        //    return list;
+        //}
+
+        public static ProductInfo GetInformation(int id)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE is_existing = 'true'", dbTableName);
+            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} AND is_existing = true", dbInfoTableName, id);
             var table = ExecuteReader(sql);
-            var list = new List<ProductInfo>();
-            foreach (var row in table)
-            {
-                list.Add(ConvertToDTO(row));
-            }
-            return list;
+            return table.Count != 0 ? ConvertToInfoDTO(table[table.Count - 1]) : null;
         }
 
-        public static ProductInfo Select(int id)
+        public static int GetProductId(string barCode)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} AND is_existing = 'true'", dbTableName, id);
-            var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
+            if (string.IsNullOrEmpty(barCode)) { return 0; }
+            string sql = string.Format("SELECT id FROM {0} WHERE code = '{1}' AND is_existing = true", dbInfoTableName, barCode);
+            return Convert.ToInt16(ExecuteScalar(sql));
         }
-
-        public static ProductInfo Select(string barCode)
-        {
-            string sql = string.Format("SELECT * FROM {0} WHERE code = '{1}' AND is_existing = 'true'", dbTableName, barCode);
-            var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
-        }
-
-        public static List<ProductInfo> AdvancedSearch(Dictionary<string, string> conditions)
-        {
-            return new List<ProductInfo>();
-        }
-
-        public static bool Insert(ProductInfo e)
+        private static bool Insert(ProductInfo e)
         {
             if (Open())
             {
@@ -97,7 +91,10 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@image", e.Image);
                     cmd.ExecuteNonQuery();
 
-                    int id = Select(e.Barcode).Id;
+                    cmd.CommandText =
+                        "SELECT auto_increment FROM information_schema.tables WHERE table_name='product_info'";
+                    int id = (int)cmd.ExecuteScalar() - 1;
+
                     foreach (var i in e.ActiveIngredient)
                     {
                         cmd.CommandText = "INSERT INTO product_extra_ingredient VALUES (@product_id,@ingredient_id,@dosage)";
@@ -120,7 +117,7 @@ namespace DAL
             return false;
         }
 
-        public static bool Update(ProductInfo e)
+        private static bool Update(ProductInfo e)
         {
             if (Open())
             {
@@ -160,11 +157,10 @@ namespace DAL
                     cmd.CommandText = "DELETE FROM product_extra_ingredient WHERE product_id=" + Convert.ToString(e.Id);
                     cmd.ExecuteNonQuery();
 
-                    int id = Select(e.Barcode).Id;
                     foreach (var i in e.ActiveIngredient)
                     {
                         cmd.CommandText = "INSERT INTO product_extra_ingredient VALUES (@product_id,@ingredient_id,@dosage)";
-                        cmd.Parameters.AddWithValue("@product_id", id);
+                        cmd.Parameters.AddWithValue("@product_id", e.Id);
                         cmd.Parameters.AddWithValue("@ingredient_id", i.Key.Id);
                         cmd.Parameters.AddWithValue("@dosage", i.Value);
                         cmd.ExecuteNonQuery();

@@ -10,7 +10,7 @@ namespace DAL
 
         public static Account Login(Account e) //inp (username,pass) out (id,username,role)
         {
-            string sql = string.Format("CALL {0}_login('{1}','{2}')", dbTableName, e.Username, e.Password);
+            string sql = string.Format("CALL login('{0}','{1}')", e.Username, e.Password);
             var table = ExecuteReader(sql);
             try
             {
@@ -29,10 +29,15 @@ namespace DAL
         public static bool ResetPassword(Staff e)
         {
             int id = e.Account.Id;
-            String defaultPassword = GetDefaultPassword(e);
-            string sql = string.Format("UPDATE {0} SET " +
-                "password = '{2}', " +
-                "WHERE id = {1}", dbTableName, id, defaultPassword);
+            string sql = string.Format(
+                "UPDATE {0} SET password = '{2}' WHERE id = {1};" +
+                "DELETE FROM reset_request_tmp WHERE id = {1};", dbTableName, id, GetDefaultPassword(e));
+            return ExecuteNonQuery(sql) > 0;
+        }
+        public static bool UpdateAvatar(int id, string path) 
+        {
+            string sql = string.Format(
+                "UPDATE {0} SET avatar = '{2}' WHERE id = {1}", dbTableName, id, path);
             return ExecuteNonQuery(sql) > 0;
         }
         public static Account Select(int id)

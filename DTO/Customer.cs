@@ -4,7 +4,7 @@ namespace DTO
 {
     public class Customer
     {
-        public int Id { get; }
+        public int Id { get; private set; }
         public string Name { get; set; }
         public string ContactNumber { get; set; }
         public int Point { get; set; } = 0;

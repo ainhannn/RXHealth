@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 
 namespace DTO
 {
     public class Product
     {
+        public int Id { get => Information.Id; }
         public ProductInfo Information { get; set; }
         public List<ProductBatch> Batches { get; set; } = new List<ProductBatch>();
         public string Stack { get; set; } = string.Empty;

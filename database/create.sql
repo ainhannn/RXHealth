@@ -49,6 +49,11 @@ CREATE TABLE account (
     role TINYINT DEFAULT 3,
     avatar TEXT
 );
+CREATE TABLE reset_request_tmp (
+    id INT PRIMARY KEY,
+    CONSTRAINT fk_request_reset_password FOREIGN KEY (id) REFERENCES account(id)
+);
+
 CREATE TABLE staff (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nickname VARCHAR(16) UNIQUE NOT NULL,
@@ -344,7 +349,7 @@ END//
 
 
 -- -- -- -- -- PROCEDURES -- -- -- -- --
-CREATE PROCEDURE account_login(user VARCHAR(16), pass VARCHAR(16))
+CREATE PROCEDURE login(user VARCHAR(16), pass VARCHAR(16))
 BEGIN
     DECLARE acc_id INT;
     DECLARE role_number INT;
@@ -360,7 +365,7 @@ BEGIN
     END IF;
 END//
 
-CREATE PROCEDURE staff_insert_account(staff_id INT, role_number INT)
+CREATE PROCEDURE insert_account(staff_id INT, role_number INT)
 BEGIN
     DECLARE user VARCHAR(16);
     DECLARE pass VARCHAR(16);
@@ -382,5 +387,29 @@ BEGIN
     SET account_id=acc_id
     WHERE staff.id=staff_id;
 END//
+
+CREATE PROCEDURE insert_order(OUT form_id INT, role_number INT)
+BEGIN
+    DECLARE user VARCHAR(16);
+    DECLARE pass VARCHAR(16);
+    DECLARE acc_id VARCHAR(16);
+    
+    SELECT citizen_id_number INTO user
+    FROM staff WHERE staff.id=staff_id;
+    
+    SELECT DATE_FORMAT(birthday,"%d%m%Y") INTO pass
+    FROM staff WHERE staff.id=staff_id;
+    
+    INSERT INTO account(username,password,role)
+    VALUES (user, pass, role_number);
+    
+    SELECT account.id INTO acc_id
+    FROM account WHERE username=user AND password=pass;
+
+    UPDATE staff
+    SET account_id=acc_id
+    WHERE staff.id=staff_id;
+END//
+
 DELIMITER;
 
