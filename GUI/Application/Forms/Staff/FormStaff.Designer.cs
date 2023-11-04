@@ -34,8 +34,6 @@ namespace GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblFilter = new System.Windows.Forms.Label();
-            this.filterDate = new System.Windows.Forms.DateTimePicker();
             this.download = new System.Windows.Forms.Button();
             this.print = new System.Windows.Forms.Button();
             this.upload = new System.Windows.Forms.Button();
@@ -61,8 +59,8 @@ namespace GUI
             this.refresh = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.form = new System.Windows.Forms.Panel();
-            this.inpRole = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.inpTitle = new System.Windows.Forms.ComboBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.inpGenderFemale = new System.Windows.Forms.RadioButton();
             this.save = new System.Windows.Forms.Button();
             this.inpGenderMale = new System.Windows.Forms.RadioButton();
@@ -92,6 +90,8 @@ namespace GUI
             this.lblId = new System.Windows.Forms.Label();
             this.update = new System.Windows.Forms.Button();
             this.create = new System.Windows.Forms.Button();
+            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
+            this.lblFilter = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
@@ -102,9 +102,9 @@ namespace GUI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Controls.Add(this.lblFilter);
-            this.panel3.Controls.Add(this.filterDate);
+            this.panel3.Controls.Add(this.comboBoxFilter);
             this.panel3.Controls.Add(this.download);
+            this.panel3.Controls.Add(this.lblFilter);
             this.panel3.Controls.Add(this.print);
             this.panel3.Controls.Add(this.upload);
             this.panel3.Controls.Add(this.pnlSearch);
@@ -113,29 +113,6 @@ namespace GUI
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1600, 77);
             this.panel3.TabIndex = 1;
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblFilter.ForeColor = System.Drawing.Color.White;
-            this.lblFilter.Location = new System.Drawing.Point(657, 26);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(131, 25);
-            this.lblFilter.TabIndex = 111;
-            this.lblFilter.Text = "Ngày vào làm";
-            // 
-            // filterDate
-            // 
-            this.filterDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.filterDate.CustomFormat = "dd-MM-yyyy";
-            this.filterDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.filterDate.Location = new System.Drawing.Point(794, 23);
-            this.filterDate.MaximumSize = new System.Drawing.Size(500, 30);
-            this.filterDate.Name = "filterDate";
-            this.filterDate.Size = new System.Drawing.Size(150, 30);
-            this.filterDate.TabIndex = 109;
             // 
             // download
             // 
@@ -436,8 +413,8 @@ namespace GUI
             // 
             // form
             // 
-            this.form.Controls.Add(this.inpRole);
-            this.form.Controls.Add(this.label12);
+            this.form.Controls.Add(this.inpTitle);
+            this.form.Controls.Add(this.lblTitle);
             this.form.Controls.Add(this.inpGenderFemale);
             this.form.Controls.Add(this.save);
             this.form.Controls.Add(this.inpGenderMale);
@@ -473,25 +450,32 @@ namespace GUI
             this.form.Size = new System.Drawing.Size(1600, 467);
             this.form.TabIndex = 2;
             // 
-            // inpRole
+            // inpTitle
             // 
-            this.inpRole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.inpRole.FormattingEnabled = true;
-            this.inpRole.Location = new System.Drawing.Point(1307, 271);
-            this.inpRole.Name = "inpRole";
-            this.inpRole.Size = new System.Drawing.Size(250, 33);
-            this.inpRole.TabIndex = 116;
+            this.inpTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.inpTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inpTitle.FormattingEnabled = true;
+            this.inpTitle.Items.AddRange(new object[] {
+            "",
+            "Bán hàng",
+            "Thủ kho",
+            "Kế toán",
+            "Quản lý"});
+            this.inpTitle.Location = new System.Drawing.Point(1307, 271);
+            this.inpTitle.Name = "inpTitle";
+            this.inpTitle.Size = new System.Drawing.Size(250, 33);
+            this.inpTitle.TabIndex = 116;
             // 
-            // label12
+            // lblTitle
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label12.Location = new System.Drawing.Point(1144, 275);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 25);
-            this.label12.TabIndex = 114;
-            this.label12.Text = "Chức vụ";
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblTitle.Location = new System.Drawing.Point(1144, 275);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(85, 25);
+            this.lblTitle.TabIndex = 114;
+            this.lblTitle.Text = "Chức vụ";
             // 
             // inpGenderFemale
             // 
@@ -845,6 +829,34 @@ namespace GUI
             this.create.UseVisualStyleBackColor = false;
             this.create.Click += new System.EventHandler(this.create_Click);
             // 
+            // comboBoxFilter
+            // 
+            this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilter.FormattingEnabled = true;
+            this.comboBoxFilter.Items.AddRange(new object[] {
+            "",
+            "Bán hàng",
+            "Thủ kho",
+            "Kế toán",
+            "Quản lý"});
+            this.comboBoxFilter.Location = new System.Drawing.Point(728, 22);
+            this.comboBoxFilter.Name = "comboBoxFilter";
+            this.comboBoxFilter.Size = new System.Drawing.Size(250, 33);
+            this.comboBoxFilter.TabIndex = 118;
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblFilter.ForeColor = System.Drawing.Color.White;
+            this.lblFilter.Location = new System.Drawing.Point(623, 26);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(92, 25);
+            this.lblFilter.TabIndex = 117;
+            this.lblFilter.Text = "Chức vụ";
+            // 
             // FormStaff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -886,8 +898,6 @@ namespace GUI
         private DataGridView table;
         private Button delete;
         private Button refresh;
-        private DateTimePicker filterDate;
-        private Label lblFilter;
         private Panel panel1;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nickname;
@@ -932,9 +942,11 @@ namespace GUI
         private Label lblId;
         private Button update;
         private Button create;
-        private ComboBox inpRole;
-        private Label label12;
+        private ComboBox inpTitle;
+        private Label lblTitle;
         private Panel pnlSearch;
         private DataGridViewTextBoxColumn Role;
+        private ComboBox comboBoxFilter;
+        private Label lblFilter;
     }
 }

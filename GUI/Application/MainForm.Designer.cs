@@ -33,13 +33,16 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.Sidebar = new System.Windows.Forms.Panel();
             this.staff = new System.Windows.Forms.Button();
+            this.setting = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
+            this.transacMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.transaction = new System.Windows.Forms.Button();
             this.sell = new System.Windows.Forms.Button();
+            this.buy = new System.Windows.Forms.Button();
             this.invenMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.inventory = new System.Windows.Forms.Button();
             this.invenImp = new System.Windows.Forms.Button();
             this.invenChk = new System.Windows.Forms.Button();
-            this.setting = new System.Windows.Forms.Button();
-            this.logout = new System.Windows.Forms.Button();
             this.cateMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.category = new System.Windows.Forms.Button();
             this.cateCate = new System.Windows.Forms.Button();
@@ -49,6 +52,7 @@ namespace GUI
             this.cateCus = new System.Windows.Forms.Button();
             this.statistic = new System.Windows.Forms.Button();
             this.pnl = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.menu = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
             this.Header = new System.Windows.Forms.Panel();
@@ -60,8 +64,8 @@ namespace GUI
             this.minimize = new System.Windows.Forms.Button();
             this.restore = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.Sidebar.SuspendLayout();
+            this.transacMenu.SuspendLayout();
             this.invenMenu.SuspendLayout();
             this.cateMenu.SuspendLayout();
             this.pnl.SuspendLayout();
@@ -75,10 +79,10 @@ namespace GUI
             // 
             this.Sidebar.BackColor = System.Drawing.Color.RoyalBlue;
             this.Sidebar.Controls.Add(this.staff);
-            this.Sidebar.Controls.Add(this.sell);
-            this.Sidebar.Controls.Add(this.invenMenu);
             this.Sidebar.Controls.Add(this.setting);
             this.Sidebar.Controls.Add(this.logout);
+            this.Sidebar.Controls.Add(this.transacMenu);
+            this.Sidebar.Controls.Add(this.invenMenu);
             this.Sidebar.Controls.Add(this.cateMenu);
             this.Sidebar.Controls.Add(this.statistic);
             this.Sidebar.Controls.Add(this.pnl);
@@ -98,9 +102,56 @@ namespace GUI
             this.staff.UseVisualStyleBackColor = false;
             this.staff.Click += new System.EventHandler(this.staff_Click);
             // 
+            // setting
+            // 
+            this.setting.BackColor = System.Drawing.Color.RoyalBlue;
+            this.setting.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.setting, "setting");
+            this.setting.FlatAppearance.BorderSize = 0;
+            this.setting.ForeColor = System.Drawing.Color.White;
+            this.setting.Image = global::GUI.Properties.Resources.settings_gears;
+            this.setting.Name = "setting";
+            this.setting.Tag = "Cài Đặt";
+            this.setting.UseVisualStyleBackColor = false;
+            this.setting.Click += new System.EventHandler(this.setting_Click);
+            // 
+            // logout
+            // 
+            this.logout.BackColor = System.Drawing.Color.RoyalBlue;
+            this.logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.logout, "logout");
+            this.logout.FlatAppearance.BorderSize = 0;
+            this.logout.ForeColor = System.Drawing.Color.White;
+            this.logout.Image = global::GUI.Properties.Resources.logout;
+            this.logout.Name = "logout";
+            this.logout.Tag = "Đăng Xuất";
+            this.logout.UseVisualStyleBackColor = false;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
+            // transacMenu
+            // 
+            this.transacMenu.Controls.Add(this.transaction);
+            this.transacMenu.Controls.Add(this.sell);
+            this.transacMenu.Controls.Add(this.buy);
+            resources.ApplyResources(this.transacMenu, "transacMenu");
+            this.transacMenu.Name = "transacMenu";
+            // 
+            // transaction
+            // 
+            this.transaction.BackColor = System.Drawing.Color.RoyalBlue;
+            this.transaction.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.transaction, "transaction");
+            this.transaction.FlatAppearance.BorderSize = 0;
+            this.transaction.ForeColor = System.Drawing.Color.White;
+            this.transaction.Image = global::GUI.Properties.Resources.transfer;
+            this.transaction.Name = "transaction";
+            this.transaction.Tag = "Giao Dịch";
+            this.transaction.UseVisualStyleBackColor = false;
+            this.transaction.Click += new System.EventHandler(this.transaction_Click);
+            // 
             // sell
             // 
-            this.sell.BackColor = System.Drawing.Color.RoyalBlue;
+            this.sell.BackColor = System.Drawing.Color.CornflowerBlue;
             this.sell.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.sell, "sell");
             this.sell.FlatAppearance.BorderSize = 0;
@@ -110,6 +161,19 @@ namespace GUI
             this.sell.Tag = "Bán Hàng";
             this.sell.UseVisualStyleBackColor = false;
             this.sell.Click += new System.EventHandler(this.sell_Click);
+            // 
+            // buy
+            // 
+            this.buy.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.buy.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.buy, "buy");
+            this.buy.FlatAppearance.BorderSize = 0;
+            this.buy.ForeColor = System.Drawing.Color.White;
+            this.buy.Image = global::GUI.Properties.Resources.shopping_list;
+            this.buy.Name = "buy";
+            this.buy.Tag = "Đặt Hàng";
+            this.buy.UseVisualStyleBackColor = false;
+            this.buy.Click += new System.EventHandler(this.buy_Click);
             // 
             // invenMenu
             // 
@@ -123,8 +187,8 @@ namespace GUI
             // 
             this.inventory.BackColor = System.Drawing.Color.RoyalBlue;
             this.inventory.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.inventory, "inventory");
             this.inventory.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.inventory, "inventory");
             this.inventory.ForeColor = System.Drawing.Color.White;
             this.inventory.Image = global::GUI.Properties.Resources.stock;
             this.inventory.Name = "inventory";
@@ -157,32 +221,6 @@ namespace GUI
             this.invenChk.Tag = "Kiểm Kho";
             this.invenChk.UseVisualStyleBackColor = false;
             this.invenChk.Click += new System.EventHandler(this.invenChk_Click);
-            // 
-            // setting
-            // 
-            this.setting.BackColor = System.Drawing.Color.RoyalBlue;
-            this.setting.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.setting, "setting");
-            this.setting.FlatAppearance.BorderSize = 0;
-            this.setting.ForeColor = System.Drawing.Color.White;
-            this.setting.Image = global::GUI.Properties.Resources.settings_gears;
-            this.setting.Name = "setting";
-            this.setting.Tag = "Cài Đặt";
-            this.setting.UseVisualStyleBackColor = false;
-            this.setting.Click += new System.EventHandler(this.setting_Click);
-            // 
-            // logout
-            // 
-            this.logout.BackColor = System.Drawing.Color.RoyalBlue;
-            this.logout.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.logout, "logout");
-            this.logout.FlatAppearance.BorderSize = 0;
-            this.logout.ForeColor = System.Drawing.Color.White;
-            this.logout.Image = global::GUI.Properties.Resources.logout;
-            this.logout.Name = "logout";
-            this.logout.Tag = "Đăng Xuất";
-            this.logout.UseVisualStyleBackColor = false;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // cateMenu
             // 
@@ -294,6 +332,12 @@ namespace GUI
             this.pnl.Controls.Add(this.logo);
             resources.ApplyResources(this.pnl, "pnl");
             this.pnl.Name = "pnl";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Name = "label1";
             // 
             // menu
             // 
@@ -407,12 +451,6 @@ namespace GUI
             this.button8.Name = "button8";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -430,6 +468,7 @@ namespace GUI
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.Sidebar.ResumeLayout(false);
+            this.transacMenu.ResumeLayout(false);
             this.invenMenu.ResumeLayout(false);
             this.cateMenu.ResumeLayout(false);
             this.pnl.ResumeLayout(false);
@@ -475,5 +514,8 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2CirclePictureBox avatar;
         private System.Windows.Forms.Panel pnlAccount;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel transacMenu;
+        private System.Windows.Forms.Button transaction;
+        private System.Windows.Forms.Button buy;
     }
 }

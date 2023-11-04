@@ -2,7 +2,7 @@
 
 namespace GUI.Components
 {
-    class Navigate
+    internal class Navigate
     {
         private static Form form;
 

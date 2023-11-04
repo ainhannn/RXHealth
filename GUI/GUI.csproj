@@ -199,84 +199,103 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Navigate.cs" />
-    <Compile Include="Forms\FormAccount.cs">
+    <Compile Include="Application\Forms\Staff\FormStaffHandle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAccount.Designer.cs">
+    <Compile Include="Application\Forms\Staff\FormStaffStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Transactions\FormBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Transactions\FormBuy.Designer.cs">
+      <DependentUpon>FormBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\MainFormHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\MainFormStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Handle\HandleGUI.cs" />
+    <Compile Include="Handle\Navigate.cs" />
+    <Compile Include="Application\Forms\Account\FormAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Account\FormAccount.Designer.cs">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCateCate.cs">
+    <Compile Include="Application\Forms\Categories\FormCateCate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormCateCate.Designer.cs">
+    <Compile Include="Application\Forms\Categories\FormCateCate.Designer.cs">
       <DependentUpon>FormCateCate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCateCus.cs">
+    <Compile Include="Application\Forms\Categories\FormCateCus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormCateCus.Designer.cs">
+    <Compile Include="Application\Forms\Categories\FormCateCus.Designer.cs">
       <DependentUpon>FormCateCus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCateDrug.cs">
+    <Compile Include="Application\Forms\Categories\FormCateDrug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormCateDrug.Designer.cs">
+    <Compile Include="Application\Forms\Categories\FormCateDrug.Designer.cs">
       <DependentUpon>FormCateDrug.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCateIngre.cs">
+    <Compile Include="Application\Forms\Categories\FormCateIngre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormCateIngre.Designer.cs">
+    <Compile Include="Application\Forms\Categories\FormCateIngre.Designer.cs">
       <DependentUpon>FormCateIngre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormCateProvi.cs">
+    <Compile Include="Application\Forms\Categories\FormCateProvi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormCateProvi.Designer.cs">
+    <Compile Include="Application\Forms\Categories\FormCateProvi.Designer.cs">
       <DependentUpon>FormCateProvi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormInvenChk.cs">
+    <Compile Include="Application\Forms\Inventories\FormInvenChk.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormInvenChk.Designer.cs">
+    <Compile Include="Application\Forms\Inventories\FormInvenChk.Designer.cs">
       <DependentUpon>FormInvenChk.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormInvenImp.cs">
+    <Compile Include="Application\Forms\Inventories\FormInvenImp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormInvenImp.Designer.cs">
+    <Compile Include="Application\Forms\Inventories\FormInvenImp.Designer.cs">
       <DependentUpon>FormInvenImp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\Xls.cs" />
-    <Compile Include="Forms\FormSell.cs">
+    <Compile Include="Handle\Xls.cs" />
+    <Compile Include="Application\Forms\Transactions\FormSell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormSell.Designer.cs">
+    <Compile Include="Application\Forms\Transactions\FormSell.Designer.cs">
       <DependentUpon>FormSell.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormSetting.cs">
+    <Compile Include="Application\Forms\Setting\FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormSetting.Designer.cs">
+    <Compile Include="Application\Forms\Setting\FormSetting.Designer.cs">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormStaff.cs">
+    <Compile Include="Application\Forms\Staff\FormStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormStaff.Designer.cs">
+    <Compile Include="Application\Forms\Staff\FormStaff.Designer.cs">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormStatistic.cs">
+    <Compile Include="Application\Forms\Activate\FormStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormStatistic.Designer.cs">
+    <Compile Include="Application\Forms\Activate\FormStatistic.Designer.cs">
       <DependentUpon>FormStatistic.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Application\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Application\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -285,21 +304,30 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginFormHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\FormAccount.resx">
+    <Compile Include="LoginFormStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="Application\Forms\Account\FormAccount.resx">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormSell.resx">
+    <EmbeddedResource Include="Application\Forms\Transactions\FormBuy.resx">
+      <DependentUpon>FormBuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Transactions\FormSell.resx">
       <DependentUpon>FormSell.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormStaff.resx">
+    <EmbeddedResource Include="Application\Forms\Staff\FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Application\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -453,6 +481,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transfer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

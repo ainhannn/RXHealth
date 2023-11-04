@@ -1,6 +1,4 @@
-﻿using Spire.Xls;
-using System;
-using System.IO;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
 using TextBox = System.Windows.Forms.TextBox;
@@ -25,7 +23,8 @@ namespace GUI
                 dateBox.Enabled = false;
             foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
                 genderBox.Enabled = false;
-            GetTable(); //lấy dữ liệu bảng
+            inpTitle.Enabled = false;
+            inpTitle.SelectedIndex = 0;
         }
 
         // Responsive
@@ -37,7 +36,7 @@ namespace GUI
                     textBox.Width = 250;
                 foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                     dateBox.Width = 250;
-                inpRole.Width = 250;
+                inpTitle.Width = 250;
                 if (Height > 970)
                 {
                     table.Height = 450;
@@ -58,13 +57,11 @@ namespace GUI
             }
             else if (Width > 1200)
             {
-                lblFilter.Visible = true;
-                filterDate.Visible = true;
                 foreach (TextBox textBox in form.Controls.OfType<TextBox>())
                     textBox.Width = 200;
                 foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
                     dateBox.Width = 200;
-                inpRole.Width = 200;
+                inpTitle.Width = 200;
                 if (Height > 970)
                 {
                     table.Height = 450;
@@ -86,8 +83,6 @@ namespace GUI
             else
             {
                 form.Visible = false;
-                lblFilter.Visible = false;
-                filterDate.Visible = false;
                 table.Dock = DockStyle.Fill;
             }
         }
@@ -116,6 +111,8 @@ namespace GUI
                 dateBox.Enabled = true;
             foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
                 genderBox.Enabled = true;
+            inpTitle.Enabled = true;
+            inpTitle.SelectedIndex = 0;
         }
 
         private void update_Click(object sender, System.EventArgs e)
@@ -126,6 +123,7 @@ namespace GUI
                 dateBox.Enabled = true;
             foreach (RadioButton genderBox in form.Controls.OfType<RadioButton>())
                 genderBox.Enabled = true;
+            inpTitle.Enabled = true;
         }
 
         private void delete_Click(object sender, System.EventArgs e)
@@ -181,7 +179,7 @@ namespace GUI
                 3. dialog để "Save As" file được chỉ định ở location tự chọn của người dùng (xong)
 
          upload: yêu cầu đăng tải file chứa dữ liệu mới để cập nhật thêm dữ liệu vào DB
-                    (lưu ý không cần ghi file vào documents, chỉ cần cập nhật dữ liệu)
+                    (lưu ý không cần ghi file vào documents, chỉ cần đọc để lấy dữ liệu mới)
                 1. dialog chọn file cần đăng tải mà người dùng đã tạo (xong)
                 2. đọc dữ liệu file đã chọn và cập nhật thêm mới vào DB ()
          -----------------------------*/

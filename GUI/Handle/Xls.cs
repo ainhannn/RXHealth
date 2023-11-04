@@ -3,18 +3,11 @@ using System.Windows.Forms;
 using System;
 using Spire.Xls;
 using System.IO;
-using System.Runtime.InteropServices;
 
 namespace GUI
 {
-    class Xls
+    internal class Xls
     {
-        [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-        public extern static void ReleaseCapture();
-
-        [DllImport("user32.dll", EntryPoint = "SendMessage")]
-        public extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
         /*----------------------------
          print: yêu cầu ép tất cả dữ liệu vào excel và lưu lại trong folder documents
                 1. ép dữ liệu DB vào excel ()
@@ -28,7 +21,7 @@ namespace GUI
                 3. dialog để "Save As" file được chỉ định ở location tự chọn của người dùng (xong)
 
          upload: yêu cầu đăng tải file chứa dữ liệu mới để cập nhật thêm dữ liệu vào DB
-                    (lưu ý không cần ghi file vào documents, chỉ cần cập nhật dữ liệu)
+                    (lưu ý không cần ghi file vào documents, chỉ cần đọc để lấy dữ liệu mới)
                 1. dialog chọn file cần đăng tải mà người dùng đã tạo (xong)
                 2. đọc dữ liệu file đã chọn và cập nhật thêm mới vào DB ()
          -----------------------------*/
@@ -100,7 +93,7 @@ namespace GUI
 
                     // Thực hiện xử lý với dữ liệu từ tệp Excel : lấy dữ liệu
 
-                    MessageBox.Show("Tải lên và lưu tệp Excel thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tải lên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
