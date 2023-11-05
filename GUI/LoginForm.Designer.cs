@@ -93,9 +93,9 @@
             this.btntoggle.BackColor = System.Drawing.Color.Transparent;
             this.btntoggle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btntoggle.Image = global::GUI.Properties.Resources.view;
-            this.btntoggle.Location = new System.Drawing.Point(417, 401);
+            this.btntoggle.Location = new System.Drawing.Point(417, 405);
             this.btntoggle.Name = "btntoggle";
-            this.btntoggle.Size = new System.Drawing.Size(28, 34);
+            this.btntoggle.Size = new System.Drawing.Size(30, 30);
             this.btntoggle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btntoggle.TabIndex = 13;
             this.btntoggle.TabStop = false;
@@ -147,7 +147,7 @@
             this.forgot.ForeColor = System.Drawing.Color.White;
             this.forgot.Location = new System.Drawing.Point(328, 460);
             this.forgot.Name = "forgot";
-            this.forgot.Size = new System.Drawing.Size(150, 22);
+            this.forgot.Size = new System.Drawing.Size(120, 18);
             this.forgot.TabIndex = 10;
             this.forgot.Text = "Quên mật khẩu?";
             // 
@@ -160,7 +160,7 @@
             this.title.ForeColor = System.Drawing.Color.White;
             this.title.Location = new System.Drawing.Point(148, 194);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(250, 57);
+            this.title.Size = new System.Drawing.Size(209, 46);
             this.title.TabIndex = 8;
             this.title.Text = "ĐĂNG NHẬP";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,9 +183,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pwdicon.BackColor = System.Drawing.Color.Transparent;
             this.pwdicon.Image = global::GUI.Properties.Resources.padlock;
-            this.pwdicon.Location = new System.Drawing.Point(59, 401);
+            this.pwdicon.Location = new System.Drawing.Point(56, 405);
             this.pwdicon.Name = "pwdicon";
-            this.pwdicon.Size = new System.Drawing.Size(28, 34);
+            this.pwdicon.Size = new System.Drawing.Size(30, 30);
             this.pwdicon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pwdicon.TabIndex = 6;
             this.pwdicon.TabStop = false;
@@ -226,9 +226,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.usericon.BackColor = System.Drawing.Color.Transparent;
             this.usericon.Image = global::GUI.Properties.Resources.user;
-            this.usericon.Location = new System.Drawing.Point(60, 282);
+            this.usericon.Location = new System.Drawing.Point(56, 286);
             this.usericon.Name = "usericon";
-            this.usericon.Size = new System.Drawing.Size(28, 34);
+            this.usericon.Size = new System.Drawing.Size(30, 30);
             this.usericon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.usericon.TabIndex = 3;
             this.usericon.TabStop = false;

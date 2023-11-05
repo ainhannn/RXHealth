@@ -199,11 +199,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Forms\Account\ChangePwd\FormChangePwdHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Account\ChangePwd\FormChangePwdStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Application\Forms\Account\FormAccountHandle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\Forms\Account\FormAccountStyle.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Account\ChangePwd\FormChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Account\ChangePwd\FormChangePwd.Designer.cs">
+      <DependentUpon>FormChangePwd.cs</DependentUpon>
     </Compile>
     <Compile Include="Application\Forms\Staff\FormStaffHandle.cs">
       <SubType>Form</SubType>
@@ -320,6 +332,9 @@
     </Compile>
     <EmbeddedResource Include="Application\Forms\Account\FormAccount.resx">
       <DependentUpon>FormAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Account\ChangePwd\FormChangePwd.resx">
+      <DependentUpon>FormChangePwd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Transactions\Buy\FormBuy.resx">
       <DependentUpon>FormBuy.cs</DependentUpon>
@@ -496,6 +511,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\security.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

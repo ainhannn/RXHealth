@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace GUI
 {
@@ -13,6 +14,7 @@ namespace GUI
         {
             lblNickname.Text = LoginForm.username;
             inpNickname.Visible = false;
+            lblNickname.Location = new Point((456 - lblNickname.Width) / 2, 566);
         }
     }
 }

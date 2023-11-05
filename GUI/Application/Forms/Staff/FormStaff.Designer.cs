@@ -31,8 +31,8 @@ namespace GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStaff));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.download = new System.Windows.Forms.Button();
@@ -127,7 +127,7 @@ namespace GUI
             this.comboBoxFilter.Location = new System.Drawing.Point(789, 22);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(120, 33);
-            this.comboBoxFilter.TabIndex = 118;
+            this.comboBoxFilter.TabIndex = 114;
             // 
             // download
             // 
@@ -258,14 +258,14 @@ namespace GUI
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -379,10 +379,10 @@ namespace GUI
             // 
             // selectDelete
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = false;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = false;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle6;
             this.selectDelete.HeaderText = "Xóa";
             this.selectDelete.Name = "selectDelete";
             // 
@@ -412,7 +412,7 @@ namespace GUI
             this.refresh.Margin = new System.Windows.Forms.Padding(5);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(50, 50);
-            this.refresh.TabIndex = 114;
+            this.refresh.TabIndex = 111;
             this.refresh.Tag = "";
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.refresh.UseVisualStyleBackColor = false;
@@ -432,7 +432,7 @@ namespace GUI
             this.delete.Margin = new System.Windows.Forms.Padding(5);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(50, 50);
-            this.delete.TabIndex = 80;
+            this.delete.TabIndex = 112;
             this.delete.Tag = "";
             this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.delete.UseVisualStyleBackColor = false;
@@ -490,7 +490,7 @@ namespace GUI
             this.inpTitle.Location = new System.Drawing.Point(1307, 271);
             this.inpTitle.Name = "inpTitle";
             this.inpTitle.Size = new System.Drawing.Size(250, 33);
-            this.inpTitle.TabIndex = 116;
+            this.inpTitle.TabIndex = 107;
             // 
             // lblTitle
             // 
@@ -510,7 +510,7 @@ namespace GUI
             this.inpGenderFemale.Location = new System.Drawing.Point(1421, 110);
             this.inpGenderFemale.Name = "inpGenderFemale";
             this.inpGenderFemale.Size = new System.Drawing.Size(55, 29);
-            this.inpGenderFemale.TabIndex = 113;
+            this.inpGenderFemale.TabIndex = 99;
             this.inpGenderFemale.TabStop = true;
             this.inpGenderFemale.Text = "Nữ";
             this.inpGenderFemale.UseVisualStyleBackColor = true;
@@ -530,7 +530,7 @@ namespace GUI
             this.save.Margin = new System.Windows.Forms.Padding(5);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(50, 50);
-            this.save.TabIndex = 81;
+            this.save.TabIndex = 110;
             this.save.Tag = "";
             this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.save.UseVisualStyleBackColor = false;
@@ -543,7 +543,7 @@ namespace GUI
             this.inpGenderMale.Location = new System.Drawing.Point(1307, 110);
             this.inpGenderMale.Name = "inpGenderMale";
             this.inpGenderMale.Size = new System.Drawing.Size(71, 29);
-            this.inpGenderMale.TabIndex = 112;
+            this.inpGenderMale.TabIndex = 98;
             this.inpGenderMale.TabStop = true;
             this.inpGenderMale.Text = "Nam";
             this.inpGenderMale.UseVisualStyleBackColor = true;
@@ -557,7 +557,7 @@ namespace GUI
             this.inpBirthday.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpBirthday.Name = "inpBirthday";
             this.inpBirthday.Size = new System.Drawing.Size(250, 30);
-            this.inpBirthday.TabIndex = 111;
+            this.inpBirthday.TabIndex = 97;
             // 
             // btnAccount
             // 
@@ -572,7 +572,7 @@ namespace GUI
             this.btnAccount.Margin = new System.Windows.Forms.Padding(5);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(242, 50);
-            this.btnAccount.TabIndex = 110;
+            this.btnAccount.TabIndex = 106;
             this.btnAccount.Tag = "";
             this.btnAccount.Text = "Cấp tài khoản";
             this.btnAccount.UseVisualStyleBackColor = false;
@@ -587,7 +587,7 @@ namespace GUI
             this.inpResignationDate.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpResignationDate.Name = "inpResignationDate";
             this.inpResignationDate.Size = new System.Drawing.Size(250, 30);
-            this.inpResignationDate.TabIndex = 109;
+            this.inpResignationDate.TabIndex = 105;
             // 
             // inpStartDate
             // 
@@ -598,7 +598,7 @@ namespace GUI
             this.inpStartDate.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpStartDate.Name = "inpStartDate";
             this.inpStartDate.Size = new System.Drawing.Size(250, 30);
-            this.inpStartDate.TabIndex = 108;
+            this.inpStartDate.TabIndex = 104;
             // 
             // label1
             // 
@@ -613,6 +613,8 @@ namespace GUI
             // 
             // inpAddress
             // 
+            this.inpAddress.AcceptsReturn = true;
+            this.inpAddress.AcceptsTab = true;
             this.inpAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpAddress.Location = new System.Drawing.Point(1307, 164);
@@ -620,10 +622,12 @@ namespace GUI
             this.inpAddress.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpAddress.Name = "inpAddress";
             this.inpAddress.Size = new System.Drawing.Size(250, 30);
-            this.inpAddress.TabIndex = 105;
+            this.inpAddress.TabIndex = 102;
             // 
             // inpCitizenId
             // 
+            this.inpCitizenId.AcceptsReturn = true;
+            this.inpCitizenId.AcceptsTab = true;
             this.inpCitizenId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpCitizenId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpCitizenId.Location = new System.Drawing.Point(1307, 52);
@@ -631,10 +635,12 @@ namespace GUI
             this.inpCitizenId.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpCitizenId.Name = "inpCitizenId";
             this.inpCitizenId.Size = new System.Drawing.Size(250, 30);
-            this.inpCitizenId.TabIndex = 103;
+            this.inpCitizenId.TabIndex = 95;
             // 
             // inpContactNumber
             // 
+            this.inpContactNumber.AcceptsReturn = true;
+            this.inpContactNumber.AcceptsTab = true;
             this.inpContactNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpContactNumber.Location = new System.Drawing.Point(722, 164);
@@ -646,6 +652,8 @@ namespace GUI
             // 
             // inpNickname
             // 
+            this.inpNickname.AcceptsReturn = true;
+            this.inpNickname.AcceptsTab = true;
             this.inpNickname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpNickname.Location = new System.Drawing.Point(722, 52);
@@ -653,30 +661,36 @@ namespace GUI
             this.inpNickname.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpNickname.Name = "inpNickname";
             this.inpNickname.Size = new System.Drawing.Size(250, 30);
-            this.inpNickname.TabIndex = 99;
+            this.inpNickname.TabIndex = 94;
             // 
             // inpAccount
             // 
+            this.inpAccount.AcceptsReturn = true;
+            this.inpAccount.AcceptsTab = true;
             this.inpAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpAccount.Location = new System.Drawing.Point(159, 218);
             this.inpAccount.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpAccount.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpAccount.Name = "inpAccount";
             this.inpAccount.Size = new System.Drawing.Size(250, 30);
-            this.inpAccount.TabIndex = 98;
+            this.inpAccount.TabIndex = 103;
             // 
             // inpQualification
             // 
+            this.inpQualification.AcceptsReturn = true;
+            this.inpQualification.AcceptsTab = true;
             this.inpQualification.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpQualification.Location = new System.Drawing.Point(159, 164);
             this.inpQualification.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpQualification.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpQualification.Name = "inpQualification";
             this.inpQualification.Size = new System.Drawing.Size(250, 30);
-            this.inpQualification.TabIndex = 97;
+            this.inpQualification.TabIndex = 100;
             // 
             // inpFullName
             // 
+            this.inpFullName.AcceptsReturn = true;
+            this.inpFullName.AcceptsTab = true;
             this.inpFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpFullName.Location = new System.Drawing.Point(159, 109);
             this.inpFullName.MaximumSize = new System.Drawing.Size(500, 30);
@@ -687,6 +701,8 @@ namespace GUI
             // 
             // inpId
             // 
+            this.inpId.AcceptsReturn = true;
+            this.inpId.AcceptsTab = true;
             this.inpId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpId.Location = new System.Drawing.Point(159, 52);
             this.inpId.MaximumSize = new System.Drawing.Size(500, 30);
@@ -828,7 +844,7 @@ namespace GUI
             this.update.Margin = new System.Windows.Forms.Padding(5);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(50, 50);
-            this.update.TabIndex = 79;
+            this.update.TabIndex = 109;
             this.update.Tag = "";
             this.update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.update.UseVisualStyleBackColor = false;
@@ -849,7 +865,7 @@ namespace GUI
             this.create.Margin = new System.Windows.Forms.Padding(5);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(50, 50);
-            this.create.TabIndex = 78;
+            this.create.TabIndex = 108;
             this.create.Tag = "";
             this.create.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.create.UseVisualStyleBackColor = false;
