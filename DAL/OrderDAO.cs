@@ -88,7 +88,7 @@ namespace DAL
                     {
                         cmd.CommandText = "INSERT INTO order_detail VALUES (@order_id,@product_id,@number)";
                         cmd.Parameters.AddWithValue("@order_id", id);
-                        cmd.Parameters.AddWithValue("@product_id", ProductDAO.GetProductIdFromBarcode(i.Barcode));
+                        cmd.Parameters.AddWithValue("@product_id", ProductDAO.GetProductId(i.Barcode));
                         cmd.Parameters.AddWithValue("@number", i.Number);
                         cmd.ExecuteNonQuery();
                     }
