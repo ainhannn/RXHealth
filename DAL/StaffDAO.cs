@@ -16,15 +16,19 @@ namespace DAL
                 {
                     CitizenId = Convert.ToString(row[2]),
                     FullName = Convert.ToString(row[3]),
-                    Birthday = Convert.ToDateTime(row[4]),
                     GenderIsMale = Convert.ToBoolean(row[5]),
                     Qualification = Convert.ToString(row[6]),
                     ContactNumber = Convert.ToString(row[7]),
                     Address = Convert.ToString(row[8]),
-                    Account = row[9] != null ? AccountDAO.Select(Convert.ToInt16(row[9])) : null,
-                    StartDate = Convert.ToDateTime(row[10]),
-                    ResignationDate = row[11] != null ? Convert.ToDateTime(row[11]) : DateTime.MaxValue
+                    Account = AccountDAO.Select(Convert.ToInt16(row[9]),
+                    StartDate = Convert.ToDateTime(row[10])
                 };
+                 
+                var d = DateTime.Now;
+                // parse date which can be null
+                staff.Birthday = DateTime.TryParse(row[4].ToString(), out d) ? d : DateTime.MinValue;
+                staff.ResignationDate = DateTime.TryParse(row[11].ToString(), out d) ? d : DateTime.MaxValue;
+
                 return staff;
             }
             catch { return null; }
@@ -53,9 +57,9 @@ namespace DAL
         }
         public static Staff Select(int id)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE id = {1}", dbTableName, id);
+            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbTableName, id);
             var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
+            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }
         public static bool Insert(Staff e)
         {

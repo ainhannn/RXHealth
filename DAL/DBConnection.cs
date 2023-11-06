@@ -44,11 +44,11 @@ namespace DAL
         // null if have error else table
         protected static List<List<object>> ExecuteReader(string sql)
         {
+            var table = new List<List<object>>();
             if (Open())
             {
                 try
                 {
-                    var table = new List<List<object>>();
                     var cmd = new MySqlCommand(sql, conn);
                     //var cmd = conn.CreateCommand();
                     //cmd.CommandText = sql;
@@ -64,10 +64,10 @@ namespace DAL
                         table.Add(row);
                     }
                 }
-                catch {  return new List<List<object>>(); }
+                catch { return new List<List<object>>(); }
                 finally { Close(); }
             }
-            return new List<List<object>>();
+            return table;
         }
 
         // return an object

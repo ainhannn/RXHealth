@@ -114,7 +114,7 @@ namespace DAL
                             "INSERT INTO import_detail " +
                             "VALUES (@import_invoice_id,@product_id,@order_number,@actual_number,@import_unit_price)";
                         cmd.Parameters.AddWithValue("@order_id", id);
-                        cmd.Parameters.AddWithValue("@product_id", ProductDAO.GetProductIdFromBarcode(i.Barcode));
+                        cmd.Parameters.AddWithValue("@product_id", ProductDAO.GetProductId(i.Barcode));
                         cmd.Parameters.AddWithValue("@order_number", i.NumberOrder);
                         cmd.Parameters.AddWithValue("@actual_number", i.NumberActual);
                         cmd.Parameters.AddWithValue("@import_unit_price", i.UnitPrice);
