@@ -20,7 +20,7 @@ namespace DAL
                     Qualification = Convert.ToString(row[6]),
                     ContactNumber = Convert.ToString(row[7]),
                     Address = Convert.ToString(row[8]),
-                    Account = AccountDAO.Select(Convert.ToInt16(row[9]),
+                    Account = AccountDAO.Select(Convert.ToInt16(row[9])),
                     StartDate = Convert.ToDateTime(row[10])
                 };
                  
