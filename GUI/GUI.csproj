@@ -217,6 +217,60 @@
     <Compile Include="Application\Forms\Account\ChangePwd\FormChangePwd.Designer.cs">
       <DependentUpon>FormChangePwd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Application\Forms\Activate\FormStatisticHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Activate\FormStatisticStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Category\FormCateCateHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Category\FormCateCateStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Customer\FormCateCusHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Customer\FormCateCusStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\FormCateDrugHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\FormCateDrugStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Ingredient\FormCateIngreHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Ingredient\FormCateIngreStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Provider\FormCateProviHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Provider\FormCateProviStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Inventories\InventoryChecked\FormInvenChkHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Inventories\InventoryChecked\FormInvenChkStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Inventories\InventoryImport\FormInvenImpHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Inventories\InventoryImport\FormInvenImpStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Setting\FormSettingHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Setting\FormSettingStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Application\Forms\Staff\FormStaffHandle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +282,18 @@
     </Compile>
     <Compile Include="Application\Forms\Transactions\Buy\FormBuy.Designer.cs">
       <DependentUpon>FormBuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\Transactions\Buy\FormBuyHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Transactions\Buy\FormBuyStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Transactions\Sell\FormSellHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Transactions\Sell\FormSellStyle.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\MainFormHandle.cs">
       <SubType>Form</SubType>
@@ -243,46 +309,46 @@
     <Compile Include="Application\Forms\Account\FormAccount.Designer.cs">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateCate.cs">
+    <Compile Include="Application\Forms\Categories\Category\FormCateCate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateCate.Designer.cs">
+    <Compile Include="Application\Forms\Categories\Category\FormCateCate.Designer.cs">
       <DependentUpon>FormCateCate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateCus.cs">
+    <Compile Include="Application\Forms\Categories\Customer\FormCateCus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateCus.Designer.cs">
+    <Compile Include="Application\Forms\Categories\Customer\FormCateCus.Designer.cs">
       <DependentUpon>FormCateCus.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateDrug.cs">
+    <Compile Include="Application\Forms\Categories\Drug\FormCateDrug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateDrug.Designer.cs">
+    <Compile Include="Application\Forms\Categories\Drug\FormCateDrug.Designer.cs">
       <DependentUpon>FormCateDrug.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateIngre.cs">
+    <Compile Include="Application\Forms\Categories\Ingredient\FormCateIngre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateIngre.Designer.cs">
+    <Compile Include="Application\Forms\Categories\Ingredient\FormCateIngre.Designer.cs">
       <DependentUpon>FormCateIngre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateProvi.cs">
+    <Compile Include="Application\Forms\Categories\Provider\FormCateProvi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\FormCateProvi.Designer.cs">
+    <Compile Include="Application\Forms\Categories\Provider\FormCateProvi.Designer.cs">
       <DependentUpon>FormCateProvi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Inventories\FormInvenChk.cs">
+    <Compile Include="Application\Forms\Inventories\InventoryChecked\FormInvenChk.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Inventories\FormInvenChk.Designer.cs">
+    <Compile Include="Application\Forms\Inventories\InventoryChecked\FormInvenChk.Designer.cs">
       <DependentUpon>FormInvenChk.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Inventories\FormInvenImp.cs">
+    <Compile Include="Application\Forms\Inventories\InventoryImport\FormInvenImp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Inventories\FormInvenImp.Designer.cs">
+    <Compile Include="Application\Forms\Inventories\InventoryImport\FormInvenImp.Designer.cs">
       <DependentUpon>FormInvenImp.cs</DependentUpon>
     </Compile>
     <Compile Include="Handle\Xls.cs" />
@@ -335,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Account\ChangePwd\FormChangePwd.resx">
       <DependentUpon>FormChangePwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Provider\FormCateProvi.resx">
+      <DependentUpon>FormCateProvi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Transactions\Buy\FormBuy.resx">
       <DependentUpon>FormBuy.cs</DependentUpon>
