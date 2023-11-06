@@ -42,7 +42,7 @@ namespace DAL
         }
         public static Account Select(int id)
         {
-            string sql = string.Format("SELECT id,username,role FROM {0} WHERE id={1}", dbTableName, id);
+            string sql = string.Format("SELECT id,username,role,avatar FROM {0} WHERE id={1} LIMIT 1", dbTableName, id);
             var table = ExecuteReader(sql);
             try
             {
