@@ -12,23 +12,23 @@ namespace DAL
         {
             try
             {
+                DateTime d = DateTime.Now;
+                bool b = true;
+                int i =  0;
                 Staff staff = new Staff(Convert.ToInt16(row[0]), Convert.ToString(row[1])) // id, nickname
                 {
                     CitizenId = Convert.ToString(row[2]),
                     FullName = Convert.ToString(row[3]),
-                    GenderIsMale = Convert.ToBoolean(row[5]),
+                    Birthday = DateTime.TryParse(row[4].ToString(), out d) ? d : DateTime.MinValue,
+                    GenderIsMale = Boolean.TryParse(row[5].ToString(), out b) ? d : true,
                     Qualification = Convert.ToString(row[6]),
                     ContactNumber = Convert.ToString(row[7]),
                     Address = Convert.ToString(row[8]),
-                    Account = AccountDAO.Select(Convert.ToInt16(row[9])),
-                    StartDate = Convert.ToDateTime(row[10])
+                    Account = Int16.TryParse(row[9].ToString(), out i) ? AccountDAO.Select(i) : null,
+                    StartDate = DateTime.TryParse(row[10].ToString(), out d) ? d : DateTime.Now,
+                    ResignationDate = DateTime.TryParse(row[11].ToString(), out d) ? d : DateTime.MaxValue
                 };
-                 
-                var d = DateTime.Now;
-                // parse date which can be null
-                staff.Birthday = DateTime.TryParse(row[4].ToString(), out d) ? d : DateTime.MinValue;
-                staff.ResignationDate = DateTime.TryParse(row[11].ToString(), out d) ? d : DateTime.MaxValue;
-
+                
                 return staff;
             }
             catch { return null; }
