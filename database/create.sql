@@ -19,11 +19,12 @@ CREATE TABLE staff (
 );
 
 CREATE TABLE account (
-    id INT PRIMARY KEY,
+    id INT,
     username VARCHAR(16) UNIQUE NOT NULL,
     password VARCHAR(16) NOT NULL,
     role TINYINT DEFAULT 3,
     avatar TEXT,
+    CONSTRAINT pk_account PRIMARY KEY(username,password),
     CONSTRAINT fk_account_staff FOREIGN KEY (id) REFERENCES staff(id) ON DELETE CASCADE
 );
 
@@ -298,7 +299,6 @@ CREATE PROCEDURE insert_account(staff_id INT, role_number INT)
 BEGIN
     DECLARE user VARCHAR(16);
     DECLARE pass VARCHAR(16);
-    DECLARE acc_id VARCHAR(16);
     
     SELECT citizen_id_number INTO user
     FROM staff WHERE staff.id=staff_id;
@@ -306,15 +306,8 @@ BEGIN
     SELECT DATE_FORMAT(birthday,"%d%m%Y") INTO pass
     FROM staff WHERE staff.id=staff_id;
     
-    INSERT INTO account(username,password,role)
-    VALUES (user, pass, role_number);
-    
-    SELECT account.id INTO acc_id
-    FROM account WHERE username=user AND password=pass;
-
-    UPDATE staff
-    SET account_id=acc_id
-    WHERE staff.id=staff_id;
+    INSERT INTO account(id,username,password,role)
+    VALUES (staff_id, user, pass, role_number);
 END//
 
 CREATE PROCEDURE insert_order(OUT form_id INT, role_number INT)
