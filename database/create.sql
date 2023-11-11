@@ -64,7 +64,7 @@ CREATE TABLE substance (
 CREATE TABLE product (
     id INT AUTO_INCREMENT PRIMARY KEY,
     stack VARCHAR(10), 
-    barcode CHAR(16) UNIQUE,
+    barcode VARCHAR(16) UNIQUE,
     name VARCHAR(50) NOT NULL,
     category_id INT NOT NULL,
     expiry TINYINT UNSIGNED,
@@ -82,7 +82,7 @@ CREATE TABLE product (
 );
 
 CREATE TABLE product_batch (
-    local_code CHAR(13) PRIMARY KEY, 
+    local_code VARCHAR(13) PRIMARY KEY, 
     product_id INT NOT NULL,
     mfg_date DATETIME,
     exp_date DATETIME,	
@@ -97,7 +97,7 @@ CREATE TABLE trash_tmp (
 
 CREATE TABLE import_invoice (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    code CHAR(16) UNIQUE NOT NULL,
+    code VARCHAR(16) UNIQUE NOT NULL,
     time_init DATETIME DEFAULT CURRENT_TIMESTAMP,
     staff_id INT NOT NULL,
     supplier_id	INT NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE import_invoice (
 CREATE TABLE import_detail (
     import_invoice_id INT NOT NULL,
     product_id INT NOT NULL,
-    barcode CHAR(16) UNIQUE,
+    barcode VARCHAR(16) UNIQUE,
     name VARCHAR(50) NOT NULL,
 	mfg_date DATETIME,
 	exp_date DATETIME,
@@ -121,10 +121,10 @@ CREATE TABLE import_detail (
 
 CREATE TABLE sale_invoice (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    code CHAR(16) UNIQUE NOT NULL,
+    code VARCHAR(16) UNIQUE NOT NULL,
     time_init DATETIME DEFAULT CURRENT_TIMESTAMP,
     staff_id INT NOT NULL,
-    customer_id	INT NOT NULL,
+    customer_id	INT DEFAULT 1,
 	point SMALLINT UNSIGNED DEFAULT 0,
     CONSTRAINT fk_sale_staff FOREIGN KEY (staff_id) REFERENCES staff(id),
     CONSTRAINT fk_sale_customer FOREIGN KEY (customer_id) REFERENCES customer(id)
@@ -133,8 +133,8 @@ CREATE TABLE sale_invoice (
 CREATE TABLE sale_detail (
     sale_invoice_id	INT NOT NULL,
     product_id INT NOT NULL,
-    name INT NOT NULL,
-    unit INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    unit VARCHAR(25) NOT NULL,
     unit_price DECIMAL(10,0) NOT NULL,
     number INT DEFAULT 1,
     CONSTRAINT pk_sale_detail PRIMARY KEY(sale_invoice_id, product_id),
@@ -186,12 +186,12 @@ BEGIN
     DECLARE num INT;
        
     SELECT LPAD(id,5,0) INTO pid
-    FROM product WHERE id = NEW.product_id;
+    FROM product WHERE product.id = NEW.product_id;
 
 	SET timeid = DATE_FORMAT(CURRENT_TIMESTAMP,"%d%m%y");
 
     SET code = CONCAT('P',pid,timeid,'%');
-    SELECT COUNT(id) INTO num
+    SELECT COUNT(*) INTO num
     FROM product_batch WHERE local_code LIKE code;
     
     SET code = CONCAT('P',pid,timeid,CHAR(ASCII('A')+num));
@@ -222,6 +222,14 @@ BEGIN
     WHERE table_name = 'sale_invoice' AND table_schema = 'pharmacy';
 
     SET NEW.code = CONCAT('SA',LPAD(newid,5,0));
+END//
+
+CREATE TRIGGER auto_insert_storage_product
+		AFTER INSERT ON import_detail 
+		FOR EACH ROW
+BEGIN
+	INSERT INTO product_batch(product_id, mfg_date, exp_date, number)
+	VALUES (NEW.product_id,NEW.mfg_date,NEW.exp_date,NEW.number);
 END//
 
 CREATE TRIGGER auto_update_storage_number
@@ -257,10 +265,10 @@ BEGIN
             IF nb >= n THEN
             	UPDATE product_batch SET number = nb - n
 				WHERE local_code = lc;
+				SET n = 0;
             ELSE
             	UPDATE product_batch SET number = 0
 				WHERE local_code = lc;
-                
                 SET n = n - nb;
             END IF;
         END WHILE;
@@ -297,4 +305,35 @@ BEGIN
     
     INSERT INTO account(id,username,password,role)
     VALUES (staff_id, user, pass, role_number);
+END//
+	
+CREATE PROCEDURE export_for_retail(product_id INT, number INT, capacity INT)
+BEGIN
+    DECLARE lc VARCHAR(13);
+    DECLARE n INT;
+    DECLARE nb INT;
+
+	SET n = number;
+    WHILE n > 0 DO
+		SELECT local_code INTO lc
+		FROM product_batch
+		WHERE product_batch.product_id = product_id AND product_batch.number > 0
+		ORDER BY exp_date ASC LIMIT 1;
+
+		SELECT product_batch.number INTO nb
+		FROM product_batch
+		WHERE local_code = lc;
+			
+		IF n > nb THEN
+			UPDATE product_batch SET product_batch.number = 0
+			WHERE local_code = lc;
+			SET n = n - nb;
+		ELSE
+			UPDATE product_batch SET product_batch.number = product_batch.number - n
+			WHERE local_code = lc;
+			SET n = 0;
+		END IF;
+	END WHILE;
+	
+	UPDATE product SET retail_number = retail_number+(number*capacity);
 END//
