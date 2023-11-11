@@ -112,7 +112,7 @@ CREATE TABLE import_detail (
     name VARCHAR(50) NOT NULL,
     unit VARCHAR(25) NOT NULL,
     number INT DEFAULT 1,
-    import_price DECIMAL (10,0),	
+    import_price DECIMAL (10,0) NOT NULL,	
     CONSTRAINT pk_import_detail PRIMARY KEY(import_invoice_id, product_id),
     CONSTRAINT fk_import_product FOREIGN KEY (product_id) REFERENCES product(id)
 );
@@ -123,7 +123,7 @@ CREATE TABLE sale_invoice (
     time_init DATETIME DEFAULT CURRENT_TIMESTAMP,
     staff_id INT NOT NULL,
     customer_id	INT NOT NULL,
-	point SMALLINT UNSIGNED,
+	point SMALLINT UNSIGNED DEFAULT 0,
     CONSTRAINT fk_sale_staff FOREIGN KEY (staff_id) REFERENCES staff(id),
     CONSTRAINT fk_sale_customer FOREIGN KEY (customer_id) REFERENCES customer(id)
 );
@@ -133,7 +133,7 @@ CREATE TABLE sale_detail (
     product_id INT NOT NULL,
     name INT NOT NULL,
     unit INT NOT NULL,
-    unit_price DECIMAL(10,0),
+    unit_price DECIMAL(10,0) NOT NULL,
     number INT DEFAULT 1,
     CONSTRAINT pk_sale_detail PRIMARY KEY(sale_invoice_id, product_id),
     CONSTRAINT fk_detail_sale FOREIGN KEY (sale_invoice_id) REFERENCES sale_invoice(id),
