@@ -23,6 +23,13 @@ INSERT INTO customer (name,contact_number) VALUES
     ('Lag', '0865674317'),
     ('Thư NT', '0368779041');
 
+INSERT INTO `supplier`(`name`,`contact_number`,`address`) VALUES 
+	('Công ty TNHH Mediphar USA','0903850866','Xã Đức Hòa Hạ, Huyện Đức Hòa, Tỉnh Long An'),
+    ('Công ty cổ phần Traphaco','18006612','75 Yên Ninh, Ba Đình, Hà Nội'),
+    ('Công ty cổ phần dược Hậu Giang','02923891433','288 Bis Nguyễn Văn Cừ, P. An Hòa, Q. Ninh Kiều, TP Cần Thơ'),
+    ('Công ty cổ phần dược phẩm Hà Tây','0433522525','10A Quang Trung, Hà Đông, Hà Nội'),
+    ('Công ty cổ phần hóa dược phẩm Mekophar','02838650258','297/5 Lý Thường Kiệt, Quận 11, Tp Hồ Chí Minh');
+
 INSERT INTO country(name) VALUES  
     ('Unknown'),
     ('Việt Nam'),
@@ -72,14 +79,19 @@ INSERT INTO category (name) VALUES
     ('Dụng cụ y tế'),
     ('Thiết bị y tế');
 
+INSERT INTO product (barcode,name,category_id, current_import_price,unit,saleprice, retail_unit,retail_saleprice, extra_information) VALUES
+    ('VD-22387-15','Salonpas',2,'20000','Hộp','25000', 'Miếng','1500',
+    'Hoạt chất: Methyl salicylate 6,29%, L- Menthol 5,71%, dL – Camphor 1,24 %, Tocopherol acetate 2,00% ...
+	Công dụng: Dùng giảm đau , kháng viêm trong các cơn đau Đối tượng sử dụng: Người lớn và trẻ em trên 12 tuổi.
+	Hình thức: Cao dán ngoài da.
+	Thương hiệu: Hisamitsu Pharmaceutical.
+	Nơi sản xuất: Công ty cổ phần dược phẩm Dược Phẩm Hisamitsu (Việt Nam).');
 
+INSERT INTO import_invoice(staff_id, supplier_id) VALUES (1,3);
+INSERT INTO import_detail(import_invoice_id, product_id, barcode, name, mfg_date, exp_date, unit, number, import_price) VALUES 
+	(1,1,'VD-22387-15','Salonpas','2023-01-07','2026-01-07','Hộp',100,'18000');
+CALL export_for_retail(1,5,20);
 
-
-
-
-
-INSERT INTO product_info (code,name,category_id,manufacturer_id,expiry,unit_id,storage_condition,note) VALUES
-    ('VD-22387-15','Salonpas',2,1,36,8,
-    'Bảo quản nơi khô ráo, nhiệt độ 30 độ C, tránh ẩm ướt và ánh nắng trực tiếp. Đối với những miếng cao dán đã mở mà không dùng hết, nên bọc kín sản phẩm để tránh vi khuẩn xâm nhập. Không bảo quản thuốc trong phòng tắm hay ngăn đá để tránh ảnh hưởng đến chất lượng.',
-    'Salonpas là thuốc có tác dụng giảm đau chống viêm các cơn đau vai, đau lưng, đau mỏi cơ, căng cơ, bong gân, bầm tím, đau răng, đau đầu... giúp bệnh nhân thư giãn. Chỉ dùng ngoài da. Không dùng lên vùng da bị tổn thương, vết thương hở.');
-    
+INSERT INTO sale_invoice(staff_id,customer_id,point) VALUES (2,1,10);
+INSERT INTO sale_detail(sale_invoice_id,product_id,name,unit,unit_price,number) VALUES 
+	(1,1,'Salonpas','Hộp',25000,4);
