@@ -296,26 +296,3 @@ BEGIN
     INSERT INTO account(id,username,password,role)
     VALUES (staff_id, user, pass, role_number);
 END//
-
-CREATE PROCEDURE insert_order(OUT form_id INT, role_number INT)
-BEGIN
-    DECLARE user VARCHAR(16);
-    DECLARE pass VARCHAR(16);
-    DECLARE acc_id VARCHAR(16);
-    
-    SELECT citizen_id_number INTO user
-    FROM staff WHERE staff.id=staff_id;
-    
-    SELECT DATE_FORMAT(birthday,"%d%m%Y") INTO pass
-    FROM staff WHERE staff.id=staff_id;
-    
-    INSERT INTO account(username,password,role)
-    VALUES (user, pass, role_number);
-    
-    SELECT account.id INTO acc_id
-    FROM account WHERE username=user AND password=pass;
-
-    UPDATE staff
-    SET account_id=acc_id
-    WHERE staff.id=staff_id;
-END//
