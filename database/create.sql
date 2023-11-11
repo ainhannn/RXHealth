@@ -110,6 +110,8 @@ CREATE TABLE import_detail (
     product_id INT NOT NULL,
     barcode CHAR(16) UNIQUE,
     name VARCHAR(50) NOT NULL,
+	mfg_date DATETIME,
+	exp_date DATETIME,
     unit VARCHAR(25) NOT NULL,
     number INT DEFAULT 1,
     import_price DECIMAL (10,0) NOT NULL,	
