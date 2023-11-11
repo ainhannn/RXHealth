@@ -1,4 +1,3 @@
--- Active: 1695203080273@@127.0.0.1@3306@pharmacy
 DROP DATABASE IF EXISTS pharmacy;
 CREATE DATABASE pharmacy;
 USE pharmacy;
@@ -33,7 +32,6 @@ CREATE TABLE reset_request_tmp (
     CONSTRAINT fk_request_reset_password FOREIGN KEY (id) REFERENCES account(id)
 );
 
-
 CREATE TABLE customer (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
@@ -53,11 +51,6 @@ CREATE TABLE category (
     name VARCHAR(50) UNIQUE NOT NULL
 );
 
-CREATE TABLE substance (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) UNIQUE NOT NULL
-);
-
 CREATE TABLE country (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) UNIQUE NOT NULL
@@ -69,8 +62,6 @@ CREATE TABLE product (
     barcode CHAR(16) UNIQUE,
     name VARCHAR(50) NOT NULL,
     category_id INT NOT NULL,
-    manufacturer VARCHAR(50),
-    made_in VARCHAR(25),
     expiry TINYINT UNSIGNED,
     current_import_price DECIMAL(10,0) NOT NULL,
     unit VARCHAR(25) NOT NULL,
@@ -84,15 +75,6 @@ CREATE TABLE product (
     is_existing BOOLEAN DEFAULT TRUE,
     CONSTRAINT fk_info_cate FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
 );
-
-CREATE TABLE medicine_active_substance (
-    medicine_product_id INT NOT NULL,
-    substance_id INT NOT NULL,
-    dosage DECIMAL(6,4) NOT NULL,
-    PRIMARY KEY(medicine_product_id, substance_id),
-    CONSTRAINT fk_medicine_extra FOREIGN KEY (medicine_product_id) REFERENCES product(id),
-    CONSTRAINT fk_active_substance FOREIGN KEY (substance_id) REFERENCES substance(id)
-);	
 
 CREATE TABLE product_batch (
     local_code CHAR(13) PRIMARY KEY, 
