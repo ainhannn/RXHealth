@@ -116,6 +116,7 @@ CREATE TABLE import_detail (
     number INT DEFAULT 1,
     import_price DECIMAL (10,0) NOT NULL,	
     CONSTRAINT pk_import_detail PRIMARY KEY(import_invoice_id, product_id),
+    CONSTRAINT fk_detail_import FOREIGN KEY (import_invoice_id) REFERENCES import_invoice(id),
     CONSTRAINT fk_import_product FOREIGN KEY (product_id) REFERENCES product(id)
 );
 
