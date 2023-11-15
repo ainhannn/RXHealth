@@ -18,3 +18,10 @@ C:\Users\LAM\source\repos\RXHealth\GLB\obj\Debug\GLB.csproj.CoreCompileInputs.ca
 C:\Users\LAM\source\repos\RXHealth\GLB\obj\Debug\GLB.csproj.CopyComplete
 C:\Users\LAM\source\repos\RXHealth\GLB\obj\Debug\GLB.dll
 C:\Users\LAM\source\repos\RXHealth\GLB\obj\Debug\GLB.pdb
+C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\EPPlus.dll
+C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\EPPlus.xml
+C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

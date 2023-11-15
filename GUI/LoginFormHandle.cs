@@ -1,11 +1,16 @@
-﻿using DotNetEnv;
+﻿using BLL;
+using DAL;
+using DotNetEnv;
+using DTO;
 using GLB;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class LoginForm : Form 
+    public partial class LoginForm : Form
     {
         public static string username;
         public static int role;
@@ -42,30 +47,32 @@ namespace GUI
 
         private void login_Click(object sender, EventArgs e)
         {
-            username = inputName.Text;
-            //string password = inputPass.Text;
-            //string rs = caseValidate(username, password);
-            //// (1) != "" --> check input false | (2) == "" --> check input true and login
-            //if (rs != "")
-            //{
-            //    MessageBox.Show(rs, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else
-            //{
-            //    Account account = AccountBLL.Login(new Account(username, password));
-            //    if(account == null)
-            //    {
-            //        MessageBox.Show("Tài khoản không tồn tại ", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Xin chào " + account.Username, "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            new MainForm().Show();
-            Hide();
-            //    }
-            //    inputName.Text = "Tên đăng nhập";
-            //    inputPass.Text = "Mật khẩu";
-            //}
+            string username = inputName.Text;
+            string password = inputPass.Text;
+            string rs = caseValidate(username, password);
+            // (1) != "" --> check input false | (2) == "" --> check input true and login
+            if (rs != "")
+            {
+                MessageBox.Show(rs, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Account account = AccountBLL.Login(new Account(username, password));
+                if (account == null)
+                {
+                    MessageBox.Show("Tài khoản không tồn tại ", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    if(account.Role == Env.GetInt("admin"))
+                    {
+                        new MainForm().Show();
+                        Hide();
+                    }
+                }
+                inputName.Text = "Tên đăng nhập";
+                inputPass.Text = "Mật khẩu";
+            }
         }
     }
 }
