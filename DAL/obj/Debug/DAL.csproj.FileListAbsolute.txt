@@ -197,3 +197,11 @@ C:\Users\LAM\source\repos\RXHealth\DAL\bin\Debug\System.ComponentModel.Annotatio
 C:\Users\LAM\source\repos\RXHealth\DAL\bin\Debug\EPPlus.xml
 C:\Users\LAM\source\repos\RXHealth\DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\LAM\source\repos\RXHealth\DAL\obj\Debug\DAL.csproj.ResolveComReference.cache
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\EPPlus.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\EPPlus.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\obj\Debug\DAL.csproj.ResolveComReference.cache
