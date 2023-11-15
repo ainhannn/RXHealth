@@ -92,6 +92,8 @@ namespace GUI
             this.lblId = new System.Windows.Forms.Label();
             this.update = new System.Windows.Forms.Button();
             this.create = new System.Windows.Forms.Button();
+            this.comboFilterGender = new System.Windows.Forms.ComboBox();
+            this.lblFilterGender = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
@@ -102,6 +104,8 @@ namespace GUI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.Controls.Add(this.comboFilterGender);
+            this.panel3.Controls.Add(this.lblFilterGender);
             this.panel3.Controls.Add(this.comboBoxFilter);
             this.panel3.Controls.Add(this.download);
             this.panel3.Controls.Add(this.lblFilter);
@@ -124,7 +128,7 @@ namespace GUI
             "Bán hàng",
             "Quản kho",
             "Kế toán"});
-            this.comboBoxFilter.Location = new System.Drawing.Point(789, 22);
+            this.comboBoxFilter.Location = new System.Drawing.Point(648, 22);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(120, 33);
             this.comboBoxFilter.TabIndex = 114;
@@ -157,7 +161,7 @@ namespace GUI
             this.lblFilter.AutoSize = true;
             this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblFilter.ForeColor = System.Drawing.Color.White;
-            this.lblFilter.Location = new System.Drawing.Point(691, 26);
+            this.lblFilter.Location = new System.Drawing.Point(550, 26);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(92, 25);
             this.lblFilter.TabIndex = 117;
@@ -871,6 +875,32 @@ namespace GUI
             this.create.UseVisualStyleBackColor = false;
             this.create.Click += new System.EventHandler(this.create_Click);
             // 
+            // comboFilterGender
+            // 
+            this.comboFilterGender.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboFilterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboFilterGender.FormattingEnabled = true;
+            this.comboFilterGender.Items.AddRange(new object[] {
+            "",
+            "Nam",
+            "Nữ"});
+            this.comboFilterGender.Location = new System.Drawing.Point(930, 22);
+            this.comboFilterGender.Name = "comboFilterGender";
+            this.comboFilterGender.Size = new System.Drawing.Size(120, 33);
+            this.comboFilterGender.TabIndex = 118;
+            // 
+            // lblFilterGender
+            // 
+            this.lblFilterGender.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFilterGender.AutoSize = true;
+            this.lblFilterGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblFilterGender.ForeColor = System.Drawing.Color.White;
+            this.lblFilterGender.Location = new System.Drawing.Point(832, 26);
+            this.lblFilterGender.Name = "lblFilterGender";
+            this.lblFilterGender.Size = new System.Drawing.Size(91, 25);
+            this.lblFilterGender.TabIndex = 119;
+            this.lblFilterGender.Text = "Giới tính";
+            // 
             // FormStaff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -962,5 +992,7 @@ namespace GUI
         private DataGridViewTextBoxColumn Role;
         private ComboBox comboBoxFilter;
         private Label lblFilter;
+        private ComboBox comboFilterGender;
+        private Label lblFilterGender;
     }
 }
