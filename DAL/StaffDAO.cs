@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,14 +21,14 @@ namespace DAL
                 {
                     i = Convert.ToInt16(row[9]);
                 }
-                catch{ i = 0; }
+                catch { i = 0; }
                 int id = Convert.ToInt16(row[0]);
                 string name = Convert.ToString(row[1]);
                 string CitizenId = Convert.ToString(row[2]);
                 string FullName = Convert.ToString(row[3]);
                 DateTime Birthday = DateTime.TryParse(row[4].ToString(), out d) ? d : DateTime.MinValue;
                 bool gender = Convert.ToInt16(row[5]) == 1;
-                string Qualification = Convert.ToString(row[6]);   
+                string Qualification = Convert.ToString(row[6]);
                 string ContactNumber = Convert.ToString(row[7]);
                 string Address = Convert.ToString(row[8]);
                 DateTime StartDate = Convert.ToDateTime(row[9]);
@@ -78,7 +78,7 @@ namespace DAL
             .Select(g => g.First())
             .ToList();
 
-            for(int i = distinctStaff.Count -1; i >=0; i-- ) 
+            for (int i = distinctStaff.Count - 1; i >= 0; i--)
             {
                 Console.WriteLine(AccountDAO.Select(distinctStaff[i].Id).Role + "   " + filter);
                 if (AccountDAO.Select(distinctStaff[i].Id).Role != filter)
@@ -105,7 +105,7 @@ namespace DAL
             var table = ExecuteReader(sql);
             return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }
-        public static int SelectId(string CitizenId) 
+        public static int SelectId(string CitizenId)
         {
             string sql = string.Format("SELECT id FROM {0} WHERE citizen_id_number = {1} LIMIT 1", dbTableName, CitizenId);
             var table = ExecuteReader(sql);
@@ -115,12 +115,12 @@ namespace DAL
         {
             string sql = string.Format(
                 "INSERT INTO {0} (nickname,citizen_id_number,fullname,birthday,gender,qualification,contact_number,address,start_date) " +
-                "VALUE ('{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}','{9}')", 
-                dbTableName, 
-                e.Nickname, 
-                e.CitizenId, 
-                e.FullName, 
-                e.Birthday.ToString("yyyy-MM-dd"), 
+                "VALUE ('{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}','{9}')",
+                dbTableName,
+                e.Nickname,
+                e.CitizenId,
+                e.FullName,
+                e.Birthday.ToString("yyyy-MM-dd"),
                 e.GenderIsMale == true ? 1 : 0,
                 e.Qualification,
                 e.ContactNumber,
@@ -148,9 +148,9 @@ namespace DAL
                 "qualification='{6}', " +
                 "contact_number='{7}', " +
                 "address='{8}', " +
-                "nickname='{9}', "+
-                "resignation_date='{10}' "+
-                "WHERE id = {1}", dbTableName,e.Id, e.CitizenId, e.FullName, e.Birthday.ToString("yyyy-MM-dd"), e.GenderIsMale, e.Qualification, e.ContactNumber, e.Address, e.Nickname, e.ResignationDate.ToString("yyyy-MM-dd"));
+                "nickname='{9}', " +
+                "resignation_date='{10}' " +
+                "WHERE id = {1}", dbTableName, e.Id, e.CitizenId, e.FullName, e.Birthday.ToString("yyyy-MM-dd"), e.GenderIsMale, e.Qualification, e.ContactNumber, e.Address, e.Nickname, e.ResignationDate.ToString("yyyy-MM-dd"));
             Console.WriteLine(sql);
             return ExecuteNonQuery(sql) > 0;
         }
@@ -167,6 +167,6 @@ namespace DAL
                 "WHERE id={1}", dbTableName, id, resignationDate.ToString("yyyy-MM-dd"));
             return ExecuteNonQuery(sql) > 0;
         }
-       
+
     }
 }
