@@ -7,6 +7,7 @@ namespace GUI
 {
     public partial class FormStaff : Form
     {
+        private int id_user = 0;
         public FormStaff()
         {
             InitializeComponent();
@@ -32,5 +33,6 @@ namespace GUI
             inpTitle.Enabled = false;
             inpTitle.SelectedIndex = 0;
         }
+
     }
 }

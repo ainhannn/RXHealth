@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Relational;
 
@@ -96,7 +97,7 @@ namespace DAL
                     var cmd = new MySqlCommand(sql, conn);
                     return cmd.ExecuteNonQuery();
                 }
-                catch { return -1; }
+                catch (SqlException e){ Console.WriteLine(e); return -1; }
                 finally { Close(); }
             }
             return -1;

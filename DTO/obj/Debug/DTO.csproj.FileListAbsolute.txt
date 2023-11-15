@@ -44,3 +44,30 @@ C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DTO\obj\Debug\DTO.cs
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DTO\obj\Debug\DTO.dll
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DTO\obj\Debug\DTO.pdb
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\DTO.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\DTO.pdb
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\DotNetEnv.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\Sprache.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\Sprache.xml
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\LAM\Source\Repos\RXHealth\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\LAM\Source\Repos\RXHealth\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\LAM\Source\Repos\RXHealth\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\LAM\Source\Repos\RXHealth\DTO\obj\Debug\DTO.csproj.CopyComplete
+C:\Users\LAM\Source\Repos\RXHealth\DTO\obj\Debug\DTO.dll
+C:\Users\LAM\Source\Repos\RXHealth\DTO\obj\Debug\DTO.pdb
+C:\Users\LAM\source\repos\RXHealth\DTO\bin\Debug\EPPlus.dll
+C:\Users\LAM\source\repos\RXHealth\DTO\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\LAM\source\repos\RXHealth\DTO\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\LAM\source\repos\RXHealth\DTO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\LAM\source\repos\RXHealth\DTO\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\LAM\source\repos\RXHealth\DTO\bin\Debug\EPPlus.xml
+C:\Users\LAM\source\repos\RXHealth\DTO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml

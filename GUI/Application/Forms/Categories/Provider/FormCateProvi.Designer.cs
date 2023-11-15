@@ -816,8 +816,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormCateProvi";
-            this.Text = "FormCateProvi";
+            //this.Name = "FormCateProvi";
+            //this.Text = "FormCateProvi";
             this.panel1.ResumeLayout(false);
             this.form.ResumeLayout(false);
             this.form.PerformLayout();

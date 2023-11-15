@@ -2,6 +2,9 @@
 using System;
 using System.Windows.Forms;
 using System.IO;
+using DTO;
+using DAL;
+using BLL;
 
 namespace GUI
 {
@@ -35,6 +38,18 @@ namespace GUI
             }
             else
             {
+                if(inpNickname.Text == "" || inpNickname.Text == " ")
+                {
+                    MessageBox.Show("Vui lòng điền thông tin");
+                    return;
+                }
+                try
+                {
+                    MessageBox.Show(StaffBLL.ChangeNickname(5, inpNickname.Text));
+                }catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 inpNickname.Visible = false;
                 lblNickname.Text = inpNickname.Text;
                 lblNickname.Location = new Point((456 - lblNickname.Width) / 2, 566);

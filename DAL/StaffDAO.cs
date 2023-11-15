@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using DTO;
 
 namespace DAL
@@ -12,24 +15,26 @@ namespace DAL
         {
             try
             {
-                Staff staff = new Staff(Convert.ToInt16(row[0]), Convert.ToString(row[1])) // id, nickname
-                {
-                    CitizenId = Convert.ToString(row[2]),
-                    FullName = Convert.ToString(row[3]),
-                    GenderIsMale = Convert.ToBoolean(row[5]),
-                    Qualification = Convert.ToString(row[6]),
-                    ContactNumber = Convert.ToString(row[7]),
-                    Address = Convert.ToString(row[8]),
-                    Account = AccountDAO.Select(Convert.ToInt16(row[9]),
-                    StartDate = Convert.ToDateTime(row[10])
-                };
-                 
                 var d = DateTime.Now;
-                // parse date which can be null
-                staff.Birthday = DateTime.TryParse(row[4].ToString(), out d) ? d : DateTime.MinValue;
-                staff.ResignationDate = DateTime.TryParse(row[11].ToString(), out d) ? d : DateTime.MaxValue;
+                int i = 0;
+                try
+                {
+                    i = Convert.ToInt16(row[9]);
+                }
+                catch{ i = 0; }
+                int id = Convert.ToInt16(row[0]);
+                string name = Convert.ToString(row[1]);
+                string CitizenId = Convert.ToString(row[2]);
+                string FullName = Convert.ToString(row[3]);
+                DateTime Birthday = DateTime.TryParse(row[4].ToString(), out d) ? d : DateTime.MinValue;
+                bool gender = Convert.ToInt16(row[5]) == 1;
+                string Qualification = Convert.ToString(row[6]);   
+                string ContactNumber = Convert.ToString(row[7]);
+                string Address = Convert.ToString(row[8]);
+                DateTime StartDate = Convert.ToDateTime(row[9]);
+                DateTime ResignationDate = DateTime.TryParse(row[10].ToString(), out d) ? d : new DateTime(9998, 12, 31);
 
-                return staff;
+                return new Staff(id, name, CitizenId, FullName, Birthday, gender, Qualification, ContactNumber, Address, StartDate, ResignationDate);
             }
             catch { return null; }
         }
@@ -43,6 +48,45 @@ namespace DAL
                 list.Add(ConvertToDTO(row));
             }
             return list;
+        }
+        public static List<Staff> SelectOnRequest(string request, int filter)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE id LIKE '%{1}%' OR nickname LIKE '%{1}%' OR " +
+                "citizen_id_number LIKE '%{1}%' OR fullname LIKE '%{1}%' OR birthday LIKE '%{1}%' OR " +
+                "gender LIKE '%{1}%' OR qualification LIKE '%{1}%' OR contact_number LIKE '%{1}%' OR " +
+                "address LIKE '%{1}%' OR start_date LIKE '%{1}%' OR resignation_date LIKE '%{1}%'", dbTableName, request);
+            var table = ExecuteReader(sql);
+            var list = new List<Staff>();
+            foreach (var row in table)
+            {
+                list.Add(ConvertToDTO(row));
+            }
+            foreach (int i in AccountDAO.getIdOnRequest(request))
+            {
+                try
+                {
+                    list.Add(Select(i));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+
+            List<Staff> distinctStaff = list
+            .GroupBy(p => p.Id)
+            .Select(g => g.First())
+            .ToList();
+
+            for(int i = distinctStaff.Count -1; i >=0; i-- ) 
+            {
+                Console.WriteLine(AccountDAO.Select(distinctStaff[i].Id).Role + "   " + filter);
+                if (AccountDAO.Select(distinctStaff[i].Id).Role != filter)
+                {
+                    distinctStaff.Remove(distinctStaff[i]);
+                }
+            }
+            return distinctStaff;
         }
         public static List<Staff> SelectAll(bool isWorking)
         {
@@ -61,17 +105,23 @@ namespace DAL
             var table = ExecuteReader(sql);
             return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }
+        public static int SelectId(string CitizenId) 
+        {
+            string sql = string.Format("SELECT id FROM {0} WHERE citizen_id_number = {1} LIMIT 1", dbTableName, CitizenId);
+            var table = ExecuteReader(sql);
+            return table.Count != 0 ? Convert.ToInt16(table[0][0]) : -1;
+        }
         public static bool Insert(Staff e)
         {
             string sql = string.Format(
-                "INSERT INTO {0}(nickname,citizen_id_number,fullname,birthday,gender,qualification,contact_number,address,start_date) " +
+                "INSERT INTO {0} (nickname,citizen_id_number,fullname,birthday,gender,qualification,contact_number,address,start_date) " +
                 "VALUE ('{1}','{2}','{3}','{4}',{5},'{6}','{7}','{8}','{9}')", 
                 dbTableName, 
                 e.Nickname, 
                 e.CitizenId, 
                 e.FullName, 
                 e.Birthday.ToString("yyyy-MM-dd"), 
-                e.GenderIsMale,
+                e.GenderIsMale == true ? 1 : 0,
                 e.Qualification,
                 e.ContactNumber,
                 e.Address,
@@ -85,7 +135,6 @@ namespace DAL
         }
         public static bool Delete(int id)
         {
-            RemoveAccount(id);
             string sql = string.Format("DELETE FROM {0} WHERE id = {1}", dbTableName, id);
             return ExecuteNonQuery(sql) > 0;
         }
@@ -98,8 +147,17 @@ namespace DAL
                 "gender={5}, " +
                 "qualification='{6}', " +
                 "contact_number='{7}', " +
-                "address='{8}' " +
-                "WHERE id = {1}", dbTableName, e.CitizenId, e.FullName, e.Birthday.ToString("yyyy-MM-dd"), e.GenderIsMale, e.Qualification, e.ContactNumber, e.Address);
+                "address='{8}', " +
+                "nickname='{9}', "+
+                "resignation_date='{10}' "+
+                "WHERE id = {1}", dbTableName,e.Id, e.CitizenId, e.FullName, e.Birthday.ToString("yyyy-MM-dd"), e.GenderIsMale, e.Qualification, e.ContactNumber, e.Address, e.Nickname, e.ResignationDate.ToString("yyyy-MM-dd"));
+            Console.WriteLine(sql);
+            return ExecuteNonQuery(sql) > 0;
+        }
+        public static bool UpdateNickname(int id, string nickname)
+        {
+            string sql = string.Format("UPDATE {0} SET nickname='{2}' WHERE id={1}", dbTableName, id, nickname);
+            Console.WriteLine(sql);
             return ExecuteNonQuery(sql) > 0;
         }
         public static bool UpdateStatus(int id, DateTime resignationDate)
@@ -109,10 +167,6 @@ namespace DAL
                 "WHERE id={1}", dbTableName, id, resignationDate.ToString("yyyy-MM-dd"));
             return ExecuteNonQuery(sql) > 0;
         }
-        public static bool RemoveAccount(int staffId) 
-        {
-            string sql = string.Format("SELECT (account_id) FROM {0} WHERE id = {1}", dbTableName, staffId);
-            return AccountDAO.Delete(Convert.ToInt16(ExecuteScalar(sql)));
-        }
+       
     }
 }

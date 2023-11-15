@@ -13,7 +13,6 @@ namespace DTO
         public string Qualification { get; set; }
         public string ContactNumber { get; set; }
         public string Address { get; set; }
-        public Account Account { get; set; }
         public DateTime StartDate { get; set; } = DateTime.Now;
         public DateTime ResignationDate { get; set; }
         public Staff(int id, string nickname)
@@ -21,7 +20,7 @@ namespace DTO
             Id = id;
             Nickname = nickname;
         }
-        public Staff(int id, string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string contactNumber, string address, Account account, DateTime startDate, DateTime resignationDate)
+        public Staff(int id, string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string contactNumber, string address, DateTime startDate, DateTime resignationDate)
         {
             Id = id;
             Nickname = nickname;
@@ -32,7 +31,6 @@ namespace DTO
             Qualification = qualification;
             ContactNumber = contactNumber;
             Address = address;
-            Account = account;
             StartDate = startDate;
             ResignationDate = resignationDate;
         }
@@ -40,7 +38,7 @@ namespace DTO
         {
             Nickname = nickname;
         }
-        public Staff(string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string contactNumber, string address, Account account, DateTime startDate)
+        public Staff(string nickname, string citizenId, string fullName, DateTime birthday, bool genderIsMale, string qualification, string contactNumber, string address, DateTime startDate)
         {
             Nickname = nickname;
             CitizenId = citizenId;
@@ -50,8 +48,11 @@ namespace DTO
             Qualification = qualification;
             ContactNumber = contactNumber;
             Address = address;
-            Account = account;
             StartDate = startDate;
+        }
+
+        public Staff()
+        {
         }
     }
 }

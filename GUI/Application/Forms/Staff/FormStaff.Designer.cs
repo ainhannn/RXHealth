@@ -120,13 +120,12 @@ namespace GUI
             this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilter.FormattingEnabled = true;
             this.comboBoxFilter.Items.AddRange(new object[] {
-            "",
-            "Bán hàng",
+            "Quản lý",
             "Quản kho",
-            "Kế toán"});
+            "Bán hàng"});
             this.comboBoxFilter.Location = new System.Drawing.Point(789, 22);
             this.comboBoxFilter.Name = "comboBoxFilter";
-            this.comboBoxFilter.Size = new System.Drawing.Size(120, 33);
+            this.comboBoxFilter.Size = new System.Drawing.Size(120, 37);
             this.comboBoxFilter.TabIndex = 114;
             // 
             // download
@@ -159,7 +158,7 @@ namespace GUI
             this.lblFilter.ForeColor = System.Drawing.Color.White;
             this.lblFilter.Location = new System.Drawing.Point(691, 26);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(92, 25);
+            this.lblFilter.Size = new System.Drawing.Size(113, 29);
             this.lblFilter.TabIndex = 117;
             this.lblFilter.Text = "Chức vụ";
             // 
@@ -236,6 +235,7 @@ namespace GUI
             this.search.Tag = "";
             this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.search.UseVisualStyleBackColor = false;
+            this.search.Click += new System.EventHandler(this.search_Click);
             this.search.MouseHover += new System.EventHandler(this.search_MouseHover);
             // 
             // inpSearch
@@ -245,7 +245,7 @@ namespace GUI
             this.inpSearch.Location = new System.Drawing.Point(8, 14);
             this.inpSearch.Margin = new System.Windows.Forms.Padding(0);
             this.inpSearch.Name = "inpSearch";
-            this.inpSearch.Size = new System.Drawing.Size(237, 23);
+            this.inpSearch.Size = new System.Drawing.Size(237, 29);
             this.inpSearch.TabIndex = 21;
             this.inpSearch.Enter += new System.EventHandler(this.search_MouseHover);
             this.inpSearch.Leave += new System.EventHandler(this.pnlSearch_MouseLeave);
@@ -286,6 +286,7 @@ namespace GUI
             this.table.EnableHeadersVisualStyles = false;
             this.table.Location = new System.Drawing.Point(0, 444);
             this.table.Name = "table";
+            this.table.RowHeadersWidth = 51;
             this.table.RowTemplate.Height = 24;
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.table.Size = new System.Drawing.Size(1600, 450);
@@ -295,6 +296,7 @@ namespace GUI
             // Id
             // 
             this.Id.HeaderText = "ID";
+            this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             // 
@@ -302,6 +304,7 @@ namespace GUI
             // 
             this.Nickname.HeaderText = "Tên Hiển Thị";
             this.Nickname.MaxInputLength = 16;
+            this.Nickname.MinimumWidth = 6;
             this.Nickname.Name = "Nickname";
             this.Nickname.ReadOnly = true;
             // 
@@ -309,6 +312,7 @@ namespace GUI
             // 
             this.CitizenId.HeaderText = "CMND /CCCD";
             this.CitizenId.MaxInputLength = 12;
+            this.CitizenId.MinimumWidth = 6;
             this.CitizenId.Name = "CitizenId";
             this.CitizenId.ReadOnly = true;
             // 
@@ -316,18 +320,21 @@ namespace GUI
             // 
             this.FullName.HeaderText = "Họ Và Tên";
             this.FullName.MaxInputLength = 50;
+            this.FullName.MinimumWidth = 6;
             this.FullName.Name = "FullName";
             this.FullName.ReadOnly = true;
             // 
             // Birthday
             // 
             this.Birthday.HeaderText = "Ngày Sinh";
+            this.Birthday.MinimumWidth = 6;
             this.Birthday.Name = "Birthday";
             this.Birthday.ReadOnly = true;
             // 
             // GenderIsMale
             // 
             this.GenderIsMale.HeaderText = "Giới Tính";
+            this.GenderIsMale.MinimumWidth = 6;
             this.GenderIsMale.Name = "GenderIsMale";
             this.GenderIsMale.ReadOnly = true;
             // 
@@ -335,6 +342,7 @@ namespace GUI
             // 
             this.Qualification.HeaderText = "Bằng Cấp";
             this.Qualification.MaxInputLength = 50;
+            this.Qualification.MinimumWidth = 6;
             this.Qualification.Name = "Qualification";
             this.Qualification.ReadOnly = true;
             // 
@@ -342,6 +350,7 @@ namespace GUI
             // 
             this.ContactNumber.HeaderText = "SĐT";
             this.ContactNumber.MaxInputLength = 12;
+            this.ContactNumber.MinimumWidth = 6;
             this.ContactNumber.Name = "ContactNumber";
             this.ContactNumber.ReadOnly = true;
             // 
@@ -349,12 +358,14 @@ namespace GUI
             // 
             this.Address.HeaderText = "Địa Chỉ";
             this.Address.MaxInputLength = 100;
+            this.Address.MinimumWidth = 6;
             this.Address.Name = "Address";
             this.Address.ReadOnly = true;
             // 
             // Role
             // 
             this.Role.HeaderText = "Chức Vụ";
+            this.Role.MinimumWidth = 6;
             this.Role.Name = "Role";
             this.Role.ReadOnly = true;
             // 
@@ -362,18 +373,21 @@ namespace GUI
             // 
             this.Account.HeaderText = "Tài Khoản";
             this.Account.MaxInputLength = 16;
+            this.Account.MinimumWidth = 6;
             this.Account.Name = "Account";
             this.Account.ReadOnly = true;
             // 
             // StartDate
             // 
             this.StartDate.HeaderText = "Bắt Đầu";
+            this.StartDate.MinimumWidth = 6;
             this.StartDate.Name = "StartDate";
             this.StartDate.ReadOnly = true;
             // 
             // ResignationDate
             // 
             this.ResignationDate.HeaderText = "Nghỉ Việc";
+            this.ResignationDate.MinimumWidth = 6;
             this.ResignationDate.Name = "ResignationDate";
             this.ResignationDate.ReadOnly = true;
             // 
@@ -384,6 +398,7 @@ namespace GUI
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
             this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
             this.selectDelete.HeaderText = "Xóa";
+            this.selectDelete.MinimumWidth = 6;
             this.selectDelete.Name = "selectDelete";
             // 
             // panel1
@@ -416,6 +431,7 @@ namespace GUI
             this.refresh.Tag = "";
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.refresh.UseVisualStyleBackColor = false;
+            this.refresh.Click += new System.EventHandler(this.Table_Load);
             // 
             // delete
             // 
@@ -483,13 +499,12 @@ namespace GUI
             this.inpTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inpTitle.FormattingEnabled = true;
             this.inpTitle.Items.AddRange(new object[] {
-            "",
-            "Bán hàng",
+            "Quản lý",
             "Quản kho",
-            "Kế toán"});
+            "Bán hàng"});
             this.inpTitle.Location = new System.Drawing.Point(1307, 271);
             this.inpTitle.Name = "inpTitle";
-            this.inpTitle.Size = new System.Drawing.Size(250, 33);
+            this.inpTitle.Size = new System.Drawing.Size(250, 37);
             this.inpTitle.TabIndex = 107;
             // 
             // lblTitle
@@ -499,7 +514,7 @@ namespace GUI
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblTitle.Location = new System.Drawing.Point(1144, 275);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(85, 25);
+            this.lblTitle.Size = new System.Drawing.Size(106, 29);
             this.lblTitle.TabIndex = 114;
             this.lblTitle.Text = "Chức vụ";
             // 
@@ -507,9 +522,9 @@ namespace GUI
             // 
             this.inpGenderFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpGenderFemale.AutoSize = true;
-            this.inpGenderFemale.Location = new System.Drawing.Point(1421, 110);
+            this.inpGenderFemale.Location = new System.Drawing.Point(1410, 110);
             this.inpGenderFemale.Name = "inpGenderFemale";
-            this.inpGenderFemale.Size = new System.Drawing.Size(55, 29);
+            this.inpGenderFemale.Size = new System.Drawing.Size(66, 33);
             this.inpGenderFemale.TabIndex = 99;
             this.inpGenderFemale.TabStop = true;
             this.inpGenderFemale.Text = "Nữ";
@@ -540,9 +555,9 @@ namespace GUI
             // 
             this.inpGenderMale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpGenderMale.AutoSize = true;
-            this.inpGenderMale.Location = new System.Drawing.Point(1307, 110);
+            this.inpGenderMale.Location = new System.Drawing.Point(1290, 110);
             this.inpGenderMale.Name = "inpGenderMale";
-            this.inpGenderMale.Size = new System.Drawing.Size(71, 29);
+            this.inpGenderMale.Size = new System.Drawing.Size(88, 33);
             this.inpGenderMale.TabIndex = 98;
             this.inpGenderMale.TabStop = true;
             this.inpGenderMale.Text = "Nam";
@@ -576,6 +591,7 @@ namespace GUI
             this.btnAccount.Tag = "";
             this.btnAccount.Text = "Cấp tài khoản";
             this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnAccount.Visible = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // inpResignationDate
@@ -607,7 +623,7 @@ namespace GUI
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.Location = new System.Drawing.Point(1144, 221);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.Size = new System.Drawing.Size(118, 29);
             this.label1.TabIndex = 106;
             this.label1.Text = "Nghỉ việc";
             // 
@@ -718,7 +734,7 @@ namespace GUI
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label11.Location = new System.Drawing.Point(1144, 167);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 25);
+            this.label11.Size = new System.Drawing.Size(91, 29);
             this.label11.TabIndex = 92;
             this.label11.Text = "Địa chỉ";
             // 
@@ -729,7 +745,7 @@ namespace GUI
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label10.Location = new System.Drawing.Point(1144, 112);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 25);
+            this.label10.Size = new System.Drawing.Size(106, 29);
             this.label10.TabIndex = 91;
             this.label10.Text = "Giới tính";
             // 
@@ -740,7 +756,7 @@ namespace GUI
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label9.Location = new System.Drawing.Point(1144, 55);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 25);
+            this.label9.Size = new System.Drawing.Size(167, 29);
             this.label9.TabIndex = 90;
             this.label9.Text = "CMND/CCCD";
             // 
@@ -751,7 +767,7 @@ namespace GUI
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label8.Location = new System.Drawing.Point(587, 221);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 25);
+            this.label8.Size = new System.Drawing.Size(100, 29);
             this.label8.TabIndex = 89;
             this.label8.Text = "Bắt đầu";
             // 
@@ -762,7 +778,7 @@ namespace GUI
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label7.Location = new System.Drawing.Point(587, 167);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 25);
+            this.label7.Size = new System.Drawing.Size(63, 29);
             this.label7.TabIndex = 88;
             this.label7.Text = "SĐT";
             // 
@@ -773,7 +789,7 @@ namespace GUI
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label6.Location = new System.Drawing.Point(587, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 25);
+            this.label6.Size = new System.Drawing.Size(126, 29);
             this.label6.TabIndex = 87;
             this.label6.Text = "Ngày sinh";
             // 
@@ -784,7 +800,7 @@ namespace GUI
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label5.Location = new System.Drawing.Point(587, 55);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 25);
+            this.label5.Size = new System.Drawing.Size(145, 29);
             this.label5.TabIndex = 86;
             this.label5.Text = "Tên hiển thị";
             // 
@@ -794,7 +810,7 @@ namespace GUI
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label4.Location = new System.Drawing.Point(43, 221);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 25);
+            this.label4.Size = new System.Drawing.Size(124, 29);
             this.label4.TabIndex = 85;
             this.label4.Text = "Tài khoản";
             // 
@@ -804,7 +820,7 @@ namespace GUI
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label3.Location = new System.Drawing.Point(43, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 25);
+            this.label3.Size = new System.Drawing.Size(120, 29);
             this.label3.TabIndex = 84;
             this.label3.Text = "Bằng cấp";
             // 
@@ -814,7 +830,7 @@ namespace GUI
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label2.Location = new System.Drawing.Point(43, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.Size = new System.Drawing.Size(121, 29);
             this.label2.TabIndex = 83;
             this.label2.Text = "Họ và tên";
             // 
@@ -825,7 +841,7 @@ namespace GUI
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblId.Location = new System.Drawing.Point(43, 55);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(31, 25);
+            this.lblId.Size = new System.Drawing.Size(37, 29);
             this.lblId.TabIndex = 82;
             this.lblId.Text = "ID";
             // 
@@ -888,6 +904,7 @@ namespace GUI
             this.Name = "FormStaff";
             this.Text = "FormStaff";
             this.Activated += new System.EventHandler(this.FormStaff_Activated);
+            this.Load += new System.EventHandler(this.Table_Load);
             this.Resize += new System.EventHandler(this.FormStaff_Resize);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
