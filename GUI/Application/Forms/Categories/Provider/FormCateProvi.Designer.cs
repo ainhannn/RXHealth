@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCateProvi));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.refresh = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
@@ -523,9 +523,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label9.Location = new System.Drawing.Point(1144, 55);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 25);
+            this.label9.Size = new System.Drawing.Size(53, 25);
             this.label9.TabIndex = 90;
-            this.label9.Text = "CMND/CCCD";
+            this.label9.Text = "SĐT";
             // 
             // label8
             // 
@@ -567,9 +567,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label5.Location = new System.Drawing.Point(587, 55);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 25);
+            this.label5.Size = new System.Drawing.Size(47, 25);
             this.label5.TabIndex = 86;
-            this.label5.Text = "Tên hiển thị";
+            this.label5.Text = "Tên";
             // 
             // label4
             // 
@@ -587,9 +587,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label3.Location = new System.Drawing.Point(43, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 25);
+            this.label3.Size = new System.Drawing.Size(87, 25);
             this.label3.TabIndex = 84;
-            this.label3.Text = "Bằng cấp";
+            this.label3.Text = "Công nợ";
             // 
             // label2
             // 
@@ -597,9 +597,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label2.Location = new System.Drawing.Point(43, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.Size = new System.Drawing.Size(71, 25);
             this.label2.TabIndex = 83;
-            this.label2.Text = "Họ và tên";
+            this.label2.Text = "Địa chỉ";
             // 
             // lblId
             // 
@@ -721,14 +721,14 @@
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Stt,
@@ -796,10 +796,10 @@
             // 
             // selectDelete
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = false;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = false;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle6;
             this.selectDelete.HeaderText = "Xóa";
             this.selectDelete.Name = "selectDelete";
             // 
@@ -816,8 +816,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Name = "FormCateProvi";
-            //this.Text = "FormCateProvi";
+            this.Text = "FormCateProvi";
             this.panel1.ResumeLayout(false);
             this.form.ResumeLayout(false);
             this.form.PerformLayout();

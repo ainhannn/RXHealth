@@ -109,7 +109,8 @@ namespace GUI
             table.Rows.Clear();
             List<Staff> list = StaffBLL.getAllStaff();
             Data(list);
-            comboBoxFilter.SelectedIndex = 2;
+            comboBoxFilter.SelectedIndex = 3;
+            comboFilterGender.SelectedIndex = 2;
             inpTitle.SelectedIndex = 2;
         }
 
@@ -118,6 +119,7 @@ namespace GUI
         {
             string contentSearch = inpSearch.Text;
             int filter = comboBoxFilter.SelectedIndex;
+            int gender = comboFilterGender.SelectedIndex;
             if (contentSearch == "" || contentSearch == " ")
             {
                 MessageBox.Show("Chưa có dữ liệu để tìm kiếm!");
@@ -125,7 +127,7 @@ namespace GUI
             }
             table.Rows.Clear();
             pnlSearch.Text = "";
-            List<Staff> list = StaffBLL.getStaffsOnRequest(contentSearch, filter);
+            List<Staff> list = StaffBLL.getStaffsOnRequest(contentSearch, filter, gender);
             Data(list);
         }
         private void create_Click(object sender, System.EventArgs e)

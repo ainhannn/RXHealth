@@ -25,3 +25,30 @@ C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemorySt
 C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\EPPlus.xml
 C:\Users\LAM\source\repos\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\GLB.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\GLB.pdb
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\DotNetEnv.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\EPPlus.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Sprache.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\EPPlus.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\Sprache.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.csproj.AssemblyReference.cache
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.csproj.CoreCompileInputs.cache
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.csproj.CopyComplete
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.dll
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.pdb

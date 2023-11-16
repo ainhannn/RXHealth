@@ -34,6 +34,8 @@ namespace GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.comboFilterGender = new System.Windows.Forms.ComboBox();
+            this.lblFilterGender = new System.Windows.Forms.Label();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.download = new System.Windows.Forms.Button();
             this.lblFilter = new System.Windows.Forms.Label();
@@ -102,6 +104,8 @@ namespace GUI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.Controls.Add(this.comboFilterGender);
+            this.panel3.Controls.Add(this.lblFilterGender);
             this.panel3.Controls.Add(this.comboBoxFilter);
             this.panel3.Controls.Add(this.download);
             this.panel3.Controls.Add(this.lblFilter);
@@ -114,6 +118,33 @@ namespace GUI
             this.panel3.Size = new System.Drawing.Size(1600, 77);
             this.panel3.TabIndex = 1;
             // 
+            // comboFilterGender
+            // 
+            this.comboFilterGender.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboFilterGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboFilterGender.FormattingEnabled = true;
+            this.comboFilterGender.Items.AddRange(new object[] {
+            "Nữ",
+            "Nam",
+            "Tất cả"});
+            this.comboFilterGender.Location = new System.Drawing.Point(922, 22);
+            this.comboFilterGender.Name = "comboFilterGender";
+            this.comboFilterGender.Size = new System.Drawing.Size(120, 37);
+            this.comboFilterGender.TabIndex = 118;
+            this.comboFilterGender.SelectedIndexChanged += new System.EventHandler(this.comboFilterGender_SelectedIndexChanged);
+            // 
+            // lblFilterGender
+            // 
+            this.lblFilterGender.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFilterGender.AutoSize = true;
+            this.lblFilterGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblFilterGender.ForeColor = System.Drawing.Color.White;
+            this.lblFilterGender.Location = new System.Drawing.Point(824, 26);
+            this.lblFilterGender.Name = "lblFilterGender";
+            this.lblFilterGender.Size = new System.Drawing.Size(115, 29);
+            this.lblFilterGender.TabIndex = 119;
+            this.lblFilterGender.Text = "Giới tính";
+            // 
             // comboBoxFilter
             // 
             this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -122,8 +153,9 @@ namespace GUI
             this.comboBoxFilter.Items.AddRange(new object[] {
             "Quản lý",
             "Quản kho",
-            "Bán hàng"});
-            this.comboBoxFilter.Location = new System.Drawing.Point(789, 22);
+            "Bán hàng",
+            "Tất cả"});
+            this.comboBoxFilter.Location = new System.Drawing.Point(656, 22);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(120, 37);
             this.comboBoxFilter.TabIndex = 114;
@@ -156,7 +188,7 @@ namespace GUI
             this.lblFilter.AutoSize = true;
             this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
             this.lblFilter.ForeColor = System.Drawing.Color.White;
-            this.lblFilter.Location = new System.Drawing.Point(691, 26);
+            this.lblFilter.Location = new System.Drawing.Point(558, 26);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(113, 29);
             this.lblFilter.TabIndex = 117;
@@ -979,5 +1011,7 @@ namespace GUI
         private DataGridViewTextBoxColumn Role;
         private ComboBox comboBoxFilter;
         private Label lblFilter;
+        private ComboBox comboFilterGender;
+        private Label lblFilterGender;
     }
 }

@@ -17,9 +17,16 @@ namespace BLL
         {
             return StaffDAO.SelectAll() != null ? StaffDAO.SelectAll() : null;
         } 
-        public static List<Staff> getStaffsOnRequest(string request, int filter)
+        public static List<Staff> getStaffsOnRequest(string request, int filter, int gender)
         {
-            return StaffDAO.SelectOnRequest(request, filter);
+            try
+            {
+                return StaffDAO.SelectOnRequest(request, filter, gender);
+            }catch(Exception ex)
+            {   
+                Console.WriteLine(ex.ToString());
+            }
+            return null;
         }
         
         public static bool insertStaff(Staff e, int role, string CitizenId)

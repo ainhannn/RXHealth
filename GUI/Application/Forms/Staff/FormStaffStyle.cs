@@ -43,6 +43,8 @@ namespace GUI
             {
                 lblFilter.Visible = true;
                 comboBoxFilter.Visible = true;
+                lblFilterGender.Visible = true;
+                comboFilterGender.Visible = true;
                 foreach (TextBox textBox in form.Controls.OfType<TextBox>())
                     textBox.Width = 200;
                 foreach (DateTimePicker dateBox in form.Controls.OfType<DateTimePicker>())
@@ -76,6 +78,8 @@ namespace GUI
             {
                 lblFilter.Visible = false;
                 comboBoxFilter.Visible = false;
+                lblFilterGender.Visible = false;
+                comboFilterGender.Visible = false;
                 form.Visible = false;
                 table.Dock = DockStyle.Fill;
             }

@@ -49,44 +49,35 @@ namespace DAL
             }
             return list;
         }
-        public static List<Staff> SelectOnRequest(string request, int filter)
+        public static List<Staff> SelectOnRequest(string request, int filter, int gender)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE id LIKE '%{1}%' OR nickname LIKE '%{1}%' OR " +
-                "citizen_id_number LIKE '%{1}%' OR fullname LIKE '%{1}%' OR birthday LIKE '%{1}%' OR " +
-                "gender LIKE '%{1}%' OR qualification LIKE '%{1}%' OR contact_number LIKE '%{1}%' OR " +
-                "address LIKE '%{1}%' OR start_date LIKE '%{1}%' OR resignation_date LIKE '%{1}%'", dbTableName, request);
+            string sql = string.Format("SELECT * FROM {0} JOIN account ON staff.id = account.id WHERE (staff.id LIKE '%{1}%' OR staff.nickname LIKE '%{1}%' OR " +
+        "staff.citizen_id_number LIKE '%{1}%' OR staff.fullname LIKE '%{1}%' OR staff.birthday LIKE '%{1}%' OR " +
+        "qualification LIKE '%{1}%' OR contact_number LIKE '%{1}%' OR " +
+        "address LIKE '%{1}%' OR staff.start_date LIKE '%{1}%' OR staff.resignation_date LIKE '%{1}%') ",
+        dbTableName, request);
+
+            if (filter != 3)
+            {
+                sql += string.Format(" AND account.role = {0}", filter);
+            }
+
+            if (gender != 2)
+            {
+                sql += string.Format(" AND staff.gender = {0}", gender);
+            }
+
+            Console.WriteLine(sql);
+
             var table = ExecuteReader(sql);
             var list = new List<Staff>();
+
             foreach (var row in table)
             {
                 list.Add(ConvertToDTO(row));
             }
-            foreach (int i in AccountDAO.getIdOnRequest(request))
-            {
-                try
-                {
-                    list.Add(Select(i));
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
-            }
 
-            List<Staff> distinctStaff = list
-            .GroupBy(p => p.Id)
-            .Select(g => g.First())
-            .ToList();
-
-            for (int i = distinctStaff.Count - 1; i >= 0; i--)
-            {
-                Console.WriteLine(AccountDAO.Select(distinctStaff[i].Id).Role + "   " + filter);
-                if (AccountDAO.Select(distinctStaff[i].Id).Role != filter)
-                {
-                    distinctStaff.Remove(distinctStaff[i]);
-                }
-            }
-            return distinctStaff;
+            return list;
         }
         public static List<Staff> SelectAll(bool isWorking)
         {

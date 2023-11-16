@@ -7,7 +7,6 @@ namespace GUI
 {
     public partial class FormStaff : Form
     {
-        private int id_user = 0;
         public FormStaff()
         {
             InitializeComponent();
@@ -34,5 +33,9 @@ namespace GUI
             inpTitle.SelectedIndex = 0;
         }
 
+        private void comboFilterGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
