@@ -11,7 +11,7 @@ CREATE TABLE staff (
     birthday DATETIME NOT NULL,
     gender BOOLEAN DEFAULT TRUE,
     qualification VARCHAR(50) NOT NULL,
-    contact_number VARCHAR(12) UNIQUE NOT NULL,
+    contact_number VARCHAR(12) NOT NULL,
     address VARCHAR(100),
     start_date DATETIME DEFAULT CURRENT_DATE(),
     resignation_date DATETIME
