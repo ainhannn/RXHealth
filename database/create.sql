@@ -18,9 +18,9 @@ CREATE TABLE staff (
 );
 
 CREATE TABLE account (
-    id INT,
-    username VARCHAR(16) PRIMARY KEY,
-    password VARCHAR(16) NOT NULL,
+    id INT PRIMARY KEY,
+    username VARCHAR(16),
+    password VARCHAR(16),
     role TINYINT DEFAULT 3,
     avatar TEXT,
     CONSTRAINT fk_account_staff FOREIGN KEY (id) REFERENCES staff(id) ON DELETE CASCADE
