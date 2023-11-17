@@ -50,7 +50,7 @@ namespace DAL
             var list = new List<OrderDetail>();
             foreach (var row in table)
             {
-                ProductInfo p = ProductDAO.GetInformation(Convert.ToInt16(row[0]));
+                Product p = ProductDAO.GetInformation(Convert.ToInt16(row[0]));
                 OrderDetail detail = new OrderDetail()
                 {
                     Barcode = p.Barcode,

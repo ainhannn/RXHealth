@@ -53,7 +53,7 @@ namespace DAL
             var list = new List<ImportDetail>();
             foreach (var row in table)
             {
-                ProductInfo p = ProductDAO.GetInformation(Convert.ToInt16(row[0]));
+                Product p = ProductDAO.GetInformation(Convert.ToInt16(row[0]));
                 ImportDetail detail = new ImportDetail()
                 {
                     Barcode = p.Barcode,
@@ -74,7 +74,7 @@ namespace DAL
                 "SELECT order_number,actual_number,import_unit_price " +
                 "FROM import_detail WHERE import_invoice_id={0} AND product_id={1} LIMIT 1", formId, productId);
             var row = ExecuteReader(sql)[0];
-            ProductInfo p = ProductDAO.GetInformation(productId);
+            Product p = ProductDAO.GetInformation(productId);
             ImportDetail detail = new ImportDetail()
             {
                 Barcode = p.Barcode,

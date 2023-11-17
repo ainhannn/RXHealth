@@ -9,11 +9,11 @@ namespace DAL
     public partial class ProductDAO : DBConnection
     {
         private static readonly string dbInfoTableName = "product_info";
-        private static ProductInfo ConvertToInfoDTO(List<object> row)
+        private static Product ConvertToInfoDTO(List<object> row)
         {
             try
             {
-                ProductInfo obj = new ProductInfo(Convert.ToInt16(row[0]), Convert.ToString(row[1]))
+                Product obj = new ProductInfo(Convert.ToInt16(row[0]), Convert.ToString(row[1]))
                 {
                     Name = Convert.ToString(row[2]),
                     Category = CategoryDAO.Select(Convert.ToInt16(row[3])),
@@ -48,7 +48,7 @@ namespace DAL
         //    return list;
         //}
 
-        public static ProductInfo GetInformation(int id)
+        public static Product GetInformation(int id)
         {
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1} AND is_existing = true", dbInfoTableName, id);
             var table = ExecuteReader(sql);
@@ -61,7 +61,7 @@ namespace DAL
             string sql = string.Format("SELECT id FROM {0} WHERE code = '{1}' AND is_existing = true", dbInfoTableName, barCode);
             return Convert.ToInt16(ExecuteScalar(sql));
         }
-        private static bool Insert(ProductInfo e)
+        private static bool Insert(Product e)
         {
             if (Open())
             {
@@ -117,7 +117,7 @@ namespace DAL
             return false;
         }
 
-        private static bool Update(ProductInfo e)
+        private static bool Update(Product e)
         {
             if (Open())
             {

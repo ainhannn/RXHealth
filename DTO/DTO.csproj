@@ -209,32 +209,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateTimeCycle.cs" />
-    <Compile Include="Address.cs" />
     <Compile Include="Account.cs" />
+    <Compile Include="ProductOnSale .cs" />
     <Compile Include="SaleDetail.cs" />
-    <Compile Include="ExportDetail.cs" />
     <Compile Include="SaleInvoice.cs" />
     <Compile Include="ImportDetail.cs" />
-    <Compile Include="ExportInvoice.cs" />
-    <Compile Include="InventoryForm.cs" />
     <Compile Include="ImportInvoice.cs" />
-    <Compile Include="InventoryDetail.cs" />
-    <Compile Include="OrderDetail.cs" />
     <Compile Include="FormInvoice.cs" />
-    <Compile Include="OrderForm.cs" />
-    <Compile Include="PaymentInvoice.cs" />
-    <Compile Include="Product.cs" />
     <Compile Include="ProductBatch.cs" />
-    <Compile Include="Provider.cs" />
+    <Compile Include="Supplier.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="Unit.cs" />
     <Compile Include="Country.cs" />
-    <Compile Include="Manufacturer.cs" />
-    <Compile Include="Ingredient.cs" />
+    <Compile Include="Substance.cs" />
     <Compile Include="Category.cs" />
-    <Compile Include="ProductInfo.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

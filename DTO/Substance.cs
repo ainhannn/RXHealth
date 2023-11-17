@@ -1,15 +1,15 @@
 ﻿namespace DTO
 {
-    public class Ingredient
+    public class Substance
     {
         public int Id { get; }
         public string Name { get; set; }
-        public Ingredient(int id, string name)
+        public Substance(int id, string name)
         {
             Id = id;
             Name = name;
         }
-        public Ingredient(string name)
+        public Substance(string name)
         {
             Name = name;
         }

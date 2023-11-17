@@ -8,7 +8,7 @@ namespace DAL
     {
         private static readonly string dbTableName = "provider";
 
-        private static Provider ConvertToDTO(List<object> row)
+        private static Supplier ConvertToDTO(List<object> row)
         {
             try
             {
@@ -31,11 +31,11 @@ namespace DAL
             catch { return null; }
         }
 
-        public static List<Provider> SelectAll()
+        public static List<Supplier> SelectAll()
         {
             string sql = string.Format("SELECT * FROM {0}", dbTableName);
             var table = ExecuteReader(sql);
-            var list = new List<Provider>();
+            var list = new List<Supplier>();
             foreach (var row in table)
             {
                 list.Add(ConvertToDTO(row));
@@ -43,14 +43,14 @@ namespace DAL
             return list;
         }
 
-        public static Provider Select(int id)
+        public static Supplier Select(int id)
         {
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1}", dbTableName, id);
             var table = ExecuteReader(sql);
             return ConvertToDTO(table[table.Count - 1]);
         }
 
-        public static bool Insert(Provider e)
+        public static bool Insert(Supplier e)
         {
             string sql = string.Format(
                 "INSERT INTO {0}(name,contact_number,address,debt,payment_date,cycle) " +
@@ -70,7 +70,7 @@ namespace DAL
             return ExecuteNonQuery(sql) > 0;
         }
 
-        public static bool UpdateInformation(Provider e)
+        public static bool UpdateInformation(Supplier e)
         {
             string sql = string.Format("UPDATE {0} SET " +
                 "name = '{2}', " +
