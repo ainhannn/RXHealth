@@ -33,17 +33,17 @@ namespace GUI
         }
 
         // covert stringVN to stringEnglish
-        private void input_Onchange(object sender, EventArgs e)
-        {
-            TextBox input = (TextBox)sender;
-            string plaholder = input.Name == "inputName" ? "Tên đăng nhập" : "Mật khẩu";
-            if (input.Text != "" && (input.Text != plaholder))
-            {
-                input.Text = HandleGlobal.covertEnglish(input.Text);
-            }
-            input.SelectionStart = input.Text.Length;
-            input.SelectionLength = 0;
-        }
+        //private void input_Onchange(object sender, EventArgs e)
+        //{
+        //    TextBox input = (TextBox)sender;
+        //    string plaholder = input.Name == "inputName" ? "Tên đăng nhập" : "Mật khẩu";
+        //    if (input.Text != "" && (input.Text != plaholder))
+        //    {
+        //        input.Text = HandleGlobal.covertEnglish(input.Text);
+        //    }
+        //    input.SelectionStart = input.Text.Length;
+        //    input.SelectionLength = 0;
+        //}
 
         private void login_Click(object sender, EventArgs e)
         {

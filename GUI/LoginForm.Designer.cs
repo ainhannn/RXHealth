@@ -215,7 +215,7 @@
             this.inputPass.Size = new System.Drawing.Size(351, 47);
             this.inputPass.TabIndex = 4;
             this.inputPass.Text = "Mật khẩu";
-            this.inputPass.TextChanged += new System.EventHandler(this.input_Onchange);
+            //this.inputPass.TextChanged += new System.EventHandler(this.input_Onchange);
             this.inputPass.Enter += new System.EventHandler(this.password_Enter);
             this.inputPass.Leave += new System.EventHandler(this.password_Leave);
             // 
