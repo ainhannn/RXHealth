@@ -19,11 +19,10 @@ CREATE TABLE staff (
 
 CREATE TABLE account (
     id INT,
-    username VARCHAR(16) UNIQUE NOT NULL,
+    username VARCHAR(16) PRIMARY KEY,
     password VARCHAR(16) NOT NULL,
     role TINYINT DEFAULT 3,
     avatar TEXT,
-    CONSTRAINT pk_account PRIMARY KEY(username,password),
     CONSTRAINT fk_account_staff FOREIGN KEY (id) REFERENCES staff(id) ON DELETE CASCADE
 );
 
@@ -169,7 +168,8 @@ SELECT
     sale_invoice.time_init, 
     staff.nickname AS `staff_nickname`, 
     customer.name AS `customer_name`, 
-    SUM(sale_detail.number*sale_detail.unit_price) AS total_amount
+    SUM(sale_detail.number*sale_detail.unit_price) AS total_amount,
+	sale_invoice.point
 FROM sale_invoice
 LEFT JOIN sale_detail ON sale_invoice.id=sale_detail.sale_invoice_id
 LEFT JOIN staff ON sale_invoice.staff_id=staff.id
