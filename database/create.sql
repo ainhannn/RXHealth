@@ -225,6 +225,14 @@ BEGIN
     SET NEW.code = CONCAT('SA',LPAD(newid,5,0));
 END//
 
+CREATE TRIGGER auto_update_total_point
+        AFTER INSERT ON sale_invoice 
+        FOR EACH ROW
+BEGIN
+    UPDATE customer SET total_point = total_point + NEW.point
+	WHERE customer.id = NEW.customer_id;
+END//
+
 CREATE TRIGGER auto_insert_storage_product
 		AFTER INSERT ON import_detail 
 		FOR EACH ROW
