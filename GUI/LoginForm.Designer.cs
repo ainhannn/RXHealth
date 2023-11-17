@@ -258,7 +258,7 @@
             this.inputName.Size = new System.Drawing.Size(351, 47);
             this.inputName.TabIndex = 1;
             this.inputName.Text = "Tên đăng nhập";
-            this.inputName.TextChanged += new System.EventHandler(this.input_Onchange);
+            //this.inputName.TextChanged += new System.EventHandler(this.input_Onchange);
             this.inputName.Enter += new System.EventHandler(this.username_Enter);
             this.inputName.Leave += new System.EventHandler(this.username_Leave);
             // 
