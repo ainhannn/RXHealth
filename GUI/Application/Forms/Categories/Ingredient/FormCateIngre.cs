@@ -9,11 +9,5 @@ namespace GUI
         {
             InitializeComponent();
         }
-
-        private void FormCateIngre_Load(object sender, EventArgs e)
-        {
-            foreach (Control lbl in Controls)
-                lbl.Text = "Ái Nhân"; //bỏ list dô
-        }
     }
 }
