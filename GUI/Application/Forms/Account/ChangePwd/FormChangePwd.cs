@@ -3,11 +3,13 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormChangePwd : Form
+    public partial class FormChangePwdHandle : Form
     {
-        public FormChangePwd()
+        private int idUser;
+        public FormChangePwdHandle(int idUser)
         {
             InitializeComponent();
+            this.idUser = idUser;
         }
 
         private void bunifuGradientPanel1_MouseDown(object sender, MouseEventArgs e)

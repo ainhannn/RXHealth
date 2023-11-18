@@ -1,4 +1,5 @@
-﻿using GUI.Handle;
+﻿using BLL;
+using GUI.Handle;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -8,16 +9,18 @@ namespace GUI
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private int idUser;
+        public MainForm(int idUser)
         {
             InitializeComponent();
+            this.idUser = idUser;
             SetStyle(ControlStyles.ResizeRedraw, true);
         }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             ResetMenu();
-            username.Text = LoginForm.username;
+            avatar.Image = new Bitmap(AccountBLL.getAvatarAccount(idUser));
+            username.Text = StaffBLL.getNickName(idUser);
             if (LoginForm.role == 0)
                 return;
             else if (LoginForm.role == 1) // Accountant

@@ -510,7 +510,7 @@ namespace GUI
         private System.Windows.Forms.Button invenImp;
         private System.Windows.Forms.Button invenChk;
         private System.Windows.Forms.Label formTitle;
-        private System.Windows.Forms.Label username;
+        public System.Windows.Forms.Label username;
         private Guna.UI2.WinForms.Guna2CirclePictureBox avatar;
         private System.Windows.Forms.Panel pnlAccount;
         private System.Windows.Forms.Label label1;

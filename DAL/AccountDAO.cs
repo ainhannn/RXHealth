@@ -31,13 +31,12 @@ namespace DAL
                 "password = '{3}', username = '{2}' WHERE id = {1}", dbTableName, id, newUsername, newPassword);
             return ExecuteNonQuery(sql) > 0;
         }
-        public static bool UpdatePassword(Account current, string newPassword) //inp (username,pass,newpass) out (status)
+        public static bool UpdatePassword(int id, string newPassword) //inp (username,pass,newpass) out (status)
         {
-            current = Login(current);
-            if (current == null) { return false; }
             string sql = string.Format("UPDATE {0} SET " +
-                "password = '{2}', " +
-                "WHERE id = {1}", dbTableName, current.Id, newPassword);
+                "password = '{2}' " +
+                "WHERE id = {1}", dbTableName, id, newPassword);
+            Console.WriteLine(sql);
             return ExecuteNonQuery(sql) > 0;
         }
         public static bool UpdateRole(int id, int role) 
@@ -58,6 +57,12 @@ namespace DAL
                 "UPDATE {0} SET avatar = '{2}' WHERE id = {1}", dbTableName, id, path);
             return ExecuteNonQuery(sql) > 0;
         }
+        public static bool UpdateUsername(int id, string username)
+        {
+            string sql = string.Format(
+                "UPDATE {0} SET username = '{2}' WHERE id = {1}", dbTableName, id, username);
+            return ExecuteNonQuery(sql) > 0;
+        }
         public static Account Select(int id)
         {
             string sql = string.Format("SELECT id,username,role,avatar FROM {0} WHERE id={1} LIMIT 1", dbTableName, id);
@@ -65,6 +70,18 @@ namespace DAL
             try
             {
                 return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][2]), Convert.ToString(table[0][3]));
+            }
+            catch { return null; }
+        }
+
+        public static Account SelectAcc(int id)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE id={1} LIMIT 1", dbTableName, id);
+            Console.WriteLine(sql);
+            var table = ExecuteReader(sql);
+            try
+            {
+                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToString(table[0][2]), Convert.ToInt16(table[0][3]),  Convert.ToString(table[0][4]));
             }
             catch { return null; }
         }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormChangePwd : Form
+    public partial class FormChangePwdHandle : Form
     {
         private void login_Paint(object sender, PaintEventArgs e)
         {

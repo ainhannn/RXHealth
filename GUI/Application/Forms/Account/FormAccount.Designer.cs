@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using System;
+
+namespace GUI
 {
     partial class FormAccount
     {
@@ -92,7 +94,9 @@
             this.inpNickname.Name = "inpNickname";
             this.inpNickname.Size = new System.Drawing.Size(253, 51);
             this.inpNickname.TabIndex = 99;
+            this.inpNickname.Enabled = false;
             this.inpNickname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+
             // 
             // editNickname
             // 
@@ -194,14 +198,14 @@
             this.inpTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inpTitle.FormattingEnabled = true;
             this.inpTitle.Items.AddRange(new object[] {
-            "",
-            "Bán hàng",
+            "Quản lý",
             "Quản kho",
-            "Kế toán"});
+            "Bán hàng"});
             this.inpTitle.Location = new System.Drawing.Point(523, 658);
             this.inpTitle.Name = "inpTitle";
             this.inpTitle.Size = new System.Drawing.Size(350, 37);
             this.inpTitle.TabIndex = 142;
+            this.inpTitle.Enabled = false;
             // 
             // lblTitle
             // 
@@ -213,6 +217,7 @@
             this.lblTitle.Size = new System.Drawing.Size(106, 29);
             this.lblTitle.TabIndex = 140;
             this.lblTitle.Text = "Chức vụ";
+            
             // 
             // inpGenderFemale
             // 
@@ -225,6 +230,7 @@
             this.inpGenderFemale.TabStop = true;
             this.inpGenderFemale.Text = "Nữ";
             this.inpGenderFemale.UseVisualStyleBackColor = true;
+            this.inpGenderFemale.Enabled = false;
             // 
             // save
             // 
@@ -261,6 +267,7 @@
             this.inpGenderMale.TabStop = true;
             this.inpGenderMale.Text = "Nam";
             this.inpGenderMale.UseVisualStyleBackColor = true;
+            this.inpGenderMale.Enabled = false;
             // 
             // inpBirthday
             // 
@@ -272,6 +279,7 @@
             this.inpBirthday.Name = "inpBirthday";
             this.inpBirthday.Size = new System.Drawing.Size(350, 30);
             this.inpBirthday.TabIndex = 137;
+            this.inpBirthday.Enabled = false;
             // 
             // btnAccount
             // 
@@ -305,6 +313,7 @@
             this.inpAddress.Name = "inpAddress";
             this.inpAddress.Size = new System.Drawing.Size(350, 30);
             this.inpAddress.TabIndex = 139;
+            this.inpAddress.Enabled = false;
             // 
             // inpCitizenId
             // 
@@ -318,6 +327,7 @@
             this.inpCitizenId.Name = "inpCitizenId";
             this.inpCitizenId.Size = new System.Drawing.Size(350, 30);
             this.inpCitizenId.TabIndex = 138;
+            this.inpCitizenId.Enabled = false;
             // 
             // inpContactNumber
             // 
@@ -331,6 +341,7 @@
             this.inpContactNumber.Name = "inpContactNumber";
             this.inpContactNumber.Size = new System.Drawing.Size(350, 30);
             this.inpContactNumber.TabIndex = 140;
+            this.inpContactNumber.Enabled = false;
             // 
             // inpAccount
             // 
@@ -357,6 +368,7 @@
             this.inpQualification.Name = "inpQualification";
             this.inpQualification.Size = new System.Drawing.Size(350, 30);
             this.inpQualification.TabIndex = 141;
+            this.inpQualification.Enabled = false;
             // 
             // inpFullName
             // 
@@ -370,6 +382,7 @@
             this.inpFullName.Name = "inpFullName";
             this.inpFullName.Size = new System.Drawing.Size(350, 30);
             this.inpFullName.TabIndex = 134;
+            this.inpFullName.Enabled = false;
             // 
             // label11
             // 
@@ -507,6 +520,7 @@
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
 

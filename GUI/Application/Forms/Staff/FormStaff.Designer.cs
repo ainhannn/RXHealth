@@ -151,7 +151,6 @@ namespace GUI
             this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilter.FormattingEnabled = true;
             this.comboBoxFilter.Items.AddRange(new object[] {
-            "Quản lý",
             "Quản kho",
             "Bán hàng",
             "Tất cả"});
@@ -531,7 +530,6 @@ namespace GUI
             this.inpTitle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inpTitle.FormattingEnabled = true;
             this.inpTitle.Items.AddRange(new object[] {
-            "Quản lý",
             "Quản kho",
             "Bán hàng"});
             this.inpTitle.Location = new System.Drawing.Point(1307, 271);

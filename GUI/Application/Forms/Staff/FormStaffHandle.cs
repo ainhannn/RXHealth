@@ -29,7 +29,7 @@ namespace GUI
         //check position
         private int checkIndexPositionStaff(string position)
         {
-            return position == "Quản lý" ? Env.GetInt("admin") : ((position == "Quản kho" ? Env.GetInt("warehouse_manager") : Env.GetInt("sell")));
+            return position == "Quản kho" ? Env.GetInt("warehouse_manager") : Env.GetInt("sell");
         }
         private string ckeckPositionStaff(int id)
         {
@@ -84,7 +84,7 @@ namespace GUI
             }
             inpGenderMale.Checked = true;
             inpTitle.Enabled = true;
-            inpTitle.SelectedIndex = 2;
+            inpTitle.SelectedIndex = 1;
             inpId.Enabled = false;
             btnAccount.Visible = false;
             setBtnAccount();
@@ -99,6 +99,7 @@ namespace GUI
             }
             foreach (Staff item in list)
             {
+                if(ckeckPositionStaff(item.Id) != "Quản lý")
                 table.Rows.Add(item.Id.ToString(), item.Nickname, item.CitizenId, item.FullName, item.Birthday,
                     item.GenderIsMale == true ? "Nam" : "Nữ", item.Qualification, item.ContactNumber, item.Address,
                     ckeckPositionStaff(item.Id), AccountBLL.getUsernameAccount(item.Id), item.StartDate, item.ResignationDate);
@@ -109,9 +110,10 @@ namespace GUI
             table.Rows.Clear();
             List<Staff> list = StaffBLL.getAllStaff();
             Data(list);
-            comboBoxFilter.SelectedIndex = 3;
+            comboBoxFilter.SelectedIndex = 2;
             comboFilterGender.SelectedIndex = 2;
-            inpTitle.SelectedIndex = 2;
+            inpTitle.SelectedIndex = 1;
+
         }
 
         //Tìm kiếm
@@ -147,7 +149,7 @@ namespace GUI
             }
             inpGenderMale.Checked = true;
             inpTitle.Enabled = true;
-            inpTitle.SelectedIndex = 2;
+            inpTitle.SelectedIndex = 1;
             inpId.Enabled = false;
             inpAccount.Enabled = false;
             btnAccount.Visible = false;
@@ -256,7 +258,7 @@ namespace GUI
             if (StaffBLL.insertStaff(new Staff(inpNickname.Text, inpCitizenId.Text, inpFullName.Text,
                 ConvertStringToDateTime(inpBirthday.Text), inpGenderMale.Checked == true,
                 inpQualification.Text, inpContactNumber.Text, inpAddress.Text,
-                ConvertStringToDateTime(DateTime.Now.ToString("dd-MM-yyyy"))), role, inpCitizenId.Text))
+                ConvertStringToDateTime(DateTime.Now.ToString("dd-MM-yyyy"))), role+1, inpCitizenId.Text))
             {
                 MessageBox.Show("Thêm thành công");
                 return;
@@ -276,7 +278,7 @@ namespace GUI
             bool rs = StaffBLL.updateStaff(new Staff(Convert.ToInt16(inpId.Text), inpNickname.Text, inpCitizenId.Text, inpFullName.Text,
                 ConvertStringToDateTime(inpBirthday.Text), inpGenderMale.Checked == true,
                 inpQualification.Text, inpContactNumber.Text, inpAddress.Text,
-                ConvertStringToDateTime(DateTime.Now.ToString("dd-MM-yyyy")), ConvertStringToDateTime(inpResignationDate.Text)), role);
+                ConvertStringToDateTime(DateTime.Now.ToString("dd-MM-yyyy")), ConvertStringToDateTime(inpResignationDate.Text)), role+1);
             if (rs == true)
             {
                 MessageBox.Show("Cập nhật thông tin thành công");
@@ -309,7 +311,7 @@ namespace GUI
             table.Rows.Clear();
             List<Staff> list = StaffBLL.getAllStaff();
             Data(list);
-            inpTitle.SelectedIndex = 2;
+            inpTitle.SelectedIndex = 1;
             setBtnAccount();
         }
         //foreach (TextBox textBox in form.Controls.OfType<TextBox>())
@@ -348,7 +350,7 @@ namespace GUI
                 inpQualification.Text = (string)selectedRow.Cells[6].Value;
                 inpContactNumber.Text = (string)selectedRow.Cells[7].Value;
                 inpAddress.Text = (string)selectedRow.Cells[8].Value;
-                inpTitle.SelectedIndex = checkIndexPositionStaff((string)selectedRow.Cells[9].Value);
+                inpTitle.SelectedIndex = checkIndexPositionStaff((string)selectedRow.Cells[9].Value) -1 ;
                 inpAccount.Text = (string)selectedRow.Cells[10].Value;
                 try
                 {

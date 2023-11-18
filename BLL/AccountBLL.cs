@@ -35,14 +35,41 @@ namespace BLL
             }
             return false;
         }
-
+        public static bool updateAvatar(int id, string avatar)
+        {
+            try
+            {
+                bool rs = AccountDAO.UpdateAvatar(id, avatar);
+                return rs;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return false;
+        }
+        public static bool updateUsername(int id, string username)
+        {
+            try
+            {
+                bool rs = AccountDAO.UpdateUsername(id, username);
+                return rs;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return false;
+        }
         public static string ChangePwd(int id, string oldPass, string newPass)
         {
-            Account acc = AccountDAO.Select(id);
+            Account acc = AccountDAO.SelectAcc(id);
             if (acc != null)
             {
+                Console.WriteLine(acc.Password);
+                Console.WriteLine(oldPass);
                 return acc.Password == oldPass ? (
-                    AccountDAO.UpdatePassword(acc, newPass) ? "Thay đổi mật khẩu thành công" : "Thay đổi mật khẩu thất bại"
+                    AccountDAO.UpdatePassword(id, newPass) ? "Thay đổi mật khẩu thành công" : "Thay đổi mật khẩu thất bại"
                     ) : "Mật khẩu hiện tại không chính xác!";
             }
             return "Tài khoản không tồn tại";
@@ -54,6 +81,19 @@ namespace BLL
             {
                 string username = AccountDAO.Select(id) == null ? "" : AccountDAO.Select(id).Username;
                 return username;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return "";
+        }
+        public static string getAvatarAccount(int id)
+        {
+            try
+            {
+                string avatar = AccountDAO.Select(id) == null ? "" : AccountDAO.Select(id).Avatar;
+                return avatar != null ? avatar : "";
             }
             catch (Exception ex)
             {

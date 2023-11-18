@@ -17,6 +17,29 @@ namespace BLL
         {
             return StaffDAO.SelectAll() != null ? StaffDAO.SelectAll() : null;
         } 
+        public static Staff getStaff(int id)
+        {
+            try
+            {
+                Staff staff = StaffDAO.Select(id);
+                return staff != null ? staff : null;
+            }catch(Exception ex) { 
+                Console.WriteLine(ex.Message);
+            }
+            return null;
+        }
+        public static string getNickName(int id)
+        {
+            try
+            {
+                Staff staff = StaffDAO.Select(id);
+                return staff.Nickname;
+            }catch (Exception ex)
+            {
+                Console.WriteLine("No nickname"+ex.Message);
+            }
+            return "";
+        }
         public static List<Staff> getStaffsOnRequest(string request, int filter, int gender)
         {
             try
@@ -63,6 +86,7 @@ namespace BLL
             }
             return false;
         }
+
         public static bool deleteStaff(int id)
         {
             return StaffDAO.Delete(id) == true;

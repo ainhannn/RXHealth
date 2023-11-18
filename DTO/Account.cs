@@ -7,6 +7,15 @@
         public string Password { get; set; }
         public int Role { get; set; }
         public string Avatar { get; set; }
+
+        public Account(int id, string username, string password, int role, string avatar)
+        {
+            Id = id;
+            Username = username;
+            Password = password;
+            Role = role;
+            Avatar = avatar;
+        }
         public Account(int id, string username, int role, string avatar)
         {
             Id = id;
