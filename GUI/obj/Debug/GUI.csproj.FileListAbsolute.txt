@@ -255,7 +255,6 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\Guna.UI2.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormAccount.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormBuy.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormChangePwd.resources
-C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateProvi.resources
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormAccount.resources
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormChangePwd.resources
@@ -379,3 +378,5 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\Microsoft.IO.
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\EPPlus.xml
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateCate.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateProvi.resources
