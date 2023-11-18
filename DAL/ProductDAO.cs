@@ -29,6 +29,11 @@ namespace DAL
             } catch { return null; }
         }
 
+        public static int GetProductId (string barcode)
+        {
+            return 0;
+        }
+
         public static List<Product> SelectAll()
         {
             string sql = string.Format("SELECT * FROM {0}", dbViewName);
