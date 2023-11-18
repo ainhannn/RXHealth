@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCateProvi));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCateProvi));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,7 +44,6 @@
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.form = new System.Windows.Forms.Panel();
-            this.save = new System.Windows.Forms.Button();
             this.inpAddress = new System.Windows.Forms.TextBox();
             this.inpContactNumber = new System.Windows.Forms.TextBox();
             this.inpNickname = new System.Windows.Forms.TextBox();
@@ -53,8 +51,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.save = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.create = new System.Windows.Forms.Button();
+            this.search = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlSearch.SuspendLayout();
@@ -71,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 855);
+            this.panel1.Size = new System.Drawing.Size(400, 894);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -101,7 +101,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(303, 677);
+            this.dataGridView1.Size = new System.Drawing.Size(303, 716);
             this.dataGridView1.TabIndex = 114;
             // 
             // name
@@ -121,26 +121,6 @@
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Size = new System.Drawing.Size(303, 50);
             this.pnlSearch.TabIndex = 113;
-            // 
-            // search
-            // 
-            this.search.BackColor = System.Drawing.Color.RoyalBlue;
-            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search.Dock = System.Windows.Forms.DockStyle.Right;
-            this.search.FlatAppearance.BorderSize = 0;
-            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.search.ForeColor = System.Drawing.Color.White;
-            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
-            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.search.Location = new System.Drawing.Point(251, 0);
-            this.search.Margin = new System.Windows.Forms.Padding(5);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(50, 48);
-            this.search.TabIndex = 22;
-            this.search.Tag = "";
-            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.search.UseVisualStyleBackColor = false;
             // 
             // inpSearch
             // 
@@ -174,12 +154,12 @@
             this.staff,
             this.total});
             this.table.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.table.Location = new System.Drawing.Point(400, 355);
+            this.table.Location = new System.Drawing.Point(400, 394);
             this.table.Margin = new System.Windows.Forms.Padding(0);
             this.table.Name = "table";
             this.table.ReadOnly = true;
             this.table.RowHeadersVisible = false;
-            this.table.Size = new System.Drawing.Size(1184, 500);
+            this.table.Size = new System.Drawing.Size(1200, 500);
             this.table.TabIndex = 1;
             // 
             // id
@@ -218,7 +198,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(400, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1184, 355);
+            this.panel2.Size = new System.Drawing.Size(1200, 394);
             this.panel2.TabIndex = 2;
             // 
             // form
@@ -236,28 +216,8 @@
             this.form.Dock = System.Windows.Forms.DockStyle.Fill;
             this.form.Location = new System.Drawing.Point(0, 0);
             this.form.Name = "form";
-            this.form.Size = new System.Drawing.Size(1184, 355);
+            this.form.Size = new System.Drawing.Size(1200, 394);
             this.form.TabIndex = 3;
-            // 
-            // save
-            // 
-            this.save.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.save.BackColor = System.Drawing.Color.RoyalBlue;
-            this.save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Image = global::GUI.Properties.Resources.save;
-            this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.save.Location = new System.Drawing.Point(719, 327);
-            this.save.Margin = new System.Windows.Forms.Padding(5);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(50, 50);
-            this.save.TabIndex = 110;
-            this.save.Tag = "";
-            this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.save.UseVisualStyleBackColor = false;
             // 
             // inpAddress
             // 
@@ -265,7 +225,7 @@
             this.inpAddress.AcceptsTab = true;
             this.inpAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpAddress.Location = new System.Drawing.Point(788, 61);
+            this.inpAddress.Location = new System.Drawing.Point(796, 61);
             this.inpAddress.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpAddress.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpAddress.Name = "inpAddress";
@@ -278,7 +238,7 @@
             this.inpContactNumber.AcceptsTab = true;
             this.inpContactNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpContactNumber.Location = new System.Drawing.Point(281, 123);
+            this.inpContactNumber.Location = new System.Drawing.Point(289, 123);
             this.inpContactNumber.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpContactNumber.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpContactNumber.Name = "inpContactNumber";
@@ -291,7 +251,7 @@
             this.inpNickname.AcceptsTab = true;
             this.inpNickname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inpNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpNickname.Location = new System.Drawing.Point(281, 61);
+            this.inpNickname.Location = new System.Drawing.Point(289, 61);
             this.inpNickname.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpNickname.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpNickname.Name = "inpNickname";
@@ -303,7 +263,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label11.Location = new System.Drawing.Point(625, 64);
+            this.label11.Location = new System.Drawing.Point(633, 64);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 25);
             this.label11.TabIndex = 92;
@@ -314,18 +274,18 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label8.Location = new System.Drawing.Point(625, 121);
+            this.label8.Location = new System.Drawing.Point(633, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(187, 25);
             this.label8.TabIndex = 89;
-            this.label8.Text = "Số lân giao dịch     0";
+            this.label8.Text = "Số lần giao dịch     0";
             // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label7.Location = new System.Drawing.Point(146, 126);
+            this.label7.Location = new System.Drawing.Point(154, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 25);
             this.label7.TabIndex = 88;
@@ -336,11 +296,31 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label5.Location = new System.Drawing.Point(146, 64);
+            this.label5.Location = new System.Drawing.Point(154, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 25);
+            this.label5.Size = new System.Drawing.Size(47, 25);
             this.label5.TabIndex = 86;
-            this.label5.Text = "Tên hiển thị";
+            this.label5.Text = "Tên";
+            // 
+            // save
+            // 
+            this.save.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.save.BackColor = System.Drawing.Color.RoyalBlue;
+            this.save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.save.FlatAppearance.BorderSize = 0;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.save.ForeColor = System.Drawing.Color.White;
+            this.save.Image = global::GUI.Properties.Resources.save;
+            this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.save.Location = new System.Drawing.Point(727, 327);
+            this.save.Margin = new System.Windows.Forms.Padding(5);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(50, 50);
+            this.save.TabIndex = 110;
+            this.save.Tag = "";
+            this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.save.UseVisualStyleBackColor = false;
             // 
             // update
             // 
@@ -353,7 +333,7 @@
             this.update.ForeColor = System.Drawing.Color.White;
             this.update.Image = global::GUI.Properties.Resources.compose;
             this.update.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.update.Location = new System.Drawing.Point(567, 327);
+            this.update.Location = new System.Drawing.Point(575, 327);
             this.update.Margin = new System.Windows.Forms.Padding(5);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(50, 50);
@@ -369,11 +349,11 @@
             this.create.Cursor = System.Windows.Forms.Cursors.Hand;
             this.create.FlatAppearance.BorderSize = 0;
             this.create.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.create.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.create.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.create.ForeColor = System.Drawing.Color.White;
             this.create.Image = ((System.Drawing.Image)(resources.GetObject("create.Image")));
             this.create.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.create.Location = new System.Drawing.Point(415, 327);
+            this.create.Location = new System.Drawing.Point(423, 327);
             this.create.Margin = new System.Windows.Forms.Padding(5);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(50, 50);
@@ -382,10 +362,30 @@
             this.create.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.create.UseVisualStyleBackColor = false;
             // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.RoyalBlue;
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Dock = System.Windows.Forms.DockStyle.Right;
+            this.search.FlatAppearance.BorderSize = 0;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.search.ForeColor = System.Drawing.Color.White;
+            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
+            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search.Location = new System.Drawing.Point(251, 0);
+            this.search.Margin = new System.Windows.Forms.Padding(5);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(50, 48);
+            this.search.TabIndex = 22;
+            this.search.Tag = "";
+            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.search.UseVisualStyleBackColor = false;
+            // 
             // FormCateProvi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1584, 855);
+            this.ClientSize = new System.Drawing.Size(1600, 894);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.table);

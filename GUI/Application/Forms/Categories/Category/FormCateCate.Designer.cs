@@ -73,10 +73,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.img);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(900, 0);
+            this.panel1.Location = new System.Drawing.Point(1150, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 894);
+            this.panel1.Size = new System.Drawing.Size(450, 894);
             this.panel1.TabIndex = 0;
             // 
             // btn
@@ -92,7 +92,7 @@
             this.btn.Location = new System.Drawing.Point(0, 842);
             this.btn.Margin = new System.Windows.Forms.Padding(5);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(698, 50);
+            this.btn.Size = new System.Drawing.Size(448, 50);
             this.btn.TabIndex = 10;
             this.btn.Tag = "";
             this.btn.Text = "Xem thêm";
@@ -132,10 +132,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.title.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.title.Enabled = false;
-            this.title.Font = new System.Drawing.Font("Segoe UI", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.Location = new System.Drawing.Point(202, 22);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(472, 150);
+            this.title.Size = new System.Drawing.Size(222, 150);
             this.title.TabIndex = 6;
             this.title.Text = "";
             // 
@@ -187,7 +187,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 744);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(900, 150);
+            this.panel2.Size = new System.Drawing.Size(1150, 150);
             this.panel2.TabIndex = 1;
             // 
             // btnCate6
@@ -195,7 +195,7 @@
             this.btnCate6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCate6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate6.Image = global::GUI.Properties.Resources.thietbi;
-            this.btnCate6.Location = new System.Drawing.Point(750, 0);
+            this.btnCate6.Location = new System.Drawing.Point(875, 0);
             this.btnCate6.Name = "btnCate6";
             this.btnCate6.Padding = new System.Windows.Forms.Padding(20);
             this.btnCate6.Size = new System.Drawing.Size(150, 150);
@@ -209,7 +209,7 @@
             this.btnCate5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCate5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate5.Image = global::GUI.Properties.Resources.dungcu;
-            this.btnCate5.Location = new System.Drawing.Point(600, 0);
+            this.btnCate5.Location = new System.Drawing.Point(725, 0);
             this.btnCate5.Name = "btnCate5";
             this.btnCate5.Padding = new System.Windows.Forms.Padding(20);
             this.btnCate5.Size = new System.Drawing.Size(150, 150);
@@ -223,7 +223,7 @@
             this.btnCate4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCate4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate4.Image = global::GUI.Properties.Resources.canhan;
-            this.btnCate4.Location = new System.Drawing.Point(450, 0);
+            this.btnCate4.Location = new System.Drawing.Point(575, 0);
             this.btnCate4.Name = "btnCate4";
             this.btnCate4.Padding = new System.Windows.Forms.Padding(20);
             this.btnCate4.Size = new System.Drawing.Size(150, 150);
@@ -237,7 +237,7 @@
             this.btnCate3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCate3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate3.Image = global::GUI.Properties.Resources.thucpham;
-            this.btnCate3.Location = new System.Drawing.Point(300, 0);
+            this.btnCate3.Location = new System.Drawing.Point(425, 0);
             this.btnCate3.Name = "btnCate3";
             this.btnCate3.Padding = new System.Windows.Forms.Padding(20);
             this.btnCate3.Size = new System.Drawing.Size(150, 150);
@@ -251,7 +251,7 @@
             this.btnCate2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCate2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate2.Image = global::GUI.Properties.Resources._kedon;
-            this.btnCate2.Location = new System.Drawing.Point(150, 0);
+            this.btnCate2.Location = new System.Drawing.Point(275, 0);
             this.btnCate2.Name = "btnCate2";
             this.btnCate2.Padding = new System.Windows.Forms.Padding(20);
             this.btnCate2.Size = new System.Drawing.Size(150, 150);
@@ -265,7 +265,7 @@
             this.btnCate1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCate1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate1.Image = global::GUI.Properties.Resources.kedon;
-            this.btnCate1.Location = new System.Drawing.Point(0, 0);
+            this.btnCate1.Location = new System.Drawing.Point(125, 0);
             this.btnCate1.Name = "btnCate1";
             this.btnCate1.Padding = new System.Windows.Forms.Padding(20);
             this.btnCate1.Size = new System.Drawing.Size(150, 150);
@@ -281,13 +281,13 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(900, 744);
+            this.panel3.Size = new System.Drawing.Size(1150, 744);
             this.panel3.TabIndex = 2;
             // 
             // image
             // 
             this.image.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.image.Location = new System.Drawing.Point(100, 22);
+            this.image.Location = new System.Drawing.Point(225, 22);
             this.image.Name = "image";
             this.image.Size = new System.Drawing.Size(700, 700);
             this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

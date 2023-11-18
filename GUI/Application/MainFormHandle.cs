@@ -43,7 +43,7 @@ namespace GUI
             SetDefault();
             cateIngre.BackColor = Color.LightSteelBlue;
             category.BackColor = Color.Navy;
-            Navigate.Form(formTitle, "Hoạt Chất", fmCateIngre, new FormCateIngre(), this);
+            Navigate.Form(formTitle, "Hoạt Chất Thông Dụng", fmCateIngre, new FormCateIngre(), this);
         }
 
         public void cateDrug_Click(object sender, EventArgs e)

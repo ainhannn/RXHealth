@@ -421,6 +421,12 @@
     <EmbeddedResource Include="Application\Forms\Categories\Category\FormCateCate.resx">
       <DependentUpon>FormCateCate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Customer\FormCateCus.resx">
+      <DependentUpon>FormCateCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Ingredient\FormCateIngre.resx">
+      <DependentUpon>FormCateIngre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Provider\FormCateProvi.resx">
       <DependentUpon>FormCateProvi.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -15,6 +8,12 @@ namespace GUI
         public FormCateIngre()
         {
             InitializeComponent();
+        }
+
+        private void FormCateIngre_Load(object sender, EventArgs e)
+        {
+            foreach (Control lbl in Controls)
+                lbl.Text = "Ái Nhân"; //bỏ list dô
         }
     }
 }
