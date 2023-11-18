@@ -205,3 +205,11 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\System.Compon
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\EPPlus.xml
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DAL\obj\Debug\DAL.csproj.ResolveComReference.cache
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DAL\bin\Debug\EPPlus.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DAL\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DAL\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DAL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DAL\bin\Debug\EPPlus.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DAL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\DAL\obj\Debug\DAL.csproj.ResolveComReference.cache

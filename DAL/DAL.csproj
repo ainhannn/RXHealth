@@ -254,20 +254,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerDAO.cs" />
-    <Compile Include="ExportDAO.cs" />
     <Compile Include="ImportDAO.cs" />
-    <Compile Include="OrderDAO.cs" />
     <Compile Include="ProductDAO.cs" />
     <Compile Include="ProductBatchDAO.cs" />
     <Compile Include="StaffDAO.cs" />
-    <Compile Include="ProviderDAO.cs" />
+    <Compile Include="SupplierDAO.cs" />
     <Compile Include="AccountDAO.cs" />
-    <Compile Include="UnitDAO.cs" />
-    <Compile Include="CountryDAO.cs" />
-    <Compile Include="IngredientDAO.cs" />
+    <Compile Include="SubstanceDAO.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="CategoryDAO.cs" />
-    <Compile Include="ManufacturerDAO.cs" />
     <Compile Include="ProductInfoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

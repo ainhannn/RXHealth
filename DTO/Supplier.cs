@@ -8,6 +8,7 @@ namespace DTO
         public string Name { get; set; }
         public string ContactNumber { get; set; }
         public string Address { get; set; }
+        public int Times { get; set; } = 0;
         public List<ImportDetail> Details { get; set; } = new List<ImportDetail>();
 
         public Supplier(int id) { Id = id; }
