@@ -69,7 +69,14 @@ namespace DAL
             var table = ExecuteReader(sql);
             try
             {
-                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToInt16(table[0][2]), Convert.ToString(table[0][3]));
+                if (!Int16.TryParse(table[0][0].ToString(), out var p01))
+                    p01 = 0;
+                var p02 = table[0][1].ToString();
+                if (!Int16.TryParse(table[0][2].ToString(), out var p03))
+                    p03 = -1;
+                var p04 = table[0][3].ToString();
+
+                return new Account(p01,p02,p03,p04);
             }
             catch { return null; }
         }

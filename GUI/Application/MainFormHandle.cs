@@ -11,7 +11,7 @@ namespace GUI
     public partial class MainForm : Form
     {
         FormStatistic fmStatistic;
-        FormCateCate fmCateCate;
+        FormCateProvi fmCateCate;
         FormCateIngre fmCateIngre;
         FormCateDrug fmCateDrug;
         FormCateProvi fmCateProvi;
@@ -44,10 +44,10 @@ namespace GUI
             SetDefault();
             cateIngre.BackColor = Color.LightSteelBlue;
             category.BackColor = Color.Navy;
-            Navigate.Form(formTitle, "Hoạt Chất", fmCateIngre, new FormCateIngre(), this);
+            Navigate.Form(formTitle, "Hoạt Chất Thông Dụng", fmCateIngre, new FormCateIngre(), this);
         }
 
-        private void cateDrug_Click(object sender, EventArgs e)
+        public void cateDrug_Click(object sender, EventArgs e)
         {
             SetDefault();
             cateDrug.BackColor = Color.LightSteelBlue;

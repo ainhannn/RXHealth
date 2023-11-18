@@ -255,7 +255,6 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\Guna.UI2.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormAccount.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormBuy.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormChangePwd.resources
-C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateProvi.resources
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormAccount.resources
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormCateProvi.resources
@@ -378,4 +377,28 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\Microsoft.IO.
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\EPPlus.xml
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+<<<<<<< HEAD
 C:\Users\LAM\source\repos\RXHealth\GUI\obj\Debug\GUI.FormChangePwdHandle.resources
+=======
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateCate.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateProvi.resources
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\EPPlus.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\Guna.UI2.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\Spire.XLS.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\EPPlus.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\Spire.XLS.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.FormAccount.resources
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.FormChangePwd.resources
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.FormCateCate.resources
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.FormCateProvi.resources
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.FormBuy.resources
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.FormSell.resources
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.FormStaff.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateIngre.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateCus.resources
+>>>>>>> 1d424a06ecc3ed27a38f79de1507bc59ea61e832

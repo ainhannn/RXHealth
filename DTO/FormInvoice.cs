@@ -8,7 +8,7 @@ namespace DTO
         public string Code { get; private set; }
         public DateTime DateInit { get; set; } = DateTime.Now;
         public int StaffId { get; set; }
-        public string StaffNickName { get; set; }
+        public string StaffNickName { get; set; } //
 
 
         public FormInvoice() { }

@@ -1,20 +1,17 @@
 -- Active: 1695203080273@@127.0.0.1@3306@pharmacy
 USE pharmacy;
 
-INSERT INTO account (username,password,role) VALUE 
-	('admin','123',0),
-	('manager','123',1),
-	('stocker','123',2),
-	('seller','123',3);
-
 INSERT INTO staff (nickname,citizen_id_number,fullname,birthday,qualification,contact_number) VALUES
-    ('Calcifer','003121410361','Trần Thụy Ái Nhân','2003-10-06','Đang học Đại học','0857288009'),
-    ('Chanh','003121410292','Nguyễn Vủ Quốc Lâm','2003-10-08','Đang học Đại học','0941545482'),
-    ('NLHN','003121410339','Ngô Lê Huệ Ngân','2003-02-17','Đang học Đại học','0869037600');
-
-CALL insert_account(1,1);
-CALL insert_account(2,3);
-CALL insert_account(3,2);
+    ('admin','000000000000','Admin','2023-11-20','Đang học Đại học','0123456789'),
+    ('manager','000000000001','Manager','2023-11-20','Đang học Đại học','0123456789'),
+    ('stocker','000000000002','Stocker','2023-11-20','Đang học Đại học','0123456789'),
+    ('seller','000000000003','Seller','2023-11-20','Đang học Đại học','0123456789');
+    
+INSERT INTO account (id,username,password,role) VALUE 
+	(1,'admin_role','0123456789',0),
+	(2,'manager_role','0123456789',1),
+	(3,'stocker_role','0123456789',2),
+	(4,'seller_role','0123456789',3);
 
 INSERT INTO customer (name,contact_number) VALUES
     ('Guest', ''),

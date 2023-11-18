@@ -7,14 +7,14 @@ namespace DTO
         public int Id { get; private set; }
         public string Name { get; set; }
         public string ContactNumber { get; set; }
-        public int Point { get; set; } = 0;
+        public int TotalPoint { get; set; } = 0;
         public List<SaleDetail> PurchaseHistory { get; set; } = new List<SaleDetail>();
-        public Customer(int id, string name, string contactNumber, int point)
+        public Customer(int id, string name, string contactNumber, int totalPoint)
         {
             Id = id;
             Name = name;
             ContactNumber = contactNumber;
-            Point = point;
+            TotalPoint = totalPoint;
         }
         public Customer(string name, string contactNumber)
         {

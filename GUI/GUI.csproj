@@ -239,10 +239,10 @@
     <Compile Include="Application\Forms\Activate\FormStatisticStyle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\Category\FormCateCateHandle.cs">
+    <Compile Include="Application\Forms\Categories\Provider\FormCateProviHandle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\Category\FormCateCateStyle.cs">
+    <Compile Include="Application\Forms\Categories\Provider\FormCateProviStyle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\Forms\Categories\Customer\FormCateCusHandle.cs">
@@ -263,10 +263,10 @@
     <Compile Include="Application\Forms\Categories\Ingredient\FormCateIngreStyle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\Provider\FormCateProviHandle.cs">
+    <Compile Include="Application\Forms\Categories\Category\FormCateCateHandle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\Provider\FormCateProviStyle.cs">
+    <Compile Include="Application\Forms\Categories\Category\FormCateCateStyle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\Forms\Inventories\InventoryChecked\FormInvenChkHandle.cs">
@@ -325,11 +325,11 @@
     <Compile Include="Application\Forms\Account\FormAccount.Designer.cs">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Categories\Category\FormCateCate.cs">
+    <Compile Include="Application\Forms\Categories\Provider\FormCateProvi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\Category\FormCateCate.Designer.cs">
-      <DependentUpon>FormCateCate.cs</DependentUpon>
+    <Compile Include="Application\Forms\Categories\Provider\FormCateProvi.Designer.cs">
+      <DependentUpon>FormCateProvi.cs</DependentUpon>
     </Compile>
     <Compile Include="Application\Forms\Categories\Customer\FormCateCus.cs">
       <SubType>Form</SubType>
@@ -349,11 +349,11 @@
     <Compile Include="Application\Forms\Categories\Ingredient\FormCateIngre.Designer.cs">
       <DependentUpon>FormCateIngre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application\Forms\Categories\Provider\FormCateProvi.cs">
+    <Compile Include="Application\Forms\Categories\Category\FormCateCate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application\Forms\Categories\Provider\FormCateProvi.Designer.cs">
-      <DependentUpon>FormCateProvi.cs</DependentUpon>
+    <Compile Include="Application\Forms\Categories\Category\FormCateCate.Designer.cs">
+      <DependentUpon>FormCateCate.cs</DependentUpon>
     </Compile>
     <Compile Include="Application\Forms\Inventories\InventoryChecked\FormInvenChk.cs">
       <SubType>Form</SubType>
@@ -417,6 +417,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Account\ChangePwd\FormChangePwd.resx">
       <DependentUpon>FormChangePwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Category\FormCateCate.resx">
+      <DependentUpon>FormCateCate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Customer\FormCateCus.resx">
+      <DependentUpon>FormCateCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Ingredient\FormCateIngre.resx">
+      <DependentUpon>FormCateIngre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Provider\FormCateProvi.resx">
       <DependentUpon>FormCateProvi.cs</DependentUpon>
@@ -605,6 +614,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kedon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\!kedon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thucpham.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\canhan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dungcu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thietbi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

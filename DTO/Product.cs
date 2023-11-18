@@ -1,33 +1,31 @@
 ﻿using System.Collections.Generic;
-using System.Reflection;
 
 namespace DTO
 {
     public class Product
     {
-        public int Id { get => Information.Id; }
-        public ProductInfo Information { get; set; }
+        public int Id { get; }
+        public string Stack { get; set; }
+        public string Barcode { get; set; }
+        public string Name { get; set; }
+        public Category Category { get; set; }
+        public byte Expiry { get; set; }
+        public string Unit { get; set; }
+        public float CurrentImportPrice { get; set; } //
+        public float Saleprice { get; set; }
+        public int NumberSoldOut { get; set; } // 
+        public int TotalNumber { get; set; } // 
+        public string RetailUnit { get; set; }
+        public float RetailSaleprice { get; set; }
+        public int RetailNumber { get; set; }
+        public string ExtraInformation { get; set; }
+        public string Image { get; set; }
+        public bool IsOnSale { get; set; } = true;
         public List<ProductBatch> Batches { get; set; } = new List<ProductBatch>();
-        public string Stack { get; set; } = string.Empty;
-        public int NumberSoldOut { get; set; }
-        public int Number { get; set; }
-        public int NumberSubunit { get; set; }
-        public int NumberAboutToExpire { get; set; }
-        public float Rate { get; set; }
-        public bool IsOnSale { get; set; }
-        public Product() { }
 
-        public Product(ProductInfo information, List<ProductBatch> batches, string stack, int numberSoldOut, int number, int numberSubunit, int numberAboutToExpire, float rate, bool isOnSale)
+        public Product(int id)
         {
-            Information = information;
-            Batches = batches;
-            Stack = stack;
-            NumberSoldOut = numberSoldOut;
-            Number = number;
-            NumberSubunit = numberSubunit;
-            NumberAboutToExpire = numberAboutToExpire;
-            Rate = rate;
-            IsOnSale = isOnSale;
+            Id = id;
         }
         public void AddProductBatch(ProductBatch batch) => Batches.Add(batch);
     }
