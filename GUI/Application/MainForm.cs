@@ -81,8 +81,7 @@ namespace GUI
         // Control Box
         private void close_Click(object sender, EventArgs e)
         {
-            Close();
-            new LoginForm().Show();
+            Application.Exit();
         }
 
         private void minimize_Click(object sender, EventArgs e)

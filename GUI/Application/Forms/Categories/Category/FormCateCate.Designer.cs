@@ -93,7 +93,7 @@
             this.btn.Margin = new System.Windows.Forms.Padding(5);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(698, 50);
-            this.btn.TabIndex = 11;
+            this.btn.TabIndex = 10;
             this.btn.Tag = "";
             this.btn.Text = "Xem thêm";
             this.btn.UseVisualStyleBackColor = false;
