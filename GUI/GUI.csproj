@@ -606,5 +606,23 @@
   <ItemGroup>
     <None Include="Resources\unlock.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kedon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\!kedon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thucpham.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\canhan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dungcu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thietbi.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

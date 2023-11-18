@@ -47,32 +47,32 @@ namespace GUI
 
         private void login_Click(object sender, EventArgs e)
         {
-            string username = inputName.Text;
-            string password = inputPass.Text;
-            string rs = caseValidate(username, password);
-            // (1) != "" --> check input false | (2) == "" --> check input true and login
-            if (rs != "")
-            {
-                MessageBox.Show(rs, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                Account account = AccountBLL.Login(new Account(username, password));
-                if (account == null)
-                {
-                    MessageBox.Show("Tài khoản không tồn tại ", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    if(account.Role == Env.GetInt("admin"))
-                    {
+            //string username = inputName.Text;
+            //string password = inputPass.Text;
+            //string rs = caseValidate(username, password);
+            //// (1) != "" --> check input false | (2) == "" --> check input true and login
+            //if (rs != "")
+            //{
+            //    MessageBox.Show(rs, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //}
+            //else
+            //{
+            //    Account account = AccountBLL.Login(new Account(username, password));
+            //    if (account == null)
+            //    {
+            //        MessageBox.Show("Tài khoản không tồn tại ", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    else
+            //    {
+            //        if(account.Role == Env.GetInt("admin"))
+            //        {
                         new MainForm().Show();
                         Hide();
-                    }
-                }
-                inputName.Text = "Tên đăng nhập";
-                inputPass.Text = "Mật khẩu";
-            }
+            //        }
+            //    }
+            //    inputName.Text = "Tên đăng nhập";
+            //    inputPass.Text = "Mật khẩu";
+            //}
         }
     }
 }
