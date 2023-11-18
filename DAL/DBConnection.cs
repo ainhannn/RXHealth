@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
 
 namespace DAL
 {
@@ -33,7 +32,7 @@ namespace DAL
         protected static void Close()
         {
             try
-            {
+            {       
                 conn?.Close();
             }
             catch (MySqlException ex)
