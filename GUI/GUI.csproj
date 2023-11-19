@@ -430,6 +430,9 @@
     <EmbeddedResource Include="Application\Forms\Categories\Provider\FormCateProvi.resx">
       <DependentUpon>FormCateProvi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Inventories\InventoryImport\FormInvenImp.resx">
+      <DependentUpon>FormInvenImp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Transactions\Buy\FormBuy.resx">
       <DependentUpon>FormBuy.cs</DependentUpon>
     </EmbeddedResource>

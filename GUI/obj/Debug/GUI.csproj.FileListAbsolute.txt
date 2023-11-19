@@ -402,10 +402,9 @@ C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.Fo
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateIngre.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateCus.resources
 >>>>>>> 1d424a06ecc3ed27a38f79de1507bc59ea61e832
-<<<<<<< HEAD
 C:\Users\LAM\source\repos\RXHealth\GUI\obj\Debug\GUI.FormCateCate.resources
 C:\Users\LAM\source\repos\RXHealth\GUI\obj\Debug\GUI.FormCateCus.resources
 C:\Users\LAM\source\repos\RXHealth\GUI\obj\Debug\GUI.FormCateIngre.resources
-=======
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormChangePwdHandle.resources
 >>>>>>> 17d57986bdd99e5152f6b6b27388ea9b15448f62
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormInvenImp.resources

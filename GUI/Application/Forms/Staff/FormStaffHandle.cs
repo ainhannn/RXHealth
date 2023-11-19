@@ -99,7 +99,7 @@ namespace GUI
             }
             foreach (Staff item in list)
             {
-                if(checkPositionStaff(item.Id) != "Quản lý")
+                //if(checkPositionStaff(item.Id) != "Quản lý")
                 table.Rows.Add(item.Id.ToString(), item.Nickname, item.CitizenId, item.FullName, item.Birthday,
                     item.GenderIsMale == true ? "Nam" : "Nữ", item.Qualification, item.ContactNumber, item.Address,
                     ckeckPositionStaff(item.Id), AccountBLL.getUsernameAccount(item.Id), item.StartDate, item.ResignationDate);
