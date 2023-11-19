@@ -233,10 +233,34 @@
     <Compile Include="Application\Forms\Account\ChangePwd\FormChangePwd.Designer.cs">
       <DependentUpon>FormChangePwd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Application\Forms\Activate\Invoices\FormInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Activate\Invoices\FormInvoice.Designer.cs">
+      <DependentUpon>FormInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\Activate\Invoices\FormInvoiceHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Activate\Invoices\FormInvoiceStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Application\Forms\Activate\FormStatisticHandle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\Forms\Activate\FormStatisticStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\PDetails\FormPDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\PDetails\FormPDetails.Designer.cs">
+      <DependentUpon>FormPDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\PDetails\FormPDetailsHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\PDetails\FormPDetailsStyle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\Forms\Categories\Provider\FormCateProviHandle.cs">
@@ -267,6 +291,18 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\Forms\Categories\Category\FormCateCateStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Inventories\InventoryChecked\BatchDetails\FormDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Inventories\InventoryChecked\BatchDetails\FormDetails.Designer.cs">
+      <DependentUpon>FormDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\Inventories\InventoryChecked\BatchDetails\FormDetailsHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Inventories\InventoryChecked\BatchDetails\FormDetailsStyle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Application\Forms\Inventories\InventoryChecked\FormInvenChkHandle.cs">
@@ -418,17 +454,29 @@
     <EmbeddedResource Include="Application\Forms\Account\ChangePwd\FormChangePwd.resx">
       <DependentUpon>FormChangePwd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Activate\Invoices\FormInvoice.resx">
+      <DependentUpon>FormInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Category\FormCateCate.resx">
       <DependentUpon>FormCateCate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Customer\FormCateCus.resx">
       <DependentUpon>FormCateCus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Drug\FormCateDrug.resx">
+      <DependentUpon>FormCateDrug.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Ingredient\FormCateIngre.resx">
       <DependentUpon>FormCateIngre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Provider\FormCateProvi.resx">
       <DependentUpon>FormCateProvi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Inventories\InventoryChecked\BatchDetails\FormDetails.resx">
+      <DependentUpon>FormDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Inventories\InventoryChecked\FormInvenChk.resx">
+      <DependentUpon>FormInvenChk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Inventories\InventoryImport\FormInvenImp.resx">
       <DependentUpon>FormInvenImp.cs</DependentUpon>
@@ -636,5 +684,6 @@
   <ItemGroup>
     <None Include="Resources\thietbi.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

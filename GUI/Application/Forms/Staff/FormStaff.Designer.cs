@@ -30,19 +30,15 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStaff));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStaff));
             this.panel3 = new System.Windows.Forms.Panel();
             this.comboFilterGender = new System.Windows.Forms.ComboBox();
             this.lblFilterGender = new System.Windows.Forms.Label();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
-            this.download = new System.Windows.Forms.Button();
             this.lblFilter = new System.Windows.Forms.Label();
-            this.print = new System.Windows.Forms.Button();
-            this.upload = new System.Windows.Forms.Button();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,13 +56,10 @@ namespace GUI
             this.ResignationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.refresh = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
             this.form = new System.Windows.Forms.Panel();
             this.inpTitle = new System.Windows.Forms.ComboBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.inpGenderFemale = new System.Windows.Forms.RadioButton();
-            this.save = new System.Windows.Forms.Button();
             this.inpGenderMale = new System.Windows.Forms.RadioButton();
             this.inpBirthday = new System.Windows.Forms.DateTimePicker();
             this.btnAccount = new System.Windows.Forms.Button();
@@ -92,8 +85,15 @@ namespace GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
+            this.save = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.create = new System.Windows.Forms.Button();
+            this.refresh = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.download = new System.Windows.Forms.Button();
+            this.print = new System.Windows.Forms.Button();
+            this.upload = new System.Windows.Forms.Button();
+            this.search = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
@@ -159,28 +159,6 @@ namespace GUI
             this.comboBoxFilter.Size = new System.Drawing.Size(120, 33);
             this.comboBoxFilter.TabIndex = 114;
             // 
-            // download
-            // 
-            this.download.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.download.AutoSize = true;
-            this.download.BackColor = System.Drawing.Color.RoyalBlue;
-            this.download.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.download.FlatAppearance.BorderSize = 0;
-            this.download.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.download.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.download.ForeColor = System.Drawing.Color.White;
-            this.download.Image = ((System.Drawing.Image)(resources.GetObject("download.Image")));
-            this.download.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.download.Location = new System.Drawing.Point(1410, 13);
-            this.download.Margin = new System.Windows.Forms.Padding(5);
-            this.download.Name = "download";
-            this.download.Size = new System.Drawing.Size(50, 50);
-            this.download.TabIndex = 18;
-            this.download.Tag = "";
-            this.download.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.download.UseVisualStyleBackColor = false;
-            this.download.Click += new System.EventHandler(this.download_Click);
-            // 
             // lblFilter
             // 
             this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -193,48 +171,6 @@ namespace GUI
             this.lblFilter.TabIndex = 117;
             this.lblFilter.Text = "Chức vụ";
             // 
-            // print
-            // 
-            this.print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.print.BackColor = System.Drawing.Color.RoyalBlue;
-            this.print.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.print.FlatAppearance.BorderSize = 0;
-            this.print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.print.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.print.ForeColor = System.Drawing.Color.White;
-            this.print.Image = ((System.Drawing.Image)(resources.GetObject("print.Image")));
-            this.print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.print.Location = new System.Drawing.Point(1530, 13);
-            this.print.Margin = new System.Windows.Forms.Padding(5);
-            this.print.Name = "print";
-            this.print.Size = new System.Drawing.Size(50, 50);
-            this.print.TabIndex = 20;
-            this.print.Tag = "";
-            this.print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.print.UseVisualStyleBackColor = false;
-            this.print.Click += new System.EventHandler(this.print_Click);
-            // 
-            // upload
-            // 
-            this.upload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.upload.BackColor = System.Drawing.Color.RoyalBlue;
-            this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.upload.FlatAppearance.BorderSize = 0;
-            this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upload.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.upload.ForeColor = System.Drawing.Color.White;
-            this.upload.Image = ((System.Drawing.Image)(resources.GetObject("upload.Image")));
-            this.upload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.upload.Location = new System.Drawing.Point(1470, 13);
-            this.upload.Margin = new System.Windows.Forms.Padding(5);
-            this.upload.Name = "upload";
-            this.upload.Size = new System.Drawing.Size(50, 50);
-            this.upload.TabIndex = 19;
-            this.upload.Tag = "";
-            this.upload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.upload.UseVisualStyleBackColor = false;
-            this.upload.Click += new System.EventHandler(this.upload_Click);
-            // 
             // pnlSearch
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.White;
@@ -246,28 +182,6 @@ namespace GUI
             this.pnlSearch.TabIndex = 112;
             this.pnlSearch.MouseLeave += new System.EventHandler(this.pnlSearch_MouseLeave);
             this.pnlSearch.MouseHover += new System.EventHandler(this.search_MouseHover);
-            // 
-            // search
-            // 
-            this.search.BackColor = System.Drawing.Color.RoyalBlue;
-            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search.Dock = System.Windows.Forms.DockStyle.Right;
-            this.search.FlatAppearance.BorderSize = 0;
-            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.search.ForeColor = System.Drawing.Color.White;
-            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
-            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.search.Location = new System.Drawing.Point(0, 0);
-            this.search.Margin = new System.Windows.Forms.Padding(5);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(50, 50);
-            this.search.TabIndex = 22;
-            this.search.Tag = "";
-            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.search.UseVisualStyleBackColor = false;
-            this.search.Click += new System.EventHandler(this.search_Click);
-            this.search.MouseHover += new System.EventHandler(this.search_MouseHover);
             // 
             // inpSearch
             // 
@@ -317,6 +231,7 @@ namespace GUI
             this.table.EnableHeadersVisualStyles = false;
             this.table.Location = new System.Drawing.Point(0, 444);
             this.table.Name = "table";
+            this.table.RowHeadersVisible = false;
             this.table.RowHeadersWidth = 51;
             this.table.RowTemplate.Height = 24;
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -443,48 +358,6 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(1600, 50);
             this.panel1.TabIndex = 1;
             // 
-            // refresh
-            // 
-            this.refresh.BackColor = System.Drawing.Color.Transparent;
-            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refresh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.refresh.FlatAppearance.BorderSize = 0;
-            this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refresh.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.refresh.ForeColor = System.Drawing.Color.White;
-            this.refresh.Image = global::GUI.Properties.Resources.refresh;
-            this.refresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.refresh.Location = new System.Drawing.Point(1500, 0);
-            this.refresh.Margin = new System.Windows.Forms.Padding(5);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(50, 50);
-            this.refresh.TabIndex = 111;
-            this.refresh.Tag = "";
-            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refresh.UseVisualStyleBackColor = false;
-            this.refresh.Click += new System.EventHandler(this.Table_Load);
-            // 
-            // delete
-            // 
-            this.delete.BackColor = System.Drawing.Color.Transparent;
-            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.delete.FlatAppearance.BorderSize = 0;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.delete.ForeColor = System.Drawing.Color.White;
-            this.delete.Image = global::GUI.Properties.Resources.trash;
-            this.delete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.delete.Location = new System.Drawing.Point(1550, 0);
-            this.delete.Margin = new System.Windows.Forms.Padding(5);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(50, 50);
-            this.delete.TabIndex = 112;
-            this.delete.Tag = "";
-            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.delete.UseVisualStyleBackColor = false;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
-            // 
             // form
             // 
             this.form.Controls.Add(this.inpTitle);
@@ -559,27 +432,6 @@ namespace GUI
             this.inpGenderFemale.TabStop = true;
             this.inpGenderFemale.Text = "Nữ";
             this.inpGenderFemale.UseVisualStyleBackColor = true;
-            // 
-            // save
-            // 
-            this.save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.save.BackColor = System.Drawing.Color.RoyalBlue;
-            this.save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.save.FlatAppearance.BorderSize = 0;
-            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.save.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.save.ForeColor = System.Drawing.Color.White;
-            this.save.Image = global::GUI.Properties.Resources.save;
-            this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.save.Location = new System.Drawing.Point(927, 236);
-            this.save.Margin = new System.Windows.Forms.Padding(5);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(50, 50);
-            this.save.TabIndex = 110;
-            this.save.Tag = "";
-            this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // inpGenderMale
             // 
@@ -875,6 +727,27 @@ namespace GUI
             this.lblId.TabIndex = 82;
             this.lblId.Text = "ID";
             // 
+            // save
+            // 
+            this.save.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.save.BackColor = System.Drawing.Color.RoyalBlue;
+            this.save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.save.FlatAppearance.BorderSize = 0;
+            this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.save.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.save.ForeColor = System.Drawing.Color.White;
+            this.save.Image = global::GUI.Properties.Resources.save;
+            this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.save.Location = new System.Drawing.Point(927, 236);
+            this.save.Margin = new System.Windows.Forms.Padding(5);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(50, 50);
+            this.save.TabIndex = 110;
+            this.save.Tag = "";
+            this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
             // update
             // 
             this.update.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -916,6 +789,134 @@ namespace GUI
             this.create.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.create.UseVisualStyleBackColor = false;
             this.create.Click += new System.EventHandler(this.create_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.BackColor = System.Drawing.Color.Transparent;
+            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.refresh.FlatAppearance.BorderSize = 0;
+            this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refresh.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.refresh.ForeColor = System.Drawing.Color.White;
+            this.refresh.Image = global::GUI.Properties.Resources.refresh;
+            this.refresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.refresh.Location = new System.Drawing.Point(1500, 0);
+            this.refresh.Margin = new System.Windows.Forms.Padding(5);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(50, 50);
+            this.refresh.TabIndex = 111;
+            this.refresh.Tag = "";
+            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refresh.UseVisualStyleBackColor = false;
+            this.refresh.Click += new System.EventHandler(this.Table_Load);
+            // 
+            // delete
+            // 
+            this.delete.BackColor = System.Drawing.Color.Transparent;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.delete.ForeColor = System.Drawing.Color.White;
+            this.delete.Image = global::GUI.Properties.Resources.trash;
+            this.delete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.delete.Location = new System.Drawing.Point(1550, 0);
+            this.delete.Margin = new System.Windows.Forms.Padding(5);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(50, 50);
+            this.delete.TabIndex = 112;
+            this.delete.Tag = "";
+            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
+            // download
+            // 
+            this.download.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.download.AutoSize = true;
+            this.download.BackColor = System.Drawing.Color.RoyalBlue;
+            this.download.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.download.FlatAppearance.BorderSize = 0;
+            this.download.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.download.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.download.ForeColor = System.Drawing.Color.White;
+            this.download.Image = ((System.Drawing.Image)(resources.GetObject("download.Image")));
+            this.download.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.download.Location = new System.Drawing.Point(1410, 13);
+            this.download.Margin = new System.Windows.Forms.Padding(5);
+            this.download.Name = "download";
+            this.download.Size = new System.Drawing.Size(50, 50);
+            this.download.TabIndex = 18;
+            this.download.Tag = "";
+            this.download.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.download.UseVisualStyleBackColor = false;
+            this.download.Click += new System.EventHandler(this.download_Click);
+            // 
+            // print
+            // 
+            this.print.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.print.BackColor = System.Drawing.Color.RoyalBlue;
+            this.print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.print.FlatAppearance.BorderSize = 0;
+            this.print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.print.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.print.ForeColor = System.Drawing.Color.White;
+            this.print.Image = ((System.Drawing.Image)(resources.GetObject("print.Image")));
+            this.print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.print.Location = new System.Drawing.Point(1530, 13);
+            this.print.Margin = new System.Windows.Forms.Padding(5);
+            this.print.Name = "print";
+            this.print.Size = new System.Drawing.Size(50, 50);
+            this.print.TabIndex = 20;
+            this.print.Tag = "";
+            this.print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.print.UseVisualStyleBackColor = false;
+            this.print.Click += new System.EventHandler(this.print_Click);
+            // 
+            // upload
+            // 
+            this.upload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.upload.BackColor = System.Drawing.Color.RoyalBlue;
+            this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upload.FlatAppearance.BorderSize = 0;
+            this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upload.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.upload.ForeColor = System.Drawing.Color.White;
+            this.upload.Image = ((System.Drawing.Image)(resources.GetObject("upload.Image")));
+            this.upload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.upload.Location = new System.Drawing.Point(1470, 13);
+            this.upload.Margin = new System.Windows.Forms.Padding(5);
+            this.upload.Name = "upload";
+            this.upload.Size = new System.Drawing.Size(50, 50);
+            this.upload.TabIndex = 19;
+            this.upload.Tag = "";
+            this.upload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.upload.UseVisualStyleBackColor = false;
+            this.upload.Click += new System.EventHandler(this.upload_Click);
+            // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.RoyalBlue;
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Dock = System.Windows.Forms.DockStyle.Right;
+            this.search.FlatAppearance.BorderSize = 0;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.search.ForeColor = System.Drawing.Color.White;
+            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
+            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search.Location = new System.Drawing.Point(0, 0);
+            this.search.Margin = new System.Windows.Forms.Padding(5);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(50, 50);
+            this.search.TabIndex = 22;
+            this.search.Tag = "";
+            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.search.UseVisualStyleBackColor = false;
+            this.search.Click += new System.EventHandler(this.search_Click);
+            this.search.MouseHover += new System.EventHandler(this.search_MouseHover);
             // 
             // FormStaff
             // 

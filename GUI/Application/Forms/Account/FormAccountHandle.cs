@@ -117,7 +117,7 @@ namespace GUI
         // Đổi mật khẩu
         private void btnAccount_Click(object sender, System.EventArgs e)
         {
-            new FormChangePwdHandle(idUser).Show();
+            new FormChangePwdHandle(idUser).ShowDialog();
         }
     }
 }
