@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
-
+using MySqlX.XDevAPI.Relational;
 namespace DAL
 {
     public class DBConnection
@@ -32,7 +32,7 @@ namespace DAL
         protected static void Close()
         {
             try
-            {       
+            {
                 conn?.Close();
             }
             catch (MySqlException ex)
@@ -86,7 +86,7 @@ namespace DAL
             return null;
         }
 
-        // -1 if have error else an integer number of rows changed 
+        // -1 if have error else an integer number of rows changed
         protected static int ExecuteNonQuery(string sql)
         {
             if (Open())
