@@ -440,7 +440,7 @@ namespace GUI
 
         private void print_Click(object sender, System.EventArgs e)
         {
-            Xls.Print("DHT.xlsx"); // sửa đúng tên và định dạng của tệp cần in
+            Xls.Print("test.xlsx"); // sửa đúng tên và định dạng của tệp cần in
         }
 
         private void download_Click(object sender, System.EventArgs e)
