@@ -253,6 +253,7 @@ namespace GUI
             this.save.Text = "Lưu";
             this.save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.save.UseVisualStyleBackColor = false;
+            this.save.Visible = false;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // inpGenderMale
@@ -347,6 +348,7 @@ namespace GUI
             this.inpAccount.AcceptsReturn = true;
             this.inpAccount.AcceptsTab = true;
             this.inpAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpAccount.Enabled = false;
             this.inpAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.inpAccount.Location = new System.Drawing.Point(523, 137);
             this.inpAccount.MaximumSize = new System.Drawing.Size(500, 30);
@@ -445,9 +447,9 @@ namespace GUI
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label4.Location = new System.Drawing.Point(363, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 25);
+            this.label4.Size = new System.Drawing.Size(131, 25);
             this.label4.TabIndex = 124;
-            this.label4.Text = "Tên đăng nhập";
+            this.label4.Text = "Tên tài khoản";
             // 
             // label3
             // 

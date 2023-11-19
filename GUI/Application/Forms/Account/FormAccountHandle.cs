@@ -13,8 +13,9 @@ namespace GUI
     {
         private void FormAccount_Load(object sender, EventArgs e)
         {
-            if (AccountBLL.getAvatarAccount(idUser) != "" && File.Exists(AccountBLL.getAvatarAccount(idUser)))
-                avatar.Image = new Bitmap(AccountBLL.getAvatarAccount(idUser));
+            string path = AccountBLL.getAvatarAccount(idUser);
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                avatar.Image = new Bitmap(path);
             inpNickname.Text = lblNickname.Text = StaffBLL.getNickName(idUser);
             inpAccount.Text = AccountBLL.getUsernameAccount(idUser);
             Staff staff = StaffBLL.getStaff(idUser);
@@ -43,7 +44,8 @@ namespace GUI
                 {
                     string selectedFilePath = openFileDialog.FileName;
                     string destinationPath = Path.Combine(@"../../../images/", Path.GetFileName(selectedFilePath));
-                    File.Copy(selectedFilePath, destinationPath);
+                    if (!File.Exists(destinationPath))
+                        File.Copy(selectedFilePath, destinationPath);
                     avatar.Image = new Bitmap(destinationPath);
                     AccountBLL.updateAvatar(idUser, destinationPath);
                 }
@@ -88,7 +90,8 @@ namespace GUI
         // sửa infomation
         private void update_Click(object sender, System.EventArgs e)
         {
-
+            inpAccount.Enabled = true;
+            save.Visible = true;
         }
 
         //lưu sửa đổi trên form
@@ -102,6 +105,8 @@ namespace GUI
             if (AccountBLL.updateUsername(idUser, inpAccount.Text))
             {
                 MessageBox.Show("Cập nhật tên đăng nhập thành công");
+                save.Visible = false;
+                inpAccount.Enabled = false;
             }
             else
             {
