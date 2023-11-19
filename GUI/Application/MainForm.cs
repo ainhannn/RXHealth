@@ -10,34 +10,22 @@ namespace GUI
     public partial class MainForm : Form
     {
         private int idUser;
-        public MainForm(int idUser)
+        private int roleUser;
+        public MainForm(int idUser, int roleUser)
         {
             InitializeComponent();
             this.idUser = idUser;
             SetStyle(ControlStyles.ResizeRedraw, true);
+            this.roleUser = roleUser;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
             ResetMenu();
             avatar.Image = new Bitmap(AccountBLL.getAvatarAccount(idUser));
             username.Text = StaffBLL.getNickName(idUser);
-            if (LoginForm.role == 0)
+            if (roleUser == 0)
                 return;
-            else if (LoginForm.role == 1) // Accountant
-            {
-                foreach (Button btn in Sidebar.Controls.OfType<Button>())
-                    btn.Visible = false;
-                statistic.Visible = true;
-                logout.Visible = true;
-                foreach (Button btn in cateMenu.Controls.OfType<Button>())
-                    btn.Visible = true;
-                foreach (Button btn in invenMenu.Controls.OfType<Button>())
-                    btn.Visible = false;
-                invenMenu.Visible = false;
-                foreach (Button btn in transacMenu.Controls.OfType<Button>())
-                    btn.Visible = false;
-            }
-            else if (LoginForm.role == 2) // Warehouse Manager
+            else if (roleUser == 1) // Warehouse Manager
             {
                 foreach (Button btn in Sidebar.Controls.OfType<Button>())
                     btn.Visible = false;
@@ -53,7 +41,7 @@ namespace GUI
                 buy.Visible = true;
                 buy.BackColor = Color.RoyalBlue;
             }
-            else if (LoginForm.role == 3) // Saler
+            else if (roleUser == 2) // Saler
             {
                 foreach (Button btn in Sidebar.Controls.OfType<Button>())
                     btn.Visible = false;

@@ -66,7 +66,7 @@ namespace GUI
                 {
                     if (account.Role == Env.GetInt("admin"))
                     {
-                        new MainForm(account.Id).Show();
+                        new MainForm(account.Id, account.Role).Show();
                         Hide();
                     }
                 }
