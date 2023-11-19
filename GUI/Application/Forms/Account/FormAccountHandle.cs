@@ -5,8 +5,6 @@ using System.IO;
 using DTO;
 using DAL;
 using BLL;
-using GUI.Components;
-using System.Security.Principal;
 using System.Linq;
 using GLB;
 
@@ -17,11 +15,11 @@ namespace GUI
         private void FormAccount_Load(object sender, EventArgs e)
         {
             avatar.Image = new Bitmap(AccountBLL.getAvatarAccount(idUser));
-            inpNickname.Text = StaffBLL.getNickName(idUser); 
+            inpNickname.Text = StaffBLL.getNickName(idUser);
             inpAccount.Text = AccountBLL.getUsernameAccount(idUser);
             Staff staff = StaffBLL.getStaff(idUser);
             inpFullName.Text = staff.FullName;
-            if(staff.GenderIsMale == true)
+            if (staff.GenderIsMale == true)
             {
                 inpGenderMale.Checked = true;
             }
@@ -64,7 +62,7 @@ namespace GUI
             }
             else
             {
-                if(inpNickname.Text == "" || inpNickname.Text == " ")
+                if (inpNickname.Text == "" || inpNickname.Text == " ")
                 {
                     MessageBox.Show("Vui lòng điền thông tin");
                     return;
@@ -92,12 +90,12 @@ namespace GUI
         //lưu sửa đổi trên form
         private void save_Click(object sender, System.EventArgs e)
         {
-            if(inpAccount.Text.Length < 6 || HandleGlobal.checkIsEnglish(inpAccount.Text) == false)
+            if (inpAccount.Text.Length < 6 || HandleGlobal.checkIsEnglish(inpAccount.Text) == false)
             {
                 MessageBox.Show("Vui lòng kiểm tra lại Tên đăng nhập ( A-Z,a-z,0-9,_ ) và >= 6 kí tự");
                 return;
             }
-           if (AccountBLL.updateUsername(idUser, inpAccount.Text))
+            if (AccountBLL.updateUsername(idUser, inpAccount.Text))
             {
                 MessageBox.Show("Cập nhật tên đăng nhập thành công");
             }

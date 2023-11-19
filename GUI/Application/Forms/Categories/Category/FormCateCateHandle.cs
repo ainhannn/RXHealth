@@ -9,7 +9,11 @@ namespace GUI
         {
             resetMenu();
             if (!panel1.Visible)
+            {
+                panel2.Dock = DockStyle.Bottom;
                 panel1.Visible = true;
+                panel3.Visible = true;
+            }
             btn.SizeMode = PictureBoxSizeMode.Zoom;
             btn.Padding = new Padding(10, 10, 10, 10);
             btn.SizeMode = PictureBoxSizeMode.StretchImage;

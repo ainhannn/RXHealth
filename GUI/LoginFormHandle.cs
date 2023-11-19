@@ -47,7 +47,6 @@ namespace GUI
 
         private void login_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             string username = inputName.Text;
             string password = inputPass.Text;
             string rs = caseValidate(username, password);
@@ -65,37 +64,15 @@ namespace GUI
                 }
                 else
                 {
-                    if(account.Role == Env.GetInt("admin"))
+                    if (account.Role == Env.GetInt("admin"))
                     {
                         new MainForm(account.Id).Show();
-=======
-            //string username = inputName.Text;
-            //string password = inputPass.Text;
-            //string rs = caseValidate(username, password);
-            //// (1) != "" --> check input false | (2) == "" --> check input true and login
-            //if (rs != "")
-            //{
-            //    MessageBox.Show(rs, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-            //else
-            //{
-            //    Account account = AccountBLL.Login(new Account(username, password));
-            //    if (account == null)
-            //    {
-            //        MessageBox.Show("Tài khoản không tồn tại ", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    }
-            //    else
-            //    {
-            //        if(account.Role == Env.GetInt("admin"))
-            //        {
-                        new MainForm().Show();
->>>>>>> 1d424a06ecc3ed27a38f79de1507bc59ea61e832
                         Hide();
-            //        }
-            //    }
-            //    inputName.Text = "Tên đăng nhập";
-            //    inputPass.Text = "Mật khẩu";
-            //}
+                    }
+                }
+                inputName.Text = "Tên đăng nhập";
+                inputPass.Text = "Mật khẩu";
+            }
         }
     }
 }

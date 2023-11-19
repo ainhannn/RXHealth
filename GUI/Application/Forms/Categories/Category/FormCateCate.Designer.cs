@@ -192,7 +192,7 @@
             // 
             // btnCate6
             // 
-            this.btnCate6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCate6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCate6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate6.Image = global::GUI.Properties.Resources.thietbi;
             this.btnCate6.Location = new System.Drawing.Point(875, 0);
@@ -206,7 +206,7 @@
             // 
             // btnCate5
             // 
-            this.btnCate5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCate5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCate5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate5.Image = global::GUI.Properties.Resources.dungcu;
             this.btnCate5.Location = new System.Drawing.Point(725, 0);
@@ -220,7 +220,7 @@
             // 
             // btnCate4
             // 
-            this.btnCate4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCate4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCate4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate4.Image = global::GUI.Properties.Resources.canhan;
             this.btnCate4.Location = new System.Drawing.Point(575, 0);
@@ -234,7 +234,7 @@
             // 
             // btnCate3
             // 
-            this.btnCate3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCate3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCate3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate3.Image = global::GUI.Properties.Resources.thucpham;
             this.btnCate3.Location = new System.Drawing.Point(425, 0);
@@ -248,7 +248,7 @@
             // 
             // btnCate2
             // 
-            this.btnCate2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCate2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCate2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate2.Image = global::GUI.Properties.Resources._kedon;
             this.btnCate2.Location = new System.Drawing.Point(275, 0);
@@ -262,7 +262,7 @@
             // 
             // btnCate1
             // 
-            this.btnCate1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCate1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCate1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCate1.Image = global::GUI.Properties.Resources.kedon;
             this.btnCate1.Location = new System.Drawing.Point(125, 0);
