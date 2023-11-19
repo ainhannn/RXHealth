@@ -1,9 +1,10 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using DTO;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace DAL
 {
@@ -54,8 +55,28 @@ namespace DAL
             string sql = string.Format("SELECT * FROM {0} JOIN account ON staff.id = account.id WHERE (staff.id LIKE '%{1}%' OR staff.nickname LIKE '%{1}%' OR " +
         "staff.citizen_id_number LIKE '%{1}%' OR staff.fullname LIKE '%{1}%' OR staff.birthday LIKE '%{1}%' OR " +
         "qualification LIKE '%{1}%' OR contact_number LIKE '%{1}%' OR " +
-        "address LIKE '%{1}%' OR staff.start_date LIKE '%{1}%' OR staff.resignation_date LIKE '%{1}%') ",
+        "address LIKE '%{1}%' OR staff.start_date LIKE '%{1}%' OR staff.resignation_date LIKE '%{1}%' ",
         dbTableName, request);
+        
+            if(request == "Na" || request == "na" || request == "Nam" || request == "nam")
+            {
+                sql += string.Format(" OR staff.gender = {0})", 1);
+            }else if(request == "Nu" || request == "nu" || request == "nư" || request == "Nư" || request == "Nữ" || request == "nữ")
+            {
+                sql += string.Format(" OR staff.gender = {0})", 0);
+            }else if (request == "N" || request == "n")
+            {
+                sql += string.Format(" OR staff.gender = {0} OR staff.gender = {1})", 0, 1);
+            }else if("bán hàng".Contains(request.ToLower()))
+            {
+                sql += string.Format(" OR account.role = {0})", 2);
+            }else if("quản kho".Contains(request.ToLower())){
+                sql += string.Format(" OR account.role = {0})", 1);
+            }
+            else
+            {
+                sql += string.Format(")");
+            }
 
             if (filter != 3)
             {

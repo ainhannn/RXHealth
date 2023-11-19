@@ -120,7 +120,7 @@ namespace GUI
         private void search_Click(object sender, System.EventArgs e)
         {
             string contentSearch = inpSearch.Text;
-            int filter = comboBoxFilter.SelectedIndex;
+            int filter = comboBoxFilter.SelectedIndex+1;
             int gender = comboFilterGender.SelectedIndex;
             if (contentSearch == "" || contentSearch == " ")
             {
@@ -379,7 +379,6 @@ namespace GUI
             for (int i = table.Rows.Count - 1; i >= 0; i--)
             {
                 DataGridViewRow row = table.Rows[i];
-                int id = Convert.ToInt16(row.Cells[0].Value);
                 string nickname = Convert.ToString(row.Cells[1].Value);
                 string citizenId = Convert.ToString(row.Cells[2].Value);
                 string fullname = Convert.ToString(row.Cells[3].Value);
@@ -495,11 +494,17 @@ namespace GUI
             saveFileDialog.Title = "Save Excel File";
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                string filePath = saveFileDialog.FileName;
-
-                workbook.SaveAs(filePath);
-                workbook.Close();
-                excelApp.Quit();
+                try
+                {
+                    string filePath = saveFileDialog.FileName;
+                    workbook.SaveAs(filePath);
+                    workbook.Close();
+                    excelApp.Quit();
+                    MessageBox.Show("Xuất danh sách nhân viên thành công");
+                }
+                catch(Exception ex) {
+                    MessageBox.Show("Xuất danh sách nhân viên không thành công");
+                }
             }
 
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);

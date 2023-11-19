@@ -2,6 +2,7 @@
 using GUI.Handle;
 using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -21,7 +22,9 @@ namespace GUI
         private void MainForm_Load(object sender, EventArgs e)
         {
             ResetMenu();
-            avatar.Image = new Bitmap(AccountBLL.getAvatarAccount(idUser));
+            string path = AccountBLL.getAvatarAccount(idUser);
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
+                avatar.Image = new Bitmap(path);
             username.Text = StaffBLL.getNickName(idUser);
             if (roleUser == 0)
                 return;
