@@ -1,20 +1,14 @@
 ﻿using BLL;
-using DAL;
 using DotNetEnv;
 using DTO;
 using GLB;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
 {
     public partial class LoginForm : Form
     {
-        public static string username;
-        public static int role;
-
         private string caseValidate(string username, string password)
         {
             if (username == "Tên đăng nhập" || password == "Mật khẩu" || username == "" || password == "")
@@ -64,15 +58,12 @@ namespace GUI
                 }
                 else
                 {
-                    if (account.Role == Env.GetInt("admin"))
-                    {
-                        new MainForm(account.Id, account.Role).Show();
-                        Hide();
-                    }
+                    new MainForm(account.Id, account.Role).Show();
+                    Hide();
                 }
-                inputName.Text = "Tên đăng nhập";
-                inputPass.Text = "Mật khẩu";
             }
+            inputName.Text = username;
+            inputPass.Text = "Mật khẩu";
         }
     }
 }

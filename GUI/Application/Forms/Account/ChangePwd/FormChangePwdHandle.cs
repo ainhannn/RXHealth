@@ -34,9 +34,8 @@ namespace GUI
             if (MessageBox.Show("Bạn có xác nhận thay đổi mật khẩu?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 MessageBox.Show(updatePass(idUser, inputPass.Text, inputPass1.Text, inputPass2.Text));
-
+                Close();
             }
-            Close();
         }
     }
 }

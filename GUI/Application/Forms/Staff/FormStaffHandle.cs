@@ -99,7 +99,7 @@ namespace GUI
             }
             foreach (Staff item in list)
             {
-                if(ckeckPositionStaff(item.Id) != "Quản lý")
+                if(checkPositionStaff(item.Id) != "Quản lý")
                 table.Rows.Add(item.Id.ToString(), item.Nickname, item.CitizenId, item.FullName, item.Birthday,
                     item.GenderIsMale == true ? "Nam" : "Nữ", item.Qualification, item.ContactNumber, item.Address,
                     ckeckPositionStaff(item.Id), AccountBLL.getUsernameAccount(item.Id), item.StartDate, item.ResignationDate);
@@ -439,7 +439,7 @@ namespace GUI
 
         private void print_Click(object sender, System.EventArgs e)
         {
-            Xls.Print("DHT.xlsx"); // sửa đúng tên và định dạng của tệp cần in
+            Xls.Print("test.xlsx"); // sửa đúng tên và định dạng của tệp cần in
         }
 
         private void download_Click(object sender, System.EventArgs e)

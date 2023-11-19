@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Drawing;
+using BLL;
 
 namespace GUI
 {
@@ -157,13 +158,13 @@ namespace GUI
                     invenMenu.Height = transacMenu.Height = 65;
                     restore.Image = Properties.Resources.maximize;
                 } else restore.Image = Properties.Resources.minimize;
-                setting.Visible = LoginForm.role == 0;
+                setting.Visible = roleUser == 0;
             }
             else if (Height > 810)
             {
                 setting.Visible = false;
                 cateMenu.Visible = true;
-                invenMenu.Visible = LoginForm.role % 2 == 0;
+                invenMenu.Visible = roleUser != 1;
                 transacMenu.Visible = true;
                 menu.Enabled = true;
             }
@@ -180,14 +181,14 @@ namespace GUI
                 setting.Visible = false;
                 cateMenu.Visible = true;
                 invenMenu.Visible = false;
-                transacMenu.Visible = LoginForm.role == 2 || LoginForm.role == 3;
+                transacMenu.Visible = roleUser != 0;
                 menu.Enabled = true;
             }
             else if (Height > 615)
             {
-                setting.Visible = LoginForm.role == 0;
+                setting.Visible = roleUser == 0;
                 cateMenu.Visible = false;
-                invenMenu.Visible = LoginForm.role % 2 == 0;
+                invenMenu.Visible = roleUser != 1;
                 transacMenu.Visible = true;
                 menu.Enabled = true;
             }
@@ -195,7 +196,7 @@ namespace GUI
             {
                 setting.Visible = false;
                 cateMenu.Visible = false;
-                invenMenu.Visible = LoginForm.role % 2 == 0;
+                invenMenu.Visible = roleUser != 1;
                 transacMenu.Visible = true;
                 menu.Enabled = true;
             }
@@ -209,12 +210,12 @@ namespace GUI
             }
             else
             {
-                setting.Visible = LoginForm.role == 0;
-                transacMenu.Visible = LoginForm.role == 2 || LoginForm.role == 3;
+                setting.Visible = roleUser == 0;
+                transacMenu.Visible = roleUser != 0;
                 menu.Enabled = false;
                 ResetMenu();
             }
-            username.Text = WindowState == FormWindowState.Maximized ? LoginForm.username : " ";
+            username.Text = WindowState == FormWindowState.Maximized ? StaffBLL.getNickName(idUser) : " ";
         }
     }
 }

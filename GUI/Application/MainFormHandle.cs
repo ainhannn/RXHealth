@@ -120,8 +120,6 @@ namespace GUI
             foreach (Control ctrl in pnlAccount.Controls)
                 ctrl.Visible = false;
             Navigate.Form(formTitle, "Thông Tin Cá Nhân", fmAccount, new FormAccount(idUser), this);
-            username.Text = StaffBLL.getNickName(idUser);
-            username.Visible = true;
         }
 
         private void setting_Click(object sender, EventArgs e)

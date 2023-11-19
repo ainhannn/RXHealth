@@ -9,6 +9,8 @@ namespace GUI
         {
             InitializeComponent();
             panel1.Visible = false;
+            panel3.Visible = false;
+            panel2.Dock = DockStyle.Fill;
         }
     }
 }
