@@ -1,11 +1,8 @@
 ﻿using BLL;
-using DAL;
 using DotNetEnv;
 using DTO;
 using GLB;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
@@ -70,9 +67,9 @@ namespace GUI
                         Hide();
                     }
                 }
-                inputName.Text = "Tên đăng nhập";
-                inputPass.Text = "Mật khẩu";
             }
+            inputName.Text = username;
+            inputPass.Text = "Mật khẩu";
         }
     }
 }

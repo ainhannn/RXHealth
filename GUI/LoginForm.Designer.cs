@@ -215,8 +215,8 @@
             this.inputPass.Size = new System.Drawing.Size(351, 47);
             this.inputPass.TabIndex = 4;
             this.inputPass.Text = "Mật khẩu";
-            //this.inputPass.TextChanged += new System.EventHandler(this.input_Onchange);
             this.inputPass.Enter += new System.EventHandler(this.password_Enter);
+            this.inputPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_Enter);
             this.inputPass.Leave += new System.EventHandler(this.password_Leave);
             // 
             // usericon
@@ -258,7 +258,6 @@
             this.inputName.Size = new System.Drawing.Size(351, 47);
             this.inputName.TabIndex = 1;
             this.inputName.Text = "Tên đăng nhập";
-            //this.inputName.TextChanged += new System.EventHandler(this.input_Onchange);
             this.inputName.Enter += new System.EventHandler(this.username_Enter);
             this.inputName.Leave += new System.EventHandler(this.username_Leave);
             // 

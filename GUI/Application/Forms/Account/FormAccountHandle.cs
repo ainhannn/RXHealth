@@ -3,7 +3,6 @@ using System;
 using System.Windows.Forms;
 using System.IO;
 using DTO;
-using DAL;
 using BLL;
 using System.Linq;
 using GLB;
@@ -14,8 +13,9 @@ namespace GUI
     {
         private void FormAccount_Load(object sender, EventArgs e)
         {
-            avatar.Image = new Bitmap(AccountBLL.getAvatarAccount(idUser));
-            inpNickname.Text = StaffBLL.getNickName(idUser);
+            if (AccountBLL.getAvatarAccount(idUser) != "" && File.Exists(AccountBLL.getAvatarAccount(idUser)))
+                avatar.Image = new Bitmap(AccountBLL.getAvatarAccount(idUser));
+            inpNickname.Text = lblNickname.Text = StaffBLL.getNickName(idUser);
             inpAccount.Text = AccountBLL.getUsernameAccount(idUser);
             Staff staff = StaffBLL.getStaff(idUser);
             inpFullName.Text = staff.FullName;
@@ -56,9 +56,9 @@ namespace GUI
             if (editNickname.Text == "      Chỉnh sửa")
             {
                 inpNickname.Visible = true;
-                inpNickname.Text = "";
+                inpNickname.Text = lblNickname.Text;
+                lblNickname.Visible = false;
                 editNickname.Text = "      Lưu";
-                inpNickname.Enabled = true;
             }
             else
             {
@@ -76,8 +76,12 @@ namespace GUI
                 {
                     Console.WriteLine(ex.Message);
                 }
+
+                inpNickname.Visible = false;
+                lblNickname.Text = inpNickname.Text;
+                lblNickname.Location = new Point((456 - lblNickname.Width) / 2, 566);
+                lblNickname.Visible = true;
                 editNickname.Text = "      Chỉnh sửa";
-                inpNickname.Enabled = false;
             }
         }
 
