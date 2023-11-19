@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
-<<<<<<< HEAD
 using MySqlX.XDevAPI.Relational;
-=======
->>>>>>> 17d57986bdd99e5152f6b6b27388ea9b15448f62
-
 namespace DAL
 {
     public class DBConnection
@@ -36,11 +32,7 @@ namespace DAL
         protected static void Close()
         {
             try
-<<<<<<< HEAD
-            {       
-=======
             {
->>>>>>> 17d57986bdd99e5152f6b6b27388ea9b15448f62
                 conn?.Close();
             }
             catch (MySqlException ex)

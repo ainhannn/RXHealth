@@ -31,7 +31,7 @@ namespace GUI
         {
             return position == "Quản kho" ? Env.GetInt("warehouse_manager") : Env.GetInt("sell");
         }
-        private string ckeckPositionStaff(int id)
+        private string checkPositionStaff(int id)
         {
             return StaffBLL.getRole(id);
         }
@@ -102,7 +102,7 @@ namespace GUI
                 if(checkPositionStaff(item.Id) != "Quản lý")
                 table.Rows.Add(item.Id.ToString(), item.Nickname, item.CitizenId, item.FullName, item.Birthday,
                     item.GenderIsMale == true ? "Nam" : "Nữ", item.Qualification, item.ContactNumber, item.Address,
-                    ckeckPositionStaff(item.Id), AccountBLL.getUsernameAccount(item.Id), item.StartDate, item.ResignationDate);
+                    checkPositionStaff(item.Id), AccountBLL.getUsernameAccount(item.Id), item.StartDate, item.ResignationDate);
             }
         }
         private void Table_Load(object sender, System.EventArgs e)
