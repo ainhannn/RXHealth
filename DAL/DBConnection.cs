@@ -78,7 +78,8 @@ namespace DAL
                 try
                 {
                     var cmd = new MySqlCommand(sql, conn);
-                    return cmd.ExecuteScalar();
+                    var rd = cmd.ExecuteScalar();
+                    return rd != DBNull.Value ? rd : null;
                 }
                 catch { return null; }
                 finally { Close(); }
