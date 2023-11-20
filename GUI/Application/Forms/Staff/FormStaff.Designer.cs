@@ -457,7 +457,7 @@ namespace GUI
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel1.Controls.Add(this.refresh);
             this.panel1.Controls.Add(this.delete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -510,6 +510,7 @@ namespace GUI
             // 
             // form
             // 
+            this.form.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.form.Controls.Add(this.inpTitle);
             this.form.Controls.Add(this.lblTitle);
             this.form.Controls.Add(this.inpGenderFemale);
@@ -564,10 +565,11 @@ namespace GUI
             // 
             this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(1144, 275);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(85, 25);
+            this.lblTitle.Size = new System.Drawing.Size(92, 25);
             this.lblTitle.TabIndex = 114;
             this.lblTitle.Text = "Chức vụ";
             // 
@@ -575,9 +577,11 @@ namespace GUI
             // 
             this.inpGenderFemale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpGenderFemale.AutoSize = true;
-            this.inpGenderFemale.Location = new System.Drawing.Point(1421, 110);
+            this.inpGenderFemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.inpGenderFemale.ForeColor = System.Drawing.Color.White;
+            this.inpGenderFemale.Location = new System.Drawing.Point(1419, 110);
             this.inpGenderFemale.Name = "inpGenderFemale";
-            this.inpGenderFemale.Size = new System.Drawing.Size(55, 29);
+            this.inpGenderFemale.Size = new System.Drawing.Size(57, 29);
             this.inpGenderFemale.TabIndex = 99;
             this.inpGenderFemale.TabStop = true;
             this.inpGenderFemale.Text = "Nữ";
@@ -608,9 +612,11 @@ namespace GUI
             // 
             this.inpGenderMale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.inpGenderMale.AutoSize = true;
-            this.inpGenderMale.Location = new System.Drawing.Point(1307, 110);
+            this.inpGenderMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.inpGenderMale.ForeColor = System.Drawing.Color.White;
+            this.inpGenderMale.Location = new System.Drawing.Point(1304, 110);
             this.inpGenderMale.Name = "inpGenderMale";
-            this.inpGenderMale.Size = new System.Drawing.Size(71, 29);
+            this.inpGenderMale.Size = new System.Drawing.Size(74, 29);
             this.inpGenderMale.TabIndex = 98;
             this.inpGenderMale.TabStop = true;
             this.inpGenderMale.Text = "Nam";
@@ -673,10 +679,11 @@ namespace GUI
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(1144, 221);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.Size = new System.Drawing.Size(101, 25);
             this.label1.TabIndex = 106;
             this.label1.Text = "Nghỉ việc";
             // 
@@ -784,10 +791,11 @@ namespace GUI
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(1144, 167);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 25);
+            this.label11.Size = new System.Drawing.Size(78, 25);
             this.label11.TabIndex = 92;
             this.label11.Text = "Địa chỉ";
             // 
@@ -795,10 +803,11 @@ namespace GUI
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(1144, 112);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 25);
+            this.label10.Size = new System.Drawing.Size(91, 25);
             this.label10.TabIndex = 91;
             this.label10.Text = "Giới tính";
             // 
@@ -806,10 +815,11 @@ namespace GUI
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(1144, 55);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 25);
+            this.label9.Size = new System.Drawing.Size(146, 25);
             this.label9.TabIndex = 90;
             this.label9.Text = "CMND/CCCD";
             // 
@@ -817,10 +827,11 @@ namespace GUI
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(587, 221);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 25);
+            this.label8.Size = new System.Drawing.Size(86, 25);
             this.label8.TabIndex = 89;
             this.label8.Text = "Bắt đầu";
             // 
@@ -828,10 +839,11 @@ namespace GUI
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(587, 167);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 25);
+            this.label7.Size = new System.Drawing.Size(56, 25);
             this.label7.TabIndex = 88;
             this.label7.Text = "SĐT";
             // 
@@ -839,10 +851,11 @@ namespace GUI
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(587, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 25);
+            this.label6.Size = new System.Drawing.Size(108, 25);
             this.label6.TabIndex = 87;
             this.label6.Text = "Ngày sinh";
             // 
@@ -850,40 +863,44 @@ namespace GUI
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(587, 55);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 25);
+            this.label5.Size = new System.Drawing.Size(126, 25);
             this.label5.TabIndex = 86;
             this.label5.Text = "Tên hiển thị";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(43, 221);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 25);
+            this.label4.Size = new System.Drawing.Size(108, 25);
             this.label4.TabIndex = 85;
             this.label4.Text = "Tài khoản";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(43, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 25);
+            this.label3.Size = new System.Drawing.Size(103, 25);
             this.label3.TabIndex = 84;
             this.label3.Text = "Bằng cấp";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(43, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 83;
             this.label2.Text = "Họ và tên";
             // 
@@ -891,10 +908,11 @@ namespace GUI
             // 
             this.lblId.AutoSize = true;
             this.lblId.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblId.ForeColor = System.Drawing.Color.White;
             this.lblId.Location = new System.Drawing.Point(43, 55);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(31, 25);
+            this.lblId.Size = new System.Drawing.Size(33, 25);
             this.lblId.TabIndex = 82;
             this.lblId.Text = "ID";
             // 

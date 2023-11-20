@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCateDrug));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +48,8 @@
             this.is_on_sale = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.refresh = new System.Windows.Forms.Button();
+            this.RecycleBin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,9 +65,6 @@
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.btnAccount = new System.Windows.Forms.Button();
-            this.refresh = new System.Windows.Forms.Button();
-            this.RecycleBin = new System.Windows.Forms.Button();
-            this.search = new System.Windows.Forms.Button();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,6 +83,26 @@
             this.pnlSearch.Size = new System.Drawing.Size(1600, 50);
             this.pnlSearch.TabIndex = 113;
             // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.RoyalBlue;
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Dock = System.Windows.Forms.DockStyle.Right;
+            this.search.FlatAppearance.BorderSize = 0;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.search.ForeColor = System.Drawing.Color.White;
+            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
+            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search.Location = new System.Drawing.Point(1548, 0);
+            this.search.Margin = new System.Windows.Forms.Padding(5);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(50, 48);
+            this.search.TabIndex = 22;
+            this.search.Tag = "";
+            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.search.UseVisualStyleBackColor = false;
+            // 
             // inpSearch
             // 
             this.inpSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -100,14 +120,14 @@
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -124,13 +144,13 @@
             this.selectDelete});
             this.table.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.table.EnableHeadersVisualStyles = false;
-            this.table.Location = new System.Drawing.Point(0, 444);
+            this.table.Location = new System.Drawing.Point(0, 494);
             this.table.Name = "table";
             this.table.RowHeadersVisible = false;
             this.table.RowHeadersWidth = 51;
             this.table.RowTemplate.Height = 24;
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.Size = new System.Drawing.Size(1600, 450);
+            this.table.Size = new System.Drawing.Size(1600, 400);
             this.table.TabIndex = 115;
             this.table.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellDoubleClick);
             // 
@@ -202,210 +222,28 @@
             // 
             // selectDelete
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = false;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = false;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle4;
             this.selectDelete.HeaderText = "Xóa";
             this.selectDelete.MinimumWidth = 6;
             this.selectDelete.Name = "selectDelete";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.Controls.Add(this.refresh);
             this.panel2.Controls.Add(this.RecycleBin);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 394);
+            this.panel2.Location = new System.Drawing.Point(0, 444);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1600, 50);
             this.panel2.TabIndex = 116;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBoxFilter);
-            this.panel1.Controls.Add(this.lblFilter);
-            this.panel1.Controls.Add(this.btnAccount);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1600, 344);
-            this.panel1.TabIndex = 117;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.Location = new System.Drawing.Point(630, 198);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(112, 30);
-            this.textBox5.TabIndex = 132;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(579, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 25);
-            this.label5.TabIndex = 131;
-            this.label5.Text = "đến";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.Location = new System.Drawing.Point(461, 198);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 30);
-            this.textBox4.TabIndex = 130;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(322, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 25);
-            this.label4.TabIndex = 129;
-            this.label4.Text = "Khoảng giá từ";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(919, 200);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(127, 29);
-            this.checkBox1.TabIndex = 128;
-            this.checkBox1.Text = "Ngừng bán";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Location = new System.Drawing.Point(1049, 133);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(230, 30);
-            this.textBox3.TabIndex = 127;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(914, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 25);
-            this.label3.TabIndex = 126;
-            this.label3.Text = "Đơn vị bán lẻ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(457, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 30);
-            this.textBox2.TabIndex = 125;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(322, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 25);
-            this.label2.TabIndex = 124;
-            this.label2.Text = "Tên";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(457, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 30);
-            this.textBox1.TabIndex = 123;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(322, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 25);
-            this.label1.TabIndex = 122;
-            this.label1.Text = "Đơn vị";
-            // 
-            // comboBoxFilter
-            // 
-            this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Items.AddRange(new object[] {
-            "Thuốc kê đơn",
-            "Thuốc không kê đơn",
-            "Thực phẩm chức năng",
-            "Chăm sóc cá nhân",
-            "Dụng cụ y tế",
-            "Thiết bị y tế",
-            "Tất cả"});
-            this.comboBoxFilter.Location = new System.Drawing.Point(1049, 66);
-            this.comboBoxFilter.Name = "comboBoxFilter";
-            this.comboBoxFilter.Size = new System.Drawing.Size(230, 33);
-            this.comboBoxFilter.TabIndex = 120;
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblFilter.ForeColor = System.Drawing.Color.Black;
-            this.lblFilter.Location = new System.Drawing.Point(914, 69);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(119, 25);
-            this.lblFilter.TabIndex = 121;
-            this.lblFilter.Text = "Ngành hàng";
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAccount.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAccount.Location = new System.Drawing.Point(738, 286);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(125, 50);
-            this.btnAccount.TabIndex = 107;
-            this.btnAccount.Tag = "";
-            this.btnAccount.Text = "Tìm kiếm";
-            this.btnAccount.UseVisualStyleBackColor = false;
-            // 
             // refresh
             // 
-            this.refresh.BackColor = System.Drawing.Color.Transparent;
+            this.refresh.BackColor = System.Drawing.Color.MidnightBlue;
             this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refresh.Dock = System.Windows.Forms.DockStyle.Right;
             this.refresh.FlatAppearance.BorderSize = 0;
@@ -425,7 +263,7 @@
             // 
             // RecycleBin
             // 
-            this.RecycleBin.BackColor = System.Drawing.Color.Transparent;
+            this.RecycleBin.BackColor = System.Drawing.Color.MidnightBlue;
             this.RecycleBin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RecycleBin.Dock = System.Windows.Forms.DockStyle.Left;
             this.RecycleBin.FlatAppearance.BorderSize = 0;
@@ -444,25 +282,192 @@
             this.RecycleBin.UseVisualStyleBackColor = false;
             this.RecycleBin.Click += new System.EventHandler(this.RecycleBin_Click);
             // 
-            // search
+            // panel1
             // 
-            this.search.BackColor = System.Drawing.Color.RoyalBlue;
-            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search.Dock = System.Windows.Forms.DockStyle.Right;
-            this.search.FlatAppearance.BorderSize = 0;
-            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.search.ForeColor = System.Drawing.Color.White;
-            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
-            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.search.Location = new System.Drawing.Point(1548, 0);
-            this.search.Margin = new System.Windows.Forms.Padding(5);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(50, 48);
-            this.search.TabIndex = 22;
-            this.search.Tag = "";
-            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.search.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboBoxFilter);
+            this.panel1.Controls.Add(this.lblFilter);
+            this.panel1.Controls.Add(this.btnAccount);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1600, 394);
+            this.panel1.TabIndex = 117;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox5.Location = new System.Drawing.Point(632, 205);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(112, 30);
+            this.textBox5.TabIndex = 132;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(580, 208);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 25);
+            this.label5.TabIndex = 131;
+            this.label5.Text = "đến";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox4.Location = new System.Drawing.Point(464, 205);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(112, 30);
+            this.textBox4.TabIndex = 130;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(308, 208);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 25);
+            this.label4.TabIndex = 129;
+            this.label4.Text = "Khoảng giá từ";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(905, 207);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(136, 29);
+            this.checkBox1.TabIndex = 128;
+            this.checkBox1.Text = "Ngừng bán";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox3.Location = new System.Drawing.Point(1062, 140);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(230, 30);
+            this.textBox3.TabIndex = 127;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(900, 143);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 25);
+            this.label3.TabIndex = 126;
+            this.label3.Text = "Đơn vị bán lẻ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox2.Location = new System.Drawing.Point(464, 73);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(230, 30);
+            this.textBox2.TabIndex = 125;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(308, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 25);
+            this.label2.TabIndex = 124;
+            this.label2.Text = "Tên";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Location = new System.Drawing.Point(464, 140);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(230, 30);
+            this.textBox1.TabIndex = 123;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(308, 143);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 25);
+            this.label1.TabIndex = 122;
+            this.label1.Text = "Đơn vị";
+            // 
+            // comboBoxFilter
+            // 
+            this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilter.FormattingEnabled = true;
+            this.comboBoxFilter.Items.AddRange(new object[] {
+            "Thuốc kê đơn",
+            "Thuốc không kê đơn",
+            "Thực phẩm chức năng",
+            "Chăm sóc cá nhân",
+            "Dụng cụ y tế",
+            "Thiết bị y tế",
+            "Tất cả"});
+            this.comboBoxFilter.Location = new System.Drawing.Point(1062, 73);
+            this.comboBoxFilter.Name = "comboBoxFilter";
+            this.comboBoxFilter.Size = new System.Drawing.Size(230, 33);
+            this.comboBoxFilter.TabIndex = 120;
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilter.ForeColor = System.Drawing.Color.White;
+            this.lblFilter.Location = new System.Drawing.Point(900, 76);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(129, 25);
+            this.lblFilter.TabIndex = 121;
+            this.lblFilter.Text = "Ngành hàng";
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAccount.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnAccount.ForeColor = System.Drawing.Color.White;
+            this.btnAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAccount.Location = new System.Drawing.Point(738, 272);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(125, 50);
+            this.btnAccount.TabIndex = 107;
+            this.btnAccount.Tag = "";
+            this.btnAccount.Text = "Tìm kiếm";
+            this.btnAccount.UseVisualStyleBackColor = false;
             // 
             // FormCateDrug
             // 

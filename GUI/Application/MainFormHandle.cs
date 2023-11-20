@@ -1,9 +1,6 @@
-﻿using BLL;
-using GUI.Components;
-using GUI.Forms;
+﻿using GUI.Components;
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace GUI
