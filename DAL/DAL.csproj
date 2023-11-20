@@ -253,6 +253,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SaleDAO.cs" />
     <Compile Include="CustomerDAO.cs" />
     <Compile Include="ImportDAO.cs" />
     <Compile Include="ProductDAO.cs" />
@@ -263,7 +264,7 @@
     <Compile Include="SubstanceDAO.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="CategoryDAO.cs" />
-    <Compile Include="ProductInfoDAO.cs" />
+    <Compile Include="ActivityDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
