@@ -37,5 +37,10 @@ namespace GUI
         {
 
         }
+
+        private void notification_Click(object sender, EventArgs e)
+        {
+            new FormRequest().ShowDialog();
+        }
     }
 }

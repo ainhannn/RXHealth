@@ -416,3 +416,4 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormCateD
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormPDetails.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormStatistic.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormPRecycleBin.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormRequest.resources

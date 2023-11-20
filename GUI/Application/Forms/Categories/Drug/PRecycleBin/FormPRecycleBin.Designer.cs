@@ -35,18 +35,18 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.exit = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.restore = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.choose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.restore = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
             // 
             // title
@@ -93,58 +93,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(665, 584);
             this.panel2.TabIndex = 68;
-            // 
-            // table
-            // 
-            this.table.AllowUserToAddRows = false;
-            this.table.AllowUserToDeleteRows = false;
-            this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.code,
-            this.name,
-            this.choose});
-            this.table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.table.Location = new System.Drawing.Point(0, 50);
-            this.table.Margin = new System.Windows.Forms.Padding(0);
-            this.table.Name = "table";
-            this.table.RowHeadersVisible = false;
-            this.table.Size = new System.Drawing.Size(665, 534);
-            this.table.TabIndex = 48;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "STT";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "Mã sản phẩm";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên sản phẩm";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // choose
-            // 
-            this.choose.HeaderText = "Chọn";
-            this.choose.Name = "choose";
             // 
             // panel1
             // 
@@ -197,11 +145,63 @@
             this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.delete.UseVisualStyleBackColor = false;
             // 
+            // table
+            // 
+            this.table.AllowUserToAddRows = false;
+            this.table.AllowUserToDeleteRows = false;
+            this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.code,
+            this.name,
+            this.choose});
+            this.table.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.table.Location = new System.Drawing.Point(0, 50);
+            this.table.Margin = new System.Windows.Forms.Padding(0);
+            this.table.Name = "table";
+            this.table.RowHeadersVisible = false;
+            this.table.Size = new System.Drawing.Size(665, 534);
+            this.table.TabIndex = 49;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "STT";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "Mã sản phẩm";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Tên sản phẩm";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // choose
+            // 
+            this.choose.HeaderText = "Chọn";
+            this.choose.Name = "choose";
+            // 
             // FormPRecycleBin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(720, 721);
+            this.ClientSize = new System.Drawing.Size(720, 720);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.title);
@@ -215,8 +215,8 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormPRecycleBin_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,10 +227,10 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.PictureBox exit;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button restore;
         private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;

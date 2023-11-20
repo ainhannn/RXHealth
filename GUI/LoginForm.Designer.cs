@@ -143,6 +143,7 @@
             this.forgot.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.forgot.AutoSize = true;
             this.forgot.BackColor = System.Drawing.Color.Transparent;
+            this.forgot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.forgot.Font = new System.Drawing.Font("Cascadia Code", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forgot.ForeColor = System.Drawing.Color.White;
             this.forgot.Location = new System.Drawing.Point(328, 460);
@@ -150,6 +151,7 @@
             this.forgot.Size = new System.Drawing.Size(120, 18);
             this.forgot.TabIndex = 10;
             this.forgot.Text = "Quên mật khẩu?";
+            this.forgot.Click += new System.EventHandler(this.forgot_Click);
             // 
             // title
             // 

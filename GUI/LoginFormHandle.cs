@@ -65,5 +65,13 @@ namespace GUI
             inputName.Text = username;
             inputPass.Text = "Mật khẩu";
         }
+
+        private void forgot_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Yêu cầu cấp lại mật khẩu mặc định?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // code tiếp
+            }
+        }
     }
 }

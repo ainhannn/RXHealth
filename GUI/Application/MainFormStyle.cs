@@ -102,7 +102,7 @@ namespace GUI
         private void category_Click(object sender, EventArgs e)
         {
             SetDefault();
-            if (WindowState != FormWindowState.Maximized)
+            if (Height < 900)
                 invenMenu.Height = transacMenu.Height = 65;
             CollapseCateMenu();
         }
@@ -118,7 +118,7 @@ namespace GUI
         private void inventory_Click(object sender, System.EventArgs e)
         {
             SetDefault();
-            if (WindowState != FormWindowState.Maximized)
+            if (Height < 900)
                 cateMenu.Height = transacMenu.Height = 65;
             else transacMenu.Height = 65;
             CollapseInvenMenu();
@@ -135,7 +135,7 @@ namespace GUI
         private void transaction_Click(object sender, EventArgs e)
         {
             SetDefault();
-            if (WindowState != FormWindowState.Maximized)
+            if (Height < 900)
                 cateMenu.Height = invenMenu.Height = 65;
             else invenMenu.Height = 65;
             CollapseTransacMenu();
@@ -159,12 +159,16 @@ namespace GUI
                     restore.Image = Properties.Resources.maximize;
                 } else restore.Image = Properties.Resources.minimize;
                 setting.Visible = roleUser == 0;
+                cateMenu.Visible = true;
+                invenMenu.Visible = roleUser != 2;
+                transacMenu.Visible = true;
+                menu.Enabled = true;
             }
             else if (Height > 810)
             {
                 setting.Visible = false;
                 cateMenu.Visible = true;
-                invenMenu.Visible = roleUser != 1;
+                invenMenu.Visible = roleUser != 2;
                 transacMenu.Visible = true;
                 menu.Enabled = true;
             }
@@ -188,7 +192,7 @@ namespace GUI
             {
                 setting.Visible = roleUser == 0;
                 cateMenu.Visible = false;
-                invenMenu.Visible = roleUser != 1;
+                invenMenu.Visible = roleUser != 2;
                 transacMenu.Visible = true;
                 menu.Enabled = true;
             }
@@ -196,7 +200,7 @@ namespace GUI
             {
                 setting.Visible = false;
                 cateMenu.Visible = false;
-                invenMenu.Visible = roleUser != 1;
+                invenMenu.Visible = roleUser != 2;
                 transacMenu.Visible = true;
                 menu.Enabled = true;
             }

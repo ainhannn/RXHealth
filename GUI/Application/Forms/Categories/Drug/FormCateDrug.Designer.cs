@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCateDrug));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSearch = new System.Windows.Forms.Panel();
-            this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,8 +47,6 @@
             this.is_on_sale = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.refresh = new System.Windows.Forms.Button();
-            this.RecycleBin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,6 +62,9 @@
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.btnAccount = new System.Windows.Forms.Button();
+            this.refresh = new System.Windows.Forms.Button();
+            this.RecycleBin = new System.Windows.Forms.Button();
+            this.search = new System.Windows.Forms.Button();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel2.SuspendLayout();
@@ -83,26 +83,6 @@
             this.pnlSearch.Size = new System.Drawing.Size(1600, 50);
             this.pnlSearch.TabIndex = 113;
             // 
-            // search
-            // 
-            this.search.BackColor = System.Drawing.Color.RoyalBlue;
-            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.search.Dock = System.Windows.Forms.DockStyle.Right;
-            this.search.FlatAppearance.BorderSize = 0;
-            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.search.ForeColor = System.Drawing.Color.White;
-            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
-            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.search.Location = new System.Drawing.Point(1548, 0);
-            this.search.Margin = new System.Windows.Forms.Padding(5);
-            this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(50, 48);
-            this.search.TabIndex = 22;
-            this.search.Tag = "";
-            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.search.UseVisualStyleBackColor = false;
-            // 
             // inpSearch
             // 
             this.inpSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -120,14 +100,14 @@
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -222,10 +202,10 @@
             // 
             // selectDelete
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = false;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = false;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
             this.selectDelete.HeaderText = "Xóa";
             this.selectDelete.MinimumWidth = 6;
             this.selectDelete.Name = "selectDelete";
@@ -240,47 +220,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1600, 50);
             this.panel2.TabIndex = 116;
-            // 
-            // refresh
-            // 
-            this.refresh.BackColor = System.Drawing.Color.Transparent;
-            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refresh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.refresh.FlatAppearance.BorderSize = 0;
-            this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refresh.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.refresh.ForeColor = System.Drawing.Color.White;
-            this.refresh.Image = global::GUI.Properties.Resources.save;
-            this.refresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.refresh.Location = new System.Drawing.Point(1550, 0);
-            this.refresh.Margin = new System.Windows.Forms.Padding(5);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(50, 50);
-            this.refresh.TabIndex = 111;
-            this.refresh.Tag = "";
-            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refresh.UseVisualStyleBackColor = false;
-            // 
-            // RecycleBin
-            // 
-            this.RecycleBin.BackColor = System.Drawing.Color.Transparent;
-            this.RecycleBin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RecycleBin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.RecycleBin.FlatAppearance.BorderSize = 0;
-            this.RecycleBin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RecycleBin.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.RecycleBin.ForeColor = System.Drawing.Color.White;
-            this.RecycleBin.Image = global::GUI.Properties.Resources.trash;
-            this.RecycleBin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RecycleBin.Location = new System.Drawing.Point(0, 0);
-            this.RecycleBin.Margin = new System.Windows.Forms.Padding(5);
-            this.RecycleBin.Name = "RecycleBin";
-            this.RecycleBin.Size = new System.Drawing.Size(50, 50);
-            this.RecycleBin.TabIndex = 112;
-            this.RecycleBin.Tag = "";
-            this.RecycleBin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RecycleBin.UseVisualStyleBackColor = false;
-            this.RecycleBin.Click += new System.EventHandler(this.RecycleBin_Click);
             // 
             // panel1
             // 
@@ -463,6 +402,67 @@
             this.btnAccount.Tag = "";
             this.btnAccount.Text = "Tìm kiếm";
             this.btnAccount.UseVisualStyleBackColor = false;
+            // 
+            // refresh
+            // 
+            this.refresh.BackColor = System.Drawing.Color.Transparent;
+            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refresh.Dock = System.Windows.Forms.DockStyle.Right;
+            this.refresh.FlatAppearance.BorderSize = 0;
+            this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refresh.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.refresh.ForeColor = System.Drawing.Color.White;
+            this.refresh.Image = global::GUI.Properties.Resources.save;
+            this.refresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.refresh.Location = new System.Drawing.Point(1550, 0);
+            this.refresh.Margin = new System.Windows.Forms.Padding(5);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(50, 50);
+            this.refresh.TabIndex = 111;
+            this.refresh.Tag = "";
+            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.refresh.UseVisualStyleBackColor = false;
+            // 
+            // RecycleBin
+            // 
+            this.RecycleBin.BackColor = System.Drawing.Color.Transparent;
+            this.RecycleBin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RecycleBin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RecycleBin.FlatAppearance.BorderSize = 0;
+            this.RecycleBin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RecycleBin.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.RecycleBin.ForeColor = System.Drawing.Color.White;
+            this.RecycleBin.Image = global::GUI.Properties.Resources.trash;
+            this.RecycleBin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.RecycleBin.Location = new System.Drawing.Point(0, 0);
+            this.RecycleBin.Margin = new System.Windows.Forms.Padding(5);
+            this.RecycleBin.Name = "RecycleBin";
+            this.RecycleBin.Size = new System.Drawing.Size(50, 50);
+            this.RecycleBin.TabIndex = 112;
+            this.RecycleBin.Tag = "";
+            this.RecycleBin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RecycleBin.UseVisualStyleBackColor = false;
+            this.RecycleBin.Click += new System.EventHandler(this.RecycleBin_Click);
+            // 
+            // search
+            // 
+            this.search.BackColor = System.Drawing.Color.RoyalBlue;
+            this.search.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.search.Dock = System.Windows.Forms.DockStyle.Right;
+            this.search.FlatAppearance.BorderSize = 0;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.search.ForeColor = System.Drawing.Color.White;
+            this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
+            this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.search.Location = new System.Drawing.Point(1548, 0);
+            this.search.Margin = new System.Windows.Forms.Padding(5);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(50, 48);
+            this.search.TabIndex = 22;
+            this.search.Tag = "";
+            this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.search.UseVisualStyleBackColor = false;
             // 
             // FormCateDrug
             // 

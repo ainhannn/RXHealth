@@ -336,6 +336,18 @@
     <Compile Include="Application\Forms\Setting\FormSettingStyle.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Application\Forms\Staff\FormRequest\FormRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Staff\FormRequest\FormRequest.Designer.cs">
+      <DependentUpon>FormRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\Staff\FormRequest\FormRequestHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Staff\FormRequest\FormRequestStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Application\Forms\Staff\FormStaffHandle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -502,6 +514,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Inventories\InventoryImport\FormInvenImp.resx">
       <DependentUpon>FormInvenImp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Staff\FormRequest\FormRequest.resx">
+      <DependentUpon>FormRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Transactions\Buy\FormBuy.resx">
       <DependentUpon>FormBuy.cs</DependentUpon>
@@ -714,6 +729,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\medicines.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
