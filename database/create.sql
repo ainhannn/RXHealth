@@ -3,6 +3,11 @@ CREATE DATABASE pharmacy;
 USE pharmacy;
 
 -- -- -- -- -- TABLES -- -- -- -- --
+CREATE TABLE title (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE staff (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nickname VARCHAR(16) UNIQUE NOT NULL,
