@@ -1,0 +1,45 @@
+USE pharmacy;
+
+CREATE VIEW search_sale_product AS
+SELECT 
+	product.barcode,
+    product.name,
+    category.name AS `cate`,
+    product.unit,
+    product.saleprice,
+   	SUM(product_batch.number) AS number,
+    product.retail_unit,
+    product.retail_saleprice,
+    product.retail_number
+FROM product
+LEFT JOIN category ON product.category_id=category.id
+INNER JOIN product_batch ON product.id=product_batch.product_id
+GROUP BY product.barcode;
+
+
+CREATE VIEW review_sale_invoice AS
+SELECT 
+	sale_invoice.id,
+	sale_invoice.code, 
+    sale_invoice.time_init, 
+    staff.nickname AS `staff_nickname`, 
+    customer.name AS `customer_name`, 
+    SUM(sale_detail.number*sale_detail.unit_price) AS total_amount,
+	sale_invoice.point
+FROM sale_invoice
+LEFT JOIN sale_detail ON sale_invoice.id=sale_detail.sale_invoice_id
+LEFT JOIN staff ON sale_invoice.staff_id=staff.id
+LEFT JOIN customer ON sale_invoice.customer_id=customer.id
+GROUP BY sale_invoice.id;
+
+
+CREATE VIEW best_seller_product AS
+SELECT 
+	product.barcode,
+    product.name,
+    category.name AS `cate`,
+   	COUNT(sale_detail.sale_invoice_id) AS times
+FROM product
+LEFT JOIN category ON product.category_id=category.id
+INNER JOIN sale_detail ON product.id=sale_detail.product_id
+GROUP BY product.barcode;

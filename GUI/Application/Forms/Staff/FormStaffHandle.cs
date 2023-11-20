@@ -2,23 +2,13 @@
 using System;
 using System.Windows.Forms;
 using DTO;
-using DAL;
 using System.Collections.Generic;
 using BLL;
 using System.Text.RegularExpressions;
 using DotNetEnv;
-using iText.Layout.Element;
 using System.Globalization;
-using iText.Commons.Utils;
-using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
-using System.IO;
-using OfficeOpenXml;
-using Spire.Xls.AI;
 using Excel = Microsoft.Office.Interop.Excel;
-using iText.IO.Font.Cmap;
-using Microsoft.Office.Interop.Excel;
 using TextBox = System.Windows.Forms.TextBox;
-using Google.Protobuf.WellKnownTypes;
 
 namespace GUI
 {

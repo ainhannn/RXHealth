@@ -3,6 +3,11 @@ CREATE DATABASE pharmacy;
 USE pharmacy;
 
 -- -- -- -- -- TABLES -- -- -- -- --
+CREATE TABLE title (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE staff (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nickname VARCHAR(16) UNIQUE NOT NULL,
@@ -107,7 +112,7 @@ CREATE TABLE import_invoice (
 CREATE TABLE import_detail (
     import_invoice_id INT NOT NULL,
     product_id INT NOT NULL,
-    barcode VARCHAR(16) UNIQUE,
+    barcode VARCHAR(16),
     name VARCHAR(50) NOT NULL,
 	mfg_date DATETIME,
 	exp_date DATETIME,
@@ -141,39 +146,6 @@ CREATE TABLE sale_detail (
     CONSTRAINT fk_detail_sale FOREIGN KEY (sale_invoice_id) REFERENCES sale_invoice(id),
     CONSTRAINT fk_sale_product FOREIGN KEY (product_id) REFERENCES product(id)
 );			
-
--- -- -- -- -- VIEWS -- -- -- -- --
-CREATE VIEW search_sale_product AS
-SELECT 
-	product.barcode,
-    product.name,
-    category.name AS `cate`,
-	
-    product.unit,
-    product.saleprice,
-   	SUM(product_batch.number) AS number,
-	
-    product.retail_unit,
-    product.retail_saleprice,
-    product.retail_number
-FROM product
-LEFT JOIN product_batch ON product.id=product_batch.product_id
-LEFT JOIN category ON product.category_id=category.id;
-
-
-CREATE VIEW review_sale_invoice AS
-SELECT 
-	sale_invoice.id,
-	sale_invoice.code, 
-    sale_invoice.time_init, 
-    staff.nickname AS `staff_nickname`, 
-    customer.name AS `customer_name`, 
-    SUM(sale_detail.number*sale_detail.unit_price) AS total_amount,
-	sale_invoice.point
-FROM sale_invoice
-LEFT JOIN sale_detail ON sale_invoice.id=sale_detail.sale_invoice_id
-LEFT JOIN staff ON sale_invoice.staff_id=staff.id
-LEFT JOIN customer ON sale_invoice.customer_id=customer.id;
 
 DELIMITER //
 -- -- -- -- -- TRIGGERS -- -- -- -- --

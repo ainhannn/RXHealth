@@ -6,6 +6,8 @@ using DTO;
 using BLL;
 using System.Linq;
 using GLB;
+using GUI.Handle;
+using iText.Kernel.Geom;
 
 namespace GUI
 {
@@ -37,18 +39,11 @@ namespace GUI
         //lưu path image avt cho DTO
         private void avatar_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            string path = HandleGUI.ImageChange();
+            if (!string.IsNullOrEmpty(path) && File.Exists(path))
             {
-                openFileDialog.Filter = "Image Files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string selectedFilePath = openFileDialog.FileName;
-                    string destinationPath = Path.Combine(@"../../../images/", Path.GetFileName(selectedFilePath));
-                    if (!File.Exists(destinationPath))
-                        File.Copy(selectedFilePath, destinationPath);
-                    avatar.Image = new Bitmap(destinationPath);
-                    AccountBLL.updateAvatar(idUser, destinationPath);
-                }
+                avatar.Image = Application.OpenForms.OfType<MainForm>().FirstOrDefault().avatar.Image = new Bitmap(path);
+                AccountBLL.updateAvatar(idUser, path);
             }
         }
 
@@ -81,7 +76,7 @@ namespace GUI
 
                 inpNickname.Visible = false;
                 lblNickname.Text = inpNickname.Text;
-                lblNickname.Location = new Point((456 - lblNickname.Width) / 2, 566);
+                lblNickname.Location = new System.Drawing.Point((456 - lblNickname.Width) / 2, 566);
                 lblNickname.Visible = true;
                 editNickname.Text = "      Chỉnh sửa";
             }

@@ -57,7 +57,6 @@
             this.retail_unit = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.inpCode = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -66,6 +65,9 @@
             this.capacity = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel1.SuspendLayout();
@@ -233,9 +235,9 @@
             this.label4.Location = new System.Drawing.Point(86, 270);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 25);
+            this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Miếng/hộp:";
+            this.label4.Text = "Đơn vị:";
             // 
             // label5
             // 
@@ -274,7 +276,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(86, 329);
+            this.label9.Location = new System.Drawing.Point(605, 270);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(117, 25);
@@ -307,7 +309,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(263, 329);
+            this.label12.Location = new System.Drawing.Point(782, 270);
             this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 25);
@@ -331,7 +333,7 @@
             this.retail_unit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.retail_unit.Cursor = System.Windows.Forms.Cursors.Default;
             this.retail_unit.ForeColor = System.Drawing.Color.White;
-            this.retail_unit.Location = new System.Drawing.Point(201, 329);
+            this.retail_unit.Location = new System.Drawing.Point(720, 270);
             this.retail_unit.Name = "retail_unit";
             this.retail_unit.ReadOnly = true;
             this.retail_unit.Size = new System.Drawing.Size(63, 23);
@@ -364,19 +366,6 @@
             this.inpCode.Size = new System.Drawing.Size(63, 23);
             this.inpCode.TabIndex = 31;
             this.inpCode.Text = "10000";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(236, 211);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(63, 23);
-            this.textBox3.TabIndex = 32;
-            this.textBox3.Text = "10000";
             // 
             // textBox4
             // 
@@ -480,6 +469,43 @@
             this.label8.TabIndex = 39;
             this.label8.Text = "miếng/hộp";
             // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.SteelBlue;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox3.ForeColor = System.Drawing.Color.White;
+            this.textBox3.Location = new System.Drawing.Point(236, 211);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(259, 23);
+            this.textBox3.TabIndex = 32;
+            this.textBox3.Text = "Thực phẩm chức năng";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.SteelBlue;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(236, 321);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(63, 23);
+            this.textBox2.TabIndex = 41;
+            this.textBox2.Text = "10000";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(86, 319);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(131, 25);
+            this.label13.TabIndex = 40;
+            this.label13.Text = "Đơn vị bán lẻ:";
+            // 
             // FormDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -487,6 +513,8 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(999, 750);
             this.ControlBox = false;
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -555,7 +583,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox inpCode;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox retail_unit;
@@ -563,5 +590,8 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label13;
     }
 }
