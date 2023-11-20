@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Handle;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace GUI
         public FormInvoice()
         {
             InitializeComponent();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void FormInvoice_MouseDown(object sender, MouseEventArgs e)
+        {
+            HandleGUI.ReleaseCapture();
+            HandleGUI.SendMessage(Handle, 0x112, 0xf012, 8);
         }
     }
 }
