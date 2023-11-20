@@ -112,7 +112,7 @@ CREATE TABLE import_invoice (
 CREATE TABLE import_detail (
     import_invoice_id INT NOT NULL,
     product_id INT NOT NULL,
-    barcode VARCHAR(16) UNIQUE,
+    barcode VARCHAR(16),
     name VARCHAR(50) NOT NULL,
 	mfg_date DATETIME,
 	exp_date DATETIME,
