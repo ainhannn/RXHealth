@@ -466,6 +466,9 @@
     <EmbeddedResource Include="Application\Forms\Categories\Drug\FormCateDrug.resx">
       <DependentUpon>FormCateDrug.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Drug\PDetails\FormPDetails.resx">
+      <DependentUpon>FormPDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Ingredient\FormCateIngre.resx">
       <DependentUpon>FormCateIngre.cs</DependentUpon>
     </EmbeddedResource>
