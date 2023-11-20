@@ -12,12 +12,14 @@ namespace DAL
         {
             try
             {
-                return new Customer(
+                var rs = new Customer(
                     Convert.ToInt16(row[0]),
                     Convert.ToString(row[1]),
                     Convert.ToString(row[2]),
                     Convert.ToInt16(row[3]) 
                 );
+                rs.Times = SaleDAO.CountByCustomer(rs.Id);
+                return rs;
             }
             catch { return null; }
         }
@@ -25,6 +27,18 @@ namespace DAL
         public static List<Customer> SelectAll()
         {
             string sql = string.Format("SELECT * FROM {0}", dbTableName);
+            var table = ExecuteReader(sql);
+            var list = new List<Customer>();
+            foreach (var row in table)
+            {
+                list.Add(ConvertToDTO(row));
+            }
+            return list;
+        }
+
+        public static List<Customer> SearchOnContactNumber(string con)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE contact_number LIKE '%{1}%'", dbTableName, con);
             var table = ExecuteReader(sql);
             var list = new List<Customer>();
             foreach (var row in table)
@@ -43,9 +57,9 @@ namespace DAL
 
         public static Customer Select(string contactNumber)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE contact_number = '{1}'", dbTableName, contactNumber);
+            string sql = string.Format("SELECT * FROM {0} WHERE contact_number = '{1}' LIMIT 1", dbTableName, contactNumber);
             var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
+            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }
 
         public static bool Insert(Customer e)

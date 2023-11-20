@@ -6,14 +6,14 @@ using Org.BouncyCastle.Crypto.Generators;
 
 namespace DAL
 {
-    public partial class ProductDAO : DBConnection
+    public partial class ActivityDAO : DBConnection
     {
         public static int CountSalesByCate(string cate)
         {
             string sql = String.Format(
                 "SELECT SUM(times) " +
                 "FROM best_seller_product " +
-                "WHERE cate LIKE '{0}'", cate);
+                "WHERE cate LIKE '%{0}%'", cate);
             return Convert.ToInt16(ExecuteScalar(sql));
         }
 
@@ -22,7 +22,7 @@ namespace DAL
             string sql = String.Format(
                 "SELECT name, times " +
                 "FROM best_seller_product " +
-                "WHERE cate LIKE '{0}' " +
+                "WHERE cate LIKE '%{0}%' " +
                 "ORDER BY times DESC LIMIT {1}", cate, limit);
             
             var rs = new Dictionary<string, int>();
@@ -33,6 +33,25 @@ namespace DAL
             return rs;
         }
          
+        public static int CountSaleByCustomer(int cusId)
+        {
+            string sql = String.Format(
+               "SELECT COUNT(id) " +
+               "FROM sale_invoice " +
+               "WHERE customer_id = {0}", cusId);
+            return Convert.ToInt16(ExecuteScalar(sql));
+        }
+
+        public static int GetByCustomer(int cusId)
+        {
+            string sql = String.Format(
+               "SELECT COUNT(id) " +
+               "FROM sale_invoice " +
+               "WHERE customer_id = {0}", cusId);
+            return Convert.ToInt16(ExecuteScalar(sql));
+        }
+
+
 
 
 

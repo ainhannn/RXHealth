@@ -7,10 +7,10 @@ namespace BLL
     public partial class ProductBUS
     {
         public static int CountSalesByCate(string cate) 
-            => ProductDAO.CountSalesByCate(cate);
+            => ActivityDAO.CountSalesByCate(cate);
 
         public static Dictionary<string, int> GetBestSellingByCate(string cate, int limit)
-            => ProductDAO.GetBestSellingByCate(cate, limit);
+            => ActivityDAO.GetBestSellingByCate(cate, limit);
 
 
 

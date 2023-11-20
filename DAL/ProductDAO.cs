@@ -46,29 +46,26 @@ namespace DAL
             return list;
         }
 
-        public static List<ProductOnSale> SelectAll_Sale()
-        {
-            string sql = string.Format("SELECT * FROM search_sale_product");
-            var table = ExecuteReader(sql);
-            var list = new List<ProductOnSale>();
-            foreach (var row in table)
-            {
-                var p = new ProductOnSale()
-                {
-                    Barcode = row[0].ToString(),
-                    Name = row[1].ToString(),
-                    Category = row[2].ToString(),
-                    Unit = row[3].ToString(),
-                    Saleprice = (float)row[4],
-                    Number = (int)row[5],
-                    RetailUnit = row[6].ToString(),
-                    RetailSaleprice = (float)row[7],
-                    RetailNumber = (int)row[8]
-                };
-                list.Add(p);
-            }
-            return list;
-        }
+        //public static List<ProductOnSale> SelectAll_Sale()
+        //{
+        //    string sql = string.Format("SELECT * FROM search_sale_product");
+        //    var table = ExecuteReader(sql);
+        //    var list = new List<ProductOnSale>();
+        //    foreach (var row in table)
+        //    {
+        //        var p = new ProductOnSale()
+        //        {
+        //            Barcode = row[0].ToString(),
+        //            Name = row[1].ToString(),
+        //            Category = row[2].ToString(),
+        //            Unit = row[3].ToString(),
+        //            Saleprice = (float)row[4],
+        //            Number = (int)row[5]
+        //        };
+        //        list.Add(p);
+        //    }
+        //    return list;
+        //}
 
         public static Product Select(int productId)
         {
