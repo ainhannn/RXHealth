@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using BLL;
+using System.IO;
 
 namespace GUI.Handle
 {
@@ -44,6 +46,23 @@ namespace GUI.Handle
             }
             inputPass.Focus();
             f.Focus();
+        }
+
+        public static string ImageChange()
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files (*.jpg, *.jpeg, *.png)|*.jpg;*.jpeg;*.png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedFilePath = openFileDialog.FileName;
+                    string destinationPath = Path.Combine(@"../../../images/", Path.GetFileName(selectedFilePath));
+                    if (!File.Exists(destinationPath))
+                        File.Copy(selectedFilePath, destinationPath);
+                    return destinationPath;
+                }
+            }
+            return "";
         }
     }
 }

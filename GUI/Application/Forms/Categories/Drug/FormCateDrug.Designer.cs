@@ -49,22 +49,22 @@
             this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.refresh = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
+            this.RecycleBin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
-            this.lblFilter = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.btnAccount = new System.Windows.Forms.Button();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel2.SuspendLayout();
@@ -233,7 +233,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.refresh);
-            this.panel2.Controls.Add(this.delete);
+            this.panel2.Controls.Add(this.RecycleBin);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 394);
             this.panel2.Name = "panel2";
@@ -260,25 +260,25 @@
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.refresh.UseVisualStyleBackColor = false;
             // 
-            // delete
+            // RecycleBin
             // 
-            this.delete.BackColor = System.Drawing.Color.Transparent;
-            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.delete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.delete.FlatAppearance.BorderSize = 0;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.delete.ForeColor = System.Drawing.Color.White;
-            this.delete.Image = global::GUI.Properties.Resources.trash;
-            this.delete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.delete.Location = new System.Drawing.Point(0, 0);
-            this.delete.Margin = new System.Windows.Forms.Padding(5);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(50, 50);
-            this.delete.TabIndex = 112;
-            this.delete.Tag = "";
-            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.delete.UseVisualStyleBackColor = false;
+            this.RecycleBin.BackColor = System.Drawing.Color.Transparent;
+            this.RecycleBin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RecycleBin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.RecycleBin.FlatAppearance.BorderSize = 0;
+            this.RecycleBin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RecycleBin.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.RecycleBin.ForeColor = System.Drawing.Color.White;
+            this.RecycleBin.Image = global::GUI.Properties.Resources.trash;
+            this.RecycleBin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.RecycleBin.Location = new System.Drawing.Point(0, 0);
+            this.RecycleBin.Margin = new System.Windows.Forms.Padding(5);
+            this.RecycleBin.Name = "RecycleBin";
+            this.RecycleBin.Size = new System.Drawing.Size(50, 50);
+            this.RecycleBin.TabIndex = 112;
+            this.RecycleBin.Tag = "";
+            this.RecycleBin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RecycleBin.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -302,24 +302,116 @@
             this.panel1.Size = new System.Drawing.Size(1600, 344);
             this.panel1.TabIndex = 117;
             // 
-            // btnAccount
+            // textBox5
             // 
-            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAccount.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAccount.Location = new System.Drawing.Point(738, 286);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(125, 50);
-            this.btnAccount.TabIndex = 107;
-            this.btnAccount.Tag = "";
-            this.btnAccount.Text = "Tìm kiếm";
-            this.btnAccount.UseVisualStyleBackColor = false;
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox5.Location = new System.Drawing.Point(630, 198);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(112, 30);
+            this.textBox5.TabIndex = 132;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(579, 201);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 25);
+            this.label5.TabIndex = 131;
+            this.label5.Text = "đến";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox4.Location = new System.Drawing.Point(461, 198);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(112, 30);
+            this.textBox4.TabIndex = 130;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(322, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 25);
+            this.label4.TabIndex = 129;
+            this.label4.Text = "Khoảng giá từ";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(919, 200);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(127, 29);
+            this.checkBox1.TabIndex = 128;
+            this.checkBox1.Text = "Ngừng bán";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox3.Location = new System.Drawing.Point(1049, 133);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(230, 30);
+            this.textBox3.TabIndex = 127;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(914, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 25);
+            this.label3.TabIndex = 126;
+            this.label3.Text = "Đơn vị bán lẻ";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox2.Location = new System.Drawing.Point(457, 66);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(230, 30);
+            this.textBox2.TabIndex = 125;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(322, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 25);
+            this.label2.TabIndex = 124;
+            this.label2.Text = "Tên";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Location = new System.Drawing.Point(457, 133);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(230, 30);
+            this.textBox1.TabIndex = 123;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(322, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 25);
+            this.label1.TabIndex = 122;
+            this.label1.Text = "Đơn vị";
             // 
             // comboBoxFilter
             // 
@@ -351,116 +443,24 @@
             this.lblFilter.TabIndex = 121;
             this.lblFilter.Text = "Ngành hàng";
             // 
-            // label1
+            // btnAccount
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(322, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 25);
-            this.label1.TabIndex = 122;
-            this.label1.Text = "Đơn vị";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(457, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 30);
-            this.textBox1.TabIndex = 123;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(457, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 30);
-            this.textBox2.TabIndex = 125;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(322, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 25);
-            this.label2.TabIndex = 124;
-            this.label2.Text = "Tên";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Location = new System.Drawing.Point(1049, 133);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(230, 30);
-            this.textBox3.TabIndex = 127;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(914, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 25);
-            this.label3.TabIndex = 126;
-            this.label3.Text = "Đơn vị lẻ";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(919, 200);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(127, 29);
-            this.checkBox1.TabIndex = 128;
-            this.checkBox1.Text = "Ngưng bán";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(322, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 25);
-            this.label4.TabIndex = 129;
-            this.label4.Text = "Khoảng giá từ";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.Location = new System.Drawing.Point(461, 198);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 30);
-            this.textBox4.TabIndex = 130;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(579, 201);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 25);
-            this.label5.TabIndex = 131;
-            this.label5.Text = "đến";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.Location = new System.Drawing.Point(630, 198);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(112, 30);
-            this.textBox5.TabIndex = 132;
+            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAccount.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccount.FlatAppearance.BorderSize = 0;
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnAccount.ForeColor = System.Drawing.Color.White;
+            this.btnAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAccount.Location = new System.Drawing.Point(738, 286);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(125, 50);
+            this.btnAccount.TabIndex = 107;
+            this.btnAccount.Tag = "";
+            this.btnAccount.Text = "Tìm kiếm";
+            this.btnAccount.UseVisualStyleBackColor = false;
             // 
             // FormCateDrug
             // 
@@ -495,7 +495,7 @@
         private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button refresh;
-        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button RecycleBin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn stack;

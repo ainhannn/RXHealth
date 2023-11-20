@@ -511,7 +511,7 @@ namespace GUI
         private System.Windows.Forms.Button invenChk;
         private System.Windows.Forms.Label formTitle;
         public System.Windows.Forms.Label username;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox avatar;
+        public Guna.UI2.WinForms.Guna2CirclePictureBox avatar;
         private System.Windows.Forms.Panel pnlAccount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel transacMenu;
