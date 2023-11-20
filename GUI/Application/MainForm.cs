@@ -1,4 +1,5 @@
 ﻿using BLL;
+using GUI.Components;
 using GUI.Handle;
 using System;
 using System.Drawing;
@@ -27,7 +28,10 @@ namespace GUI
                 avatar.Image = new Bitmap(path);
             username.Text = StaffBLL.getNickName(idUser);
             if (roleUser == 0)
-                return;
+            {
+                statistic.BackColor = Color.Navy;
+                Navigate.Form(formTitle, "Báo Cáo Thống Kê", fmStatistic, new FormStatistic(), this);
+            }
             else if (roleUser == 1) // Warehouse Manager
             {
                 foreach (Button btn in Sidebar.Controls.OfType<Button>())
@@ -43,6 +47,9 @@ namespace GUI
                     btn.Visible = false;
                 buy.Visible = true;
                 buy.BackColor = Color.RoyalBlue;
+                invenChk.BackColor = Color.LightSteelBlue;
+                inventory.BackColor = Color.Navy;
+                Navigate.Form(formTitle, "Kiểm Kho", fmInvenChk, new FormInvenChk(), this);
             }
             else if (roleUser == 2) // Saler
             {
@@ -59,7 +66,8 @@ namespace GUI
                 foreach (Button btn in transacMenu.Controls.OfType<Button>())
                     btn.Visible = false;
                 sell.Visible = true;
-                sell.BackColor = Color.RoyalBlue;
+                sell.BackColor = Color.Navy;
+                Navigate.Form(formTitle, "Lập Hóa Đơn Bán", fmSell, new FormSell(), this);
             }
         }
 

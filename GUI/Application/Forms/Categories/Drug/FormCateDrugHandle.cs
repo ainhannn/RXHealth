@@ -8,5 +8,10 @@ namespace GUI
         {
             new FormPDetails().ShowDialog();
         }
+
+        private void RecycleBin_Click(object sender, System.EventArgs e)
+        {
+            new FormPRecycleBin().ShowDialog();
+        }
     }
 }

@@ -264,6 +264,18 @@
     <Compile Include="Application\Forms\Categories\Drug\PDetails\FormPDetailsStyle.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\PRecycleBin\FormPRecycleBin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\PRecycleBin\FormPRecycleBin.Designer.cs">
+      <DependentUpon>FormPRecycleBin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\PRecycleBin\FormPRecycleBinHandle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\Forms\Categories\Drug\PRecycleBin\FormPRecycleBinStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Application\Forms\Categories\Provider\FormCateProviHandle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -472,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Drug\PDetails\FormPDetails.resx">
       <DependentUpon>FormPDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Categories\Drug\PRecycleBin\FormPRecycleBin.resx">
+      <DependentUpon>FormPRecycleBin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Categories\Ingredient\FormCateIngre.resx">
       <DependentUpon>FormCateIngre.cs</DependentUpon>

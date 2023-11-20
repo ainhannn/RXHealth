@@ -104,7 +104,7 @@ namespace GUI
             transaction.BackColor = Color.Navy;
             if (transaction.Visible == false)
                 buy.BackColor = Color.Navy;
-            Navigate.Form(formTitle, "Lập Đơn Đặt Hàng", fmBuy, new FormBuy(), this);
+            Navigate.Form(formTitle, "Lập Danh Sách Đặt Hàng", fmBuy, new FormBuy(), this);
         }
 
         private void staff_Click(object sender, EventArgs e)
