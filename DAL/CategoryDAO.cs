@@ -14,6 +14,12 @@ namespace DAL
             catch { return null; }
         }
 
+        public static int GetId(string name)
+        {
+            string sql = string.Format("SELECT id FROM {0} WHERE name = '{1}' LIMIT 1", dbTableName, name);
+            var table = ExecuteReader(sql);
+            return table.Count != 0 ? Convert.ToInt16(table[0][0]) : 0;
+        }
         public static List<Category> SelectAll()
         {
             string sql = string.Format("SELECT * FROM {0}", dbTableName);
