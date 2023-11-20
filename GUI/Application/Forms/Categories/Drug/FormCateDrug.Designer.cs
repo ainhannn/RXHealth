@@ -115,6 +115,7 @@
             // 
             // table
             // 
+            this.table.AllowUserToAddRows = false;
             this.table.AllowUserToDeleteRows = false;
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -151,7 +152,7 @@
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.table.Size = new System.Drawing.Size(1600, 450);
             this.table.TabIndex = 115;
-            this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
+            this.table.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellDoubleClick);
             // 
             // id
             // 

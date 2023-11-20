@@ -19,7 +19,7 @@ namespace GUI
         private void FormDetails_MouseDown(object sender, MouseEventArgs e)
         {
             HandleGUI.ReleaseCapture();
-            HandleGUI.SendMessage(this.Handle, 0x112, 0xf012, 8);
+            HandleGUI.SendMessage(Handle, 0x112, 0xf012, 8);
         }
     }
 }

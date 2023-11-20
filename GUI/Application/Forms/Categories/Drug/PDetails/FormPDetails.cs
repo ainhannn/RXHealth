@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-using System.IO;
+﻿using System.Windows.Forms;
 using GUI.Handle;
 
 namespace GUI
@@ -15,7 +13,7 @@ namespace GUI
         private void FormPDetails_MouseDown(object sender, MouseEventArgs e)
         {
             HandleGUI.ReleaseCapture();
-            HandleGUI.SendMessage(this.Handle, 0x112, 0xf012, 8);
+            HandleGUI.SendMessage(Handle, 0x112, 0xf012, 8);
         }
         private void exit_Click(object sender, System.EventArgs e)
         {
