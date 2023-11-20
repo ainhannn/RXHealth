@@ -22,14 +22,12 @@ SELECT
 	sale_invoice.id,
 	sale_invoice.code, 
     sale_invoice.time_init, 
-    staff.nickname AS `staff_nickname`, 
-    customer.name AS `customer_name`, 
+	sale_invoice.staff_id, 
+	sale_invoice.customer_id,
     SUM(sale_detail.number*sale_detail.unit_price) AS total_amount,
 	sale_invoice.point
 FROM sale_invoice
 LEFT JOIN sale_detail ON sale_invoice.id=sale_detail.sale_invoice_id
-LEFT JOIN staff ON sale_invoice.staff_id=staff.id
-LEFT JOIN customer ON sale_invoice.customer_id=customer.id
 GROUP BY sale_invoice.id;
 
 
