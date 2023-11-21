@@ -97,7 +97,7 @@ namespace DAL
                     var cmd = new MySqlCommand(sql, conn);
                     return cmd.ExecuteNonQuery();
                 }
-                catch (SqlException e){ Console.WriteLine(e); return -1; }
+                catch { return -1; }
                 finally { Close(); }
             }
             return -1;

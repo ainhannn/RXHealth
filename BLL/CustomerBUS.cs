@@ -18,5 +18,11 @@ namespace BLL
 
         public static List<SaleInvoice> GetPurchaseHistory(int cusId)
             => SaleDAO.GetOnCustomer(cusId);
+
+        public static bool Update(Customer customer)
+            => CustomerDAO.UpdateInformation(customer);
+
+        public static bool Insert(Customer customer)
+            => CustomerDAO.Insert(customer);
     }
 }

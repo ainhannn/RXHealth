@@ -1,7 +1,10 @@
 ﻿using BLL;
 using DTO;
+using GLB;
+using iText.Layout.Splitting;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI
@@ -92,26 +95,47 @@ namespace GUI
 
         private void save_Click(object sender, EventArgs e)
         {
-            if (inpName.Enabled && 
-                !string.IsNullOrEmpty(inpName.Text) && 
-                !string.IsNullOrEmpty(inpContactNumber.Text))
+            if (!inpName.Enabled) return;
+            if (string.IsNullOrEmpty(inpName.Text) || string.IsNullOrEmpty(inpContactNumber.Text))
             {
-                if (tableCus.CurrentRow != null)
+                MessageBox.Show("Vui lòng không bỏ trống!");
+                return;
+            }
+            if (!Check.IsPhoneNumber(inpContactNumber.Text))
+            {
+                MessageBox.Show("Sai định dạng số điện thoại!");
+                return;
+            }
+
+            if (tableCus.CurrentRow != null)  // sửa
+            {
+                Int16.TryParse(tableCus.CurrentRow.Cells[0].Value.ToString(), out var id);
+                var cus = CustomerBUS.Select(id);
+                cus.Name = inpName.Text;
+                cus.ContactNumber = inpContactNumber.Text;
+                if (CustomerBUS.Update(cus))
                 {
-                    Int16.TryParse(tableCus.CurrentRow.Cells[0].Value.ToString(), out var id);
-                    var cus = CustomerBUS.Select(id);
-                    cus.Name = inpName.Text;
-                    cus.ContactNumber = inpContactNumber.Text;
-                    //if (CustomerBUS.Update(cus))
-                    //    ;
+                    Changable(false);
+                    LoadIntoTableCus(CustomerBUS.SelectAll());
+                    MessageBox.Show("Cập nhật thành công!");
+                    SetCustomerDisplay(null);
                 }
                 else
+                    MessageBox.Show("Cập nhật thất bại!");
+            }
+            else //thêm
+            {
+                var cus = new Customer(inpName.Text, inpContactNumber.Text);
+                if (CustomerBUS.Insert(cus))
                 {
-                    //thêm
+                    Changable(false);
+                    LoadIntoTableCus(CustomerBUS.SelectAll());
+                    MessageBox.Show("Thêm thành công!");
+                    SetCustomerDisplay(null);
                 }
-            }    
-
-            Changable(false);
+                else
+                    MessageBox.Show("Thêm thất bại!");
+            }
         }
     }
 }
