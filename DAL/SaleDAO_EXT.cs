@@ -9,6 +9,7 @@ namespace DAL
     public partial class SaleDAO : DBConnection
     {
         private static readonly string dbTableName = "sale_invoice";
+        private static readonly string dbViewName = "review_sale_invoice";
 
         private static SaleInvoice ConvertToDTO(List<object> row)
         {
@@ -43,16 +44,16 @@ namespace DAL
         public static int CountByCustomer(int cusId)
         {
             string sql = String.Format(
-               "SELECT COUNT(id) FROM review_sale_invoice " +
-               "WHERE customer_id = {0}", cusId);
+               "SELECT COUNT(id) FROM {0} " +
+               "WHERE customer_id = {1}", dbViewName,cusId);
             return Convert.ToInt16(ExecuteScalar(sql));
         }
 
-        public static List<SaleInvoice> GetByCustomer(int cusId)
+        public static List<SaleInvoice> GetOnCustomer(int cusId)
         {
             string sql = string.Format(
-                "SELECT * FROM review_sale_invoice " +
-                "WHERE customer_id = {0}", cusId);
+                "SELECT * FROM {0} " +
+                "WHERE customer_id = {1}", dbViewName,cusId);
             var table = ExecuteReader(sql);
             var list = new List<SaleInvoice>();
             foreach (var row in table)

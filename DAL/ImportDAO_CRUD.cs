@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using DTO;
-using MySql.Data.MySqlClient;
 
 namespace DAL
 {
-    public  class ImportDAO : DBConnection
+    public  partial class ImportDAO : DBConnection
     {
         private static string dbTableName = "import_invoice";
+        private static string dbViewName = "review_import_invoice";
 
-        private static ImportInvoice ConvertToFormDTO(List<object> row)
+
+        private static ImportInvoice ConvertToDTO(List<object> row)
         {
             try 
             {
@@ -22,6 +23,7 @@ namespace DAL
                 Int16.TryParse(row[4].ToString(), out var supplierId);
                 var supplier = SupplierDAO.Select(staffId);
                 string supplierName = supplier != null ? supplier.Name : "";
+                Double.TryParse(row[5].ToString(), out var totalAmount);
 
                 return new ImportInvoice(id, code)
                 {
@@ -29,29 +31,30 @@ namespace DAL
                     StaffId = staffId,
                     StaffNickName = staffNickname,
                     SupplierId = supplierId,
-                    SupplierName = supplierName
+                    SupplierName = supplierName,
+                    TotalAmount = totalAmount
                 };
             }
             catch { return null; }
         }
-        
+
         public static List<ImportInvoice> SelectAllForm()
         {
-            string sql = string.Format("SELECT * FROM {0}", dbTableName);
+            string sql = string.Format("SELECT * FROM {0}", dbViewName);
             var table = ExecuteReader(sql);
             var list = new List<ImportInvoice>();
             foreach (var row in table)
             {
-                list.Add(ConvertToFormDTO(row));
+                list.Add(ConvertToDTO(row));
             }
             return list;
         }
 
         public static ImportInvoice SelectForm(int id)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbTableName, id);
+            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbViewName, id);
             var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToFormDTO(table[0]) : null;
+            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }
 
         public static List<ImportDetail> SelectDetails(int formId)

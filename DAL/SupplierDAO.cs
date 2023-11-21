@@ -1,32 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using DTO;
+using Org.BouncyCastle.Utilities;
 
 namespace DAL
 {
     public class SupplierDAO : DBConnection
     {
         private static readonly string dbTableName = "supplier";
-        private static readonly string dbViewName = "review_supplier";
 
         private static Supplier ConvertToDTO(List<object> row)
         {
             try
             {
-                return new Supplier(Convert.ToInt16(row[0]))
+                var rs = new Supplier(Convert.ToInt16(row[0]))
                 {
                     Name = Convert.ToString(row[1]),
                     ContactNumber = Convert.ToString(row[2]),
-                    Address = Convert.ToString(row[3]),
-                    Times = Convert.ToInt16(row[4])
+                    Address = Convert.ToString(row[3])
                 };
+                rs.Times = ImportDAO.CountBySupplier(rs.Id);
+                return rs;
             }
             catch { return null; }
         }
 
         public static List<Supplier> SelectAll()
         {
-            string sql = string.Format("SELECT * FROM {0}", dbViewName);
+            string sql = string.Format("SELECT * FROM {0}", dbTableName);
             var table = ExecuteReader(sql);
             var list = new List<Supplier>();
             foreach (var row in table)
@@ -38,9 +39,23 @@ namespace DAL
 
         public static Supplier Select(int id)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbViewName, id);
+            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbTableName, id);
             var table = ExecuteReader(sql);
             return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+        }
+
+        public static List<Supplier> SearchOnName(string name)
+        {
+            string sql = string.Format(
+                "SELECT * FROM {0} " +
+                "WHERE name LIKE '%{1}%'", dbTableName, name);
+            var table = ExecuteReader(sql);
+            var list = new List<Supplier>();
+            foreach (var row in table)
+            {
+                list.Add(ConvertToDTO(row));
+            }
+            return list;
         }
 
         public static bool Insert(Supplier e)

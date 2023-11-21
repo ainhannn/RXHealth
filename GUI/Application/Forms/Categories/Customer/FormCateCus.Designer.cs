@@ -56,8 +56,9 @@
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.tableCus = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.cusId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.form.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
@@ -85,7 +86,6 @@
             this.search.Tag = "";
             this.search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.search.UseVisualStyleBackColor = false;
-            this.search.Click += new System.EventHandler(this.search_Click);
             // 
             // save
             // 
@@ -98,7 +98,7 @@
             this.save.ForeColor = System.Drawing.Color.White;
             this.save.Image = global::GUI.Properties.Resources.save;
             this.save.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.save.Location = new System.Drawing.Point(727, 327);
+            this.save.Location = new System.Drawing.Point(577, 327);
             this.save.Margin = new System.Windows.Forms.Padding(5);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(50, 50);
@@ -113,8 +113,9 @@
             this.inpContactNumber.AcceptsReturn = true;
             this.inpContactNumber.AcceptsTab = true;
             this.inpContactNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpContactNumber.Enabled = false;
             this.inpContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpContactNumber.Location = new System.Drawing.Point(388, 203);
+            this.inpContactNumber.Location = new System.Drawing.Point(238, 203);
             this.inpContactNumber.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpContactNumber.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpContactNumber.Name = "inpContactNumber";
@@ -126,8 +127,9 @@
             this.inpName.AcceptsReturn = true;
             this.inpName.AcceptsTab = true;
             this.inpName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpName.Enabled = false;
             this.inpName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpName.Location = new System.Drawing.Point(388, 141);
+            this.inpName.Location = new System.Drawing.Point(238, 141);
             this.inpName.MaximumSize = new System.Drawing.Size(500, 30);
             this.inpName.MinimumSize = new System.Drawing.Size(100, 30);
             this.inpName.Name = "inpName";
@@ -140,7 +142,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(732, 144);
+            this.label11.Location = new System.Drawing.Point(582, 144);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 25);
             this.label11.TabIndex = 92;
@@ -152,7 +154,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(732, 201);
+            this.label8.Location = new System.Drawing.Point(582, 206);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(167, 25);
             this.label8.TabIndex = 89;
@@ -164,7 +166,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(253, 206);
+            this.label7.Location = new System.Drawing.Point(103, 206);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 25);
             this.label7.TabIndex = 88;
@@ -176,7 +178,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(253, 144);
+            this.label5.Location = new System.Drawing.Point(103, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 25);
             this.label5.TabIndex = 86;
@@ -193,7 +195,7 @@
             this.update.ForeColor = System.Drawing.Color.White;
             this.update.Image = global::GUI.Properties.Resources.compose;
             this.update.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.update.Location = new System.Drawing.Point(575, 327);
+            this.update.Location = new System.Drawing.Point(425, 327);
             this.update.Margin = new System.Windows.Forms.Padding(5);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(50, 50);
@@ -209,7 +211,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(400, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1200, 494);
+            this.panel2.Size = new System.Drawing.Size(900, 420);
             this.panel2.TabIndex = 5;
             // 
             // form
@@ -231,7 +233,7 @@
             this.form.ForeColor = System.Drawing.Color.White;
             this.form.Location = new System.Drawing.Point(0, 0);
             this.form.Name = "form";
-            this.form.Size = new System.Drawing.Size(1200, 494);
+            this.form.Size = new System.Drawing.Size(900, 420);
             this.form.TabIndex = 3;
             // 
             // inpPoint
@@ -240,7 +242,7 @@
             this.inpPoint.AutoSize = true;
             this.inpPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inpPoint.ForeColor = System.Drawing.Color.White;
-            this.inpPoint.Location = new System.Drawing.Point(924, 144);
+            this.inpPoint.Location = new System.Drawing.Point(774, 144);
             this.inpPoint.Name = "inpPoint";
             this.inpPoint.Size = new System.Drawing.Size(24, 25);
             this.inpPoint.TabIndex = 112;
@@ -252,7 +254,7 @@
             this.inpTimes.AutoSize = true;
             this.inpTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inpTimes.ForeColor = System.Drawing.Color.White;
-            this.inpTimes.Location = new System.Drawing.Point(924, 201);
+            this.inpTimes.Location = new System.Drawing.Point(774, 206);
             this.inpTimes.Name = "inpTimes";
             this.inpTimes.Size = new System.Drawing.Size(24, 25);
             this.inpTimes.TabIndex = 111;
@@ -269,7 +271,7 @@
             this.create.ForeColor = System.Drawing.Color.White;
             this.create.Image = ((System.Drawing.Image)(resources.GetObject("create.Image")));
             this.create.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.create.Location = new System.Drawing.Point(423, 327);
+            this.create.Location = new System.Drawing.Point(273, 327);
             this.create.Margin = new System.Windows.Forms.Padding(5);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(50, 50);
@@ -332,12 +334,12 @@
             this.staff,
             this.total});
             this.table.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.table.Location = new System.Drawing.Point(400, 494);
+            this.table.Location = new System.Drawing.Point(400, 420);
             this.table.Margin = new System.Windows.Forms.Padding(0);
             this.table.Name = "table";
             this.table.ReadOnly = true;
             this.table.RowHeadersVisible = false;
-            this.table.Size = new System.Drawing.Size(1200, 400);
+            this.table.Size = new System.Drawing.Size(900, 400);
             this.table.TabIndex = 4;
             // 
             // inpSearch
@@ -382,6 +384,7 @@
             this.tableCus.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tableCus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableCus.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cusId,
             this.name});
             this.tableCus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tableCus.Location = new System.Drawing.Point(48, 116);
@@ -399,9 +402,24 @@
             this.tableCus.RowHeadersVisible = false;
             this.tableCus.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tableCus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tableCus.Size = new System.Drawing.Size(303, 716);
+            this.tableCus.Size = new System.Drawing.Size(303, 642);
             this.tableCus.TabIndex = 114;
             this.tableCus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableCus_CellClick);
+            // 
+            // cusId
+            // 
+            this.cusId.HeaderText = "Id";
+            this.cusId.Name = "cusId";
+            this.cusId.ReadOnly = true;
+            this.cusId.Visible = false;
+            // 
+            // name
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.name.DefaultCellStyle = dataGridViewCellStyle3;
+            this.name.HeaderText = "Khách hàng";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // panel1
             // 
@@ -412,21 +430,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 894);
+            this.panel1.Size = new System.Drawing.Size(400, 820);
             this.panel1.TabIndex = 3;
-            // 
-            // name
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.name.DefaultCellStyle = dataGridViewCellStyle3;
-            this.name.HeaderText = "Khách hàng";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
             // 
             // FormCateCus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1600, 894);
+            this.ClientSize = new System.Drawing.Size(1300, 820);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.table);
@@ -475,6 +485,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label inpTimes;
         private System.Windows.Forms.Label inpPoint;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cusId;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }
