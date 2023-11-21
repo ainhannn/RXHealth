@@ -200,7 +200,7 @@ namespace GUI
         private bool IsCitizenId(string citizenId)
         {
             string cleanedPhoneNumber = Regex.Replace(citizenId, @"[\s-]", "");
-            if (Regex.IsMatch(cleanedPhoneNumber, @"^\d{12}$"))
+            if (Regex.IsMatch(cleanedPhoneNumber, @"^\d{9}$|^\d{12}$"))
             {
                 return true;
             }
