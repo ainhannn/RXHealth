@@ -33,10 +33,6 @@ namespace GUI
             inpTitle.SelectedIndex = 0;
         }
 
-        private void comboFilterGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void notification_Click(object sender, EventArgs e)
         {

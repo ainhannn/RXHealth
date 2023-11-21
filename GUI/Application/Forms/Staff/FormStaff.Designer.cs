@@ -180,7 +180,8 @@ namespace GUI
             this.comboBoxFilter.Location = new System.Drawing.Point(656, 22);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(120, 33);
-            this.comboBoxFilter.TabIndex = 114;
+            this.comboBoxFilter.TabIndex = 114;    
+            this.comboBoxFilter.SelectedIndexChanged += new System.EventHandler(comboBoxFilter_SelectedIndexChanged);
             // 
             // download
             // 

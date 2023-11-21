@@ -122,6 +122,28 @@ namespace GUI
             List<Staff> list = StaffBLL.getStaffsOnRequest(contentSearch, filter, gender);
             Data(list);
         }
+
+        private void comboFilterGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string contentSearch = inpSearch.Text;
+            int filter = comboBoxFilter.SelectedIndex + 1;
+            int gender = comboFilterGender.SelectedIndex;
+            table.Rows.Clear();
+            pnlSearch.Text = "";
+            List<Staff> list = StaffBLL.getStaffsOnRequest(contentSearch, filter, gender);
+            Data(list);
+        }
+        private void comboBoxFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string contentSearch = inpSearch.Text;
+            int filter = comboBoxFilter.SelectedIndex + 1;
+            int gender = comboFilterGender.SelectedIndex;
+            table.Rows.Clear();
+            pnlSearch.Text = "";
+            List<Staff> list = StaffBLL.getStaffsOnRequest(contentSearch, filter, gender);
+            Data(list);
+        }
+
         private void create_Click(object sender, System.EventArgs e)
         {
             is_CreateForm = true;
