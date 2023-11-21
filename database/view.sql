@@ -31,6 +31,19 @@ LEFT JOIN sale_detail ON sale_invoice.id=sale_detail.sale_invoice_id
 GROUP BY sale_invoice.id;
 
 
+CREATE VIEW review_import_invoice AS
+SELECT 
+	import_invoice.id,
+	import_invoice.code, 
+    import_invoice.time_init, 
+	import_invoice.staff_id, 
+	import_invoice.supplier_id,
+    SUM(import_detail.number*import_detail.import_price) AS total_amount
+FROM import_invoice
+LEFT JOIN import_detail ON import_invoice.id=import_detail.import_invoice_id
+GROUP BY import_invoice.id;
+
+
 CREATE VIEW best_seller_product AS
 SELECT 
 	product.barcode,
