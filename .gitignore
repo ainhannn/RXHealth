@@ -1,3 +1,4 @@
-.env
-*.vsidx
 database/*
+*.vsidx
+*.dll
+*.pdb
