@@ -417,3 +417,12 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormPDeta
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormStatistic.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormPRecycleBin.resources
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormRequest.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormStatistic.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormInvoice.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormCateDrug.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormPDetails.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormPRecycleBin.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormDetails.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormInvenChk.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormInvenImp.resources
+C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormRequest.resources

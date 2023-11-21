@@ -117,6 +117,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(775, 550);
             this.dataGridView1.TabIndex = 134;
+            this.dataGridView1.CellContentClick += dataGridView1_Click;
             // 
             // delete
             // 
@@ -137,6 +138,7 @@
             this.delete.Tag = "";
             this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(delete_Click);
             // 
             // exit
             // 
@@ -200,6 +202,7 @@
             this.Name = "FormRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRequest";
+            this.Load += new System.EventHandler(form_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormRequest_MouseDown);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -207,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
 
         }
 

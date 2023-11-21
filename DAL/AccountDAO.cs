@@ -22,7 +22,6 @@ namespace DAL
         {
             string sql = string.Format(
                 "INSERT INTO {0} (id,role) " + "VALUES ({1},{2})", dbTableName, id, role);
-            Console.WriteLine(sql);
             return ExecuteNonQuery(sql) > 0;
         }
         public static bool UpdateAccount(int id, string newPassword, string newUsername) //inp (username,pass,newpass) out (status)
@@ -93,6 +92,18 @@ namespace DAL
             catch { return null; }
         }
 
+        public static Account SelectAcc(string username)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE username='{1}' LIMIT 1", dbTableName, username);
+            Console.WriteLine(sql);
+            var table = ExecuteReader(sql);
+            try
+            {
+                return new Account(Convert.ToInt16(table[0][0]), Convert.ToString(table[0][1]), Convert.ToString(table[0][2]), Convert.ToInt16(table[0][3]), Convert.ToString(table[0][4]));
+            }
+            catch { return null; }
+        }
+
         public static bool Delete(int id)
         {
             string sql = string.Format("DELETE FROM {0} WHERE id = {1}", dbTableName, id);
@@ -112,10 +123,6 @@ namespace DAL
                 return ids;
             }
             catch { return null; }
-        }
-        private static string GetDefaultPassword(Staff e)
-        {
-            return e.Birthday.ToString("ddMMyyyy");
         }
     }
 }

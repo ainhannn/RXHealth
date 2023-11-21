@@ -1,8 +1,10 @@
 ﻿using BLL;
+using DAL;
 using DotNetEnv;
 using DTO;
 using GLB;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace GUI
@@ -68,9 +70,17 @@ namespace GUI
 
         private void forgot_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Yêu cầu cấp lại mật khẩu mặc định?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            string username = inputName.Text;
+            int idAcc = AccountBLL.checkUsernameExist(username);
+            if (username == "" || username == " ")
             {
-                // code tiếp
+                MessageBox.Show("Vui lòng điền tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if(idAcc == -1){
+                MessageBox.Show("Tên đăng nhập không tồn tại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }else if (MessageBox.Show("Yêu cầu cấp lại mật khẩu mặc định?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MessageBox.Show(AccountBLL.request_reset_pass(idAcc), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

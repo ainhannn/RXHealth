@@ -67,10 +67,11 @@ namespace DAL
             }else if (request == "N" || request == "n")
             {
                 sql += string.Format(" OR staff.gender = {0} OR staff.gender = {1})", 0, 1);
-            }else if("bán hàng".Contains(request.ToLower()))
+            }else if("bán hàng".Contains(request.ToLower()) || "ban hang".Contains(request.ToLower()))
             {
                 sql += string.Format(" OR account.role = {0})", 2);
-            }else if("quản kho".Contains(request.ToLower())){
+            }else if("quản kho".Contains(request.ToLower()) || "quan kho".Contains(request.ToLower()))
+            {
                 sql += string.Format(" OR account.role = {0})", 1);
             }
             else

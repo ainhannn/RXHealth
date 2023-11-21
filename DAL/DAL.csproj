@@ -253,6 +253,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Request_resetDAO.cs" />
     <Compile Include="SaleDAO.cs" />
     <Compile Include="CustomerDAO.cs" />
     <Compile Include="ImportDAO.cs" />

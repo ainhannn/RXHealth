@@ -36,7 +36,20 @@ namespace BLL
                 return staff.Nickname;
             }catch (Exception ex)
             {
-                Console.WriteLine("No nickname"+ex.Message);
+                Console.WriteLine(""+ex.Message);
+            }
+            return "";
+        }
+        public static string getFullName(int id)
+        {
+            try
+            {
+                Staff staff = StaffDAO.Select(id);
+                return staff.FullName;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("" + ex.Message);
             }
             return "";
         }

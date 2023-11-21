@@ -35,6 +35,22 @@ namespace BLL
             }
             return false;
         }
+        public static int checkUsernameExist(string username)
+        {
+            Account acc = AccountDAO.SelectAcc(username);
+            try
+            {
+                if (acc != null)
+                {
+                    return acc.Id;
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine(ex);
+            }
+            return -1;
+        }
         public static bool updateAvatar(int id, string avatar)
         {
             try
@@ -61,6 +77,36 @@ namespace BLL
             }
             return false;
         }
+
+        public static bool resetPwd(int id)
+        {
+            try
+            {
+                string phone = StaffDAO.Select(id).ContactNumber;
+                bool rs = AccountDAO.UpdatePassword(id, phone);
+                Request_resetDAO.Delete(id);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return false;
+        }
+
+        public static bool cancleRequest(int id)
+        {
+            try
+            {
+                return Request_resetDAO.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return false;
+        }
+
         public static string ChangePwd(int id, string oldPass, string newPass)
         {
             Account acc = AccountDAO.SelectAcc(id);
@@ -100,6 +146,33 @@ namespace BLL
                 Console.WriteLine(ex.Message);
             }
             return "";
+        }
+        public static String request_reset_pass(int id)
+        {
+            try
+            {
+                bool rs =  Request_resetDAO.Insert(id);
+                if(rs)
+                {
+                    return "Yêu cầu tạo lại mật khẩu thành công";
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return "Bạn đã yêu cầu, vui lòng chờ được xử lý";
+        }
+        public static List<int> getAllIRequest()
+        {
+            try
+            {
+                return Request_resetDAO.selectAll();
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return null;
         }
     }
 }

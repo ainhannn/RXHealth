@@ -219,6 +219,10 @@ namespace GUI
                 {
                     bool rs = StaffBLL.deleteStaff(Convert.ToInt16(row.Cells[0].Value));
                     if (rs == false) Console.WriteLine("Id " + Convert.ToInt16(row.Cells[0].Value) + " không có!");
+                    else
+                    {
+                        count++;
+                    }
                 }
             }
             table.Rows.Clear();
