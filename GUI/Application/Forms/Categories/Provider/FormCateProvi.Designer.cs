@@ -297,6 +297,7 @@
             this.save.Tag = "";
             this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // inpAddress
             // 
@@ -404,6 +405,7 @@
             this.update.Tag = "";
             this.update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.update.UseVisualStyleBackColor = false;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // create
             // 
@@ -424,6 +426,7 @@
             this.create.Tag = "";
             this.create.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.create.UseVisualStyleBackColor = false;
+            this.create.Click += new System.EventHandler(this.create_Click);
             // 
             // FormCateProvi
             // 

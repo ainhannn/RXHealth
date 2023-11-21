@@ -16,8 +16,13 @@ namespace BLL
         public static List<Supplier> SearchOnName(string name)
             => SupplierDAO.SearchOnName(name);
 
-
         public static List<ImportInvoice> GetExchangeHistory(int supId)
             => ImportDAO.GetOnSupplier(supId);
+
+        public static bool Update(Supplier supplier)
+            => SupplierDAO.UpdateInformation(supplier);
+
+        public static bool Insert(Supplier supplier)
+            => SupplierDAO.Insert(supplier);
     }
 }

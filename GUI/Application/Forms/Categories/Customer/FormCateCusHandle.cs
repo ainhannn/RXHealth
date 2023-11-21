@@ -18,6 +18,7 @@ namespace GUI
             {
                 tableCus.Rows.Add(item.Id, item.ContactNumber);
             }
+            tableCus.CurrentCell = null;
         }
 
         private void SetCustomerDisplay(Customer cus)

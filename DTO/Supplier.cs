@@ -12,5 +12,12 @@ namespace DTO
         public List<ImportInvoice> ExchangeHistory { get; set; } = new List<ImportInvoice>();
 
         public Supplier(int id) { Id = id; }
+
+        public Supplier(string name, string contactNumber, string address)
+        {
+            Name = name;
+            ContactNumber = contactNumber;
+            Address = address;
+        }
     }
 }
