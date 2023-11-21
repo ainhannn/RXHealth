@@ -66,7 +66,7 @@ namespace DAL
         {
             string sql = string.Format(
                 "INSERT INTO {0}(name,contact_number) " +
-                "VALUE ('{1}','{2}'", dbTableName, e.Name, e.ContactNumber);
+                "VALUE ('{1}','{2}')", dbTableName, e.Name, e.ContactNumber);
             return ExecuteNonQuery(sql) > 0;
         }
 
