@@ -255,6 +255,7 @@
   <ItemGroup>
     <Compile Include="ImportDAO_CRUD.cs" />
     <Compile Include="ImportDAO_EXT.cs" />
+    <Compile Include="ProductDAO_CRUD.cs" />
     <Compile Include="ProductOldDAO.cs" />
     <Compile Include="Request_resetDAO.cs" />
     <Compile Include="CustomerDAO.cs" />

@@ -210,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
+    <Compile Include="ProductBUS_EXT.cs" />
     <Compile Include="SupplierBUS.cs" />
     <Compile Include="CustomerBUS.cs" />
     <Compile Include="SubstanceBUS.cs" />

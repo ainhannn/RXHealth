@@ -1,11 +1,21 @@
 ﻿using System.Web.UI.WebControls;
 using System;
 using System.Windows.Forms;
+using BLL;
+using System.Collections;
+using System.Xml;
+using System.Collections.Generic;
+using iText.Layout.Element;
+using static Google.Protobuf.WellKnownTypes.Field.Types;
+using DTO;
+using DAL;
+using OfficeOpenXml.LoadFunctions.Params;
 
 namespace GUI
 {
     public partial class FormSell : Form
     {
+        ProductBUS proBUS = new ProductBUS();
         private const string defaultSearch = "Tìm sản phẩm";
         private const string defaultCustomer = "Tìm khách hàng";
         private const string defaultNote = "Ghi chú đơn hàng";
@@ -16,7 +26,21 @@ namespace GUI
             InitializeSearchBox();
             InitializeCustomerBox();
             InitializeNoteBox();
+            //LoadDataTable();
         }
+
+        //private void LoadDataTable()
+        //{
+        //    FindGoodsTable.RowCount = 1;
+        //    foreach (ProductOnSale cus in proBUS.getAllWSale())
+        //    {
+                
+
+        //            FindGoodsTable.Rows.Add(cus.Barcode, cus.Name, cus.Category, cus.Unit, cus.Saleprice, cus.Number);
+                
+
+        //    }
+        //}
 
         private void InitializeSearchBox()
         {
@@ -24,7 +48,7 @@ namespace GUI
 
             TextBoxSearch.GotFocus += TextBoxSearch_GotFocus;
             TextBoxSearch.LostFocus += TextBoxSearch_LostFocus;
-            //TextBoxSearch.TextChanged += TextBoxSearch_TextChanged;
+            //TextBoxSearch.TextChanged += TextBoxSearch_TextChanged_2;
             TextBoxSearch.KeyDown += TextBoxSearch_KeyDown;
         }
 
@@ -131,7 +155,34 @@ namespace GUI
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            //SearchLabel.Text = "Kết quả tìm kiếm cho: " + TextBoxSearch.Text;
+            string text = TextBoxSearch.Text.Trim();
+            FindGoodsTable.RowCount = 1;
+            if (text == "" || TextBoxSearch.Text == defaultSearch)
+            {
+                Find1Panel.Visible = false;
+                FindGoodsTable.Visible = false;
+            }
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                //FindGoodsTable.RowCount = 1;
+                Find1Panel.Visible = true;
+                FindGoodsTable.Visible = true;
+                FindGoodsTable.Rows.Clear();
+                foreach (ProductOnSale cus in proBUS.getAllWSale())
+                {
+                        FindGoodsTable.Rows.Add(cus.Barcode, cus.Name, cus.Category, cus.Unit, cus.Saleprice, cus.Number);
+                }
+            }
+            else
+            {
+                Find1Panel.Visible = true;
+                FindGoodsTable.Visible = true;
+                FindGoodsTable.Rows.Clear();
+                foreach (ProductOnSale cus in proBUS.getAllWholelSale(text))
+                {
+                        FindGoodsTable.Rows.Add(cus.Barcode, cus.Name, cus.Category, cus.Unit, cus.Saleprice, cus.Number);
+                }
+            }
         }
 
 
@@ -147,7 +198,7 @@ namespace GUI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -160,10 +211,6 @@ namespace GUI
 
         }
 
-        private void TextBoxSearch_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -174,5 +221,116 @@ namespace GUI
             SellBtn.Enabled = !isTableEmpty;
             MessageBox.Show("Button clicked!");
         }
+
+        private void FindGoodsTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 || string.IsNullOrWhiteSpace(TextBoxSearch.Text) == false)
+            {
+                MessageBox.Show("Thành công");
+                Find1Panel.Visible = false;
+                FindGoodsTable.Visible = false;
+                // Lấy hàng đầu tiên được chọn trong FindGoodsTable
+                DataGridViewRow selectedRow = FindGoodsTable.Rows[e.RowIndex];
+
+                // Tạo một hàng mới và sao chép dữ liệu từ hàng đã chọn
+                DataGridViewRow newRow = (DataGridViewRow)selectedRow.Clone();
+
+                // Lặp qua các ô trong hàng đã chọn và sao chép dữ liệu
+                for (int i = 0; i < selectedRow.Cells.Count; i++)
+                {
+                    newRow.Cells[i].Value = selectedRow.Cells[i].Value;
+                    newRow.Cells[5].Value = 1;
+
+                }
+
+                // Thêm hàng mới vào table
+                table.Rows.Clear();
+                table.Rows.Add(newRow);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một hàng trong dataGridView1.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void TextBoxSearch_Click(object sender, EventArgs e)
+        {
+            if (TextBoxSearch.SelectionStart == 0 || TextBoxSearch.Text == "")
+            {
+                //MessageBox.Show("TextBox có con trỏ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Find1Panel.Visible = false;
+                FindGoodsTable.Visible = false;
+            }
+        }
+
+        private void NewCustomerLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    String cln = this.table.Columns[e.ColumnIndex].Name;
+        //    int index = this.table.SelectedCells[0].RowIndex;
+        //    ChiTietHoaDon cthd = (ChiTietHoaDon)this.listCTHD[index];
+        //    ProductOnSale sp = proBUS.getFromCTSP(cthd.MaChiTietSanPham.ToString());
+        //    int slt = ChiTietSanPhamBUS.getSoLuongTon(cthd.MaChiTietSanPham.ToString());
+        //    if (cln == "Cong")
+        //    {
+
+        //        int sl = Convert.ToInt32(this.table.Rows[index].Cells["soLuongDonHang"].Value.ToString());
+        //        if ((sl + 1) <= slt)
+        //        {
+        //            updateCTHD(1, index, sp, BanHangFrom.CongTru);
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Số lượng "
+        //                + sp.TenSanPham + " ở cửa hàng chỉ còn " + this.SoLuongTon + " cái!");
+        //        }
+
+
+        //    }
+        //    else if (cln == "Tru")
+        //    {
+
+        //        updateCTHD(-1, index, sp, BanHangFrom.CongTru);
+
+
+        //    }
+        //    else if (cln == "Xoa")
+        //    {
+        //        this.dgvDonHang.Rows.RemoveAt(index);
+        //        this.listCTHD.RemoveAt(index);
+        //        this.listDonHang.RemoveAt(index);
+        //        MessageBox.Show(this.listCTHD.Count + " " + this.listCTSP.Count);
+
+        //    }
+
+        //}
+
+
+
+
+
+
+
     }
 }
