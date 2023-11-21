@@ -155,14 +155,15 @@ namespace GUI
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
         {
-            string text = TextBoxSearch.Text.Trim();
+            string text = TextBoxSearch.Text;
             FindGoodsTable.RowCount = 1;
-            if (text == "" || TextBoxSearch.Text == defaultSearch)
+            if (TextBoxSearch.Text == defaultSearch)
             {
                 Find1Panel.Visible = false;
                 FindGoodsTable.Visible = false;
+                FindGoodsTable.Rows.Clear();
             }
-            if (string.IsNullOrWhiteSpace(text))
+            else if (string.IsNullOrWhiteSpace(text))
             {
                 //FindGoodsTable.RowCount = 1;
                 Find1Panel.Visible = true;
@@ -185,6 +186,38 @@ namespace GUI
             }
         }
 
+        private void TextBoxCustomer_TextChanged(object sender, EventArgs e)
+        {
+            string text = TextBoxCustomer.Text;
+            FindGoodsTable.RowCount = 1;
+            if (TextBoxCustomer.Text == defaultCustomer)
+            {
+                Find2Panel.Visible = false;
+                FindCustomerTable.Visible = false;
+                FindCustomerTable.Rows.Clear();
+            }
+            else if (string.IsNullOrWhiteSpace(text))
+            {
+                //FindGoodsTable.RowCount = 1;
+                Find2Panel.Visible = true;
+                FindCustomerTable.Visible = true;
+                FindCustomerTable.Rows.Clear();
+                foreach (Customer cus in CustomerBUS.SelectAll())
+                {
+                    FindCustomerTable.Rows.Add(cus.ContactNumber + " - " + cus.Name);
+                }
+            }
+            else
+            {
+                Find2Panel.Visible = true;
+                FindCustomerTable.Visible = true;
+                FindCustomerTable.Rows.Clear();
+                foreach (Customer cus in CustomerBUS.SearchOnContactNumber(text))
+                {
+                    FindCustomerTable.Rows.Add(cus.ContactNumber + " - " + cus.Name);
+                }
+            }
+        }
 
         private void SaleForm_Load(object sender, EventArgs e)
         {
@@ -224,9 +257,9 @@ namespace GUI
 
         private void FindGoodsTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 || string.IsNullOrWhiteSpace(TextBoxSearch.Text) == false)
+            if ((e.RowIndex >= 0 && e.RowIndex < FindGoodsTable.Rows.Count) || string.IsNullOrWhiteSpace(TextBoxSearch.Text) == false)
             {
-                MessageBox.Show("Thành công");
+                //MessageBox.Show("Thành công");
                 Find1Panel.Visible = false;
                 FindGoodsTable.Visible = false;
                 // Lấy hàng đầu tiên được chọn trong FindGoodsTable
@@ -253,9 +286,28 @@ namespace GUI
             }
         }
 
+        private void FindCustomerTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            // Kiểm tra nếu dòng được chọn hợp lệ
+            if ((e.RowIndex >= 0 && e.RowIndex < FindCustomerTable.Rows.Count) || string.IsNullOrWhiteSpace(TextBoxCustomer.Text) == true)
+            {
+                Find2Panel.Visible = false;
+                FindCustomerTable.Visible = false;
+                // Lấy giá trị từ các ô trong dòng và gán vào Label
+                string rowValues = "";
+                for (int columnIndex = 0; columnIndex < FindCustomerTable.Columns.Count; columnIndex++)
+                {
+                    rowValues += FindCustomerTable.Rows[e.RowIndex].Cells[columnIndex].Value.ToString() + " ";
+                }
+
+                ShowPhoneLabel.Text = rowValues;
+            }
+        }
+
         private void TextBoxSearch_Click(object sender, EventArgs e)
         {
-            if (TextBoxSearch.SelectionStart == 0 || TextBoxSearch.Text == "")
+            if (TextBoxSearch.SelectionStart == 0)
             {
                 //MessageBox.Show("TextBox có con trỏ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Find1Panel.Visible = false;
@@ -263,15 +315,58 @@ namespace GUI
             }
         }
 
+        private void TextBoxCustomer_Click(object sender, EventArgs e)
+        {
+            if (TextBoxCustomer.SelectionStart == 0)
+            {
+                //MessageBox.Show("TextBox có con trỏ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Find2Panel.Visible = false;
+                FindCustomerTable.Visible = false;
+            }
+        }
+
         private void NewCustomerLabel_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void table_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void table_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //String cln = this.table.Columns[e.ColumnIndex].Name;
+            int index = this.table.SelectedCells[e.RowIndex].RowIndex;
+            int currentValue = Convert.ToInt32(table.Rows[index].Cells[5].Value);
+
+            if (e.ColumnIndex == 6)
+            {
+                int newValue = currentValue + 1;
+                table.Rows[index].Cells[5].Value = newValue;
+            }
+            else if (e.ColumnIndex == 7)
+            {
+                int newValue = currentValue - 1;
+                if (newValue == 0)
+                {
+                    MessageBox.Show("Số lượng phải lớn hơn 0");
+                }
+                else
+                table.Rows[index].Cells[5].Value = newValue;
+            }
+            else if (e.ColumnIndex == 8)
+            {
+                table.Rows.RemoveAt(index);
+            }
+        }
+
+        
+
+
+
+
 
 
 

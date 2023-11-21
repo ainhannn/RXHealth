@@ -58,3 +58,30 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DTO\bin\Debug\Microsoft.IO.
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DTO\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DTO\bin\Debug\EPPlus.xml
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\DTO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\C#\RXHealth\DTO\bin\Debug\DTO.dll
+D:\C#\RXHealth\DTO\bin\Debug\DTO.pdb
+D:\C#\RXHealth\DTO\bin\Debug\DotNetEnv.dll
+D:\C#\RXHealth\DTO\bin\Debug\EPPlus.dll
+D:\C#\RXHealth\DTO\bin\Debug\EPPlus.Interfaces.dll
+D:\C#\RXHealth\DTO\bin\Debug\EPPlus.System.Drawing.dll
+D:\C#\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\C#\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Configuration.dll
+D:\C#\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\C#\RXHealth\DTO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\C#\RXHealth\DTO\bin\Debug\Sprache.dll
+D:\C#\RXHealth\DTO\bin\Debug\System.ComponentModel.Annotations.dll
+D:\C#\RXHealth\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\C#\RXHealth\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#\RXHealth\DTO\bin\Debug\EPPlus.xml
+D:\C#\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\C#\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\C#\RXHealth\DTO\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\C#\RXHealth\DTO\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\C#\RXHealth\DTO\bin\Debug\Sprache.xml
+D:\C#\RXHealth\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\C#\RXHealth\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#\RXHealth\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\C#\RXHealth\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\C#\RXHealth\DTO\obj\Debug\DTO.csproj.CopyComplete
+D:\C#\RXHealth\DTO\obj\Debug\DTO.dll
+D:\C#\RXHealth\DTO\obj\Debug\DTO.pdb

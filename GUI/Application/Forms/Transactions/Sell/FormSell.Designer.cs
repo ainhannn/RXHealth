@@ -45,9 +45,12 @@ namespace GUI
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ShowPhoneLabel = new System.Windows.Forms.Label();
+            this.CusNameLabel = new System.Windows.Forms.Label();
+            this.NewCustomerBtn = new System.Windows.Forms.Button();
             this.Find2Panel = new System.Windows.Forms.Panel();
             this.FindCustomerTable = new System.Windows.Forms.DataGridView();
-            this.NewCustomerBtn = new System.Windows.Forms.Button();
+            this.Customer3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
@@ -90,6 +93,8 @@ namespace GUI
             this.TextBoxCustomer.Name = "TextBoxCustomer";
             this.TextBoxCustomer.Size = new System.Drawing.Size(346, 30);
             this.TextBoxCustomer.TabIndex = 103;
+            this.TextBoxCustomer.Click += new System.EventHandler(this.TextBoxCustomer_Click);
+            this.TextBoxCustomer.TextChanged += new System.EventHandler(this.TextBoxCustomer_TextChanged);
             // 
             // TextBoxNote
             // 
@@ -243,6 +248,8 @@ namespace GUI
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.Find2Panel);
+            this.panel1.Controls.Add(this.ShowPhoneLabel);
+            this.panel1.Controls.Add(this.CusNameLabel);
             this.panel1.Controls.Add(this.NewCustomerBtn);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label10);
@@ -265,24 +272,25 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(392, 894);
             this.panel1.TabIndex = 1;
             // 
-            // Find2Panel
+            // ShowPhoneLabel
             // 
-            this.Find2Panel.Controls.Add(this.FindCustomerTable);
-            this.Find2Panel.Location = new System.Drawing.Point(30, 102);
-            this.Find2Panel.Name = "Find2Panel";
-            this.Find2Panel.Size = new System.Drawing.Size(346, 191);
-            this.Find2Panel.TabIndex = 118;
+            this.ShowPhoneLabel.AutoSize = true;
+            this.ShowPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowPhoneLabel.Location = new System.Drawing.Point(201, 153);
+            this.ShowPhoneLabel.Name = "ShowPhoneLabel";
+            this.ShowPhoneLabel.Size = new System.Drawing.Size(62, 29);
+            this.ShowPhoneLabel.TabIndex = 119;
+            this.ShowPhoneLabel.Text = "SDT";
             // 
-            // FindCustomerTable
+            // CusNameLabel
             // 
-            this.FindCustomerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FindCustomerTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FindCustomerTable.Location = new System.Drawing.Point(0, 0);
-            this.FindCustomerTable.Name = "FindCustomerTable";
-            this.FindCustomerTable.RowHeadersWidth = 51;
-            this.FindCustomerTable.RowTemplate.Height = 24;
-            this.FindCustomerTable.Size = new System.Drawing.Size(346, 191);
-            this.FindCustomerTable.TabIndex = 0;
+            this.CusNameLabel.AutoSize = true;
+            this.CusNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CusNameLabel.Location = new System.Drawing.Point(25, 153);
+            this.CusNameLabel.Name = "CusNameLabel";
+            this.CusNameLabel.Size = new System.Drawing.Size(154, 29);
+            this.CusNameLabel.TabIndex = 118;
+            this.CusNameLabel.Text = "Số điện thoại";
             // 
             // NewCustomerBtn
             // 
@@ -294,6 +302,35 @@ namespace GUI
             this.NewCustomerBtn.Text = "Thêm mới";
             this.NewCustomerBtn.UseVisualStyleBackColor = true;
             this.NewCustomerBtn.Click += new System.EventHandler(this.NewCustomerLabel_Click);
+            // 
+            // Find2Panel
+            // 
+            this.Find2Panel.Controls.Add(this.FindCustomerTable);
+            this.Find2Panel.Location = new System.Drawing.Point(30, 101);
+            this.Find2Panel.Name = "Find2Panel";
+            this.Find2Panel.Size = new System.Drawing.Size(346, 191);
+            this.Find2Panel.TabIndex = 118;
+            // 
+            // FindCustomerTable
+            // 
+            this.FindCustomerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FindCustomerTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Customer3});
+            this.FindCustomerTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FindCustomerTable.Location = new System.Drawing.Point(0, 0);
+            this.FindCustomerTable.Name = "FindCustomerTable";
+            this.FindCustomerTable.RowHeadersWidth = 51;
+            this.FindCustomerTable.RowTemplate.Height = 24;
+            this.FindCustomerTable.Size = new System.Drawing.Size(346, 191);
+            this.FindCustomerTable.TabIndex = 0;
+            this.FindCustomerTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FindCustomerTable_CellClick);
+            // 
+            // Customer3
+            // 
+            this.Customer3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Customer3.HeaderText = "Số điện thoại";
+            this.Customer3.MinimumWidth = 6;
+            this.Customer3.Name = "Customer3";
             // 
             // panel2
             // 
@@ -346,6 +383,7 @@ namespace GUI
             this.table.RowTemplate.Height = 24;
             this.table.Size = new System.Drawing.Size(1208, 819);
             this.table.TabIndex = 4;
+            this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             this.table.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellContentClick);
             // 
             // Barcode1
@@ -535,5 +573,8 @@ namespace GUI
         private Panel Find2Panel;
         private DataGridView FindCustomerTable;
         private Button NewCustomerBtn;
+        private DataGridViewTextBoxColumn Customer3;
+        private Label CusNameLabel;
+        private Label ShowPhoneLabel;
     }
 }

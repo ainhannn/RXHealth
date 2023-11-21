@@ -18,7 +18,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new FormSell());
             //new DBConnection().ExecuteNonQuery("INSERT INTO COUNTRY(name) VALUE ('Test')");
         }
     }

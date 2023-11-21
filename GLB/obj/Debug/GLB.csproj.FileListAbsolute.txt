@@ -52,3 +52,30 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.csproj.Co
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.csproj.CopyComplete
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.pdb
+D:\C#\RXHealth\GLB\bin\Debug\GLB.dll
+D:\C#\RXHealth\GLB\bin\Debug\GLB.pdb
+D:\C#\RXHealth\GLB\bin\Debug\DotNetEnv.dll
+D:\C#\RXHealth\GLB\bin\Debug\EPPlus.dll
+D:\C#\RXHealth\GLB\bin\Debug\EPPlus.Interfaces.dll
+D:\C#\RXHealth\GLB\bin\Debug\EPPlus.System.Drawing.dll
+D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.dll
+D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\C#\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\C#\RXHealth\GLB\bin\Debug\Sprache.dll
+D:\C#\RXHealth\GLB\bin\Debug\System.ComponentModel.Annotations.dll
+D:\C#\RXHealth\GLB\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\C#\RXHealth\GLB\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#\RXHealth\GLB\bin\Debug\EPPlus.xml
+D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\C#\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\C#\RXHealth\GLB\bin\Debug\Sprache.xml
+D:\C#\RXHealth\GLB\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\C#\RXHealth\GLB\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#\RXHealth\GLB\obj\Debug\GLB.csproj.AssemblyReference.cache
+D:\C#\RXHealth\GLB\obj\Debug\GLB.csproj.CoreCompileInputs.cache
+D:\C#\RXHealth\GLB\obj\Debug\GLB.csproj.CopyComplete
+D:\C#\RXHealth\GLB\obj\Debug\GLB.dll
+D:\C#\RXHealth\GLB\obj\Debug\GLB.pdb
