@@ -426,3 +426,7 @@ C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormDetails.resources
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormInvenChk.resources
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormInvenImp.resources
 C:\Users\LAM\Source\Repos\RXHealth\GUI\obj\Debug\GUI.FormRequest.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.Forms.FormSetting.resources
+C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GUI\obj\Debug\GUI.FormSetting.resources
+>>>>>>> 6d416251cc04bdbc4818e3bba35f410c9e4a0108
+C:\Users\LAM\source\repos\RXHealth\GUI\obj\Debug\GUI.FormSetting.resources

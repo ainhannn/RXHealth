@@ -67,7 +67,7 @@ namespace GUI
             // 
             // avtForm
             // 
-            this.avtForm.BackColor = System.Drawing.SystemColors.Control;
+            this.avtForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.avtForm.Controls.Add(this.inpNickname);
             this.avtForm.Controls.Add(this.editNickname);
             this.avtForm.Controls.Add(this.avatar);
@@ -143,7 +143,7 @@ namespace GUI
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(456, 0);
             this.panel2.Name = "panel2";

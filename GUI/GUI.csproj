@@ -515,6 +515,9 @@
     <EmbeddedResource Include="Application\Forms\Inventories\InventoryImport\FormInvenImp.resx">
       <DependentUpon>FormInvenImp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Application\Forms\Setting\FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Application\Forms\Staff\FormRequest\FormRequest.resx">
       <DependentUpon>FormRequest.cs</DependentUpon>
     </EmbeddedResource>
