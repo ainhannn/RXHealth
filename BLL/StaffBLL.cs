@@ -65,26 +65,42 @@ namespace BLL
             return null;
         }
         
-        public static bool insertStaff(Staff e, int role, string CitizenId)
+
+        public static string insertStaff(Staff e, int role)
         {
-            try
+            if (StaffDAO.SelectbyNickname(e.Nickname) != null)
             {
-                StaffDAO.Insert(e);
-                int id = StaffDAO.SelectId(CitizenId);
+                return "Tên hiển thị đã tồn tại!";
+            }else if(StaffDAO.SelectByCitizenId(e.CitizenId) != null)
+            {
+                return "Số cmnn/cccd đã tồn tại!";
+            }else if(StaffDAO.SelectbyPhoneNumber(e.ContactNumber) != null)
+            {
+                return "Số điện thoại đã tồn tại!";
+            }
+            else
+            {
                 try
                 {
-                    AccountDAO.Insert(id, role);
-                }catch(Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
+                    StaffDAO.Insert(e);
+                    int id = StaffDAO.SelectId(e.CitizenId);
+                    try
+                    {
+                        AccountDAO.Insert(id, role);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
+                    return "Thêm thành công";
                 }
-                return true;
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+                return "Thêm thất bại, vui lòng thử lại";
             }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            return false;
+
         }
         public static bool updateStaff(Staff e, int role)
         {

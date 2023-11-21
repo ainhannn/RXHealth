@@ -118,6 +118,26 @@ namespace DAL
             var table = ExecuteReader(sql);
             return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }
+
+        public static Staff SelectbyNickname(string nickname)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE nickname = '{1}' LIMIT 1", dbTableName, nickname);
+            var table = ExecuteReader(sql);
+            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+        }
+        public static Staff SelectbyPhoneNumber(string phonenumber)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE contact_number = '{1}' LIMIT 1", dbTableName, phonenumber);
+            var table = ExecuteReader(sql);
+            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+        }
+        public static Staff SelectByCitizenId(string citizenId)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE citizen_id_number = '{1}' LIMIT 1", dbTableName, citizenId);
+            var table = ExecuteReader(sql);
+            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+        }
+
         public static int SelectId(string CitizenId)
         {
             string sql = string.Format("SELECT id FROM {0} WHERE citizen_id_number = {1} LIMIT 1", dbTableName, CitizenId);

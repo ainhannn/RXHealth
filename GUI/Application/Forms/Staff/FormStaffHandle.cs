@@ -248,16 +248,20 @@ namespace GUI
         }
         private void insertStaff()
         {
-            int role = inpTitle.SelectedIndex;
-            if (StaffBLL.insertStaff(new Staff(inpNickname.Text, inpCitizenId.Text, inpFullName.Text,
+            int role = inpTitle.SelectedIndex+1;
+            Staff staff = new Staff(inpNickname.Text, inpCitizenId.Text, inpFullName.Text,
                 ConvertStringToDateTime(inpBirthday.Text), inpGenderMale.Checked == true,
                 inpQualification.Text, inpContactNumber.Text, inpAddress.Text,
-                ConvertStringToDateTime(DateTime.Now.ToString("dd-MM-yyyy"))), role+1, inpCitizenId.Text))
+                ConvertStringToDateTime(DateTime.Now.ToString("dd-MM-yyyy")));
+            string rs = StaffBLL.insertStaff(staff, role);
+            if(rs != "Thêm thành công")
             {
-                MessageBox.Show("Thêm thành công");
-                return;
+                MessageBox.Show(rs, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            MessageBox.Show("Thêm thất bại, có thể trùng tên hiển thị, cmnd/cccd hoặc số điện thoại!");
+            else
+            {
+                MessageBox.Show(rs, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void updateStaff()
@@ -385,7 +389,7 @@ namespace GUI
                 String startstr = Convert.ToString(row.Cells[11].Value);
                 DateTime start = startstr == "" ? ConvertStringToDateTime(DateTime.Now.ToString("dd-MM-yyyy")) : Convert.ToDateTime(startstr);
                 Staff staff = new Staff(nickname, citizenId, fullname, birthday, gender, qualification, contactNumber, address, start);
-                if (StaffBLL.insertStaff(staff, role, citizenId) == false)
+                if (StaffBLL.insertStaff(staff, role) != "Thêm thành công")
                 {
                     error.Add(staff);
                     continue;
