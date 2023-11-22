@@ -213,6 +213,7 @@
     <Compile Include="Check.cs" />
     <Compile Include="ProductBUS_EXT.cs" />
     <Compile Include="ImportBUS.cs" />
+    <Compile Include="SaleBUS.cs" />
     <Compile Include="SupplierBUS.cs" />
     <Compile Include="CustomerBUS.cs" />
     <Compile Include="SubstanceBUS.cs" />

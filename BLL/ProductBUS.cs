@@ -12,23 +12,23 @@ namespace BLL
         public static Dictionary<string, int> GetBestSellingByCate(string cate, int limit)
             => ActivityDAO.GetBestSellingByCate(cate, limit);
 
+        public static List<Product> SelectAll() => ProductDAO.SelectAll();
 
 
+		//public static List<Product> Search(string keyWords)
+		//{
+		//    var list = new List<Product>();
+		//    foreach (var e in ProductDAO.SelectAll())
+		//    {
+		//        if (e.Information.ToString().Contains(keyWords))
+		//            list.Add(e);
+		//    }
+		//    return list;
+		//}
 
-        //public static List<Product> Search(string keyWords)
-        //{
-        //    var list = new List<Product>();
-        //    foreach (var e in ProductDAO.SelectAll())
-        //    {
-        //        if (e.Information.ToString().Contains(keyWords))
-        //            list.Add(e);
-        //    }
-        //    return list;
-        //}
-
-        //public static List<Product> AdvancedSearch(Dictionary<string, string> conditions)
-        //{
-        //    return ProductDAO.AdvancedSearch(conditions);
-        //}
-    }
+		//public static List<Product> AdvancedSearch(Dictionary<string, string> conditions)
+		//{
+		//    return ProductDAO.AdvancedSearch(conditions);
+		//}
+	}
 }

@@ -261,6 +261,7 @@
     <Compile Include="CustomerDAO.cs" />
     <Compile Include="ProductDAO.cs" />
     <Compile Include="ProductBatchDAO.cs" />
+    <Compile Include="SaleDAO_CRUD.cs" />
     <Compile Include="SaleDAO_EXT.cs" />
     <Compile Include="StaffDAO.cs" />
     <Compile Include="SupplierDAO.cs" />

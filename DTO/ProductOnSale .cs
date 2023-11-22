@@ -11,7 +11,7 @@ namespace DTO
         public double Saleprice { get; set; }
         public int Number { get; set; }
         public string RetailUnit { get; set; }
-        public float RetailSaleprice { get; set; }
+        public double RetailSaleprice { get; set; }
         public int RetailNumber { get; set; }
 
         public ProductOnSale() { }

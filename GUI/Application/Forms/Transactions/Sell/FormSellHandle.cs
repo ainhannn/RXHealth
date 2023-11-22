@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using System;
 using System.Windows.Forms;
 
@@ -25,7 +26,10 @@ namespace GUI
                 invoice.AddDetail(new SaleDetail(barcode, name, unit, unitPrice, number));
             }
 
-            // code here: gọi bus để insert(invoice)
-        }
-    }
+			// code here: gọi bus để insert(invoice)
+			SaleBUS.InsertInvoice(invoice);
+			MessageBox.Show("Thành công");
+
+		}
+	}
 }
