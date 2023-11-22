@@ -71,7 +71,6 @@ CREATE TABLE product (
     barcode VARCHAR(16) UNIQUE,
     name VARCHAR(50) NOT NULL,
     category_id INT NOT NULL,
-    expiry TINYINT UNSIGNED,
     current_import_price DECIMAL(10,0) NOT NULL,
     unit VARCHAR(25) NOT NULL,
     saleprice DECIMAL(10,0),
