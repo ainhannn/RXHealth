@@ -25,10 +25,5 @@ namespace BLL
         //    }
         //    return list;
         //}
-
-        //public static List<Product> AdvancedSearch(Dictionary<string, string> conditions)
-        //{
-        //    return ProductDAO.AdvancedSearch(conditions);
-        //}
     }
 }

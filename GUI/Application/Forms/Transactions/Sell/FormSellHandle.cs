@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using System;
 using System.Windows.Forms;
 
@@ -26,6 +27,9 @@ namespace GUI
             }
 
             // code here: gọi bus để insert(invoice)
+            SaleBUS.InsertInvoice(invoice);
+            MessageBox.Show("Thành công");
+
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using DTO;
-using Google.Protobuf.WellKnownTypes;
 
 namespace DAL
 {
@@ -18,11 +16,7 @@ namespace DAL
                 int productId = Convert.ToInt16(row[0]);
                 Product obj = new Product(productId)
                 {
-
-
-
-
-
+                    
 
                 };
                 return obj;
@@ -59,7 +53,7 @@ namespace DAL
         //            Name = row[1].ToString(),
         //            Category = row[2].ToString(),
         //            Unit = row[3].ToString(),
-        //            Saleprice = (float)row[4],
+        //            Saleprice = (double)row[4],
         //            Number = (int)row[5]
         //        };
         //        list.Add(p);
@@ -74,20 +68,6 @@ namespace DAL
             return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }
 
-        public static List<Product> AdvancedSearch(Dictionary<string, string> conditions)
-        {
-            var list = new List<Product>();
-            //foreach (var condition in conditions) 
-            //{
-            //    string value = "";
-            //    if (conditions.TryGetValue(condition.Key,out value ))
-            //    {
-            //        Console.WriteLine("For key = \"tif\", value = {0}.", value);
-            //    }
-
-            //}
-            return list;
-        }
         public static bool Insert(Product e)
         {
 

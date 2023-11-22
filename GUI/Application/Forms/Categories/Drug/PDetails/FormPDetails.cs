@@ -1,12 +1,14 @@
 ﻿using System.Windows.Forms;
+using DTO;
 using GUI.Handle;
 
 namespace GUI
 {
     public partial class FormPDetails : Form
     {
-        public FormPDetails()
+        public FormPDetails(CateProduct product)
         {
+            pd = product;
             InitializeComponent();
         }
 

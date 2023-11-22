@@ -72,7 +72,7 @@ namespace DAL
                 {
                     Name = row[0].ToString(),
                     Unit = row[1].ToString(),
-                    UnitPrice = (float)row[2],
+                    UnitPrice = (double)row[2],
                     Number = Convert.ToInt16(row[3])
                 };
 

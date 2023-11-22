@@ -76,7 +76,7 @@ namespace DAL
         //                var table = ExecuteReader("SELECT * FROM product_extra_ingredient WHERE product_id = " + obj.Id);
         //                foreach (var r in table)
         //                {
-        //                    obj.AddIngredient(SubstanceDAO.Select(Convert.ToInt16(r[1])), (float)r[2]);
+        //                    obj.AddIngredient(SubstanceDAO.Select(Convert.ToInt16(r[1])), (double)r[2]);
         //                }
         //                return obj;
         //            }

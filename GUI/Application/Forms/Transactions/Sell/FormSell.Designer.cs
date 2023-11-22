@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace GUI
 {
@@ -39,16 +38,17 @@ namespace GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TotalLabel = new System.Windows.Forms.Label();
+            this.PayLabel = new System.Windows.Forms.Label();
+            this.RottenLabel = new System.Windows.Forms.Label();
+            this.TextBoxReceive = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Find2Panel = new System.Windows.Forms.Panel();
             this.FindCustomerTable = new System.Windows.Forms.DataGridView();
+            this.Customer3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaleCombobox = new System.Windows.Forms.ComboBox();
             this.ShowPhoneLabel = new System.Windows.Forms.Label();
-            this.CusNameLabel = new System.Windows.Forms.Label();
             this.NewCustomerBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
@@ -70,8 +70,6 @@ namespace GUI
             this.Unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalePrice2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Number2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Customer3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.Find2Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FindCustomerTable)).BeginInit();
@@ -132,7 +130,7 @@ namespace GUI
             this.label2.Location = new System.Drawing.Point(30, 305);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 24);
+            this.label2.Size = new System.Drawing.Size(174, 29);
             this.label2.TabIndex = 106;
             this.label2.Text = "Tổng tiền hàng";
             // 
@@ -144,7 +142,7 @@ namespace GUI
             this.label3.Location = new System.Drawing.Point(31, 347);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 24);
+            this.label3.Size = new System.Drawing.Size(138, 29);
             this.label3.TabIndex = 107;
             this.label3.Text = "Khuyến mãi";
             // 
@@ -156,7 +154,7 @@ namespace GUI
             this.label4.Location = new System.Drawing.Point(32, 386);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 24);
+            this.label4.Size = new System.Drawing.Size(157, 29);
             this.label4.TabIndex = 108;
             this.label4.Text = "Khách cần trả";
             // 
@@ -168,7 +166,7 @@ namespace GUI
             this.label5.Location = new System.Drawing.Point(32, 456);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 24);
+            this.label5.Size = new System.Drawing.Size(177, 29);
             this.label5.TabIndex = 109;
             this.label5.Text = "Tiền khách đưa";
             // 
@@ -180,84 +178,71 @@ namespace GUI
             this.label6.Location = new System.Drawing.Point(32, 494);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(170, 24);
+            this.label6.Size = new System.Drawing.Size(119, 29);
             this.label6.TabIndex = 110;
-            this.label6.Text = "Tiền thừa khách trả";
+            this.label6.Text = "Tiền thừa ";
             // 
-            // label1
+            // TotalLabel
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.label1.Location = new System.Drawing.Point(240, 304);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 25);
-            this.label1.TabIndex = 111;
-            this.label1.Text = "label1";
+            this.TotalLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TotalLabel.AutoSize = true;
+            this.TotalLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.TotalLabel.Location = new System.Drawing.Point(240, 304);
+            this.TotalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TotalLabel.Name = "TotalLabel";
+            this.TotalLabel.Size = new System.Drawing.Size(76, 31);
+            this.TotalLabel.TabIndex = 111;
+            this.TotalLabel.Text = "label1";
             // 
-            // label7
+            // PayLabel
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.label7.Location = new System.Drawing.Point(240, 346);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 25);
-            this.label7.TabIndex = 112;
-            this.label7.Text = "label7";
+            this.PayLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.PayLabel.AutoSize = true;
+            this.PayLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.PayLabel.Location = new System.Drawing.Point(240, 387);
+            this.PayLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PayLabel.Name = "PayLabel";
+            this.PayLabel.Size = new System.Drawing.Size(76, 31);
+            this.PayLabel.TabIndex = 113;
+            this.PayLabel.Text = "label8";
             // 
-            // label8
+            // RottenLabel
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.label8.Location = new System.Drawing.Point(240, 387);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 25);
-            this.label8.TabIndex = 113;
-            this.label8.Text = "label8";
+            this.RottenLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.RottenLabel.AutoSize = true;
+            this.RottenLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.RottenLabel.Location = new System.Drawing.Point(240, 494);
+            this.RottenLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.RottenLabel.Name = "RottenLabel";
+            this.RottenLabel.Size = new System.Drawing.Size(88, 31);
+            this.RottenLabel.TabIndex = 115;
+            this.RottenLabel.Text = "label10";
             // 
-            // label10
+            // TextBoxReceive
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.label10.Location = new System.Drawing.Point(240, 494);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 25);
-            this.label10.TabIndex = 115;
-            this.label10.Text = "label10";
-            // 
-            // textBox1
-            // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.AcceptsTab = true;
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox1.Location = new System.Drawing.Point(206, 456);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.textBox1.MaximumSize = new System.Drawing.Size(376, 30);
-            this.textBox1.MinimumSize = new System.Drawing.Size(76, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 30);
-            this.textBox1.TabIndex = 116;
+            this.TextBoxReceive.AcceptsReturn = true;
+            this.TextBoxReceive.AcceptsTab = true;
+            this.TextBoxReceive.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TextBoxReceive.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.TextBoxReceive.Location = new System.Drawing.Point(206, 456);
+            this.TextBoxReceive.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.TextBoxReceive.MaximumSize = new System.Drawing.Size(376, 30);
+            this.TextBoxReceive.MinimumSize = new System.Drawing.Size(76, 30);
+            this.TextBoxReceive.Name = "TextBoxReceive";
+            this.TextBoxReceive.Size = new System.Drawing.Size(156, 30);
+            this.TextBoxReceive.TabIndex = 116;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.Find2Panel);
+            this.panel1.Controls.Add(this.SaleCombobox);
             this.panel1.Controls.Add(this.ShowPhoneLabel);
-            this.panel1.Controls.Add(this.CusNameLabel);
             this.panel1.Controls.Add(this.NewCustomerBtn);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.TextBoxReceive);
+            this.panel1.Controls.Add(this.RottenLabel);
+            this.panel1.Controls.Add(this.PayLabel);
+            this.panel1.Controls.Add(this.TotalLabel);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -297,25 +282,38 @@ namespace GUI
             this.FindCustomerTable.TabIndex = 0;
             this.FindCustomerTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FindCustomerTable_CellClick);
             // 
+            // Customer3
+            // 
+            this.Customer3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Customer3.HeaderText = "Số điện thoại";
+            this.Customer3.MinimumWidth = 6;
+            this.Customer3.Name = "Customer3";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            this.Id.Width = 125;
+            // 
+            // SaleCombobox
+            // 
+            this.SaleCombobox.FormattingEnabled = true;
+            this.SaleCombobox.Location = new System.Drawing.Point(206, 352);
+            this.SaleCombobox.Name = "SaleCombobox";
+            this.SaleCombobox.Size = new System.Drawing.Size(156, 24);
+            this.SaleCombobox.TabIndex = 120;
+            // 
             // ShowPhoneLabel
             // 
             this.ShowPhoneLabel.AutoSize = true;
             this.ShowPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowPhoneLabel.Location = new System.Drawing.Point(201, 153);
+            this.ShowPhoneLabel.Location = new System.Drawing.Point(147, 167);
             this.ShowPhoneLabel.Name = "ShowPhoneLabel";
-            this.ShowPhoneLabel.Size = new System.Drawing.Size(47, 24);
+            this.ShowPhoneLabel.Size = new System.Drawing.Size(62, 29);
             this.ShowPhoneLabel.TabIndex = 119;
             this.ShowPhoneLabel.Text = "SDT";
-            // 
-            // CusNameLabel
-            // 
-            this.CusNameLabel.AutoSize = true;
-            this.CusNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CusNameLabel.Location = new System.Drawing.Point(25, 153);
-            this.CusNameLabel.Name = "CusNameLabel";
-            this.CusNameLabel.Size = new System.Drawing.Size(121, 24);
-            this.CusNameLabel.TabIndex = 118;
-            this.CusNameLabel.Text = "Số điện thoại";
             // 
             // NewCustomerBtn
             // 
@@ -342,7 +340,7 @@ namespace GUI
             // 
             this.TextBoxSearch.AcceptsReturn = true;
             this.TextBoxSearch.AcceptsTab = true;
-            this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TextBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TextBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.TextBoxSearch.Location = new System.Drawing.Point(39, 22);
@@ -503,19 +501,6 @@ namespace GUI
             this.Number2.MinimumWidth = 6;
             this.Number2.Name = "Number2";
             // 
-            // Customer3
-            // 
-            this.Customer3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Customer3.HeaderText = "Số điện thoại";
-            this.Customer3.MinimumWidth = 6;
-            this.Customer3.Name = "Customer3";
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
             // FormSell
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -553,11 +538,10 @@ namespace GUI
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label1;
-        private Label label7;
-        private Label label8;
-        private Label label10;
-        private TextBox textBox1;
+        private Label TotalLabel;
+        private Label PayLabel;
+        private Label RottenLabel;
+        private TextBox TextBoxReceive;
         private Panel panel1;
         private Panel panel2;
         private TextBox TextBoxSearch;
@@ -582,9 +566,9 @@ namespace GUI
         private Panel Find2Panel;
         private DataGridView FindCustomerTable;
         private Button NewCustomerBtn;
-        private Label CusNameLabel;
         private Label ShowPhoneLabel;
         private DataGridViewTextBoxColumn Customer3;
         private DataGridViewTextBoxColumn Id;
+        private ComboBox SaleCombobox;
     }
 }

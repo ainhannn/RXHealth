@@ -45,7 +45,7 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.retail_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.retail_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_on_sale = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.is_stopped = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.refresh = new System.Windows.Forms.Button();
@@ -64,7 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.inpCate = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
-            this.btnAccount = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel2.SuspendLayout();
@@ -140,7 +140,7 @@
             this.price,
             this.retail_unit,
             this.retail_price,
-            this.is_on_sale,
+            this.is_stopped,
             this.selectDelete});
             this.table.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.table.EnableHeadersVisualStyles = false;
@@ -214,11 +214,11 @@
             this.retail_price.Name = "retail_price";
             this.retail_price.ReadOnly = true;
             // 
-            // is_on_sale
+            // is_stopped
             // 
-            this.is_on_sale.HeaderText = "Bán?";
-            this.is_on_sale.Name = "is_on_sale";
-            this.is_on_sale.ReadOnly = true;
+            this.is_stopped.HeaderText = "Ngừng bán";
+            this.is_stopped.Name = "is_stopped";
+            this.is_stopped.ReadOnly = true;
             // 
             // selectDelete
             // 
@@ -298,7 +298,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.inpCate);
             this.panel1.Controls.Add(this.lblFilter);
-            this.panel1.Controls.Add(this.btnAccount);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.White;
@@ -426,13 +426,13 @@
             this.inpCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inpCate.FormattingEnabled = true;
             this.inpCate.Items.AddRange(new object[] {
+            "",
             "Thuốc kê đơn",
             "Thuốc không kê đơn",
             "Thực phẩm chức năng",
             "Chăm sóc cá nhân",
             "Dụng cụ y tế",
-            "Thiết bị y tế",
-            "Tất cả"});
+            "Thiết bị y tế"});
             this.inpCate.Location = new System.Drawing.Point(1062, 73);
             this.inpCate.Name = "inpCate";
             this.inpCate.Size = new System.Drawing.Size(230, 33);
@@ -450,24 +450,25 @@
             this.lblFilter.TabIndex = 121;
             this.lblFilter.Text = "Ngành hàng";
             // 
-            // btnAccount
+            // btnSearch
             // 
-            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAccount.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAccount.Location = new System.Drawing.Point(738, 272);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(125, 50);
-            this.btnAccount.TabIndex = 107;
-            this.btnAccount.Tag = "";
-            this.btnAccount.Text = "Tìm kiếm";
-            this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSearch.Location = new System.Drawing.Point(738, 272);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(125, 50);
+            this.btnSearch.TabIndex = 107;
+            this.btnSearch.Tag = "";
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // FormCateDrug
             // 
@@ -505,19 +506,7 @@
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Button RecycleBin;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imp_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn retail_unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn retail_price;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn is_on_sale;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn selectDelete;
-        private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox inpCate;
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.TextBox inpUnit;
@@ -531,5 +520,17 @@
         private System.Windows.Forms.TextBox inpPriceMax;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox inpPriceMin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imp_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn retail_unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn retail_price;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn is_stopped;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn selectDelete;
     }
 }

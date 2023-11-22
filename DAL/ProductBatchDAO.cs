@@ -25,8 +25,8 @@
 //                    Number = Convert.ToInt16(row[5]),
 //                    NumberSubunit = Convert.ToInt16(row[6]),
 //                    ImportUnitPrice = item.UnitPrice,
-//                    SaleUnitPrice = (float)row[7],
-//                    SaleSubunitPrice = (float)row[8],
+//                    SaleUnitPrice = (double)row[7],
+//                    SaleSubunitPrice = (double)row[8],
 //                    Provider = impIV.Provider
 //                };
 
