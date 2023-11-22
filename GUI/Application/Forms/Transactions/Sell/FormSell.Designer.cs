@@ -45,12 +45,11 @@ namespace GUI
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Find2Panel = new System.Windows.Forms.Panel();
+            this.FindCustomerTable = new System.Windows.Forms.DataGridView();
             this.ShowPhoneLabel = new System.Windows.Forms.Label();
             this.CusNameLabel = new System.Windows.Forms.Label();
             this.NewCustomerBtn = new System.Windows.Forms.Button();
-            this.Find2Panel = new System.Windows.Forms.Panel();
-            this.FindCustomerTable = new System.Windows.Forms.DataGridView();
-            this.Customer3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.TextBoxSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
@@ -71,6 +70,8 @@ namespace GUI
             this.Unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SalePrice2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Number2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.Find2Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FindCustomerTable)).BeginInit();
@@ -121,6 +122,7 @@ namespace GUI
             this.SellBtn.TabIndex = 105;
             this.SellBtn.Text = "Thanh toán";
             this.SellBtn.UseVisualStyleBackColor = true;
+            this.SellBtn.Click += new System.EventHandler(this.SellBtn_Click);
             // 
             // label2
             // 
@@ -130,7 +132,7 @@ namespace GUI
             this.label2.Location = new System.Drawing.Point(30, 305);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 29);
+            this.label2.Size = new System.Drawing.Size(138, 24);
             this.label2.TabIndex = 106;
             this.label2.Text = "Tổng tiền hàng";
             // 
@@ -142,7 +144,7 @@ namespace GUI
             this.label3.Location = new System.Drawing.Point(31, 347);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 29);
+            this.label3.Size = new System.Drawing.Size(110, 24);
             this.label3.TabIndex = 107;
             this.label3.Text = "Khuyến mãi";
             // 
@@ -154,7 +156,7 @@ namespace GUI
             this.label4.Location = new System.Drawing.Point(32, 386);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 29);
+            this.label4.Size = new System.Drawing.Size(125, 24);
             this.label4.TabIndex = 108;
             this.label4.Text = "Khách cần trả";
             // 
@@ -166,7 +168,7 @@ namespace GUI
             this.label5.Location = new System.Drawing.Point(32, 456);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(177, 29);
+            this.label5.Size = new System.Drawing.Size(142, 24);
             this.label5.TabIndex = 109;
             this.label5.Text = "Tiền khách đưa";
             // 
@@ -178,7 +180,7 @@ namespace GUI
             this.label6.Location = new System.Drawing.Point(32, 494);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(215, 29);
+            this.label6.Size = new System.Drawing.Size(170, 24);
             this.label6.TabIndex = 110;
             this.label6.Text = "Tiền thừa khách trả";
             // 
@@ -190,7 +192,7 @@ namespace GUI
             this.label1.Location = new System.Drawing.Point(240, 304);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 31);
+            this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 111;
             this.label1.Text = "label1";
             // 
@@ -202,7 +204,7 @@ namespace GUI
             this.label7.Location = new System.Drawing.Point(240, 346);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 31);
+            this.label7.Size = new System.Drawing.Size(63, 25);
             this.label7.TabIndex = 112;
             this.label7.Text = "label7";
             // 
@@ -214,7 +216,7 @@ namespace GUI
             this.label8.Location = new System.Drawing.Point(240, 387);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 31);
+            this.label8.Size = new System.Drawing.Size(63, 25);
             this.label8.TabIndex = 113;
             this.label8.Text = "label8";
             // 
@@ -226,7 +228,7 @@ namespace GUI
             this.label10.Location = new System.Drawing.Point(240, 494);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(88, 31);
+            this.label10.Size = new System.Drawing.Size(73, 25);
             this.label10.TabIndex = 115;
             this.label10.Text = "label10";
             // 
@@ -272,13 +274,36 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(392, 894);
             this.panel1.TabIndex = 1;
             // 
+            // Find2Panel
+            // 
+            this.Find2Panel.Controls.Add(this.FindCustomerTable);
+            this.Find2Panel.Location = new System.Drawing.Point(30, 101);
+            this.Find2Panel.Name = "Find2Panel";
+            this.Find2Panel.Size = new System.Drawing.Size(346, 191);
+            this.Find2Panel.TabIndex = 118;
+            // 
+            // FindCustomerTable
+            // 
+            this.FindCustomerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FindCustomerTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Customer3,
+            this.Id});
+            this.FindCustomerTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FindCustomerTable.Location = new System.Drawing.Point(0, 0);
+            this.FindCustomerTable.Name = "FindCustomerTable";
+            this.FindCustomerTable.RowHeadersWidth = 51;
+            this.FindCustomerTable.RowTemplate.Height = 24;
+            this.FindCustomerTable.Size = new System.Drawing.Size(346, 191);
+            this.FindCustomerTable.TabIndex = 0;
+            this.FindCustomerTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FindCustomerTable_CellClick);
+            // 
             // ShowPhoneLabel
             // 
             this.ShowPhoneLabel.AutoSize = true;
             this.ShowPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShowPhoneLabel.Location = new System.Drawing.Point(201, 153);
             this.ShowPhoneLabel.Name = "ShowPhoneLabel";
-            this.ShowPhoneLabel.Size = new System.Drawing.Size(62, 29);
+            this.ShowPhoneLabel.Size = new System.Drawing.Size(47, 24);
             this.ShowPhoneLabel.TabIndex = 119;
             this.ShowPhoneLabel.Text = "SDT";
             // 
@@ -288,7 +313,7 @@ namespace GUI
             this.CusNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CusNameLabel.Location = new System.Drawing.Point(25, 153);
             this.CusNameLabel.Name = "CusNameLabel";
-            this.CusNameLabel.Size = new System.Drawing.Size(154, 29);
+            this.CusNameLabel.Size = new System.Drawing.Size(121, 24);
             this.CusNameLabel.TabIndex = 118;
             this.CusNameLabel.Text = "Số điện thoại";
             // 
@@ -302,35 +327,6 @@ namespace GUI
             this.NewCustomerBtn.Text = "Thêm mới";
             this.NewCustomerBtn.UseVisualStyleBackColor = true;
             this.NewCustomerBtn.Click += new System.EventHandler(this.NewCustomerLabel_Click);
-            // 
-            // Find2Panel
-            // 
-            this.Find2Panel.Controls.Add(this.FindCustomerTable);
-            this.Find2Panel.Location = new System.Drawing.Point(30, 101);
-            this.Find2Panel.Name = "Find2Panel";
-            this.Find2Panel.Size = new System.Drawing.Size(346, 191);
-            this.Find2Panel.TabIndex = 118;
-            // 
-            // FindCustomerTable
-            // 
-            this.FindCustomerTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FindCustomerTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Customer3});
-            this.FindCustomerTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FindCustomerTable.Location = new System.Drawing.Point(0, 0);
-            this.FindCustomerTable.Name = "FindCustomerTable";
-            this.FindCustomerTable.RowHeadersWidth = 51;
-            this.FindCustomerTable.RowTemplate.Height = 24;
-            this.FindCustomerTable.Size = new System.Drawing.Size(346, 191);
-            this.FindCustomerTable.TabIndex = 0;
-            this.FindCustomerTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FindCustomerTable_CellClick);
-            // 
-            // Customer3
-            // 
-            this.Customer3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Customer3.HeaderText = "Số điện thoại";
-            this.Customer3.MinimumWidth = 6;
-            this.Customer3.Name = "Customer3";
             // 
             // panel2
             // 
@@ -507,6 +503,19 @@ namespace GUI
             this.Number2.MinimumWidth = 6;
             this.Number2.Name = "Number2";
             // 
+            // Customer3
+            // 
+            this.Customer3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Customer3.HeaderText = "Số điện thoại";
+            this.Customer3.MinimumWidth = 6;
+            this.Customer3.Name = "Customer3";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // FormSell
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -573,8 +582,9 @@ namespace GUI
         private Panel Find2Panel;
         private DataGridView FindCustomerTable;
         private Button NewCustomerBtn;
-        private DataGridViewTextBoxColumn Customer3;
         private Label CusNameLabel;
         private Label ShowPhoneLabel;
+        private DataGridViewTextBoxColumn Customer3;
+        private DataGridViewTextBoxColumn Id;
     }
 }

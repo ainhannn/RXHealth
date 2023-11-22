@@ -51,18 +51,18 @@
             this.refresh = new System.Windows.Forms.Button();
             this.RecycleBin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.inpPriceMax = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.inpPriceMin = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.isStopped = new System.Windows.Forms.CheckBox();
+            this.inpRUnit = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.inpName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inpUnit = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
+            this.inpCate = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.btnAccount = new System.Windows.Forms.Button();
             this.pnlSearch.SuspendLayout();
@@ -285,18 +285,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.inpPriceMax);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.inpPriceMin);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.isStopped);
+            this.panel1.Controls.Add(this.inpRUnit);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.inpName);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.inpUnit);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBoxFilter);
+            this.panel1.Controls.Add(this.inpCate);
             this.panel1.Controls.Add(this.lblFilter);
             this.panel1.Controls.Add(this.btnAccount);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -307,13 +307,13 @@
             this.panel1.Size = new System.Drawing.Size(1600, 394);
             this.panel1.TabIndex = 117;
             // 
-            // textBox5
+            // inpPriceMax
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.Location = new System.Drawing.Point(632, 205);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(112, 30);
-            this.textBox5.TabIndex = 132;
+            this.inpPriceMax.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpPriceMax.Location = new System.Drawing.Point(632, 205);
+            this.inpPriceMax.Name = "inpPriceMax";
+            this.inpPriceMax.Size = new System.Drawing.Size(112, 30);
+            this.inpPriceMax.TabIndex = 132;
             // 
             // label5
             // 
@@ -327,13 +327,13 @@
             this.label5.TabIndex = 131;
             this.label5.Text = "đến";
             // 
-            // textBox4
+            // inpPriceMin
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.Location = new System.Drawing.Point(464, 205);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(112, 30);
-            this.textBox4.TabIndex = 130;
+            this.inpPriceMin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpPriceMin.Location = new System.Drawing.Point(464, 205);
+            this.inpPriceMin.Name = "inpPriceMin";
+            this.inpPriceMin.Size = new System.Drawing.Size(112, 30);
+            this.inpPriceMin.TabIndex = 130;
             // 
             // label4
             // 
@@ -347,26 +347,26 @@
             this.label4.TabIndex = 129;
             this.label4.Text = "Khoảng giá từ";
             // 
-            // checkBox1
+            // isStopped
             // 
-            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(905, 207);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(136, 29);
-            this.checkBox1.TabIndex = 128;
-            this.checkBox1.Text = "Ngừng bán";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.isStopped.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.isStopped.AutoSize = true;
+            this.isStopped.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isStopped.ForeColor = System.Drawing.Color.White;
+            this.isStopped.Location = new System.Drawing.Point(905, 207);
+            this.isStopped.Name = "isStopped";
+            this.isStopped.Size = new System.Drawing.Size(136, 29);
+            this.isStopped.TabIndex = 128;
+            this.isStopped.Text = "Ngừng bán";
+            this.isStopped.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // inpRUnit
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Location = new System.Drawing.Point(1062, 140);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(230, 30);
-            this.textBox3.TabIndex = 127;
+            this.inpRUnit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpRUnit.Location = new System.Drawing.Point(1062, 140);
+            this.inpRUnit.Name = "inpRUnit";
+            this.inpRUnit.Size = new System.Drawing.Size(230, 30);
+            this.inpRUnit.TabIndex = 127;
             // 
             // label3
             // 
@@ -380,13 +380,13 @@
             this.label3.TabIndex = 126;
             this.label3.Text = "Đơn vị bán lẻ";
             // 
-            // textBox2
+            // inpName
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(464, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 30);
-            this.textBox2.TabIndex = 125;
+            this.inpName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpName.Location = new System.Drawing.Point(464, 73);
+            this.inpName.Name = "inpName";
+            this.inpName.Size = new System.Drawing.Size(230, 30);
+            this.inpName.TabIndex = 125;
             // 
             // label2
             // 
@@ -400,13 +400,13 @@
             this.label2.TabIndex = 124;
             this.label2.Text = "Tên";
             // 
-            // textBox1
+            // inpUnit
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(464, 140);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(230, 30);
-            this.textBox1.TabIndex = 123;
+            this.inpUnit.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpUnit.Location = new System.Drawing.Point(464, 140);
+            this.inpUnit.Name = "inpUnit";
+            this.inpUnit.Size = new System.Drawing.Size(230, 30);
+            this.inpUnit.TabIndex = 123;
             // 
             // label1
             // 
@@ -420,12 +420,12 @@
             this.label1.TabIndex = 122;
             this.label1.Text = "Đơn vị";
             // 
-            // comboBoxFilter
+            // inpCate
             // 
-            this.comboBoxFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Items.AddRange(new object[] {
+            this.inpCate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inpCate.FormattingEnabled = true;
+            this.inpCate.Items.AddRange(new object[] {
             "Thuốc kê đơn",
             "Thuốc không kê đơn",
             "Thực phẩm chức năng",
@@ -433,10 +433,10 @@
             "Dụng cụ y tế",
             "Thiết bị y tế",
             "Tất cả"});
-            this.comboBoxFilter.Location = new System.Drawing.Point(1062, 73);
-            this.comboBoxFilter.Name = "comboBoxFilter";
-            this.comboBoxFilter.Size = new System.Drawing.Size(230, 33);
-            this.comboBoxFilter.TabIndex = 120;
+            this.inpCate.Location = new System.Drawing.Point(1062, 73);
+            this.inpCate.Name = "inpCate";
+            this.inpCate.Size = new System.Drawing.Size(230, 33);
+            this.inpCate.TabIndex = 120;
             // 
             // lblFilter
             // 
@@ -484,6 +484,7 @@
             this.MinimizeBox = false;
             this.Name = "FormCateDrug";
             this.Text = "FormCateDrug";
+            this.Load += new System.EventHandler(this.FormCateDrug_Load);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
@@ -517,18 +518,18 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn is_on_sale;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selectDelete;
         private System.Windows.Forms.Button btnAccount;
-        private System.Windows.Forms.ComboBox comboBoxFilter;
+        private System.Windows.Forms.ComboBox inpCate;
         private System.Windows.Forms.Label lblFilter;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inpUnit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.CheckBox isStopped;
+        private System.Windows.Forms.TextBox inpRUnit;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox inpName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox inpPriceMax;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox inpPriceMin;
     }
 }
