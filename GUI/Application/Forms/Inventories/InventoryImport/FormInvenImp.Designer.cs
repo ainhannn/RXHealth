@@ -40,15 +40,16 @@
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.inpResignationDate = new System.Windows.Forms.DateTimePicker();
+            this.inpTotal = new System.Windows.Forms.Label();
+            this.inpDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inpProvi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.upload = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.inpContactNumber = new System.Windows.Forms.TextBox();
-            this.inpNickname = new System.Windows.Forms.TextBox();
+            this.inpStaff = new System.Windows.Forms.TextBox();
+            this.inpImpCode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
@@ -87,6 +88,7 @@
             this.table.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.table.Size = new System.Drawing.Size(1199, 894);
             this.table.TabIndex = 4;
+            this.table.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellValueChanged);
             // 
             // id
             // 
@@ -133,15 +135,16 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.inpResignationDate);
+            this.panel1.Controls.Add(this.inpTotal);
+            this.panel1.Controls.Add(this.inpDate);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.inpProvi);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.upload);
             this.panel1.Controls.Add(this.save);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.inpContactNumber);
-            this.panel1.Controls.Add(this.inpNickname);
+            this.panel1.Controls.Add(this.inpStaff);
+            this.panel1.Controls.Add(this.inpImpCode);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -150,16 +153,29 @@
             this.panel1.Size = new System.Drawing.Size(401, 894);
             this.panel1.TabIndex = 3;
             // 
-            // inpResignationDate
+            // inpTotal
             // 
-            this.inpResignationDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpResignationDate.CustomFormat = "dd-MM-yyyy";
-            this.inpResignationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.inpResignationDate.Location = new System.Drawing.Point(174, 267);
-            this.inpResignationDate.MaximumSize = new System.Drawing.Size(500, 30);
-            this.inpResignationDate.Name = "inpResignationDate";
-            this.inpResignationDate.Size = new System.Drawing.Size(200, 30);
-            this.inpResignationDate.TabIndex = 105;
+            this.inpTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpTotal.AutoSize = true;
+            this.inpTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.inpTotal.ForeColor = System.Drawing.Color.White;
+            this.inpTotal.Location = new System.Drawing.Point(169, 545);
+            this.inpTotal.Name = "inpTotal";
+            this.inpTotal.Size = new System.Drawing.Size(24, 25);
+            this.inpTotal.TabIndex = 115;
+            this.inpTotal.Tag = "Tổng tiền             0";
+            this.inpTotal.Text = "0";
+            // 
+            // inpDate
+            // 
+            this.inpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpDate.CustomFormat = "dd-MM-yyyy";
+            this.inpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.inpDate.Location = new System.Drawing.Point(174, 267);
+            this.inpDate.MaximumSize = new System.Drawing.Size(500, 30);
+            this.inpDate.Name = "inpDate";
+            this.inpDate.Size = new System.Drawing.Size(200, 30);
+            this.inpDate.TabIndex = 105;
             // 
             // label2
             // 
@@ -173,18 +189,18 @@
             this.label2.TabIndex = 114;
             this.label2.Text = "Nhân viên";
             // 
-            // textBox1
+            // inpProvi
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.AcceptsTab = true;
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox1.Location = new System.Drawing.Point(174, 451);
-            this.textBox1.MaximumSize = new System.Drawing.Size(500, 30);
-            this.textBox1.MinimumSize = new System.Drawing.Size(100, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 30);
-            this.textBox1.TabIndex = 107;
+            this.inpProvi.AcceptsReturn = true;
+            this.inpProvi.AcceptsTab = true;
+            this.inpProvi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpProvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.inpProvi.Location = new System.Drawing.Point(174, 451);
+            this.inpProvi.MaximumSize = new System.Drawing.Size(500, 30);
+            this.inpProvi.MinimumSize = new System.Drawing.Size(100, 30);
+            this.inpProvi.Name = "inpProvi";
+            this.inpProvi.Size = new System.Drawing.Size(200, 30);
+            this.inpProvi.TabIndex = 107;
             // 
             // label1
             // 
@@ -220,6 +236,7 @@
             this.upload.Text = "Nhập Danh sách";
             this.upload.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.upload.UseVisualStyleBackColor = false;
+            this.upload.Click += new System.EventHandler(this.upload_Click);
             // 
             // save
             // 
@@ -240,6 +257,7 @@
             this.save.Tag = "";
             this.save.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // label8
             // 
@@ -249,36 +267,39 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(25, 545);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(193, 25);
+            this.label8.Size = new System.Drawing.Size(103, 25);
             this.label8.TabIndex = 106;
             this.label8.Tag = "Tổng tiền             0";
-            this.label8.Text = "Tổng tiền             0";
+            this.label8.Text = "Tổng tiền";
             // 
-            // inpContactNumber
+            // inpStaff
             // 
-            this.inpContactNumber.AcceptsReturn = true;
-            this.inpContactNumber.AcceptsTab = true;
-            this.inpContactNumber.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpContactNumber.Location = new System.Drawing.Point(174, 360);
-            this.inpContactNumber.MaximumSize = new System.Drawing.Size(500, 30);
-            this.inpContactNumber.MinimumSize = new System.Drawing.Size(100, 30);
-            this.inpContactNumber.Name = "inpContactNumber";
-            this.inpContactNumber.Size = new System.Drawing.Size(200, 30);
-            this.inpContactNumber.TabIndex = 106;
+            this.inpStaff.AcceptsReturn = true;
+            this.inpStaff.AcceptsTab = true;
+            this.inpStaff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpStaff.Enabled = false;
+            this.inpStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.inpStaff.Location = new System.Drawing.Point(174, 360);
+            this.inpStaff.MaximumSize = new System.Drawing.Size(500, 30);
+            this.inpStaff.MinimumSize = new System.Drawing.Size(100, 30);
+            this.inpStaff.Name = "inpStaff";
+            this.inpStaff.Size = new System.Drawing.Size(200, 30);
+            this.inpStaff.TabIndex = 106;
             // 
-            // inpNickname
+            // inpImpCode
             // 
-            this.inpNickname.AcceptsReturn = true;
-            this.inpNickname.AcceptsTab = true;
-            this.inpNickname.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpNickname.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpNickname.Location = new System.Drawing.Point(174, 178);
-            this.inpNickname.MaximumSize = new System.Drawing.Size(500, 30);
-            this.inpNickname.MinimumSize = new System.Drawing.Size(100, 30);
-            this.inpNickname.Name = "inpNickname";
-            this.inpNickname.Size = new System.Drawing.Size(200, 30);
-            this.inpNickname.TabIndex = 104;
+            this.inpImpCode.AcceptsReturn = true;
+            this.inpImpCode.AcceptsTab = true;
+            this.inpImpCode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpImpCode.Enabled = false;
+            this.inpImpCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.inpImpCode.Location = new System.Drawing.Point(174, 178);
+            this.inpImpCode.MaximumSize = new System.Drawing.Size(500, 30);
+            this.inpImpCode.MinimumSize = new System.Drawing.Size(100, 30);
+            this.inpImpCode.Name = "inpImpCode";
+            this.inpImpCode.Size = new System.Drawing.Size(200, 30);
+            this.inpImpCode.TabIndex = 104;
+            this.inpImpCode.Text = "auto";
             // 
             // label7
             // 
@@ -317,6 +338,7 @@
             this.MinimizeBox = false;
             this.Name = "FormInvenImp";
             this.Text = "FormInvenImp";
+            this.Load += new System.EventHandler(this.FormInvenImp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -338,14 +360,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox inpContactNumber;
-        private System.Windows.Forms.TextBox inpNickname;
+        private System.Windows.Forms.TextBox inpStaff;
+        private System.Windows.Forms.TextBox inpImpCode;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inpProvi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button upload;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker inpResignationDate;
+        private System.Windows.Forms.DateTimePicker inpDate;
+        private System.Windows.Forms.Label inpTotal;
     }
 }

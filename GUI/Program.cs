@@ -1,9 +1,4 @@
-﻿using DAL;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace GUI
@@ -18,8 +13,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormSell());
-            //new DBConnection().ExecuteNonQuery("INSERT INTO COUNTRY(name) VALUE ('Test')");
+            Application.Run(new LoginForm());
         }
     }
 }

@@ -11,6 +11,8 @@ namespace GUI
 {
     public partial class LoginForm : Form
     {
+        public static int Id;
+
         private string caseValidate(string username, string password)
         {
             if (username == "Tên đăng nhập" || password == "Mật khẩu" || username == "" || password == "")
@@ -60,6 +62,7 @@ namespace GUI
                 }
                 else
                 {
+                    Id = account.Id;
                     new MainForm(account.Id, account.Role).Show();
                     Hide();
                 }
