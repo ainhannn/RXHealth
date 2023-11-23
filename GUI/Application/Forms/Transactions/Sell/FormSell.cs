@@ -151,7 +151,7 @@ namespace GUI
 
 		private void CustomerClear_Click(object sender, EventArgs e)
 		{
-			TextBoxNote.Text = "";
+			TextBoxCustomer.Text = "";
 		}
 
 		private void TextBoxNote_LostFocus(object sender, EventArgs e)
@@ -286,26 +286,25 @@ namespace GUI
                 }
 
                 // Thêm hàng mới vào table
-                table.Rows.Clear();
                 table.Rows.Add(newRow);
-				double total = 0;
-				// Lặp qua từng dòng trong DataGridView
-				for (int i = 0; i < table.Rows.Count; i++)
-				{
-					// Kiểm tra xem dòng có đủ cột không
-					if (table.Rows[i].Cells.Count >= 8)
-					{
-						// Lấy giá trị từ ô cột 4 và cột 5, nhân chúng và cộng vào tổng
-						double valueInColumn4 = Convert.ToInt32(table.Rows[i].Cells[4].Value);
-						double valueInColumn5 = Convert.ToInt32(table.Rows[i].Cells[5].Value);
+                double total = 0;
+                // Lặp qua từng dòng trong DataGridView
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    // Kiểm tra xem dòng có đủ cột không
+                    if (table.Rows[i].Cells.Count >= 8)
+                    {
+                        // Lấy giá trị từ ô cột 4 và cột 5, nhân chúng và cộng vào tổng
+                        double valueInColumn4 = Convert.ToInt32(table.Rows[i].Cells[4].Value);
+                        double valueInColumn5 = Convert.ToInt32(table.Rows[i].Cells[5].Value);
 
-						total += valueInColumn4 * valueInColumn5;
-					}
-				}
+                        total += valueInColumn4 * valueInColumn5;
+                    }
+                }
 
-				// Hiển thị tổng trong Label
-				TotalLabel.Text = total.ToString();
-			}
+                // Hiển thị tổng trong Label
+                TotalLabel.Text = total.ToString();
+            }
             else
             {
                 MessageBox.Show("Vui lòng chọn một hàng trong dataGridView1.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -344,6 +343,11 @@ namespace GUI
 				Find1Panel.Visible = false;
 				FindGoodsTable.Visible = false;
 			}
+            else
+            {
+				Find1Panel.Visible = true;
+				FindGoodsTable.Visible = true;
+			}
 		}
 
 		private void TextBoxCustomer_Click(object sender, EventArgs e)
@@ -368,28 +372,40 @@ namespace GUI
 
 		private void table_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			//String cln = this.table.Columns[e.ColumnIndex].Name;
-			int index = this.table.SelectedCells[e.RowIndex].RowIndex;
-			int currentValue = Convert.ToInt32(table.Rows[index].Cells[5].Value);
-
-			if (e.ColumnIndex == 6)
+			if (table.SelectedCells.Count > 0)
 			{
-				int newValue = currentValue + 1;
-				table.Rows[index].Cells[5].Value = newValue;
-			}
-			else if (e.ColumnIndex == 7)
-			{
-				int newValue = currentValue - 1;
-				if (newValue == 0)
+				// Duyệt qua tất cả các ô đã chọn
+				foreach (DataGridViewCell cell in table.SelectedCells)
 				{
-					MessageBox.Show("Số lượng phải lớn hơn 0");
+					int rowIndex = cell.RowIndex;
+					int currentValue = Convert.ToInt32(table.Rows[rowIndex].Cells[5].Value);
+
+					// Xác định cột được click
+					switch (e.ColumnIndex)
+					{
+						case 6:
+							// Tăng giá trị
+							int newValue = currentValue + 1;
+							table.Rows[rowIndex].Cells[5].Value = newValue;
+							break;
+
+						case 7:
+							// Giảm giá trị, đảm bảo giá trị không âm
+							int decreasedValue = Math.Max(0, currentValue - 1);
+							if (decreasedValue == 0)
+							{
+								MessageBox.Show("Số lượng phải lớn hơn 0");
+							}
+							else
+								table.Rows[rowIndex].Cells[5].Value = decreasedValue;
+							break;
+
+						case 8:
+							// Xóa hàng
+							table.Rows.RemoveAt(rowIndex);
+							break;
+					}
 				}
-				else
-					table.Rows[index].Cells[5].Value = newValue;
-			}
-			else if (e.ColumnIndex == 8)
-			{
-				table.Rows.RemoveAt(index);
 			}
 
 			double total = 0;
