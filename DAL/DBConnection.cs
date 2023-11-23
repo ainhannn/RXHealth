@@ -102,5 +102,31 @@ namespace DAL
             }
             return -1;
         }
-    }
+
+		private SqlDataReader ExecuteReader1(string sql, params SqlParameter[] parameters)
+		{
+			string connstring = string.Format("Server={0}; database={1}; UID={2}; password={3}", server, database, user, password);
+			using (SqlConnection connection = new SqlConnection(connstring))
+			{
+				connection.Open();
+
+				using (SqlCommand command = new SqlCommand(sql, connection))
+				{
+					command.Parameters.AddRange(parameters);
+
+					try
+					{
+						SqlDataReader reader = command.ExecuteReader();
+						return reader;
+					}
+					catch (Exception ex)
+					{
+						// Handle exceptions or log the error
+						Console.WriteLine($"Error executing query: {ex.Message}");
+						throw;
+					}
+				}
+			}
+		}
+	}
 }

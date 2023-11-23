@@ -26,8 +26,8 @@ namespace GUI
             InitializeSearchBox();
             InitializeCustomerBox();
             InitializeNoteBox();
-            //LoadDataTable();
-        }
+			//LoadDataTable();
+		}
 
         //private void LoadDataTable()
         //{
@@ -144,8 +144,17 @@ namespace GUI
                 TextBoxNote.Text = "";
             }
         }
+		private void GoodsClear_Click(object sender, EventArgs e)
+		{
+			TextBoxSearch.Text = "";
+		}
 
-        private void TextBoxNote_LostFocus(object sender, EventArgs e)
+		private void CustomerClear_Click(object sender, EventArgs e)
+		{
+			TextBoxNote.Text = "";
+		}
+
+		private void TextBoxNote_LostFocus(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TextBoxNote.Text))
             {
@@ -204,7 +213,7 @@ namespace GUI
                 FindCustomerTable.Rows.Clear();
                 foreach (Customer cus in CustomerBUS.SelectAll())
                 {
-                    FindCustomerTable.Rows.Add(cus.ContactNumber + " - " + cus.Name);
+                    FindCustomerTable.Rows.Add(cus.ContactNumber);
                 }
             }
             else
@@ -214,7 +223,7 @@ namespace GUI
                 FindCustomerTable.Rows.Clear();
                 foreach (Customer cus in CustomerBUS.SearchOnContactNumber(text))
                 {
-                    FindCustomerTable.Rows.Add(cus.ContactNumber + " - " + cus.Name);
+                    FindCustomerTable.Rows.Add(cus.ContactNumber);
                 }
             }
         }
@@ -279,7 +288,24 @@ namespace GUI
                 // Thêm hàng mới vào table
                 table.Rows.Clear();
                 table.Rows.Add(newRow);
-            }
+				double total = 0;
+				// Lặp qua từng dòng trong DataGridView
+				for (int i = 0; i < table.Rows.Count; i++)
+				{
+					// Kiểm tra xem dòng có đủ cột không
+					if (table.Rows[i].Cells.Count >= 8)
+					{
+						// Lấy giá trị từ ô cột 4 và cột 5, nhân chúng và cộng vào tổng
+						double valueInColumn4 = Convert.ToInt32(table.Rows[i].Cells[4].Value);
+						double valueInColumn5 = Convert.ToInt32(table.Rows[i].Cells[5].Value);
+
+						total += valueInColumn4 * valueInColumn5;
+					}
+				}
+
+				// Hiển thị tổng trong Label
+				TotalLabel.Text = total.ToString();
+			}
             else
             {
                 MessageBox.Show("Vui lòng chọn một hàng trong dataGridView1.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -302,7 +328,12 @@ namespace GUI
                 }
 
                 ShowPhoneLabel.Text = rowValues.ToString();
-			}
+                //            int customerId = Convert.ToInt32(FindCustomerTable.CurrentRow.Cells["Id"].Value);
+                //MessageBox.Show("Tổng:" + customerId);
+                //List<SaleInvoice> t = SaleBUS.OnCustomer(customerId);
+                //            MessageBox.Show("Tổng:" + t);
+                
+            }
 		}
 
 		private void TextBoxSearch_Click(object sender, EventArgs e)
@@ -384,42 +415,45 @@ namespace GUI
 		private void SaleCombobox_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			// Create an instance of your DAO class
-			SaleBUS getdiem = new SaleBUS();
 			//int count = SaleBUS.getCountByCustomer(FindCustomerTable.RowCount);
 			// Call the GetOnCustomer method to get a list of SaleInvoice objects
 			//List<SaleInvoice> saleInvoices = getdiem.OnCustomer(ShowPhoneLabel.);
 
 			// Iterate through the list of SaleInvoice objects and retrieve the Point value
-			List<SaleInvoice> invoices = getdiem.OnCustomer(Convert.ToInt32(FindCustomerTable.CurrentRow.Cells["Id"].Value));
-			foreach (SaleInvoice invoice in invoices)
-			{
-				int pointValue = invoice.Point;
-				SaleCombobox.Items.Clear();
-				if (pointValue >= 10)
+			//List<SaleInvoice> invoices = getdiem.OnCustomer(Convert.ToInt32(FindCustomerTable.CurrentRow.Cells["Id"].Value));
+			//foreach (SaleInvoice invoice in invoices)
+			//{
+			int customerId = Convert.ToInt32(FindCustomerTable.CurrentRow.Cells["Id"].Value);
+
+			// Gọi hàm GetPointOnCustomer để lấy giá trị Point
+			int pointValue = SaleBUS.GetPointOnCustomer2(ShowPhoneLabel.Text);
+			MessageBox.Show("Tổng:" + pointValue);
+			//SaleCombobox.Items.Clear();
+			if (SaleCombobox.SelectedIndex == 5)
 				{
-					SaleCombobox.Items.Add("5");
+                pointValue = pointValue - 10;
 				}
-				else if (pointValue >= 20)
+				else if (SaleCombobox.SelectedIndex == 10)
 				{
-					SaleCombobox.Items.Add("10");
-				}
-				else if (pointValue >= 30)
-				{
-					SaleCombobox.Items.Add("15");
-				}
-				else if (pointValue >= 40)
-				{
-					SaleCombobox.Items.Add("20");
-				}
-				else if (pointValue >= 50)
-				{
-					SaleCombobox.Items.Add("30");
-				}
-                else if(pointValue < 10)
-                {
-					SaleCombobox.Items.Add("0");
-				}
+				pointValue = pointValue - 20;
 			}
+				else if (SaleCombobox.SelectedIndex == 15)
+				{
+				pointValue = pointValue - 30;
+			}
+				else if (SaleCombobox.SelectedIndex == 20)
+				{
+				pointValue = pointValue - 40;
+			}
+				else if (SaleCombobox.SelectedIndex == 30)
+				{
+				pointValue = pointValue - 50;
+			}
+                else if(SaleCombobox.SelectedIndex == 0)
+                {
+				pointValue = pointValue;
+			}
+			//}
             double take = Convert.ToInt32(TotalLabel.Text);
             double pay = 0;
 				if (SaleCombobox.SelectedIndex == 0)
@@ -433,22 +467,64 @@ namespace GUI
 				PayLabel.Text = pay.ToString();
 		}
 
-		private void TextBoxReceive_Enter(object sender, EventArgs e)
+		private void SaleCombobox_Click(object sender, EventArgs e)
 		{
-			if (Convert.ToInt32(TextBoxReceive.Text) >= Convert.ToInt32(PayLabel.Text))
+			int pointValue = SaleBUS.GetPointOnCustomer2(ShowPhoneLabel.Text);
+			//SaleCombobox.Items.Clear();
+			SaleCombobox.Items.Clear();
+			SaleCombobox.Items.Add("0");
+			if (pointValue >= 10)
 			{
-				int cal = (Convert.ToInt32(TextBoxReceive.Text) - Convert.ToInt32(PayLabel.Text));
-				RottenLabel.Text = cal.ToString();
-
+				SaleCombobox.Items.Add("5");
 			}
-			else
+		    if (pointValue >= 20)
 			{
-				MessageBox.Show("Khách chưa đưa đủ tiền");
+				SaleCombobox.Items.Add("10");
+			}
+			if (pointValue >= 30)
+			{
+				SaleCombobox.Items.Add("15");
+			}
+			if (pointValue >= 40)
+			{
+				SaleCombobox.Items.Add("20");
+			}
+			if (pointValue >= 50)
+			{
+				SaleCombobox.Items.Add("30");
 			}
 		}
 
+		private void TextBoxReceive_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				if (Convert.ToInt32(TextBoxReceive.Text) >= Convert.ToInt32(PayLabel.Text))
+				{
+					int cal = (Convert.ToInt32(TextBoxReceive.Text) - Convert.ToInt32(PayLabel.Text));
+					RottenLabel.Text = cal.ToString();
 
+				}
+				else
+				{
+					MessageBox.Show("Khách chưa đưa đủ tiền");
+				}
+			}
+		}
 
+		//private void TextBoxReceive_KeyPress(object sender, KeyPressEventArgs e)
+		//{
+		//	if (Convert.ToInt32(TextBoxReceive.Text) >= Convert.ToInt32(PayLabel.Text))
+		//	{
+		//		int cal = (Convert.ToInt32(TextBoxReceive.Text) - Convert.ToInt32(PayLabel.Text));
+		//		RottenLabel.Text = cal.ToString();
+
+		//	}
+		//	else
+		//	{
+		//		MessageBox.Show("Khách chưa đưa đủ tiền");
+		//	}
+		//}
 
 	}
 }

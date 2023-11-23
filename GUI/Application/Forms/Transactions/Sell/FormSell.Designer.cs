@@ -44,6 +44,11 @@ namespace GUI
 			this.RottenLabel = new System.Windows.Forms.Label();
 			this.TextBoxReceive = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.CustomerClear = new System.Windows.Forms.PictureBox();
 			this.Find2Panel = new System.Windows.Forms.Panel();
 			this.FindCustomerTable = new System.Windows.Forms.DataGridView();
 			this.Customer3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +57,7 @@ namespace GUI
 			this.ShowPhoneLabel = new System.Windows.Forms.Label();
 			this.NewCustomerBtn = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.GoodsClear = new System.Windows.Forms.PictureBox();
 			this.TextBoxSearch = new System.Windows.Forms.TextBox();
 			this.table = new System.Windows.Forms.DataGridView();
 			this.Barcode1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,9 +78,11 @@ namespace GUI
 			this.SalePrice2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Number2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.CustomerClear)).BeginInit();
 			this.Find2Panel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.FindCustomerTable)).BeginInit();
 			this.panel2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.GoodsClear)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
 			this.Find1Panel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.FindGoodsTable)).BeginInit();
@@ -188,36 +196,36 @@ namespace GUI
 			this.TotalLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.TotalLabel.AutoSize = true;
 			this.TotalLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-			this.TotalLabel.Location = new System.Drawing.Point(240, 304);
+			this.TotalLabel.Location = new System.Drawing.Point(230, 303);
 			this.TotalLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.TotalLabel.Name = "TotalLabel";
-			this.TotalLabel.Size = new System.Drawing.Size(76, 31);
+			this.TotalLabel.Size = new System.Drawing.Size(48, 31);
 			this.TotalLabel.TabIndex = 111;
-			this.TotalLabel.Text = "label1";
+			this.TotalLabel.Text = "Giá";
 			// 
 			// PayLabel
 			// 
 			this.PayLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.PayLabel.AutoSize = true;
 			this.PayLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-			this.PayLabel.Location = new System.Drawing.Point(240, 387);
+			this.PayLabel.Location = new System.Drawing.Point(230, 384);
 			this.PayLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.PayLabel.Name = "PayLabel";
-			this.PayLabel.Size = new System.Drawing.Size(76, 31);
+			this.PayLabel.Size = new System.Drawing.Size(48, 31);
 			this.PayLabel.TabIndex = 113;
-			this.PayLabel.Text = "label8";
+			this.PayLabel.Text = "Giá";
 			// 
 			// RottenLabel
 			// 
 			this.RottenLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.RottenLabel.AutoSize = true;
 			this.RottenLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-			this.RottenLabel.Location = new System.Drawing.Point(240, 494);
+			this.RottenLabel.Location = new System.Drawing.Point(230, 492);
 			this.RottenLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.RottenLabel.Name = "RottenLabel";
-			this.RottenLabel.Size = new System.Drawing.Size(88, 31);
+			this.RottenLabel.Size = new System.Drawing.Size(48, 31);
 			this.RottenLabel.TabIndex = 115;
-			this.RottenLabel.Text = "label10";
+			this.RottenLabel.Text = "Giá";
 			// 
 			// TextBoxReceive
 			// 
@@ -230,12 +238,18 @@ namespace GUI
 			this.TextBoxReceive.MaximumSize = new System.Drawing.Size(376, 30);
 			this.TextBoxReceive.MinimumSize = new System.Drawing.Size(76, 30);
 			this.TextBoxReceive.Name = "TextBoxReceive";
-			this.TextBoxReceive.Size = new System.Drawing.Size(156, 30);
+			this.TextBoxReceive.Size = new System.Drawing.Size(106, 30);
 			this.TextBoxReceive.TabIndex = 116;
+			this.TextBoxReceive.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxReceive_KeyDown);
 			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.panel1.Controls.Add(this.label9);
+			this.panel1.Controls.Add(this.label8);
+			this.panel1.Controls.Add(this.label7);
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Controls.Add(this.CustomerClear);
 			this.panel1.Controls.Add(this.Find2Panel);
 			this.panel1.Controls.Add(this.SaleCombobox);
 			this.panel1.Controls.Add(this.ShowPhoneLabel);
@@ -259,6 +273,60 @@ namespace GUI
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(392, 894);
 			this.panel1.TabIndex = 1;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label9.Location = new System.Drawing.Point(326, 456);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(63, 29);
+			this.label9.TabIndex = 124;
+			this.label9.Text = "VNĐ";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.Location = new System.Drawing.Point(326, 494);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(63, 29);
+			this.label8.TabIndex = 123;
+			this.label8.Text = "VNĐ";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(326, 388);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(63, 29);
+			this.label7.TabIndex = 122;
+			this.label7.Text = "VNĐ";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(326, 305);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(63, 29);
+			this.label1.TabIndex = 121;
+			this.label1.Text = "VNĐ";
+			// 
+			// CustomerClear
+			// 
+			this.CustomerClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.CustomerClear.BackColor = System.Drawing.Color.Silver;
+			this.CustomerClear.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.CustomerClear.Image = global::GUI.Properties.Resources.reject;
+			this.CustomerClear.Location = new System.Drawing.Point(334, 75);
+			this.CustomerClear.Name = "CustomerClear";
+			this.CustomerClear.Size = new System.Drawing.Size(42, 30);
+			this.CustomerClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.CustomerClear.TabIndex = 96;
+			this.CustomerClear.TabStop = false;
+			this.CustomerClear.Click += new System.EventHandler(this.CustomerClear_Click);
 			// 
 			// Find2Panel
 			// 
@@ -305,6 +373,8 @@ namespace GUI
 			this.SaleCombobox.Name = "SaleCombobox";
 			this.SaleCombobox.Size = new System.Drawing.Size(156, 24);
 			this.SaleCombobox.TabIndex = 120;
+			this.SaleCombobox.SelectedIndexChanged += new System.EventHandler(this.SaleCombobox_SelectedIndexChanged);
+			this.SaleCombobox.Click += new System.EventHandler(this.SaleCombobox_Click);
 			// 
 			// ShowPhoneLabel
 			// 
@@ -330,12 +400,27 @@ namespace GUI
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.panel2.Controls.Add(this.GoodsClear);
 			this.panel2.Controls.Add(this.TextBoxSearch);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(1208, 75);
 			this.panel2.TabIndex = 2;
+			// 
+			// GoodsClear
+			// 
+			this.GoodsClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.GoodsClear.BackColor = System.Drawing.Color.Silver;
+			this.GoodsClear.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.GoodsClear.Image = global::GUI.Properties.Resources.reject;
+			this.GoodsClear.Location = new System.Drawing.Point(1127, 22);
+			this.GoodsClear.Name = "GoodsClear";
+			this.GoodsClear.Size = new System.Drawing.Size(42, 30);
+			this.GoodsClear.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.GoodsClear.TabIndex = 13;
+			this.GoodsClear.TabStop = false;
+			this.GoodsClear.Click += new System.EventHandler(this.GoodsClear_Click);
 			// 
 			// TextBoxSearch
 			// 
@@ -519,10 +604,12 @@ namespace GUI
 			this.Text = "SaleForm";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.CustomerClear)).EndInit();
 			this.Find2Panel.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.FindCustomerTable)).EndInit();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.GoodsClear)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
 			this.Find1Panel.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.FindGoodsTable)).EndInit();
@@ -571,5 +658,11 @@ namespace GUI
         private DataGridViewTextBoxColumn Customer3;
         private DataGridViewTextBoxColumn Id;
 		private ComboBox SaleCombobox;
+		private PictureBox CustomerClear;
+		private PictureBox GoodsClear;
+		private Label label9;
+		private Label label8;
+		private Label label7;
+		private Label label1;
 	}
 }
