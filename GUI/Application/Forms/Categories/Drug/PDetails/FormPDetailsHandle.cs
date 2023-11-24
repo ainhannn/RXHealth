@@ -6,12 +6,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 namespace GUI
 {
     public partial class FormPDetails : Form
     {
-        private CateProduct pd = null;
+        private CateProduct pd = new CateProduct();
 
         private void Changable(bool input)
         {
@@ -25,7 +26,8 @@ namespace GUI
                     inp.ForeColor = Color.Black;
                     inp.Cursor = Cursors.IBeam;
                 }
-                stack.Enabled = name.Enabled = image.Enabled = is_stopped.Enabled = description.Enabled = category.Enabled = true;
+                inpCode.ReadOnly = impPrice.ReadOnly = true;
+                image.Enabled = is_stopped.Enabled = category.Enabled = true;
                 description.ReadOnly = false;
                 description.BackColor = Color.White;
                 description.ForeColor = Color.Black;
@@ -41,7 +43,7 @@ namespace GUI
                     inp.ForeColor = Color.White;
                     inp.Cursor = Cursors.Default;
                 }
-                stack.Enabled = name.Enabled = image.Enabled = is_stopped.Enabled = description.Enabled = category.Enabled = false;
+                image.Enabled = is_stopped.Enabled = category.Enabled = false;
                 description.ReadOnly = true;
                 description.BackColor = Color.SteelBlue;
                 description.ForeColor = Color.White;
@@ -51,7 +53,7 @@ namespace GUI
 
         private void FormPDetails_Load(object sender, EventArgs e)
         {
-            if (pd != null)
+            if (pd != null) // Read Update
             {
                 stack.Text = pd.Stack;
                 inpCode.Text = pd.Barcode;
@@ -65,6 +67,16 @@ namespace GUI
                 description.Text = pd.ExtraInformation;
                 is_stopped.Checked = !pd.IsOnSale;
                 //image = ??
+            }
+            else // Create
+            {
+                pd = new CateProduct();
+                foreach (TextBox inp in Controls.OfType<TextBox>())
+                    inp.Text = string.Empty;
+                
+                Changable(true); 
+                edit.Visible = is_stopped.Visible = false;
+                inpCode.ReadOnly = impPrice.ReadOnly = false;
             }
         }
 
@@ -130,13 +142,38 @@ namespace GUI
             //pd.Image = ??;
             pd.IsOnSale = !is_stopped.Checked;
 
-            if (ProductBUS.Update(pd))
+            if (inpCode.ReadOnly)
             {
-                Changable(false);
-                MessageBox.Show("Cập nhật thành công!");
+                if (ProductBUS.Update(pd))
+                {
+                    Changable(false);
+                    MessageBox.Show("Cập nhật thành công!");
+                    //cap nhat lai parent table
+                    for (int i = 0; i < FormCateDrug.list.Count; i++)
+                    {
+                        if (FormCateDrug.list[i].Id == pd.Id)
+                        {
+                            FormCateDrug.list[i] = pd;
+                            break;
+                        }
+                    }
+                }
+                else
+                    MessageBox.Show("Cập nhật thất bại!");
             }
             else
-                MessageBox.Show("Cập nhật thất bại!");
+            {
+                if(ProductBUS.Insert(pd))
+                {
+                    Changable(false);
+                    MessageBox.Show("Thêm thành công!");
+                    //cap nhat lai parent table
+                    pd.Id = ProductBUS.GetId(pd.Barcode);
+                    FormCateDrug.list.Add(pd);
+                }
+                else
+                    MessageBox.Show("Cập nhật thất bại!");
+            }
         }
     }
 }

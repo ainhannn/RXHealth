@@ -1,5 +1,4 @@
 ﻿using DAL;
-using DTO;
 using System.Collections.Generic;
 
 namespace BLL
@@ -11,8 +10,6 @@ namespace BLL
 
         public static Dictionary<string, int> GetBestSellingByCate(string cate, int limit)
             => ActivityDAO.GetBestSellingByCate(cate, limit);
-
-
 
 
         //public static List<Product> Search(string keyWords)

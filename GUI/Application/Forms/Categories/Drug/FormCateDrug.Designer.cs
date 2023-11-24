@@ -35,19 +35,8 @@
             this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stack = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imp_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.retail_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.retail_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_stopped = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.insert = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
             this.RecycleBin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,6 +54,18 @@
             this.inpCate = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imp_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.retail_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.retail_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_stopped = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel2.SuspendLayout();
@@ -112,6 +113,7 @@
             this.inpSearch.Name = "inpSearch";
             this.inpSearch.Size = new System.Drawing.Size(1530, 23);
             this.inpSearch.TabIndex = 21;
+            this.inpSearch.TextChanged += new System.EventHandler(this.inpSearch_TextChanged);
             // 
             // table
             // 
@@ -154,85 +156,10 @@
             this.table.TabIndex = 115;
             this.table.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellDoubleClick);
             // 
-            // id
-            // 
-            this.id.HeaderText = "STT";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // stack
-            // 
-            this.stack.HeaderText = "Ngăn chứa";
-            this.stack.Name = "stack";
-            this.stack.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "Mã vạch";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // category
-            // 
-            this.category.HeaderText = "Ngành hàng";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "Đơn vị";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // imp_price
-            // 
-            this.imp_price.HeaderText = "Giá nhập";
-            this.imp_price.Name = "imp_price";
-            this.imp_price.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Giá bán";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // retail_unit
-            // 
-            this.retail_unit.HeaderText = "Đơn vị lẻ";
-            this.retail_unit.Name = "retail_unit";
-            this.retail_unit.ReadOnly = true;
-            // 
-            // retail_price
-            // 
-            this.retail_price.HeaderText = "Giá bán lẻ";
-            this.retail_price.Name = "retail_price";
-            this.retail_price.ReadOnly = true;
-            // 
-            // is_stopped
-            // 
-            this.is_stopped.HeaderText = "Ngừng bán";
-            this.is_stopped.Name = "is_stopped";
-            this.is_stopped.ReadOnly = true;
-            // 
-            // selectDelete
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = false;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
-            this.selectDelete.HeaderText = "Xóa";
-            this.selectDelete.MinimumWidth = 6;
-            this.selectDelete.Name = "selectDelete";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.Controls.Add(this.insert);
             this.panel2.Controls.Add(this.refresh);
             this.panel2.Controls.Add(this.RecycleBin);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -240,6 +167,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1600, 50);
             this.panel2.TabIndex = 116;
+            // 
+            // insert
+            // 
+            this.insert.BackColor = System.Drawing.Color.MidnightBlue;
+            this.insert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.insert.FlatAppearance.BorderSize = 0;
+            this.insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.insert.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.insert.ForeColor = System.Drawing.Color.White;
+            this.insert.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.insert.Location = new System.Drawing.Point(1500, 0);
+            this.insert.Margin = new System.Windows.Forms.Padding(5);
+            this.insert.Name = "insert";
+            this.insert.Size = new System.Drawing.Size(50, 50);
+            this.insert.TabIndex = 113;
+            this.insert.Tag = "";
+            this.insert.Text = "+";
+            this.insert.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.insert.UseVisualStyleBackColor = false;
+            this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // refresh
             // 
@@ -260,6 +208,7 @@
             this.refresh.Tag = "";
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.refresh.UseVisualStyleBackColor = false;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // RecycleBin
             // 
@@ -470,6 +419,85 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // id
+            // 
+            this.id.HeaderText = "STT";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // stack
+            // 
+            this.stack.HeaderText = "Ngăn chứa";
+            this.stack.Name = "stack";
+            this.stack.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "Mã vạch";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Tên";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.HeaderText = "Ngành hàng";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "Đơn vị";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // imp_price
+            // 
+            this.imp_price.HeaderText = "Giá nhập";
+            this.imp_price.Name = "imp_price";
+            this.imp_price.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Giá bán";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // retail_unit
+            // 
+            this.retail_unit.HeaderText = "Đơn vị lẻ";
+            this.retail_unit.Name = "retail_unit";
+            this.retail_unit.ReadOnly = true;
+            // 
+            // retail_price
+            // 
+            this.retail_price.HeaderText = "Giá bán lẻ";
+            this.retail_price.Name = "retail_price";
+            this.retail_price.ReadOnly = true;
+            // 
+            // is_stopped
+            // 
+            this.is_stopped.HeaderText = "Ngừng bán";
+            this.is_stopped.Name = "is_stopped";
+            this.is_stopped.ReadOnly = true;
+            this.is_stopped.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.is_stopped.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // selectDelete
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = false;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
+            this.selectDelete.HeaderText = "Xóa";
+            this.selectDelete.MinimumWidth = 6;
+            this.selectDelete.Name = "selectDelete";
+            this.selectDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // FormCateDrug
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -520,6 +548,7 @@
         private System.Windows.Forms.TextBox inpPriceMax;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox inpPriceMin;
+        private System.Windows.Forms.Button insert;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn stack;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
@@ -530,7 +559,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn retail_unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn retail_price;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn is_stopped;
+        private System.Windows.Forms.DataGridViewTextBoxColumn is_stopped;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selectDelete;
     }
 }

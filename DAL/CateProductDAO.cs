@@ -44,7 +44,7 @@ namespace DAL
                 return obj;
             } catch { return null; }
         }
-
+        
         public static List<CateProduct> SelectAllCateProduct()
         {
             string sql = string.Format("SELECT * FROM {0} WHERE is_existing = 1", dbTableName);
@@ -112,6 +112,69 @@ namespace DAL
                     "is_on_sale = {11} " +
                 "WHERE id = {1}", dbTableName, e.Id, e.Stack, e.Name, e.Category.Id, e.Unit, e.Saleprice, e.RetailUnit, e.RetailSaleprice, e.ExtraInformation, e.Image, e.IsOnSale);
 
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool Insert(CateProduct e)
+        {
+            if (e == null) return false;
+
+            string sql = string.Format(
+                "INSERT INTO `{0}`" +
+                    "(`stack`, `barcode`, `name`, `category_id`, " +
+                    "`current_import_price`, `unit`, `saleprice`, " +
+                    "`retail_unit`, `retail_saleprice`, " +
+                    "`extra_information`, `image`) " +
+                "VALUES ('{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}')", dbTableName, 
+                    e.Stack, e.Barcode, e.Name, e.Category.Id, 
+                    e.CurrentImportPrice, e.Unit, e.Saleprice, 
+                    e.RetailUnit, e.RetailSaleprice, 
+                    e.ExtraInformation, e.Image);
+
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool Delete(int productId)
+        {
+            string sql = string.Format(
+                "UPDATE {0} SET is_existing = false WHERE id = {1}; " +
+                "INSERT INTO trash_tmp VALUE ({1});", dbTableName, productId);
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static List<CateProduct> SelectAllTrash()
+        {
+            string sql = string.Format(
+                "SELECT * FROM {0} " +
+                "WHERE id IN " +
+                "(SELECT product_id FROM trash_tmp)", dbTableName);
+            
+            var table = ExecuteReader(sql);
+            var list = new List<CateProduct>();
+            foreach (var row in table)
+            {
+                list.Add(ConvertToCateProduct(row));
+            }
+            return list;
+        }
+        
+        public static bool Recover(int productId)
+        {
+            string sql = string.Format(
+                "UPDATE {0} SET is_existing = true WHERE id = {1}; " +
+                "DELETE FROM trash_tmp WHERE product_id = {1};", dbTableName, productId);
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool DeleteTrash(int productId)
+        {
+            string sql = string.Format("DELETE FROM trash_tmp WHERE product_id = {0};", productId);
+            return ExecuteNonQuery(sql) != -1;
+        }
+
+        public static bool EmptyTrash()
+        {
+            string sql = string.Format("DELETE FROM trash_tmp");
             return ExecuteNonQuery(sql) != -1;
         }
     }

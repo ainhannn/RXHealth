@@ -104,11 +104,11 @@
 
 //        private static bool Update(ProductBatch e)
 //        {
-//            string sql = string.Format("UPDATE SET " +
+//            string sql = string.Format("UPDATE {0} SET " +
 //                "manufacture_date = '{2}' " +
 //                "sale_unit_price = {3}, " +
 //                "sale_subunit_price = {4} " +
-//                "FROM {0} WHERE id = {1}", dbTableName, e.Id, 
+//                " WHERE id = {1}", dbTableName, e.Id, 
 //                e.ManufactureDate.ToString("yyyy-MM-dd"), 
 //                e.SaleUnitPrice, 
 //                e.SaleSubunitPrice);

@@ -8,14 +8,11 @@ namespace GUI
 {
     public partial class FormCateDrug : Form
     {
-        private static List<CateProduct> list = new List<CateProduct>();
+        public static List<CateProduct> list = new List<CateProduct>();
         private static Dictionary<string, string> conditions = new Dictionary<string, string>();
-
 
         private void ReloadTable()
         {
-            list = ProductBUS.AdvancedSearch(conditions);
-
             table.Rows.Clear();
             int i = 1;
             foreach (var item in list) 
@@ -31,7 +28,7 @@ namespace GUI
                     item.Saleprice,
                     item.RetailUnit,
                     item.RetailSaleprice,
-                    !item.IsOnSale,
+                    item.IsOnSale ? "" : "x",
                     false
                 );
             }
@@ -40,6 +37,15 @@ namespace GUI
 
         private void FormCateDrug_Load(object sender, EventArgs e)
         {
+            list = ProductBUS.SelectAllCateProduct();
+            ReloadTable();
+        }
+
+        private void inpSearch_TextChanged(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(inpSearch.Text)) { return; }
+
+            list = ProductBUS.Search(inpSearch.Text);
             ReloadTable();
         }
 
@@ -79,24 +85,49 @@ namespace GUI
                 conditions.Add("price_min", inpPriceMin.Text);
             if (!string.IsNullOrEmpty(inpPriceMax.Text))
                 conditions.Add("price_max", inpPriceMax.Text);
-            if (isStopped.Checked)
+            if (!string.IsNullOrEmpty(isStopped.Text))
                 conditions.Add("is_on_sale", "0");
 
+            list = ProductBUS.AdvancedSearch(conditions);
             ReloadTable();
         }
 
         private void table_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            Int16.TryParse(table.Rows[e.RowIndex].Cells["id"].Value.ToString(), out var listIndex);
-            if (listIndex*list.Count != 0)
+            Int16.TryParse(table.Rows[e.RowIndex].Cells["id"].Value.ToString(), out var listIndex); // lay gia tri STT
+            if (listIndex*list.Count != 0) // ca 2 != 0
                 new FormPDetails(list[listIndex-1]).ShowDialog();
+
+            list = ProductBUS.SelectAllCateProduct();
             ReloadTable();
         }
+
+        // code here cell click colunm delete
 
         private void RecycleBin_Click(object sender, System.EventArgs e)
         {
             new FormPRecycleBin().ShowDialog();
+            ReloadTable();
+        }
+
+        private void refresh_Click(object sender, System.EventArgs e)
+        {
+            //inpCate.Text = string.Empty;
+            //inpName.Clear();
+            //inpUnit.Clear();
+            //inpRUnit.Clear();
+            //inpPriceMin.Clear();
+            //inpPriceMax.Clear();
+            //isStopped.Checked = false;
+
+            ReloadTable();
+        }
+
+        private void insert_Click(object sender, System.EventArgs e)
+        {
+            new FormPDetails(null).ShowDialog();
+            ReloadTable();
         }
     }
 }

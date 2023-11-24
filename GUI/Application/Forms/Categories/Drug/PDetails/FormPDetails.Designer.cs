@@ -103,7 +103,6 @@
             this.impPrice.BackColor = System.Drawing.Color.SteelBlue;
             this.impPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.impPrice.Cursor = System.Windows.Forms.Cursors.Default;
-            this.impPrice.Enabled = false;
             this.impPrice.ForeColor = System.Drawing.Color.White;
             this.impPrice.Location = new System.Drawing.Point(132, 362);
             this.impPrice.Name = "impPrice";
@@ -132,7 +131,6 @@
             this.inpCode.BackColor = System.Drawing.Color.SteelBlue;
             this.inpCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inpCode.Cursor = System.Windows.Forms.Cursors.Default;
-            this.inpCode.Enabled = false;
             this.inpCode.ForeColor = System.Drawing.Color.White;
             this.inpCode.Location = new System.Drawing.Point(436, 179);
             this.inpCode.Name = "inpCode";
@@ -434,7 +432,7 @@
             this.description.ReadOnly = true;
             this.description.Size = new System.Drawing.Size(633, 150);
             this.description.TabIndex = 129;
-            this.description.Text = "...";
+            this.description.Text = "";
             // 
             // FormPDetails
             // 

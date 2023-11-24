@@ -25,6 +25,10 @@ namespace DAL
 
         public static int GetProductId (string barcode)
         {
+            string sql = string.Format("SELECT id FROM {0} WHERE barcode = '{1}' LIMIT 1", dbTableName, barcode);
+            var rs = ExecuteScalar(sql);
+            if (int.TryParse(rs.ToString(), out int id))
+                return id;
             return 0;
         }
 
@@ -61,53 +65,11 @@ namespace DAL
         //    return list;
         //}
 
-        public static Product Select(int productId)
-        {
-            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbTableName, productId);
-            var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
-        }
-
-        public static bool Insert(Product e)
-        {
-
-
-
-
-
-
-
-
-
-            return false;
-        }
         
-        public static bool Delete(int productId)
-        {
-            string sql = string.Format(
-                "UPDATE SET is_existing = false FROM {0} WHERE id = {1}; " +
-                "INSERT INTO trash_tmp VALUE ({1});", dbTableName, productId);
-            return ExecuteNonQuery(sql) != -1;
-        }
 
-        public static bool Recover(int productId)
-        {
-            string sql = string.Format(
-                "UPDATE SET is_existing = true FROM {0} WHERE id = {1}; " +
-                "DELETE FROM trash_tmp WHERE id = {1};", dbTableName, productId); 
-            return ExecuteNonQuery(sql) != -1;
-        }
+        
+        
 
-        public static bool DeleteTrash(int productId)
-        {
-            string sql = string.Format("DELETE FROM trash_tmp WHERE id = {0};", productId);
-            return ExecuteNonQuery(sql) != -1;
-        }
-
-        public static bool EmptyTrash()
-        {
-            string sql = string.Format("DELETE FROM trash_tmp");
-            return ExecuteNonQuery(sql) != -1;
-        }
+        
     }
 }
