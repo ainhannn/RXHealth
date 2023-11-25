@@ -66,7 +66,11 @@ namespace GUI
                 rPrice.Text = pd.RetailSaleprice.ToString();
                 description.Text = pd.ExtraInformation;
                 is_stopped.Checked = !pd.IsOnSale;
-                //image = ??
+                if (!string.IsNullOrEmpty(pd.Image))
+                {
+                    try { image.Image = Image.FromFile(pd.Image); }
+                    catch { }
+                }
             }
             else // Create
             {
@@ -86,7 +90,7 @@ namespace GUI
             if (!string.IsNullOrEmpty(path) && File.Exists(path))
             {
                 image.Image = new Bitmap(path);
-                //viết lưu path
+                // code here viết lưu path
             }
         }
 
@@ -97,6 +101,16 @@ namespace GUI
 
         private void save_Click(object sender, System.EventArgs e)
         {
+            if (string.IsNullOrEmpty(inpCode.Text) ||
+                string.IsNullOrEmpty(name.Text) ||
+                string.IsNullOrEmpty(category.Text) ||
+                string.IsNullOrEmpty(unit.Text))
+            {
+                MessageBox.Show("Nhập đủ thông tin bắt buộc!");
+                return;
+            }
+
+
             double iPrc, sPrc, rPrc;
             iPrc = sPrc = rPrc = -1;
             if (!double.TryParse(impPrice.Text, out iPrc) ||
@@ -106,9 +120,8 @@ namespace GUI
                 MessageBox.Show("Sai định dạng tiền tệ!");
                 return;
             }
-
+            
             pd.Stack = stack.Text;
-            pd.Barcode = inpCode.Text;
             pd.Name = name.Text;
             switch (category.Text)
             {
@@ -144,35 +157,53 @@ namespace GUI
 
             if (inpCode.ReadOnly)
             {
-                if (ProductBUS.Update(pd))
+                switch (ProductBUS.Update(pd))
                 {
-                    Changable(false);
-                    MessageBox.Show("Cập nhật thành công!");
-                    //cap nhat lai parent table
-                    for (int i = 0; i < FormCateDrug.list.Count; i++)
-                    {
-                        if (FormCateDrug.list[i].Id == pd.Id)
+                    case 1:
+                        Changable(false);
+                        MessageBox.Show("Cập nhật thành công!");
+                        //cap nhat lai parent table
+                        for (int i = 0; i < FormCateDrug.list.Count; i++)
                         {
-                            FormCateDrug.list[i] = pd;
-                            break;
+                            if (FormCateDrug.list[i].Id == pd.Id)
+                            {
+                                FormCateDrug.list[i] = pd;
+                                break;
+                            }
                         }
-                    }
+                        break;
+
+                    case 0:
+                        MessageBox.Show("Không thể nhập trùng thông tin!");
+                        break;
+
+                    default:
+                        MessageBox.Show("Đã có lỗi xảy ra. Cập nhật thất bại!");
+                        break;
                 }
-                else
-                    MessageBox.Show("Cập nhật thất bại!");
             }
             else
             {
-                if(ProductBUS.Insert(pd))
+                pd.Barcode = inpCode.Text;
+
+                switch (ProductBUS.Insert(pd))
                 {
-                    Changable(false);
-                    MessageBox.Show("Thêm thành công!");
-                    //cap nhat lai parent table
-                    pd.Id = ProductBUS.GetId(pd.Barcode);
-                    FormCateDrug.list.Add(pd);
+                    case 1:
+                        Changable(false);
+                        MessageBox.Show("Thêm thành công!");
+                        //cap nhat lai parent table
+                        pd.Id = ProductBUS.GetId(pd.Barcode);
+                        FormCateDrug.list.Add(pd);
+                        break;
+
+                    case 0:
+                        MessageBox.Show("Mã vạch đã tồn tại!");
+                        break;
+
+                    default:
+                        MessageBox.Show("Đã có lỗi xảy ra. Thêm thất bại!");
+                        break;
                 }
-                else
-                    MessageBox.Show("Cập nhật thất bại!");
             }
         }
     }

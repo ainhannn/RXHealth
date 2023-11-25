@@ -26,14 +26,22 @@ namespace BLL
         public static List<CateProduct> AdvancedSearch(Dictionary<string, string> conditions)
             => ProductDAO.AdvancedSearch(conditions);
 
-        public static bool Update(CateProduct product)
-            => ProductDAO.Update(product);
+        public static int Update(CateProduct product)
+        {
+            if (GetId(product.Barcode) < 0)
+                return 0;
+            return ProductDAO.Update(product) ? 1 : -1;
+        }
 
-        public static bool Insert(CateProduct product)
-            => ProductDAO.Insert(product);
+        public static int Insert(CateProduct product)
+        {
+            if (GetId(product.Barcode) > -1)
+                return 0;
+            return ProductDAO.Insert(product) ? 1 : -1;
+        }
 
-        public static bool Delete(int productId)
-            => ProductDAO.Delete(productId);
+        public static int Delete(int productId)
+            => ProductDAO.Delete(productId) ? 1 : -1;
 
         public static List<CateProduct> GetTrash()
             => ProductDAO.SelectAllTrash();

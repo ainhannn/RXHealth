@@ -29,7 +29,7 @@ namespace DAL
             var rs = ExecuteScalar(sql);
             if (int.TryParse(rs.ToString(), out int id))
                 return id;
-            return 0;
+            return -1;
         }
 
         public static List<Product> SelectAll()

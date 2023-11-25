@@ -85,7 +85,7 @@ namespace GUI
                 conditions.Add("price_min", inpPriceMin.Text);
             if (!string.IsNullOrEmpty(inpPriceMax.Text))
                 conditions.Add("price_max", inpPriceMax.Text);
-            if (!string.IsNullOrEmpty(isStopped.Text))
+            if (isStopped.Checked)
                 conditions.Add("is_on_sale", "0");
 
             list = ProductBUS.AdvancedSearch(conditions);
@@ -103,8 +103,6 @@ namespace GUI
             ReloadTable();
         }
 
-        // code here cell click colunm delete
-
         private void RecycleBin_Click(object sender, System.EventArgs e)
         {
             new FormPRecycleBin().ShowDialog();
@@ -113,14 +111,15 @@ namespace GUI
 
         private void refresh_Click(object sender, System.EventArgs e)
         {
-            //inpCate.Text = string.Empty;
-            //inpName.Clear();
-            //inpUnit.Clear();
-            //inpRUnit.Clear();
-            //inpPriceMin.Clear();
-            //inpPriceMax.Clear();
-            //isStopped.Checked = false;
-
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                if (Convert.ToBoolean(table.Rows[i].Cells["selectDelete"].Value))
+                {
+                    Int16.TryParse(table.Rows[i].Cells["id"].Value.ToString(), out var listIndex); // lay gia tri STT
+                    ProductBUS.Delete(list[listIndex - 1].Id);
+                    list.RemoveAt(listIndex-1);
+                }
+            }
             ReloadTable();
         }
 

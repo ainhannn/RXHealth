@@ -35,6 +35,7 @@ namespace GUI
                 {
                     Int16.TryParse(table.Rows[i].Cells["id"].Value.ToString(), out var listIndex); // lay gia tri STT
                     ProductBUS.Recover(list[listIndex-1].Id);
+                    FormCateDrug.list.Add(list[listIndex-1]);
                 }
             }
             list = ProductBUS.GetTrash();

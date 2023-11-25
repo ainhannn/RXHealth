@@ -31,14 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInvenImp));
             this.table = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mfg_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exp_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.inpTotal = new System.Windows.Forms.Label();
             this.inpDate = new System.Windows.Forms.DateTimePicker();
@@ -52,6 +44,15 @@
             this.inpImpCode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mfg_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exp_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +80,8 @@
             this.exp_date,
             this.unit,
             this.number,
-            this.price});
+            this.price,
+            this.amount});
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
             this.table.Location = new System.Drawing.Point(401, 0);
             this.table.Margin = new System.Windows.Forms.Padding(0);
@@ -89,47 +91,6 @@
             this.table.Size = new System.Drawing.Size(1199, 894);
             this.table.TabIndex = 4;
             this.table.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellValueChanged);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "STT";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "Mã vạch";
-            this.code.Name = "code";
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên";
-            this.name.Name = "name";
-            // 
-            // mfg_date
-            // 
-            this.mfg_date.HeaderText = "NSX";
-            this.mfg_date.Name = "mfg_date";
-            // 
-            // exp_date
-            // 
-            this.exp_date.HeaderText = "HSD";
-            this.exp_date.Name = "exp_date";
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "Đơn vị";
-            this.unit.Name = "unit";
-            // 
-            // number
-            // 
-            this.number.HeaderText = "Số lượng";
-            this.number.Name = "number";
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Giá";
-            this.price.Name = "price";
             // 
             // panel1
             // 
@@ -325,6 +286,53 @@
             this.label5.TabIndex = 102;
             this.label5.Text = "Mã đơn nhập";
             // 
+            // id
+            // 
+            this.id.HeaderText = "STT";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "Mã vạch";
+            this.code.Name = "code";
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Tên";
+            this.name.Name = "name";
+            // 
+            // mfg_date
+            // 
+            this.mfg_date.HeaderText = "NSX";
+            this.mfg_date.Name = "mfg_date";
+            // 
+            // exp_date
+            // 
+            this.exp_date.HeaderText = "HSD";
+            this.exp_date.Name = "exp_date";
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "Đơn vị";
+            this.unit.Name = "unit";
+            // 
+            // number
+            // 
+            this.number.HeaderText = "Số lượng";
+            this.number.Name = "number";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Giá";
+            this.price.Name = "price";
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Thành tiền";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
             // FormInvenImp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -351,14 +359,6 @@
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mfg_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn exp_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox inpStaff;
         private System.Windows.Forms.TextBox inpImpCode;
@@ -370,5 +370,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker inpDate;
         private System.Windows.Forms.Label inpTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mfg_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exp_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
     }
 }

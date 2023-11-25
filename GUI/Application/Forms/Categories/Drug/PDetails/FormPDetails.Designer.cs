@@ -233,9 +233,9 @@
             this.label4.Location = new System.Drawing.Point(286, 362);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 25);
+            this.label4.Size = new System.Drawing.Size(86, 25);
             this.label4.TabIndex = 46;
-            this.label4.Text = "Đơn vị:";
+            this.label4.Text = "Đơn vị: *";
             // 
             // label3
             // 
@@ -245,9 +245,9 @@
             this.label3.Location = new System.Drawing.Point(286, 296);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 25);
+            this.label3.Size = new System.Drawing.Size(138, 25);
             this.label3.TabIndex = 45;
-            this.label3.Text = "Ngành hàng:";
+            this.label3.Text = "Ngành hàng: *";
             // 
             // label2
             // 
@@ -257,9 +257,9 @@
             this.label2.Location = new System.Drawing.Point(286, 236);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 25);
+            this.label2.Size = new System.Drawing.Size(66, 25);
             this.label2.TabIndex = 44;
-            this.label2.Text = "Tên:";
+            this.label2.Text = "Tên: *";
             // 
             // label1
             // 
@@ -269,9 +269,9 @@
             this.label1.Location = new System.Drawing.Point(286, 177);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
+            this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 43;
-            this.label1.Text = "Mã vạch:";
+            this.label1.Text = "Mã vạch: *";
             // 
             // label5
             // 

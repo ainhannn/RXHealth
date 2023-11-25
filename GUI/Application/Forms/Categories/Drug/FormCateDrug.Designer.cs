@@ -35,6 +35,18 @@
             this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.table = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imp_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.retail_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.retail_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_stopped = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.insert = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
@@ -54,18 +66,6 @@
             this.inpCate = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stack = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imp_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.retail_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.retail_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_stopped = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel2.SuspendLayout();
@@ -155,6 +155,85 @@
             this.table.Size = new System.Drawing.Size(1600, 400);
             this.table.TabIndex = 115;
             this.table.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellDoubleClick);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "STT";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // stack
+            // 
+            this.stack.HeaderText = "Ngăn chứa";
+            this.stack.Name = "stack";
+            this.stack.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "Mã vạch";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Tên";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // category
+            // 
+            this.category.HeaderText = "Ngành hàng";
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "Đơn vị";
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            // 
+            // imp_price
+            // 
+            this.imp_price.HeaderText = "Giá nhập";
+            this.imp_price.Name = "imp_price";
+            this.imp_price.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Giá bán";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // retail_unit
+            // 
+            this.retail_unit.HeaderText = "Đơn vị lẻ";
+            this.retail_unit.Name = "retail_unit";
+            this.retail_unit.ReadOnly = true;
+            // 
+            // retail_price
+            // 
+            this.retail_price.HeaderText = "Giá bán lẻ";
+            this.retail_price.Name = "retail_price";
+            this.retail_price.ReadOnly = true;
+            // 
+            // is_stopped
+            // 
+            this.is_stopped.HeaderText = "Ngừng bán";
+            this.is_stopped.Name = "is_stopped";
+            this.is_stopped.ReadOnly = true;
+            this.is_stopped.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.is_stopped.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // selectDelete
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = false;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
+            this.selectDelete.HeaderText = "Xóa";
+            this.selectDelete.MinimumWidth = 6;
+            this.selectDelete.Name = "selectDelete";
+            this.selectDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // panel2
             // 
@@ -418,85 +497,6 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "STT";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // stack
-            // 
-            this.stack.HeaderText = "Ngăn chứa";
-            this.stack.Name = "stack";
-            this.stack.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "Mã vạch";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // category
-            // 
-            this.category.HeaderText = "Ngành hàng";
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "Đơn vị";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // imp_price
-            // 
-            this.imp_price.HeaderText = "Giá nhập";
-            this.imp_price.Name = "imp_price";
-            this.imp_price.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Giá bán";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // retail_unit
-            // 
-            this.retail_unit.HeaderText = "Đơn vị lẻ";
-            this.retail_unit.Name = "retail_unit";
-            this.retail_unit.ReadOnly = true;
-            // 
-            // retail_price
-            // 
-            this.retail_price.HeaderText = "Giá bán lẻ";
-            this.retail_price.Name = "retail_price";
-            this.retail_price.ReadOnly = true;
-            // 
-            // is_stopped
-            // 
-            this.is_stopped.HeaderText = "Ngừng bán";
-            this.is_stopped.Name = "is_stopped";
-            this.is_stopped.ReadOnly = true;
-            this.is_stopped.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.is_stopped.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // selectDelete
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = false;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.selectDelete.DefaultCellStyle = dataGridViewCellStyle2;
-            this.selectDelete.HeaderText = "Xóa";
-            this.selectDelete.MinimumWidth = 6;
-            this.selectDelete.Name = "selectDelete";
-            this.selectDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // FormCateDrug
             // 
