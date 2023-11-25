@@ -9,7 +9,7 @@
         public int Number { get; set; }
         public double Amount { get => UnitPrice * Number; }
         public SaleDetail() { }
-        public SaleDetail(string barcode, string name, string unit, float unitPrice, int number)
+        public SaleDetail(string barcode, string name, string unit, double unitPrice, int number)
         {
             Barcode = barcode;
             Name = name;

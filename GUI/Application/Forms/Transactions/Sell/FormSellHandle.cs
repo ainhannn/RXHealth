@@ -9,26 +9,35 @@ namespace GUI
     {
         private void SellBtn_Click(object sender, EventArgs e)
         {
-            var invoice = new SaleInvoice()
+            if (ShowPhoneLabel.Text.Contains("SDT"))
             {
-                StaffId = LoginForm.Id,
-                CustomerId = Convert.ToInt16(FindCustomerTable.CurrentRow.Cells["Id"].Value)
-            };
-
-            for (var i = 0; i < table.Rows.Count; i++)
+				MessageBox.Show("Chưa chọn khách hàng");
+			}
+            else
             {
-                var barcode = table.Rows[i].Cells["Barcode1"].Value.ToString();
-                var name = table.Rows[i].Cells["Name1"].Value.ToString();
-                var unit = table.Rows[i].Cells["Unit1"].Value.ToString();
-                var unitPrice = (float)Convert.ToDecimal(table.Rows[i].Cells["SalePrice1"].Value.ToString());
-                var number = Convert.ToInt16(table.Rows[i].Cells["Number1"].Value.ToString());
+				var invoice = new SaleInvoice()
+				{
+					StaffId = LoginForm.Id,
+					CustomerId = Convert.ToInt16(FindCustomerTable.CurrentRow.Cells["Id"].Value),
+					Point = Convert.ToInt16(PointLabel.Text)
+				};
 
-                invoice.AddDetail(new SaleDetail(barcode, name, unit, unitPrice, number));
-            }
+				for (int i = 0; i < table.Rows.Count; i++)
+				{
+					string barcode = table.Rows[i].Cells["Barcode1"].Value.ToString();
+					string name = table.Rows[i].Cells["Name1"].Value.ToString();
+					string unit = table.Rows[i].Cells["Unit1"].Value.ToString();
+					double unitPrice = (double)Convert.ToDecimal(table.Rows[i].Cells["SalePrice1"].Value.ToString());
+					int number = Convert.ToInt16(table.Rows[i].Cells["Number1"].Value.ToString());
 
-			// code here: gọi bus để insert(invoice)
-			SaleBUS.InsertInvoice(invoice);
-			MessageBox.Show("Thành công");
+					invoice.AddDetail(new SaleDetail(barcode, name, unit, unitPrice, number));
+				}
+
+				// code here: gọi bus để insert(invoice)
+				SaleBUS.InsertInvoice(invoice);
+				MessageBox.Show("Thành công");
+			}
+            
 
 		}
 	}

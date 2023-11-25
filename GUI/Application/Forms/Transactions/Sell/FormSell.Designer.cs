@@ -77,6 +77,8 @@ namespace GUI
 			this.Unit2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SalePrice2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Number2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label10 = new System.Windows.Forms.Label();
+			this.PointLabel = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.CustomerClear)).BeginInit();
 			this.Find2Panel.SuspendLayout();
@@ -245,6 +247,8 @@ namespace GUI
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.panel1.Controls.Add(this.PointLabel);
+			this.panel1.Controls.Add(this.label10);
 			this.panel1.Controls.Add(this.label9);
 			this.panel1.Controls.Add(this.label8);
 			this.panel1.Controls.Add(this.label7);
@@ -587,6 +591,26 @@ namespace GUI
 			this.Number2.MinimumWidth = 6;
 			this.Number2.Name = "Number2";
 			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label10.Location = new System.Drawing.Point(30, 31);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(82, 29);
+			this.label10.TabIndex = 125;
+			this.label10.Text = "Điểm :";
+			// 
+			// PointLabel
+			// 
+			this.PointLabel.AutoSize = true;
+			this.PointLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.PointLabel.Location = new System.Drawing.Point(106, 31);
+			this.PointLabel.Name = "PointLabel";
+			this.PointLabel.Size = new System.Drawing.Size(92, 29);
+			this.PointLabel.TabIndex = 126;
+			this.PointLabel.Text = "label11";
+			// 
 			// FormSell
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -664,5 +688,7 @@ namespace GUI
 		private Label label8;
 		private Label label7;
 		private Label label1;
+		private Label PointLabel;
+		private Label label10;
 	}
 }

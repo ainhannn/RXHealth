@@ -207,7 +207,6 @@ namespace GUI
             }
             else if (string.IsNullOrWhiteSpace(text))
             {
-                //FindGoodsTable.RowCount = 1;
                 Find2Panel.Visible = true;
                 FindCustomerTable.Visible = true;
                 FindCustomerTable.Rows.Clear();
@@ -327,10 +326,6 @@ namespace GUI
                 }
 
                 ShowPhoneLabel.Text = rowValues.ToString();
-                //            int customerId = Convert.ToInt32(FindCustomerTable.CurrentRow.Cells["Id"].Value);
-                //MessageBox.Show("Tổng:" + customerId);
-                //List<SaleInvoice> t = SaleBUS.OnCustomer(customerId);
-                //            MessageBox.Show("Tổng:" + t);
                 
             }
 		}
@@ -430,48 +425,44 @@ namespace GUI
 
 		private void SaleCombobox_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			// Create an instance of your DAO class
-			//int count = SaleBUS.getCountByCustomer(FindCustomerTable.RowCount);
-			// Call the GetOnCustomer method to get a list of SaleInvoice objects
-			//List<SaleInvoice> saleInvoices = getdiem.OnCustomer(ShowPhoneLabel.);
-
-			// Iterate through the list of SaleInvoice objects and retrieve the Point value
-			//List<SaleInvoice> invoices = getdiem.OnCustomer(Convert.ToInt32(FindCustomerTable.CurrentRow.Cells["Id"].Value));
-			//foreach (SaleInvoice invoice in invoices)
-			//{
-			int customerId = Convert.ToInt32(FindCustomerTable.CurrentRow.Cells["Id"].Value);
-
 			// Gọi hàm GetPointOnCustomer để lấy giá trị Point
 			int pointValue = SaleBUS.GetPointOnCustomer2(ShowPhoneLabel.Text);
-			MessageBox.Show("Tổng:" + pointValue);
-			//SaleCombobox.Items.Clear();
-			if (SaleCombobox.SelectedIndex == 5)
+			PointLabel.Text = pointValue.ToString();
+			int pointValueNew = 0;
+			if (SaleCombobox.SelectedItem.ToString() == "5")
 				{
-                pointValue = pointValue - 10;
-				}
-				else if (SaleCombobox.SelectedIndex == 10)
-				{
-				pointValue = pointValue - 20;
+                pointValueNew = pointValue - 10;
 			}
-				else if (SaleCombobox.SelectedIndex == 15)
+				else if (SaleCombobox.SelectedItem.ToString() == "10")
 				{
-				pointValue = pointValue - 30;
+				pointValueNew = pointValue - 20;
 			}
-				else if (SaleCombobox.SelectedIndex == 20)
+				else if (SaleCombobox.SelectedItem.ToString() == "15")
 				{
-				pointValue = pointValue - 40;
+				pointValueNew = pointValue - 30;
 			}
-				else if (SaleCombobox.SelectedIndex == 30)
+				else if (SaleCombobox.SelectedItem.ToString() == "20")
 				{
-				pointValue = pointValue - 50;
+				pointValueNew = pointValue - 40;
 			}
-                else if(SaleCombobox.SelectedIndex == 0)
+				else if (SaleCombobox.SelectedItem.ToString() == "30")
+				{
+				pointValueNew = pointValue - 50;
+			}
+                else if(SaleCombobox.SelectedItem.ToString() == "0")
                 {
-				pointValue = pointValue;
+				pointValueNew = pointValue;
 			}
-			//}
-            double take = Convert.ToInt32(TotalLabel.Text);
-            double pay = 0;
+			PointLabel.Text = pointValueNew.ToString();
+			double take;
+            if (TotalLabel.Text.Contains("Giá"))
+            {
+                take = 0;
+            }
+            else
+            {
+                take = Convert.ToInt32(TotalLabel.Text);
+				double pay = 0;
 				if (SaleCombobox.SelectedIndex == 0)
 				{
 					pay = take * 1;
@@ -481,6 +472,9 @@ namespace GUI
 					pay = take - ((take * Convert.ToInt32(SaleCombobox.SelectedIndex)) / 100);
 				}
 				PayLabel.Text = pay.ToString();
+			}
+            
+
 		}
 
 		private void SaleCombobox_Click(object sender, EventArgs e)
