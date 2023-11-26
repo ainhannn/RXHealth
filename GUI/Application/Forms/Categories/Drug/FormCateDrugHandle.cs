@@ -3,6 +3,7 @@ using BLL;
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using GUI.Application.Forms.Transactions.Sell.AddCustomer;
 
 namespace GUI
 {
@@ -104,8 +105,7 @@ namespace GUI
 
         private void RecycleBin_Click(object sender, System.EventArgs e)
         {
-            new FormPRecycleBin().ShowDialog();
-            ReloadTable();
+            new FormAddCustomer().ShowDialog();
         }
 
         private void refresh_Click(object sender, System.EventArgs e)

@@ -710,3 +710,4 @@ C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\GLB.dl
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\BouncyCastle.Cryptography.xml
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.Application.Forms.Transactions.Sell.FormSell.resources
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.Application.Forms.Transactions.Sell.AddCustomer.FormAddCustomer.resources
