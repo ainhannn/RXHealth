@@ -44,7 +44,7 @@
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.refresh = new System.Windows.Forms.Button();
+            this.print = new System.Windows.Forms.Button();
             this.RecycleBin = new System.Windows.Forms.Button();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -185,7 +185,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.refresh);
+            this.panel2.Controls.Add(this.print);
             this.panel2.Controls.Add(this.RecycleBin);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 444);
@@ -193,25 +193,25 @@
             this.panel2.Size = new System.Drawing.Size(1600, 50);
             this.panel2.TabIndex = 125;
             // 
-            // refresh
+            // print
             // 
-            this.refresh.BackColor = System.Drawing.Color.Transparent;
-            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refresh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.refresh.FlatAppearance.BorderSize = 0;
-            this.refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refresh.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.refresh.ForeColor = System.Drawing.Color.White;
-            this.refresh.Image = global::GUI.Properties.Resources.printing;
-            this.refresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.refresh.Location = new System.Drawing.Point(1498, 0);
-            this.refresh.Margin = new System.Windows.Forms.Padding(5);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(50, 48);
-            this.refresh.TabIndex = 111;
-            this.refresh.Tag = "";
-            this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.refresh.UseVisualStyleBackColor = false;
+            this.print.BackColor = System.Drawing.Color.Transparent;
+            this.print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.print.Dock = System.Windows.Forms.DockStyle.Right;
+            this.print.FlatAppearance.BorderSize = 0;
+            this.print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.print.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.print.ForeColor = System.Drawing.Color.White;
+            this.print.Image = global::GUI.Properties.Resources.printing;
+            this.print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.print.Location = new System.Drawing.Point(1498, 0);
+            this.print.Margin = new System.Windows.Forms.Padding(5);
+            this.print.Name = "print";
+            this.print.Size = new System.Drawing.Size(50, 48);
+            this.print.TabIndex = 111;
+            this.print.Tag = "";
+            this.print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.print.UseVisualStyleBackColor = false;
             // 
             // RecycleBin
             // 
@@ -338,7 +338,7 @@
         private System.Windows.Forms.TextBox inpSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.Button print;
         private System.Windows.Forms.Button RecycleBin;
         private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;

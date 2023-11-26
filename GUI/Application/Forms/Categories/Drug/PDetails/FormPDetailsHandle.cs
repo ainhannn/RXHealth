@@ -12,6 +12,7 @@ namespace GUI
     public partial class FormPDetails : Form
     {
         private CateProduct pd = new CateProduct();
+        private string currentPath = "";
 
         private void Changable(bool input)
         {
@@ -89,7 +90,7 @@ namespace GUI
             if (!string.IsNullOrEmpty(path) && File.Exists(path))
             {
                 image.Image = new Bitmap(path);
-                // code here viết lưu path
+                currentPath = path;
             }
         }
 
@@ -151,7 +152,7 @@ namespace GUI
             pd.Saleprice = sPrc != -1 ? sPrc : pd.Saleprice;
             pd.RetailSaleprice = rPrc != -1 ? rPrc : pd.RetailSaleprice;
             pd.ExtraInformation = description.Text;
-            //pd.Image = ??;
+            pd.Image = !string.IsNullOrEmpty(currentPath) ? currentPath : pd.Image;
             pd.IsOnSale = !is_stopped.Checked;
 
             if (inpCode.ReadOnly)
