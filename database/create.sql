@@ -96,7 +96,13 @@ CREATE TABLE product_batch (
 CREATE TABLE trash_tmp (
     product_id INT PRIMARY KEY,
     CONSTRAINT fk_trash_product FOREIGN KEY (product_id) REFERENCES product(id)
-);								
+);
+
+CREATE TABLE capacity_tmp (
+    product_id INT PRIMARY KEY,
+	capacity INT DEFAULT 0,
+    CONSTRAINT fk_capacity_product FOREIGN KEY (product_id) REFERENCES product(id)
+);
 
 CREATE TABLE import_invoice (
     id INT AUTO_INCREMENT PRIMARY KEY,
