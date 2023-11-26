@@ -322,4 +322,5 @@ BEGIN
 	END WHILE;
 	
 	UPDATE product SET retail_number = retail_number+(number*capacity);
+	UPDATE capacity_tmp SET capacity_tmp.capacity = capacity;
 END//
