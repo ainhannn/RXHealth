@@ -226,7 +226,7 @@
     <Compile Include="AccountBLL.cs" />
     <Compile Include="SaleProductBUS.cs" />
     <Compile Include="StoProductBUS.cs" />
-    <Compile Include="Check.cs" />
+    <Compile Include="Retreat.cs" />
     <Compile Include="CateProductBUS.cs" />
     <Compile Include="ImportBUS.cs" />
     <Compile Include="SaleBUS.cs" />

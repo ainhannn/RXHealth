@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using DTO;
+using Org.BouncyCastle.Utilities.Collections;
 
 namespace DAL
 {
@@ -100,19 +102,23 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@staff_id", e.StaffId);
                     cmd.Parameters.AddWithValue("@supplier_id", e.SupplierId);
                     cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
 
                     cmd.CommandText =
                         "SELECT auto_increment FROM information_schema.tables " +
                         "WHERE table_name='import_invoice'";
-                    int id = (int)cmd.ExecuteScalar()-1;
+                    int id = Convert.ToInt16(cmd.ExecuteScalar().ToString()) - 1;
 
                     foreach (var i in e.Details)
                     {
-                        cmd.CommandText = 
+                        int pid = ProductDAO.GetProductId(i.Barcode);
+                        if (pid < 0) continue;
+
+                        cmd.CommandText =
                             "INSERT INTO import_detail " +
-                            "VALUES (@import_invoice_id,@product_id,@barcode,@name,@mgf_date,@exp_date,@unit,@number,@import_price)";
+                            "VALUES (@import_invoice_id,@product_id,@barcode,@name,@mfg_date,@exp_date,@unit,@number,@import_price)";
                         cmd.Parameters.AddWithValue("@import_invoice_id", id);
-                        cmd.Parameters.AddWithValue("@product_id", ProductDAO.GetProductId(i.Barcode));
+                        cmd.Parameters.AddWithValue("@product_id", pid);
                         cmd.Parameters.AddWithValue("@barcode", i.Barcode);
                         cmd.Parameters.AddWithValue("@name", i.Name);
                         cmd.Parameters.AddWithValue("@mfg_date", i.MFGDate.ToString("yyyy-MM-dd"));
@@ -121,6 +127,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@number", i.Number);
                         cmd.Parameters.AddWithValue("@import_price", i.ImportPrice);
                         cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
                     }
 
                     trans.Commit();

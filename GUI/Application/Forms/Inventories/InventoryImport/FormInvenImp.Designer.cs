@@ -28,22 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInvenImp));
             this.table = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.inpTotal = new System.Windows.Forms.Label();
-            this.inpDate = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.inpProvi = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.upload = new System.Windows.Forms.Button();
-            this.save = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.inpStaff = new System.Windows.Forms.TextBox();
-            this.inpImpCode = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +40,20 @@
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.download = new System.Windows.Forms.Button();
+            this.inpTotal = new System.Windows.Forms.Label();
+            this.inpDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.upload = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.inpStaff = new System.Windows.Forms.TextBox();
+            this.inpImpCode = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.inpProvi = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,14 +64,14 @@
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -83,24 +84,72 @@
             this.price,
             this.amount});
             this.table.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.table.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.table.Location = new System.Drawing.Point(401, 0);
             this.table.Margin = new System.Windows.Forms.Padding(0);
             this.table.Name = "table";
-            this.table.ReadOnly = true;
             this.table.RowHeadersVisible = false;
             this.table.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.table.Size = new System.Drawing.Size(1199, 894);
             this.table.TabIndex = 4;
             this.table.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellValueChanged);
+            this.table.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.table_RowsAdded);
+            this.table.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.table_RowsRemoved);
+            // 
+            // id
+            // 
+            this.id.HeaderText = "STT";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.HeaderText = "Mã vạch";
+            this.code.Name = "code";
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Tên";
+            this.name.Name = "name";
+            // 
+            // mfg_date
+            // 
+            this.mfg_date.HeaderText = "NSX";
+            this.mfg_date.Name = "mfg_date";
+            // 
+            // exp_date
+            // 
+            this.exp_date.HeaderText = "HSD";
+            this.exp_date.Name = "exp_date";
+            // 
+            // unit
+            // 
+            this.unit.HeaderText = "Đơn vị";
+            this.unit.Name = "unit";
+            // 
+            // number
+            // 
+            this.number.HeaderText = "Số lượng";
+            this.number.Name = "number";
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Giá";
+            this.price.Name = "price";
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Thành tiền";
+            this.amount.Name = "amount";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.download);
             this.panel1.Controls.Add(this.inpTotal);
             this.panel1.Controls.Add(this.inpDate);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.inpProvi);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.upload);
             this.panel1.Controls.Add(this.save);
@@ -109,11 +158,34 @@
             this.panel1.Controls.Add(this.inpImpCode);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.inpProvi);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(401, 894);
             this.panel1.TabIndex = 3;
+            // 
+            // download
+            // 
+            this.download.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.download.AutoSize = true;
+            this.download.BackColor = System.Drawing.Color.RoyalBlue;
+            this.download.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.download.FlatAppearance.BorderSize = 0;
+            this.download.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.download.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.download.ForeColor = System.Drawing.Color.White;
+            this.download.Image = ((System.Drawing.Image)(resources.GetObject("download.Image")));
+            this.download.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.download.Location = new System.Drawing.Point(298, 50);
+            this.download.Margin = new System.Windows.Forms.Padding(5);
+            this.download.Name = "download";
+            this.download.Size = new System.Drawing.Size(50, 50);
+            this.download.TabIndex = 121;
+            this.download.Tag = "";
+            this.download.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.download.UseVisualStyleBackColor = false;
+            this.download.Click += new System.EventHandler(this.download_Click);
             // 
             // inpTotal
             // 
@@ -151,19 +223,6 @@
             this.label2.TabIndex = 114;
             this.label2.Text = "Nhân viên";
             // 
-            // inpProvi
-            // 
-            this.inpProvi.AcceptsReturn = true;
-            this.inpProvi.AcceptsTab = true;
-            this.inpProvi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpProvi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpProvi.Location = new System.Drawing.Point(174, 451);
-            this.inpProvi.MaximumSize = new System.Drawing.Size(500, 30);
-            this.inpProvi.MinimumSize = new System.Drawing.Size(100, 30);
-            this.inpProvi.Name = "inpProvi";
-            this.inpProvi.Size = new System.Drawing.Size(200, 30);
-            this.inpProvi.TabIndex = 107;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -188,7 +247,7 @@
             this.upload.Image = ((System.Drawing.Image)(resources.GetObject("upload.Image")));
             this.upload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.upload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.upload.Location = new System.Drawing.Point(79, 50);
+            this.upload.Location = new System.Drawing.Point(48, 50);
             this.upload.Margin = new System.Windows.Forms.Padding(5);
             this.upload.Name = "upload";
             this.upload.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -287,59 +346,15 @@
             this.label5.TabIndex = 102;
             this.label5.Text = "Mã đơn nhập";
             // 
-            // id
+            // inpProvi
             // 
-            this.id.HeaderText = "STT";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.HeaderText = "Mã vạch";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Tên";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // mfg_date
-            // 
-            this.mfg_date.HeaderText = "NSX";
-            this.mfg_date.Name = "mfg_date";
-            this.mfg_date.ReadOnly = true;
-            // 
-            // exp_date
-            // 
-            this.exp_date.HeaderText = "HSD";
-            this.exp_date.Name = "exp_date";
-            this.exp_date.ReadOnly = true;
-            // 
-            // unit
-            // 
-            this.unit.HeaderText = "Đơn vị";
-            this.unit.Name = "unit";
-            this.unit.ReadOnly = true;
-            // 
-            // number
-            // 
-            this.number.HeaderText = "Số lượng";
-            this.number.Name = "number";
-            this.number.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Giá";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Thành tiền";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
+            this.inpProvi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.inpProvi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.inpProvi.FormattingEnabled = true;
+            this.inpProvi.Location = new System.Drawing.Point(174, 451);
+            this.inpProvi.Name = "inpProvi";
+            this.inpProvi.Size = new System.Drawing.Size(200, 33);
+            this.inpProvi.TabIndex = 122;
             // 
             // FormInvenImp
             // 
@@ -372,12 +387,12 @@
         private System.Windows.Forms.TextBox inpImpCode;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox inpProvi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button upload;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker inpDate;
         private System.Windows.Forms.Label inpTotal;
+        private System.Windows.Forms.Button download;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -387,5 +402,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.ComboBox inpProvi;
     }
 }

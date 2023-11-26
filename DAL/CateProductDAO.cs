@@ -22,9 +22,7 @@ namespace DAL
         {
             string sql = string.Format("SELECT id FROM {0} WHERE barcode = '{1}' LIMIT 1", dbTableName, barcode);
             var rs = ExecuteScalar(sql);
-            if (int.TryParse(rs.ToString(), out int id))
-                return id;
-            return -1;
+            return rs != null ? Convert.ToInt16(rs) : -1;
         }
 
         private static CateProduct ConvertToCateProduct(List<object> row)

@@ -98,6 +98,7 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@customer_id", e.CustomerId);
                     cmd.Parameters.AddWithValue("@point", e.Point);
                     cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
 
                     cmd.CommandText =
                         "SELECT auto_increment FROM information_schema.tables " +
@@ -116,6 +117,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@unit_price", i.UnitPrice);
                         cmd.Parameters.AddWithValue("@number", i.Number);
                         cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
                     }
 
                     trans.Commit();

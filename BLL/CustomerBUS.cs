@@ -16,7 +16,7 @@ namespace BLL
             => CustomerDAO.Select(cusId);
 
         public static int GetId(string contactNumber)
-            => Check.IsPhoneNumber(contactNumber) ? CustomerDAO.GetId(contactNumber) : 1;
+            => Retreat.IsPhoneNumber(contactNumber) ? CustomerDAO.GetId(contactNumber) : 1;
 
         public static bool ReducePoint(int cusId, int point)
             => CustomerDAO.ReducePoint(cusId, point);

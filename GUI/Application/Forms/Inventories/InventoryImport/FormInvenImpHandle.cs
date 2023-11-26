@@ -2,7 +2,9 @@
 using DAL;
 using DTO;
 using Google.Protobuf;
+using iText.IO.Codec;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Windows.Forms;
@@ -16,81 +18,130 @@ namespace GUI
             double rs = 0;
             for (int i = 0; i < table.Rows.Count; i++)
             {
-                double.TryParse(table.Rows[i].Cells["amount"].Value.ToString(), out double prc);
-                rs += prc;
+                try { rs += Convert.ToDouble(table.Rows[i].Cells["amount"].Value); }
+                catch { }
             }
             inpTotal.Text = rs.ToString();
+        }
+
+        private void RefreshAmount(int i)
+        {
+            try
+            {
+                table.Rows[i].Cells["amount"].Value =
+                    Convert.ToInt16(table.Rows[i].Cells["number"].Value) *
+                    Convert.ToDouble(table.Rows[i].Cells["price"].Value);
+            }
+            catch { table.Rows[i].Cells["amount"].Value = "######"; }
+
+            RefreshTotal();
         }
 
         private void ReloadForm()
         {
             inpDate.ResetText();
             inpProvi.ResetText();
-            table.Rows.Clear();
         }
+
 
         private void FormInvenImp_Load(object sender, EventArgs e)
         {
             inpStaff.Text = StaffBLL.getNickName(LoginForm.Id);
+            inpProvi.Items.Clear();
+            foreach (var sup in SupplierBUS.SelectAll())
+                inpProvi.Items.Add(sup.Name);
         }
 
+
+        // Table handle
         private void table_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 5) { return; }
-            
-            int.TryParse(table.Rows[e.RowIndex].Cells["number"].Value.ToString(), out int num);
-            double.TryParse(table.Rows[e.RowIndex].Cells["price"].Value.ToString(), out double prc);
-            var amt = num * prc;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 6)
+                RefreshAmount(e.RowIndex);
+        }
 
-            table.Rows[e.RowIndex].Cells["amount"].Value = amt.ToString();
+        private void table_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            // Cap nhat stt
+            table.Rows[e.RowIndex-1].Cells["id"].Value = table.Rows.Count-1;
+            
+            if (table.Rows[e.RowIndex].Cells["number"].Value != null && table.Rows[e.RowIndex].Cells["price"].Value != null)
+                RefreshAmount(e.RowIndex);
+        }
+
+        private void table_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
             RefreshTotal();
+
+            for (int i = 0; i < table.Rows.Count - 1;)
+                table.Rows[i].Cells["id"].Value = --i;
+        }
+
+
+        // Button handle
+        private void download_Click(object sender, EventArgs e)
+        {
+            // code here
         }
 
         private void upload_Click(object sender, EventArgs e)
         {
             // code here
+
         }
 
         private void save_Click(object sender, EventArgs e)
         {
-            if (table.Rows.Count == 0) {  return; }
+            if (inpProvi.SelectedIndex < 0) 
+            {
+                MessageBox.Show("Chưa chọn nhà cung cấp!");
+                return; 
+            }
+
+            if (table.Rows.Count == 0)
+            {
+                MessageBox.Show("Danh sách sản phẩm trống!");
+                return;
+            }
 
             var invoice = new ImportInvoice()
             {
                 StaffId = LoginForm.Id,
-                SupplierId = 0
+                SupplierId = SupplierBUS.GetId(inpProvi.Text)
             };
 
             for (int i = 0; i < table.Rows.Count; i++)
             {
                 try
                 {
-                    if
-                    (
-                        !int.TryParse(table.Rows[i].Cells["number"].Value.ToString(), out int num) ||
-                        !double.TryParse(table.Rows[i].Cells["price"].Value.ToString(), out double prc) ||
-                        !DateTime.TryParse(table.Rows[i].Cells["mfg_date"].Value.ToString(), out var mfg) ||
-                        !DateTime.TryParse(table.Rows[i].Cells["exp_date"].Value.ToString(), out var exp)
-                    )
-                        continue; // ignore which row has wrong format
+                    if (table.Rows[i].Cells["code"].Value == null ||
+                        table.Rows[i].Cells["name"].Value == null ||
+                        table.Rows[i].Cells["unit"].Value == null ||
+                        table.Rows[i].Cells["number"].Value == null ||
+                        table.Rows[i].Cells["price"].Value == null)
+                        continue;
+                    
 
                     invoice.AddDetail(new ImportDetail
                     {
                         Barcode = table.Rows[i].Cells["code"].Value.ToString(),
                         Name = table.Rows[i].Cells["name"].Value.ToString(),
                         Unit = table.Rows[i].Cells["unit"].Value.ToString(),
-                        Number = num,
-                        ImportPrice = prc,
-                        MFGDate = mfg,
-                        EXPDate = exp
+                        Number = Convert.ToInt16(table.Rows[i].Cells["number"].Value),
+                        ImportPrice = Convert.ToDouble(table.Rows[i].Cells["price"].Value),
+                        MFGDate = Retreat.DateTime(table.Rows[i].Cells["mfg_date"].Value),
+                        EXPDate = Retreat.DateTime(table.Rows[i].Cells["exp_date"].Value)
                     });
                 } catch { continue; }
             }
 
-            if (ImportBUS.Insert(invoice))
+            var rs = ImportBUS.Insert(invoice);
+            if (rs != null)
             {
                 int i = 0;
-                foreach (var item in invoice.Details)
+                foreach (var item in rs.Details)
                 {
                     while (!item.Barcode.Contains(table.Rows[i].Cells["code"].Value.ToString()))
                         i++;

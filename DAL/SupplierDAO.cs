@@ -54,6 +54,13 @@ namespace DAL
             return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }
 
+        public static int GetId(string name)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE name = '{1}'", dbTableName, name);
+            var rs = ExecuteScalar(sql);
+            return rs != null ? int.TryParse(rs.ToString(), out int c) ? c : 0 : 0;
+        }
+
         public static List<Supplier> SearchOnName(string name)
         {
             string sql = string.Format(

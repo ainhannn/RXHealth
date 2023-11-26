@@ -15,6 +15,9 @@ namespace BLL
         public static Supplier Select(int id)
             => SupplierDAO.Select(id);
 
+        public static int GetId(string name)
+            => SupplierDAO.GetId(name);
+
         public static List<Supplier> SearchOnName(string name)
             => SupplierDAO.SearchOnName(name);
 
