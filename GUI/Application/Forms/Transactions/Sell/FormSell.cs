@@ -13,7 +13,6 @@ namespace GUI
             SetStyle(ControlStyles.ResizeRedraw, true);
             InitializeSearchBox();
             InitializeCustomerBox();
-            InitializeNoteBox();
         }
 
         private void InitializeSearchBox()
@@ -46,21 +45,6 @@ namespace GUI
             }
         }
         
-        private void InitializeNoteBox()
-        {
-            TextBoxNote.Text = defaultNote;
-            TextBoxNote.KeyDown += TextBoxNote_KeyDown;
-        }
-        private void TextBoxNote_KeyDown(object sender, KeyEventArgs e)
-        {
-            // Kiểm tra xem có phải phím Enter không (mã ASCII là 13)
-            if (e.KeyCode == Keys.Enter)
-            {
-                // Xử lý khi phím Enter được nhấn
-                TextBoxNote.Text = "";
-            }
-        }
-        
         private void GoodsClear_Click(object sender, EventArgs e)
         {
             TextBoxSearch.Text = "";
@@ -68,6 +52,11 @@ namespace GUI
         private void CustomerClear_Click(object sender, EventArgs e)
         {
             TextBoxCustomer.Text = "";
+        }
+
+        private void TextBoxNote_Click(object sender, EventArgs e)
+        {
+            if (TextBoxNote.Text == defaultNote) TextBoxNote.Text = "";
         }
     }
 }

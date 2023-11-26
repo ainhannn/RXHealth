@@ -64,11 +64,17 @@ namespace DAL
             return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
 
-        public static Customer Select(string contactNumber)
+        public static int GetId(string contactNumber)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE contact_number = '{1}' LIMIT 1", dbTableName, contactNumber);
-            var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+            string sql = string.Format("SELECT id FROM {0} WHERE contact_number = '{1}' LIMIT 1", dbTableName, contactNumber);
+            var rs = ExecuteScalar(sql);
+            return rs != null ? int.TryParse(rs.ToString(), out int c) ? c : 1 : 1;
+        }
+
+        public static bool ReducePoint(int cusId, int point)
+        {
+            string sql = string.Format("UPDATE {0} SET total_point = total_point - {2} WHERE id = {1}", dbTableName, cusId, point);
+            return ExecuteNonQuery(sql) != -1;
         }
 
         public static bool Insert(Customer e)

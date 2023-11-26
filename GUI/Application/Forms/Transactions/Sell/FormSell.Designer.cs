@@ -123,6 +123,8 @@ namespace GUI
             this.TextBoxNote.Name = "TextBoxNote";
             this.TextBoxNote.Size = new System.Drawing.Size(346, 30);
             this.TextBoxNote.TabIndex = 104;
+            this.TextBoxNote.Text = "Ghi chú đơn hàng";
+            this.TextBoxNote.Click += new System.EventHandler(this.TextBoxNote_Click);
             // 
             // SellBtn
             // 
@@ -368,8 +370,9 @@ namespace GUI
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             this.Id.Visible = false;
-            this.Id.Width = 125;
+            this.Id.Width = 6;
             // 
             // phone
             // 
@@ -377,18 +380,22 @@ namespace GUI
             this.phone.HeaderText = "Số điện thoại";
             this.phone.MinimumWidth = 6;
             this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
             // 
             // customer
             // 
             this.customer.HeaderText = "Tên khách hàng";
             this.customer.Name = "customer";
-            this.customer.Visible = false;
+            this.customer.ReadOnly = true;
+            this.customer.Width = 150;
             // 
             // point
             // 
             this.point.HeaderText = "Điểm";
             this.point.Name = "point";
+            this.point.ReadOnly = true;
             this.point.Visible = false;
+            this.point.Width = 5;
             // 
             // SaleCombobox
             // 
@@ -416,7 +423,7 @@ namespace GUI
             this.NewCustomerBtn.Name = "NewCustomerBtn";
             this.NewCustomerBtn.Size = new System.Drawing.Size(130, 48);
             this.NewCustomerBtn.TabIndex = 117;
-            this.NewCustomerBtn.Text = "Thêm mới";
+            this.NewCustomerBtn.Text = "Thêm KH";
             this.NewCustomerBtn.UseVisualStyleBackColor = true;
             this.NewCustomerBtn.Click += new System.EventHandler(this.NewCustomer_Click);
             // 
@@ -518,18 +525,21 @@ namespace GUI
             // 
             // Index
             // 
+            this.Index.FillWeight = 25F;
             this.Index.HeaderText = "STT";
             this.Index.Name = "Index";
             this.Index.ReadOnly = true;
             // 
             // Barcode
             // 
+            this.Barcode.FillWeight = 80F;
             this.Barcode.HeaderText = "Mã vạch";
             this.Barcode.MinimumWidth = 6;
             this.Barcode.Name = "Barcode";
             // 
             // PName
             // 
+            this.PName.FillWeight = 125F;
             this.PName.HeaderText = "Tên sản phẩm";
             this.PName.MinimumWidth = 6;
             this.PName.Name = "PName";
@@ -542,31 +552,36 @@ namespace GUI
             // 
             // Unit
             // 
+            this.Unit.FillWeight = 50F;
             this.Unit.HeaderText = "Đơn vị";
             this.Unit.MinimumWidth = 6;
             this.Unit.Name = "Unit";
             // 
             // SalePrice
             // 
+            this.SalePrice.FillWeight = 80F;
             this.SalePrice.HeaderText = "Giá bán";
             this.SalePrice.MinimumWidth = 6;
             this.SalePrice.Name = "SalePrice";
             // 
             // Dec
             // 
-            this.Dec.HeaderText = "Trừ";
+            this.Dec.FillWeight = 15F;
+            this.Dec.HeaderText = "";
             this.Dec.MinimumWidth = 6;
             this.Dec.Name = "Dec";
             // 
             // Number
             // 
+            this.Number.FillWeight = 50F;
             this.Number.HeaderText = "Số lượng";
             this.Number.MinimumWidth = 6;
             this.Number.Name = "Number";
             // 
             // Inc
             // 
-            this.Inc.HeaderText = "Cộng";
+            this.Inc.FillWeight = 15F;
+            this.Inc.HeaderText = "";
             this.Inc.MinimumWidth = 6;
             this.Inc.Name = "Inc";
             // 
@@ -577,6 +592,7 @@ namespace GUI
             // 
             // Delete
             // 
+            this.Delete.FillWeight = 25F;
             this.Delete.HeaderText = "Xóa";
             this.Delete.MinimumWidth = 6;
             this.Delete.Name = "Delete";
@@ -615,36 +631,42 @@ namespace GUI
             // 
             // Barcode2
             // 
+            this.Barcode2.FillWeight = 80F;
             this.Barcode2.HeaderText = "ID";
             this.Barcode2.MinimumWidth = 6;
             this.Barcode2.Name = "Barcode2";
             // 
             // Name2
             // 
+            this.Name2.FillWeight = 170F;
             this.Name2.HeaderText = "Tên sản phẩm";
             this.Name2.MinimumWidth = 6;
             this.Name2.Name = "Name2";
             // 
             // Cate2
             // 
+            this.Cate2.FillWeight = 120F;
             this.Cate2.HeaderText = "Loại";
             this.Cate2.MinimumWidth = 6;
             this.Cate2.Name = "Cate2";
             // 
             // Unit2
             // 
+            this.Unit2.FillWeight = 80F;
             this.Unit2.HeaderText = "Đơn vị";
             this.Unit2.MinimumWidth = 6;
             this.Unit2.Name = "Unit2";
             // 
             // SalePrice2
             // 
+            this.SalePrice2.FillWeight = 80F;
             this.SalePrice2.HeaderText = "Giá bán";
             this.SalePrice2.MinimumWidth = 6;
             this.SalePrice2.Name = "SalePrice2";
             // 
             // Number2
             // 
+            this.Number2.FillWeight = 80F;
             this.Number2.HeaderText = "Số lượng";
             this.Number2.MinimumWidth = 6;
             this.Number2.Name = "Number2";
@@ -699,12 +721,6 @@ namespace GUI
         private DataGridView table;
         private Panel Find1Panel;
         private DataGridView FindGoodsTable;
-        private DataGridViewTextBoxColumn Barcode2;
-        private DataGridViewTextBoxColumn Name2;
-        private DataGridViewTextBoxColumn Cate2;
-        private DataGridViewTextBoxColumn Unit2;
-        private DataGridViewTextBoxColumn SalePrice2;
-        private DataGridViewTextBoxColumn Number2;
         private Panel Find2Panel;
         private DataGridView FindCustomerTable;
         private Button NewCustomerBtn;
@@ -716,6 +732,18 @@ namespace GUI
 		private Label label8;
 		private Label label7;
 		private Label label1;
+        private Label label10;
+        private Label txtPoint;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn phone;
+        private DataGridViewTextBoxColumn customer;
+        private DataGridViewTextBoxColumn point;
+        private DataGridViewTextBoxColumn Barcode2;
+        private DataGridViewTextBoxColumn Name2;
+        private DataGridViewTextBoxColumn Cate2;
+        private DataGridViewTextBoxColumn Unit2;
+        private DataGridViewTextBoxColumn SalePrice2;
+        private DataGridViewTextBoxColumn Number2;
         private DataGridViewTextBoxColumn Index;
         private DataGridViewTextBoxColumn Barcode;
         private DataGridViewTextBoxColumn PName;
@@ -727,11 +755,5 @@ namespace GUI
         private DataGridViewButtonColumn Inc;
         private DataGridViewTextBoxColumn Amount;
         private DataGridViewButtonColumn Delete;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn phone;
-        private DataGridViewTextBoxColumn customer;
-        private DataGridViewTextBoxColumn point;
-        private Label label10;
-        private Label txtPoint;
     }
 }

@@ -15,6 +15,9 @@ namespace GUI
         private void Reload()
         {
             table.Rows.Clear();
+            TextBoxSearch.Text = defaultSearch;
+            TextBoxCustomer.Text = defaultCustomer;
+            TextBoxNote.Text = defaultNote;
             txtCus.Text = "Guest";
             txtPoint.Text = "0";
             TotalLabel.Text = "0";
@@ -32,87 +35,6 @@ namespace GUI
             FindCustomerTable.Visible = false;
 
             Reload();
-        }
-
-
-        // Tìm khách hàng
-        private void NewCustomer_Click(object sender, EventArgs e)
-        {
-            // code here
-        }
-
-        private void TextBoxCustomer_Click(object sender, EventArgs e)
-        {
-            if (TextBoxCustomer.Text == defaultCustomer) 
-                TextBoxCustomer.Text = "";
-            Find2Panel.Visible = true;
-            FindCustomerTable.Visible = true;
-        }
-
-        private void TextBoxCustomer_TextChanged(object sender, EventArgs e)
-        {
-            FindCustomerTable.Rows.Clear();
-            if (TextBoxCustomer.Text == defaultCustomer) return;
-
-            foreach (var item in CustomerBUS.SearchOnContactNumber(TextBoxCustomer.Text))
-            {
-                FindCustomerTable.Rows.Add(item.Id,item.ContactNumber,item.Name,item.TotalPoint);
-            }
-        }
-
-        private void TextBoxCustomer_Leave(object sender, EventArgs e)
-        {
-            if (!FindCustomerTable.Focused)
-            {
-                Find2Panel.Visible = false;
-                FindCustomerTable.Visible = false; 
-                if (string.IsNullOrEmpty(TextBoxCustomer.Text))
-                    TextBoxCustomer.Text = defaultCustomer;
-            }
-        }
-        
-        private void FindCustomerTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 ||
-                FindCustomerTable.Rows[e.RowIndex] == null ||
-                FindCustomerTable.Rows[e.RowIndex].Cells["Id"].Value == null)
-                return;
-
-            if (FindCustomerTable.Rows[e.RowIndex].Cells["Id"].Value.ToString() == "1")
-            {
-                // Khách vãng lai
-                txtCus.Text = "Guest";
-                txtPoint.Text = "0";
-            }
-            else
-            {
-                // Lấy thông tin khách hàng
-                txtCus.Text =
-                    FindCustomerTable.Rows[e.RowIndex].Cells["phone"].Value.ToString() + " - " +
-                    FindCustomerTable.Rows[e.RowIndex].Cells["customer"].Value.ToString();
-                txtPoint.Text = FindCustomerTable.Rows[e.RowIndex].Cells["point"].Value.ToString();
-
-                // Lấy giá trị discount
-                int.TryParse(FindCustomerTable.Rows[e.RowIndex].Cells["Point"].Value.ToString(), out int pointValue);
-                SaleCombobox.Items.Clear();
-                for (int i = 0; i <= pointValue / 2; i += 5)
-                    SaleCombobox.Items.Add(i);
-            }
-
-            // Tắt khung tìm kiếm
-            Find2Panel.Visible = false;
-            FindCustomerTable.Visible = false;
-        }
-
-        private void FindCustomerTable_Leave(object sender, EventArgs e)
-        {
-            if (!TextBoxCustomer.Focused)
-            {
-                Find2Panel.Visible = false;
-                FindCustomerTable.Visible = false;
-                if (string.IsNullOrEmpty(TextBoxCustomer.Text))
-                    TextBoxCustomer.Text = defaultCustomer;
-            }
         }
 
 
@@ -192,7 +114,8 @@ namespace GUI
                 "-",
                 1,
                 "+",
-                FindGoodsTable.Rows[e.RowIndex].Cells["Saleprice2"].Value);
+                FindGoodsTable.Rows[e.RowIndex].Cells["Saleprice2"].Value,
+                "x");
 
             // Tắt khung tìm kiếm
             Find1Panel.Visible = false;
@@ -279,16 +202,92 @@ namespace GUI
             PayLabel.Text = Convert.ToString(take * (1 - dis / 100));
         }
 
+
+        // Tìm khách hàng
+        private void TextBoxCustomer_Click(object sender, EventArgs e)
+        {
+            if (TextBoxCustomer.Text == defaultCustomer)
+                TextBoxCustomer.Text = "";
+            Find2Panel.Visible = true;
+            FindCustomerTable.Visible = true;
+        }
+
+        private void TextBoxCustomer_TextChanged(object sender, EventArgs e)
+        {
+            FindCustomerTable.Rows.Clear();
+            if (TextBoxCustomer.Text == defaultCustomer) return;
+
+            foreach (var item in CustomerBUS.SearchOnContactNumber(TextBoxCustomer.Text))
+            {
+                FindCustomerTable.Rows.Add(item.Id, item.ContactNumber, item.Name, item.TotalPoint);
+            }
+        }
+
+        private void TextBoxCustomer_Leave(object sender, EventArgs e)
+        {
+            if (!FindCustomerTable.Focused)
+            {
+                Find2Panel.Visible = false;
+                FindCustomerTable.Visible = false;
+                if (string.IsNullOrEmpty(TextBoxCustomer.Text))
+                    TextBoxCustomer.Text = defaultCustomer;
+            }
+        }
+
+        private void FindCustomerTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 ||
+                FindCustomerTable.Rows[e.RowIndex] == null ||
+                FindCustomerTable.Rows[e.RowIndex].Cells["Id"].Value == null)
+                return;
+
+            if (FindCustomerTable.Rows[e.RowIndex].Cells["Id"].Value.ToString() == "1")
+            {
+                // Khách vãng lai
+                txtCus.Text = "Guest";
+                txtPoint.Text = "0";
+            }
+            else
+            {
+                // Lấy thông tin khách hàng
+                txtCus.Text = FindCustomerTable.Rows[e.RowIndex].Cells["phone"].Value.ToString();
+                txtPoint.Text = FindCustomerTable.Rows[e.RowIndex].Cells["point"].Value.ToString();
+
+                // Lấy giá trị discount
+                int.TryParse(FindCustomerTable.Rows[e.RowIndex].Cells["Point"].Value.ToString(), out int pointValue);
+                SaleCombobox.Items.Clear();
+                for (int i = 0; i <= pointValue / 2; i += 5)
+                    SaleCombobox.Items.Add(i);
+            }
+
+            // Tắt khung tìm kiếm
+            Find2Panel.Visible = false;
+            FindCustomerTable.Visible = false;
+        }
+
+        private void FindCustomerTable_Leave(object sender, EventArgs e)
+        {
+            if (!TextBoxCustomer.Focused)
+            {
+                Find2Panel.Visible = false;
+                FindCustomerTable.Visible = false;
+                if (string.IsNullOrEmpty(TextBoxCustomer.Text))
+                    TextBoxCustomer.Text = defaultCustomer;
+            }
+        }
+
+        private void NewCustomer_Click(object sender, EventArgs e)
+        {
+            // code here
+        }
+
+
         // Chọn đổi điểm giảm giá
         private void SaleCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
             double.TryParse(TotalLabel.Text, out var take);
-            int dis = 0;
-
-            if (SaleCombobox.SelectedValue != null)
-                int.TryParse(SaleCombobox.SelectedValue.ToString(), out dis);
-
-            PayLabel.Text = Convert.ToString(take * (1 - dis/100));
+            int.TryParse(SaleCombobox.Text, out var dis);
+            PayLabel.Text = Convert.ToString(take * (1 - (dis*1.0/100)));
         }
 
         // Nhập số tiền thu
@@ -314,26 +313,19 @@ namespace GUI
                 MessageBox.Show("Không có sản phẩm được chọn!");
                 return;
             }
-
             if (string.IsNullOrEmpty(TextBoxReceive.Text))
             {
                 MessageBox.Show("Chưa nhập thông tin thanh toán!");
                 return;
             }
 
-            // Lấy cusomer id, default 1
-            var cusId = 1;
-            if (txtCus.Text != "Guest" && FindCustomerTable.CurrentCell != null)
-                if (int.TryParse(FindCustomerTable.Rows[FindCustomerTable.CurrentCell.RowIndex].Cells["Id"].Value.ToString(), out var i))
-                    cusId = i;
-
             // Tạo hóa đơn
             var invoice = new SaleInvoice()
             {
                 StaffId = LoginForm.Id,
-                CustomerId = cusId
+                CustomerId = txtCus.Text != "Guest" ? CustomerBUS.GetId(txtCus.Text) : 1,
+                Point = (int) Convert.ToDouble(TotalLabel.Text) / 10000
             };
-
             for (var i = 0; i < table.Rows.Count - 1; i++)
             {
                 var barcode = table.Rows[i].Cells["Barcode"].Value.ToString();
@@ -348,7 +340,12 @@ namespace GUI
             // Lưu xuống db
             if (SaleBUS.Insert(invoice))
             {
-                MessageBox.Show("Giao dịch hoàn tất!");
+                // Trừ điểm đã đổi discount
+                int.TryParse(SaleCombobox.Text, out var dis);
+                if (CustomerBUS.ReducePoint(invoice.CustomerId, 2 * dis))
+                    MessageBox.Show("Giao dịch hoàn tất!");
+                else
+                    MessageBox.Show("Tru diem ko dc");
                 Reload();
             }
             else
