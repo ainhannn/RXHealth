@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using System;
 using System.Collections.Generic;
 
 namespace BLL
@@ -9,8 +10,9 @@ namespace BLL
         public static List<SaleInvoice> SelectAll()
             => SaleDAO.SelectAllForm();
 
-        public static bool InsertInvoice(SaleInvoice e)
+        public static bool Insert(SaleInvoice e)
             => SaleDAO.Insert(e);
+        
         
 
 

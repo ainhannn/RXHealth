@@ -63,7 +63,7 @@ namespace DAL
                     Number = Convert.ToInt16(row[5])
                 });
 
-                if (string.IsNullOrEmpty(row[6].ToString()))
+                if (!string.IsNullOrEmpty(row[6].ToString()))
                 {
                     list.Add(new ProductOnSale()
                     {

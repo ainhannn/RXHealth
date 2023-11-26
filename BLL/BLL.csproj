@@ -224,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
+    <Compile Include="SaleProductBUS.cs" />
     <Compile Include="StoProductBUS.cs" />
     <Compile Include="Check.cs" />
     <Compile Include="CateProductBUS.cs" />

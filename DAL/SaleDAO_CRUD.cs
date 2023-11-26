@@ -102,7 +102,7 @@ namespace DAL
                     cmd.CommandText =
                         "SELECT auto_increment FROM information_schema.tables " +
                         "WHERE table_name='sale_invoice'";
-                    int id = (int)cmd.ExecuteScalar()-1;
+                    int id = Convert.ToInt16(cmd.ExecuteScalar().ToString())-1;
 
                     foreach (var i in e.Details)
                     {

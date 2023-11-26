@@ -8,7 +8,7 @@ namespace DTO
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
         public double TotalAmount { get; set; }
-        public int Point { get; set; }
+        public int Point { get; set; } = 0;
         public List<SaleDetail> Details { get; set; } = new List<SaleDetail>();
 
         public SaleInvoice() { }
