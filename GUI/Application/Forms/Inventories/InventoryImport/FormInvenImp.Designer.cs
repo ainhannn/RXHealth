@@ -86,6 +86,7 @@
             this.table.Location = new System.Drawing.Point(401, 0);
             this.table.Margin = new System.Windows.Forms.Padding(0);
             this.table.Name = "table";
+            this.table.ReadOnly = true;
             this.table.RowHeadersVisible = false;
             this.table.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.table.Size = new System.Drawing.Size(1199, 894);
@@ -296,36 +297,43 @@
             // 
             this.code.HeaderText = "Mã vạch";
             this.code.Name = "code";
+            this.code.ReadOnly = true;
             // 
             // name
             // 
             this.name.HeaderText = "Tên";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // mfg_date
             // 
             this.mfg_date.HeaderText = "NSX";
             this.mfg_date.Name = "mfg_date";
+            this.mfg_date.ReadOnly = true;
             // 
             // exp_date
             // 
             this.exp_date.HeaderText = "HSD";
             this.exp_date.Name = "exp_date";
+            this.exp_date.ReadOnly = true;
             // 
             // unit
             // 
             this.unit.HeaderText = "Đơn vị";
             this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
             // 
             // number
             // 
             this.number.HeaderText = "Số lượng";
             this.number.Name = "number";
+            this.number.ReadOnly = true;
             // 
             // price
             // 
             this.price.HeaderText = "Giá";
             this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // amount
             // 

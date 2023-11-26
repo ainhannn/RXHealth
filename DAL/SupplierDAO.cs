@@ -8,6 +8,16 @@ namespace DAL
     public class SupplierDAO : DBConnection
     {
         private static readonly string dbTableName = "supplier";
+        public static int Count
+        {
+            get
+            {
+                string sql = string.Format("SELECT COUNT(id) FROM {0}", dbTableName);
+                var rs = ExecuteScalar(sql);
+                return rs != null ? int.TryParse(rs.ToString(), out int c) ? c : 0 : 0;
+            }
+        }
+
 
         private static Supplier ConvertToDTO(List<object> row)
         {

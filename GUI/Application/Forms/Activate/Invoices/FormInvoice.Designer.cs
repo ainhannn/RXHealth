@@ -36,31 +36,31 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.title = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
-            this.table = new System.Windows.Forms.DataGridView();
+            this.tableImp = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.tableSale = new System.Windows.Forms.DataGridView();
             this.saleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleTotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableImp)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSale)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,40 +102,20 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.table);
+            this.panel2.Controls.Add(this.tableImp);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(30, 94);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(950, 302);
             this.panel2.TabIndex = 64;
             // 
-            // panel4
+            // tableImp
             // 
-            this.panel4.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel4.Controls.Add(this.label18);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(950, 37);
-            this.panel4.TabIndex = 45;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(388, 4);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(175, 29);
-            this.label18.TabIndex = 10;
-            this.label18.Text = "Hóa đơn nhập";
-            // 
-            // table
-            // 
-            this.table.AllowUserToAddRows = false;
-            this.table.AllowUserToDeleteRows = false;
-            this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.table.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableImp.AllowUserToAddRows = false;
+            this.tableImp.AllowUserToDeleteRows = false;
+            this.tableImp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableImp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.tableImp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,23 +123,24 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tableImp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tableImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableImp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.code,
             this.date,
             this.staff,
             this.supplier,
             this.totalPrice});
-            this.table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.table.Location = new System.Drawing.Point(0, 37);
-            this.table.Margin = new System.Windows.Forms.Padding(0);
-            this.table.Name = "table";
-            this.table.ReadOnly = true;
-            this.table.RowHeadersVisible = false;
-            this.table.Size = new System.Drawing.Size(950, 265);
-            this.table.TabIndex = 46;
+            this.tableImp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableImp.Location = new System.Drawing.Point(0, 37);
+            this.tableImp.Margin = new System.Windows.Forms.Padding(0);
+            this.tableImp.Name = "tableImp";
+            this.tableImp.ReadOnly = true;
+            this.tableImp.RowHeadersVisible = false;
+            this.tableImp.Size = new System.Drawing.Size(950, 265);
+            this.tableImp.TabIndex = 46;
+            this.tableImp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableImp_CellClick);
             // 
             // id
             // 
@@ -197,22 +178,42 @@
             this.totalPrice.Name = "totalPrice";
             this.totalPrice.ReadOnly = true;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel4.Controls.Add(this.label18);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(950, 37);
+            this.panel4.TabIndex = 45;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(388, 4);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(175, 29);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Hóa đơn nhập";
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.tableSale);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(30, 427);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(950, 302);
             this.panel1.TabIndex = 65;
             // 
-            // dataGridView1
+            // tableSale
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableSale.AllowUserToAddRows = false;
+            this.tableSale.AllowUserToDeleteRows = false;
+            this.tableSale.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableSale.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.tableSale.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,43 +221,24 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tableSale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableSale.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.saleId,
             this.saleCode,
             this.saleDate,
             this.saleStaff,
             this.customer,
             this.saleTotalPrice});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 37);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(950, 265);
-            this.dataGridView1.TabIndex = 46;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(950, 37);
-            this.panel3.TabIndex = 45;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 29);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Hóa đơn bán";
+            this.tableSale.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableSale.Location = new System.Drawing.Point(0, 37);
+            this.tableSale.Margin = new System.Windows.Forms.Padding(0);
+            this.tableSale.Name = "tableSale";
+            this.tableSale.ReadOnly = true;
+            this.tableSale.RowHeadersVisible = false;
+            this.tableSale.Size = new System.Drawing.Size(950, 265);
+            this.tableSale.TabIndex = 46;
+            this.tableSale.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableSale_CellClick);
             // 
             // saleId
             // 
@@ -294,6 +276,26 @@
             this.saleTotalPrice.Name = "saleTotalPrice";
             this.saleTotalPrice.ReadOnly = true;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(950, 37);
+            this.panel3.TabIndex = 45;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(395, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 29);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Hóa đơn bán";
+            // 
             // FormInvoice
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -310,14 +312,15 @@
             this.Name = "FormInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormStatistic";
+            this.Load += new System.EventHandler(this.FormInvoice_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormInvoice_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableImp)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSale)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -331,10 +334,10 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tableSale;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView table;
+        private System.Windows.Forms.DataGridView tableImp;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;

@@ -8,6 +8,19 @@ namespace DAL
 {
     public partial class SaleDAO : DBConnection
     {
+        public static Dictionary<string,int> SumByProduct(int proId)
+        {
+            string sql = String.Format(
+               "SELECT DISTINCT unit, SUM(number) FROM sale_detail " +
+               "WHERE product_id = {1} GROUP BY unit", dbViewName, proId);
+            
+            var rs = new Dictionary<string, int>();
+            foreach (var row in ExecuteReader(sql))
+                rs.Add(row[0].ToString(), int.Parse(row[1].ToString()));
+
+            return rs;
+        }
+
         public static int CountByCustomer(int cusId)
         {
             string sql = String.Format(

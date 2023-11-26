@@ -709,3 +709,4 @@ C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\DTO.dl
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\GLB.dll.config
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Workspace\RXHealth\GUI\obj\Debug\GUI.Application.Forms.Transactions.Sell.FormSell.resources

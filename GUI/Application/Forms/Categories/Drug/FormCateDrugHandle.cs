@@ -99,7 +99,6 @@ namespace GUI
             if (listIndex*list.Count != 0) // ca 2 != 0
                 new FormPDetails(list[listIndex-1]).ShowDialog();
 
-            list = ProductBUS.SelectAllCateProduct();
             ReloadTable();
         }
 

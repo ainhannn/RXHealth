@@ -50,9 +50,9 @@ namespace DAL
             return list;
         }
 
-        public static ImportInvoice SelectForm(int id)
+        public static ImportInvoice SelectForm(string code)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbViewName, id);
+            string sql = string.Format("SELECT * FROM {0} WHERE code = '{1}' LIMIT 1", dbViewName, code);
             var table = ExecuteReader(sql);
             return table.Count != 0 ? ConvertToDTO(table[0]) : null;
         }

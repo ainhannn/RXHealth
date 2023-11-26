@@ -6,6 +6,8 @@ namespace BLL
 {
     public partial class ProductBUS
     {
+        public static int Count { get => ProductDAO.Count; }
+
         public static int GetId(string barcode)
             => ProductDAO.GetProductId(barcode);
 
@@ -54,6 +56,5 @@ namespace BLL
 
         public static bool EmptyTrash()
             => ProductDAO.EmptyTrash();
-
     }
 }

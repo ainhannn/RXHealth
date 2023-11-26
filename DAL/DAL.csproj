@@ -262,13 +262,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CateProductDAO.cs" />
+    <Compile Include="SaleProductDAO.cs" />
     <Compile Include="SaleDAO_CRUD.cs" />
     <Compile Include="ImportDAO_CRUD.cs" />
     <Compile Include="ImportDAO_EXT.cs" />
     <Compile Include="ProductDAO_CRUD.cs" />
     <Compile Include="Request_resetDAO.cs" />
     <Compile Include="CustomerDAO.cs" />
-    <Compile Include="ProductDAO.cs" />
+    <Compile Include="StoProductDAO.cs" />
     <Compile Include="ProductBatchDAO.cs" />
     <Compile Include="SaleDAO_EXT.cs" />
     <Compile Include="StaffDAO.cs" />
@@ -277,7 +278,6 @@
     <Compile Include="SubstanceDAO.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="CategoryDAO.cs" />
-    <Compile Include="ActivityDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

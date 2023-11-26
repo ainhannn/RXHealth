@@ -224,15 +224,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
+    <Compile Include="StoProductBUS.cs" />
     <Compile Include="Check.cs" />
-    <Compile Include="CateProductBUS_CRUD.cs" />
-    <Compile Include="ProductBUS_EXT.cs" />
+    <Compile Include="CateProductBUS.cs" />
     <Compile Include="ImportBUS.cs" />
     <Compile Include="SaleBUS.cs" />
     <Compile Include="SupplierBUS.cs" />
     <Compile Include="CustomerBUS.cs" />
     <Compile Include="SubstanceBUS.cs" />
-    <Compile Include="ProductBUS.cs" />
+    <Compile Include="ProductBUS_EXT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaffBLL.cs" />
   </ItemGroup>

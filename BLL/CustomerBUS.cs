@@ -7,6 +7,8 @@ namespace BLL
 {
     public class CustomerBUS
     {
+        public static int Count { get => CustomerDAO.Count; } 
+
         public static List<Customer> SelectAll()
             => CustomerDAO.SelectAll();
 

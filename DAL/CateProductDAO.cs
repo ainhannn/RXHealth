@@ -6,6 +6,27 @@ namespace DAL
 {
     public partial class ProductDAO : DBConnection
     {
+        private static readonly string dbTableName = "product";
+        
+        public static int Count
+        {
+            get
+            {
+                string sql = string.Format("SELECT COUNT(id) FROM {0}", dbTableName);
+                var rs = ExecuteScalar(sql);
+                return rs != null ? int.TryParse(rs.ToString(), out int c) ? c : 0 : 0;
+            }
+        }
+
+        public static int GetProductId(string barcode)
+        {
+            string sql = string.Format("SELECT id FROM {0} WHERE barcode = '{1}' LIMIT 1", dbTableName, barcode);
+            var rs = ExecuteScalar(sql);
+            if (int.TryParse(rs.ToString(), out int id))
+                return id;
+            return -1;
+        }
+
         private static CateProduct ConvertToCateProduct(List<object> row)
         {
             try

@@ -6,15 +6,13 @@ namespace BLL
 {
     public partial class SaleBUS
     {
-        public List<SaleInvoice> getSelectAllForm()
-        {
-            return SaleDAO.SelectAllForm() != null ? SaleDAO.SelectAllForm() : null;
-        }
+        public static List<SaleInvoice> SelectAll()
+            => SaleDAO.SelectAllForm();
 
         public static bool InsertInvoice(SaleInvoice e)
-        {
-            return SaleDAO.Insert(e);
-        }
+            => SaleDAO.Insert(e);
+        
+
 
         public List<SaleInvoice> OnCustomer(int cusId)
         {

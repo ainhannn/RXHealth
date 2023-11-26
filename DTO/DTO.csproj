@@ -224,7 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="InvenProduct.cs" />
+    <Compile Include="StoProduct.cs" />
     <Compile Include="CateProduct.cs" />
     <Compile Include="ProductOnSale .cs" />
     <Compile Include="SaleDetail.cs" />
@@ -239,7 +239,6 @@
     <Compile Include="Country.cs" />
     <Compile Include="Substance.cs" />
     <Compile Include="Category.cs" />
-    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

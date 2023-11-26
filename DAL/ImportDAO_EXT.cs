@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using DTO;
-using MySql.Data.MySqlClient;
 
 namespace DAL
 {
     public  partial class ImportDAO : DBConnection
     {
+        public static int SumByProduct(int proId)
+        {
+            string sql = String.Format(
+                "SELECT SUM(number) FROM import_detail " +
+                "WHERE product_id = {1}", dbTableName, proId);
+            return Convert.ToInt16(ExecuteScalar(sql));
+        }
+
         public static int CountBySupplier(int supId)
         {
             string sql = String.Format(
@@ -15,7 +22,7 @@ namespace DAL
             return Convert.ToInt16(ExecuteScalar(sql));
         }
 
-        public static List<ImportInvoice> GetOnSupplier(int supId)
+        public static List<ImportInvoice> SelectOnSupplier(int supId)
         {
             string sql = string.Format(
                 "SELECT * FROM {0} " +
@@ -28,6 +35,6 @@ namespace DAL
             }
             return list;
         }
-
+    
     }
 }

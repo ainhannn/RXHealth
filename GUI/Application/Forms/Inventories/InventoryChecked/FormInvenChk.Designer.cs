@@ -84,6 +84,7 @@
             this.download.Tag = "";
             this.download.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.download.UseVisualStyleBackColor = false;
+            this.download.Click += new System.EventHandler(this.download_Click);
             // 
             // comboBoxFilter
             // 
@@ -91,17 +92,18 @@
             this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilter.FormattingEnabled = true;
             this.comboBoxFilter.Items.AddRange(new object[] {
+            "",
             "Thuốc kê đơn",
             "Thuốc không kê đơn",
             "Thực phẩm chức năng",
             "Chăm sóc cá nhân",
             "Dụng cụ y tế",
-            "Thiết bị y tế",
-            "Tất cả"});
+            "Thiết bị y tế"});
             this.comboBoxFilter.Location = new System.Drawing.Point(753, 24);
             this.comboBoxFilter.Name = "comboBoxFilter";
             this.comboBoxFilter.Size = new System.Drawing.Size(230, 33);
             this.comboBoxFilter.TabIndex = 118;
+            this.comboBoxFilter.SelectedValueChanged += new System.EventHandler(this.comboBoxFilter_SelectedValueChanged);
             // 
             // lblFilter
             // 
@@ -157,6 +159,7 @@
             this.inpSearch.Name = "inpSearch";
             this.inpSearch.Size = new System.Drawing.Size(237, 23);
             this.inpSearch.TabIndex = 21;
+            this.inpSearch.TextChanged += new System.EventHandler(this.inpSearch_TextChanged);
             this.inpSearch.Enter += new System.EventHandler(this.search_MouseHover);
             this.inpSearch.Leave += new System.EventHandler(this.pnlSearch_MouseLeave);
             this.inpSearch.MouseHover += new System.EventHandler(this.search_MouseHover);
@@ -261,6 +264,7 @@
             this.MinimizeBox = false;
             this.Name = "FormInvenChk";
             this.Text = "FormInvenChk";
+            this.Load += new System.EventHandler(this.FormInvenChk_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pnlSearch.ResumeLayout(false);

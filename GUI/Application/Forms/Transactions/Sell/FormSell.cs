@@ -162,20 +162,20 @@ namespace GUI
                 Find1Panel.Visible = true;
                 FindGoodsTable.Visible = true;
                 FindGoodsTable.Rows.Clear();
-                foreach (ProductOnSale cus in proBUS.getAllWSale())
-                {
-                    FindGoodsTable.Rows.Add(cus.Barcode, cus.Name, cus.Category, cus.Unit, cus.Saleprice, cus.Number);
-                }
+                //foreach (ProductOnSale cus in proBUS.getAllWSale())
+                //{
+                //    FindGoodsTable.Rows.Add(cus.Barcode, cus.Name, cus.Category, cus.Unit, cus.Saleprice, cus.Number);
+                //}
             }
             else
             {
                 Find1Panel.Visible = true;
                 FindGoodsTable.Visible = true;
                 FindGoodsTable.Rows.Clear();
-                foreach (ProductOnSale cus in proBUS.getAllWholelSale(text))
-                {
-                    FindGoodsTable.Rows.Add(cus.Barcode, cus.Name, cus.Category, cus.Unit, cus.Saleprice, cus.Number);
-                }
+                //foreach (ProductOnSale cus in proBUS.getAllWholelSale(text))
+                //{
+                //    FindGoodsTable.Rows.Add(cus.Barcode, cus.Name, cus.Category, cus.Unit, cus.Saleprice, cus.Number);
+                //}
             }
         }
 
