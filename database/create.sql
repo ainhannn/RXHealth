@@ -322,5 +322,6 @@ BEGIN
 	END WHILE;
 	
 	UPDATE product SET retail_number = retail_number+(number*capacity);
-	UPDATE capacity_tmp SET capacity_tmp.capacity = capacity;
+	DELETE FROM capacity_tmp WHERE capacity_tmp.product_id = product_id;
+	INSERT INTO capacity_tmp VALUE (product_id,capacity);
 END//
