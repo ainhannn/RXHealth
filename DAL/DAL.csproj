@@ -266,11 +266,9 @@
     <Compile Include="SaleDAO_CRUD.cs" />
     <Compile Include="ImportDAO_CRUD.cs" />
     <Compile Include="ImportDAO_EXT.cs" />
-    <Compile Include="ProductDAO_CRUD.cs" />
     <Compile Include="Request_resetDAO.cs" />
     <Compile Include="CustomerDAO.cs" />
     <Compile Include="StoProductDAO.cs" />
-    <Compile Include="ProductBatchDAO.cs" />
     <Compile Include="SaleDAO_EXT.cs" />
     <Compile Include="StaffDAO.cs" />
     <Compile Include="SupplierDAO.cs" />

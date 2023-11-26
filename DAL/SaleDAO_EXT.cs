@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using DTO;
-using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Crypto.Generators;
 
 namespace DAL
 {

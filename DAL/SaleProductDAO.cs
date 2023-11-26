@@ -46,25 +46,37 @@ namespace DAL
             return rs;
         }
 
-        //public static List<ProductOnSale> SelectAll_Sale()
-        //{
-        //    string sql = string.Format("SELECT * FROM search_sale_product");
-        //    var table = ExecuteReader(sql);
-        //    var list = new List<ProductOnSale>();
-        //    foreach (var row in table)
-        //    {
-        //        var p = new ProductOnSale()
-        //        {
-        //            Barcode = row[0].ToString(),
-        //            Name = row[1].ToString(),
-        //            Category = row[2].ToString(),
-        //            Unit = row[3].ToString(),
-        //            Saleprice = (double)row[4],
-        //            Number = (int)row[5]
-        //        };
-        //        list.Add(p);
-        //    }
-        //    return list;
-        //}
+        public static List<ProductOnSale> SelectAllSaleProduct()
+        {
+            string sql = string.Format("SELECT * FROM search_sale_product");
+            var table = ExecuteReader(sql);
+            var list = new List<ProductOnSale>();
+            foreach (var row in table)
+            {
+                list.Add(new ProductOnSale()
+                {
+                    Barcode = row[0].ToString(),
+                    Name = row[1].ToString(),
+                    Category = row[2].ToString(),
+                    Unit = row[3].ToString(),
+                    Saleprice = Convert.ToDouble(row[4]),
+                    Number = Convert.ToInt16(row[5])
+                });
+
+                if (string.IsNullOrEmpty(row[6].ToString()))
+                {
+                    list.Add(new ProductOnSale()
+                    {
+                        Barcode = row[0].ToString(),
+                        Name = row[1].ToString(),
+                        Category = row[2].ToString(),
+                        Unit = row[6].ToString(),
+                        Saleprice = Convert.ToDouble(row[7]),
+                        Number = Convert.ToInt16(row[8])
+                    });
+                }
+            }
+            return list;
+        }
     }
 }
