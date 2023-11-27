@@ -1,4 +1,4 @@
-﻿namespace GUI.Application.Forms.Activate.Details
+﻿namespace GUI
 {
 	partial class SDetailsForm
 	{
