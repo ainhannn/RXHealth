@@ -45,7 +45,7 @@ CREATE TABLE customer (
 
 CREATE TABLE supplier (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
+    name VARCHAR(50) UNIQUE NOT NULL,
     contact_number VARCHAR(12) UNIQUE NOT NULL,
     address VARCHAR(100) NOT NULL
 );
