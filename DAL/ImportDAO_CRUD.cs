@@ -116,7 +116,8 @@ namespace DAL
 
                         cmd.CommandText =
                             "INSERT INTO import_detail " +
-                            "VALUES (@import_invoice_id,@product_id,@barcode,@name,@mfg_date,@exp_date,@unit,@number,@import_price)";
+                            "VALUES (@import_invoice_id,@product_id,@barcode,@name,@mfg_date,@exp_date,@unit,@number,@import_price); " +
+                            "UPDATE product SET current_import_price = @import_price WHERE id = @product_id";
                         cmd.Parameters.AddWithValue("@import_invoice_id", id);
                         cmd.Parameters.AddWithValue("@product_id", pid);
                         cmd.Parameters.AddWithValue("@barcode", i.Barcode);

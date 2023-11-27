@@ -1,7 +1,6 @@
 ﻿using BLL;
 using DTO;
 using System;
-using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms;
 
 namespace GUI
@@ -351,6 +350,5 @@ namespace GUI
             else
                 MessageBox.Show("Đã có lỗi xảy ra! Vui lòng thử lại");
         }
-    
     }
 }

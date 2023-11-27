@@ -224,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="OrderProduct.cs" />
     <Compile Include="StoProduct.cs" />
     <Compile Include="CateProduct.cs" />
     <Compile Include="ProductOnSale .cs" />

@@ -52,6 +52,25 @@ namespace DAL
             return list;
         }
 
+        public static List<OrderProduct> SelectAllOrderProduct()
+        {
+            var list = new List<OrderProduct>();
+            foreach (var e in SelectAllCateProduct())
+            {
+                list.Add(new OrderProduct() 
+                {
+                    Barcode = e.Barcode,
+                    Name = e.Name,
+                    Category = e.Category.Name,
+                    Unit = e.Unit,
+                    CurrentImportPrice = e.CurrentImportPrice,
+                    Number = GetCurrentNumber(e.Id)
+                });
+            }
+
+            return list;
+        }
+
         public static List<StoProduct> SearchOnCategory(int cateId)
         {
             string sql = string.Format("SELECT * FROM {0} WHERE category_id = {1}", dbTableName, cateId);

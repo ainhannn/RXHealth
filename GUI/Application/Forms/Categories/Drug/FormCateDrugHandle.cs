@@ -41,15 +41,13 @@ namespace GUI
             ReloadTable();
         }
 
-        private void inpSearch_TextChanged(object sender, System.EventArgs e)
+        private void inpSearch_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(inpSearch.Text)) { return; }
-
             list = ProductBUS.Search(inpSearch.Text);
             ReloadTable();
         }
 
-        private void btnSearch_Click(object sender, System.EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             conditions.Clear();
             if (!string.IsNullOrEmpty(inpName.Text))

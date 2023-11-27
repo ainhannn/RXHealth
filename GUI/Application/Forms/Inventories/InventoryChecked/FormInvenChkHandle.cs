@@ -57,8 +57,6 @@ namespace GUI
 
         private void inpSearch_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(inpSearch.Text)) { return; }
-            
             list = ProductBUS.Search(cateId != 0 ? ProductBUS.SearchOnCategory(cateId) : ProductBUS.SelectAllStoProduct(), inpSearch.Text);
             ReloadTable();
         }

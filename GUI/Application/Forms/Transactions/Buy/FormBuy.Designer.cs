@@ -35,17 +35,17 @@
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chosen = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.print = new System.Windows.Forms.Button();
-            this.RecycleBin = new System.Windows.Forms.Button();
+            this.empty = new System.Windows.Forms.Button();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +55,7 @@
             this.imp_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chosen)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.SuspendLayout();
@@ -101,13 +101,14 @@
             this.inpSearch.Name = "inpSearch";
             this.inpSearch.Size = new System.Drawing.Size(1530, 23);
             this.inpSearch.TabIndex = 21;
+            this.inpSearch.TextChanged += new System.EventHandler(this.inpSearch_TextChanged);
             // 
-            // dataGridView1
+            // chosen
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.chosen.AllowUserToAddRows = false;
+            this.chosen.AllowUserToDeleteRows = false;
+            this.chosen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.chosen.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,9 +116,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chosen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.chosen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.chosen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -125,16 +126,16 @@
             this.dataGridViewTextBoxColumn6,
             this.number,
             this.dataGridViewCheckBoxColumn2});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 494);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.Size = new System.Drawing.Size(1600, 400);
-            this.dataGridView1.TabIndex = 124;
+            this.chosen.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.chosen.EnableHeadersVisualStyles = false;
+            this.chosen.Location = new System.Drawing.Point(0, 494);
+            this.chosen.Name = "chosen";
+            this.chosen.RowHeadersVisible = false;
+            this.chosen.RowHeadersWidth = 51;
+            this.chosen.RowTemplate.Height = 24;
+            this.chosen.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chosen.Size = new System.Drawing.Size(1600, 400);
+            this.chosen.TabIndex = 124;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -174,19 +175,19 @@
             // dataGridViewCheckBoxColumn2
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = false;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
             this.dataGridViewCheckBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewCheckBoxColumn2.HeaderText = "Xóa";
             this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.print);
-            this.panel2.Controls.Add(this.RecycleBin);
+            this.panel2.Controls.Add(this.empty);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 444);
             this.panel2.Name = "panel2";
@@ -212,26 +213,28 @@
             this.print.Tag = "";
             this.print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.print.UseVisualStyleBackColor = false;
+            this.print.Click += new System.EventHandler(this.print_Click);
             // 
-            // RecycleBin
+            // empty
             // 
-            this.RecycleBin.BackColor = System.Drawing.Color.Transparent;
-            this.RecycleBin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RecycleBin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.RecycleBin.FlatAppearance.BorderSize = 0;
-            this.RecycleBin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RecycleBin.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.RecycleBin.ForeColor = System.Drawing.Color.White;
-            this.RecycleBin.Image = global::GUI.Properties.Resources.trash;
-            this.RecycleBin.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.RecycleBin.Location = new System.Drawing.Point(1548, 0);
-            this.RecycleBin.Margin = new System.Windows.Forms.Padding(5);
-            this.RecycleBin.Name = "RecycleBin";
-            this.RecycleBin.Size = new System.Drawing.Size(50, 48);
-            this.RecycleBin.TabIndex = 112;
-            this.RecycleBin.Tag = "";
-            this.RecycleBin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RecycleBin.UseVisualStyleBackColor = false;
+            this.empty.BackColor = System.Drawing.Color.Transparent;
+            this.empty.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.empty.Dock = System.Windows.Forms.DockStyle.Right;
+            this.empty.FlatAppearance.BorderSize = 0;
+            this.empty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empty.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.empty.ForeColor = System.Drawing.Color.White;
+            this.empty.Image = global::GUI.Properties.Resources.trash;
+            this.empty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.empty.Location = new System.Drawing.Point(1548, 0);
+            this.empty.Margin = new System.Windows.Forms.Padding(5);
+            this.empty.Name = "empty";
+            this.empty.Size = new System.Drawing.Size(50, 48);
+            this.empty.TabIndex = 112;
+            this.empty.Tag = "";
+            this.empty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.empty.UseVisualStyleBackColor = false;
+            this.empty.Click += new System.EventHandler(this.empty_Click);
             // 
             // table
             // 
@@ -267,6 +270,7 @@
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.table.Size = new System.Drawing.Size(1600, 394);
             this.table.TabIndex = 126;
+            this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             // 
             // id
             // 
@@ -317,15 +321,16 @@
             this.ControlBox = false;
             this.Controls.Add(this.table);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.chosen);
             this.Controls.Add(this.pnlSearch);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormBuy";
             this.Text = "FormBuy";
+            this.Load += new System.EventHandler(this.FormBuy_Load);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chosen)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.ResumeLayout(false);
@@ -336,10 +341,10 @@
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.TextBox inpSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView chosen;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button print;
-        private System.Windows.Forms.Button RecycleBin;
+        private System.Windows.Forms.Button empty;
         private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
@@ -354,6 +359,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewCheckBoxColumn2;
     }
 }
