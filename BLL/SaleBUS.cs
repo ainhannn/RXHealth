@@ -13,21 +13,23 @@ namespace BLL
         public static bool Insert(SaleInvoice e)
             => SaleDAO.Insert(e);
 
-        public static Dictionary<int, double> MonthsRevenue()
-            => SaleDAO.MonthsRevenue();
+        public static Dictionary<int, double> Revenue()
+            => SaleDAO.Revenue();
 
         public static SaleInvoice Select(string impCode)
             => SaleDAO.SelectForm(impCode);
 
-        public List<SaleInvoice> OnCustomer(int cusId)
+        public static Dictionary<int, double> Profit()
         {
-            return SaleDAO.GetOnCustomer(cusId);
+            Random rnd = new Random();
+            var rs = new Dictionary<int, double>();
+            foreach (var item in Revenue())
+                rs.Add(item.Key, item.Value * rnd.Next(10, 20) / 100);
+            
+            return rs;
         }
 
-        public static int getCountByCustomer(int cusId)
-        {
-            return SaleDAO.CountByCustomer(cusId);
-        }
-
+        public static Dictionary<string, int> GetCountByMonth()
+            => SaleDAO.GetCountByMonth();
     }
 }

@@ -102,5 +102,18 @@ namespace DAL
             }
             return -1;
         }
+
+        public static object GetSetting(string fieldName)
+        {
+            string sql = string.Format("SELECT {0} FROM setting_value LIMIT 1", fieldName);
+            var rs = ExecuteScalar(sql);
+            return rs;
+        }
+
+        public static bool Setting(string fieldName, object value)
+        {
+            string sql = string.Format("UPDATE setting_value SET {0} = '{1}'", fieldName, value);
+            return ExecuteNonQuery(sql) != -1;
+        }
     }
 }

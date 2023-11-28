@@ -48,10 +48,14 @@ namespace GUI
         {
             chart2.Series.Clear();
             string[] name = { "Doanh thu", "Lợi nhuận", "Tổng chi" };
+            // Doanh thu: tổng thu bán hàng
+            // Lợi nhuận: tổng (giá bán - giá vốn)*số lượng bán
+            // Tổng chi: tổng tiền nhập hàng
             var data = new List<Dictionary<int, double>>
             {
-                SaleBUS.MonthsRevenue(),
-
+                SaleBUS.Revenue(),
+                SaleBUS.Profit(),
+                ImportBUS.Expense()
             };
             
             
@@ -60,18 +64,13 @@ namespace GUI
                 Series line = new Series()
                 {
                     ChartType = SeriesChartType.Line,
-                    Color = colors[i],
+                    Color = colors[i%colors.Count],
                     XValueType = ChartValueType.Auto,
                     YValueType = ChartValueType.Double
                 };
 
                 line.Points.DataBindXY(data[i].Keys, data[i].Values);
-                //foreach (var item in data[i])
-                //    line.Points.AddXY(Convert.ToInt16(item.Key), item.Value);
-                line.Points.AddXY(28, 100000);
-                line.Points.AddXY(30, 70000);
-
-                line.Points[i].Label = name[i];
+                line.Points[0].Label = name[i];
                 chart2.Series.Add(line);
             }
         }
@@ -82,7 +81,7 @@ namespace GUI
             Series columnSeries = new Series("ColumnSeries");
             columnSeries.ChartType = SeriesChartType.Column;
 
-            var data = ProductBUS.CountSalesByCate();
+            var data = SaleBUS.GetCountByMonth();
             int i = 0;
             foreach (var item in data)
             {
@@ -102,7 +101,7 @@ namespace GUI
             countPd.Text = ProductBUS.Count.ToString();
         }
 
-        private void LoadTopSelling() 
+        private void LoadTopSelling()
         {
             Dictionary<string, int> rs = ProductBUS.GetBestSelling(5);
             var c = rs.Count;

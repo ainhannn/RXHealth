@@ -1,5 +1,7 @@
 ﻿using BLL;
 using DTO;
+using iText.IO.Codec;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -40,6 +42,14 @@ namespace GUI
         private void table_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
+            for (int i = 0; i < chosen.Rows.Count; i++)
+                if (chosen.Rows[i].Cells["cCode"].Value.ToString()
+                    .Contains(table.Rows[e.RowIndex].Cells["code"].Value.ToString()))
+                {
+                    int.TryParse(chosen.Rows[i].Cells["number"].Value.ToString(), out int num);
+                    chosen.Rows[i].Cells["number"].Value = num + 1;
+                    return;
+                }
 
             chosen.Rows.Add(
                 chosen.Rows.Count + 1,
@@ -48,6 +58,14 @@ namespace GUI
                 table.Rows[e.RowIndex].Cells["category"].Value,
                 table.Rows[e.RowIndex].Cells["unit"].Value,
                 1, "x");
+        }
+
+        private void chosen_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; 
+            if (e.ColumnIndex != 6) return;
+
+            chosen.Rows.RemoveAt(e.RowIndex);
         }
 
         private void empty_Click(object sender, System.EventArgs e)

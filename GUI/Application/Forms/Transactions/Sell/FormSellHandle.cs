@@ -10,6 +10,9 @@ namespace GUI
         private const string defaultSearch = "Tìm sản phẩm";
         private const string defaultCustomer = "Tìm khách hàng";
         private const string defaultNote = "Ghi chú đơn hàng";
+        private readonly double VAT = Convert.ToDouble(Retreat.GetSetting("vat"));
+        private readonly double normPrice = Convert.ToDouble(Retreat.GetSetting("price"));
+        private readonly int normPoint = Convert.ToInt16(Retreat.GetSetting("point"));
 
         private void Reload()
         {
@@ -198,7 +201,7 @@ namespace GUI
             if (SaleCombobox.SelectedValue != null)
                 int.TryParse(SaleCombobox.SelectedValue.ToString(), out dis);
 
-            PayLabel.Text = Convert.ToString(take * (1 - dis / 100));
+            PayLabel.Text = Convert.ToString(take * (1 - dis / 100) * (1 + VAT));
         }
 
 
@@ -287,7 +290,7 @@ namespace GUI
         {
             double.TryParse(TotalLabel.Text, out var take);
             int.TryParse(SaleCombobox.Text, out var dis);
-            PayLabel.Text = Convert.ToString(take * (1 - (dis*1.0/100)));
+            PayLabel.Text = Convert.ToString(take * (1 - (dis*1.0/100)) * (1 + VAT));
         }
 
         // Nhập số tiền thu
@@ -324,7 +327,7 @@ namespace GUI
             {
                 StaffId = LoginForm.Id,
                 CustomerId = txtCus.Text != "Guest" ? CustomerBUS.GetId(txtCus.Text) : 1,
-                Point = (int) Convert.ToDouble(TotalLabel.Text) / 10000
+                Point = (int) (Convert.ToDouble(TotalLabel.Text) / normPrice) * normPoint
             };
             for (var i = 0; i < table.Rows.Count - 1; i++)
             {
@@ -343,9 +346,7 @@ namespace GUI
                 // Trừ điểm đã đổi discount
                 int.TryParse(SaleCombobox.Text, out var dis);
                 if (CustomerBUS.ReducePoint(invoice.CustomerId, 2 * dis))
-                    MessageBox.Show("Giao dịch hoàn tất!");
-                else
-                    MessageBox.Show("Tru diem ko dc");
+                    MessageBox.Show("Giao dịch hoàn tất! Khách hàng có thêm " + invoice.Point + " điểm!");
                 Reload();
             }
             else

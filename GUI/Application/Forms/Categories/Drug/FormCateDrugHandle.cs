@@ -103,6 +103,7 @@ namespace GUI
         private void RecycleBin_Click(object sender, System.EventArgs e)
         {
             new FormPRecycleBin().ShowDialog();
+            ReloadTable();
         }
 
         private void refresh_Click(object sender, System.EventArgs e)

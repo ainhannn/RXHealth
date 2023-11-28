@@ -30,19 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuy));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.chosen = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.print = new System.Windows.Forms.Button();
             this.empty = new System.Windows.Forms.Button();
@@ -54,6 +47,13 @@
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imp_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chosen)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,7 +69,7 @@
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(0, 0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(1600, 50);
+            this.pnlSearch.Size = new System.Drawing.Size(1444, 50);
             this.pnlSearch.TabIndex = 118;
             // 
             // search
@@ -83,7 +83,7 @@
             this.search.ForeColor = System.Drawing.Color.White;
             this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
             this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.search.Location = new System.Drawing.Point(1548, 0);
+            this.search.Location = new System.Drawing.Point(1392, 0);
             this.search.Margin = new System.Windows.Forms.Padding(5);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(50, 48);
@@ -120,12 +120,12 @@
             this.chosen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.chosen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3,
+            this.cCode,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.number,
-            this.dataGridViewCheckBoxColumn2});
+            this.remove});
             this.chosen.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.chosen.EnableHeadersVisualStyles = false;
             this.chosen.Location = new System.Drawing.Point(0, 494);
@@ -134,53 +134,9 @@
             this.chosen.RowHeadersWidth = 51;
             this.chosen.RowTemplate.Height = 24;
             this.chosen.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.chosen.Size = new System.Drawing.Size(1600, 400);
+            this.chosen.Size = new System.Drawing.Size(1444, 400);
             this.chosen.TabIndex = 124;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Mã vạch";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tên";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Ngành hàng";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Đơn vị";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // number
-            // 
-            this.number.HeaderText = "Số lượng";
-            this.number.Name = "number";
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.dataGridViewCheckBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Xóa";
-            this.dataGridViewCheckBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.chosen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.chosen_CellClick);
             // 
             // panel2
             // 
@@ -191,7 +147,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 444);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1600, 50);
+            this.panel2.Size = new System.Drawing.Size(1444, 50);
             this.panel2.TabIndex = 125;
             // 
             // print
@@ -205,7 +161,7 @@
             this.print.ForeColor = System.Drawing.Color.White;
             this.print.Image = global::GUI.Properties.Resources.printing;
             this.print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.print.Location = new System.Drawing.Point(1498, 0);
+            this.print.Location = new System.Drawing.Point(1342, 0);
             this.print.Margin = new System.Windows.Forms.Padding(5);
             this.print.Name = "print";
             this.print.Size = new System.Drawing.Size(50, 48);
@@ -226,7 +182,7 @@
             this.empty.ForeColor = System.Drawing.Color.White;
             this.empty.Image = global::GUI.Properties.Resources.trash;
             this.empty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.empty.Location = new System.Drawing.Point(1548, 0);
+            this.empty.Location = new System.Drawing.Point(1392, 0);
             this.empty.Margin = new System.Windows.Forms.Padding(5);
             this.empty.Name = "empty";
             this.empty.Size = new System.Drawing.Size(50, 48);
@@ -268,7 +224,7 @@
             this.table.RowHeadersWidth = 51;
             this.table.RowTemplate.Height = 24;
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.Size = new System.Drawing.Size(1600, 394);
+            this.table.Size = new System.Drawing.Size(1444, 394);
             this.table.TabIndex = 126;
             this.table.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellClick);
             // 
@@ -314,10 +270,55 @@
             this.stock.Name = "stock";
             this.stock.ReadOnly = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cCode
+            // 
+            this.cCode.HeaderText = "Mã vạch";
+            this.cCode.Name = "cCode";
+            this.cCode.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tên";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Ngành hàng";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Đơn vị";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // number
+            // 
+            this.number.HeaderText = "Số lượng";
+            this.number.Name = "number";
+            // 
+            // remove
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.remove.DefaultCellStyle = dataGridViewCellStyle2;
+            this.remove.HeaderText = "Xóa";
+            this.remove.MinimumWidth = 6;
+            this.remove.Name = "remove";
+            this.remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // FormBuy
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1600, 894);
+            this.ClientSize = new System.Drawing.Size(1444, 894);
             this.ControlBox = false;
             this.Controls.Add(this.table);
             this.Controls.Add(this.panel2);
@@ -354,11 +355,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn imp_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewButtonColumn remove;
     }
 }
