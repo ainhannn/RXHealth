@@ -3,7 +3,7 @@ CREATE DATABASE pharmacy;
 USE pharmacy;
 
 -- -- -- -- -- TABLES -- -- -- -- --
-CREATE TABLE title (
+CREATE TABLE setting_value (
 	vat DECIMAL(5,4),
 	rate DECIMAL(5,4),
 	price DECIMAL(10,0),
