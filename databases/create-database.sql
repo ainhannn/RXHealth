@@ -3,6 +3,13 @@ CREATE DATABASE pharmacy;
 USE pharmacy;
 
 -- -- -- -- -- TABLES -- -- -- -- --
+CREATE TABLE setting_value (
+	vat DECIMAL(5,4),
+	rate DECIMAL(5,4),
+	price DECIMAL(10,0),
+	point INT
+);
+
 CREATE TABLE title (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(50) NOT NULL
@@ -384,6 +391,8 @@ INNER JOIN sale_detail ON product.id=sale_detail.product_id
 GROUP BY product.barcode;
 
 -- -- -- -- -- VALUES -- -- -- -- --
+INSERT INTO setting_value VALUE (0.05, 0.15, 20000, 1);
+	
 INSERT INTO staff (nickname,citizen_id_number,fullname,birthday,qualification,contact_number) VALUES
     ('admin','000000000000','Admin','2023-11-20','Đang học Đại học','0123456789'),
     ('manager','000000000001','Manager','2023-11-20','Đang học Đại học','0123456789'),
