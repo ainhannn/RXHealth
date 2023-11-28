@@ -12,9 +12,9 @@ namespace BLL
 
         public static bool Insert(SaleInvoice e)
             => SaleDAO.Insert(e);
-        
-        
 
+        public static Dictionary<int, double> MonthsRevenue()
+            => SaleDAO.MonthsRevenue();
 
         public List<SaleInvoice> OnCustomer(int cusId)
         {

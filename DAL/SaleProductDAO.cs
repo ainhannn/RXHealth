@@ -6,6 +6,22 @@ namespace DAL
 {
     public partial class ProductDAO : DBConnection
     {
+        public static Dictionary<string, int> CountSalesByCate()
+        {
+            string sql = String.Format(
+                "SELECT cate, SUM(times) " +
+                "FROM best_seller_product " +
+                "GROUP BY cate");
+            var rd = ExecuteReader(sql);
+            var list = new Dictionary<string, int>();
+            if (rd != null)
+            {
+                foreach (var row in rd) list.Add(row[0].ToString(), Convert.ToInt16(row[1]));
+                return list;
+            }
+            return null;
+        }
+
         public static int CountSalesByCate(string cate)
         {
             string sql = String.Format(

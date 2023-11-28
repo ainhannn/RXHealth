@@ -8,8 +8,8 @@ namespace DAL
 {
     public  partial class ImportDAO : DBConnection
     {
-        private static string dbTableName = "import_invoice";
-        private static string dbViewName = "review_import_invoice";
+        private static readonly string dbTableName = "import_invoice";
+        private static readonly string dbViewName = "review_import_invoice";
 
 
         private static ImportInvoice ConvertToDTO(List<object> row)
@@ -23,7 +23,7 @@ namespace DAL
                 var staff = StaffDAO.Select(staffId);
                 string staffNickname = staff != null ? staff.Nickname : "";
                 Int16.TryParse(row[4].ToString(), out var supplierId);
-                var supplier = SupplierDAO.Select(staffId);
+                var supplier = SupplierDAO.Select(supplierId);
                 string supplierName = supplier != null ? supplier.Name : "";
                 Double.TryParse(row[5].ToString(), out var totalAmount);
 
@@ -56,7 +56,13 @@ namespace DAL
         {
             string sql = string.Format("SELECT * FROM {0} WHERE code = '{1}' LIMIT 1", dbViewName, code);
             var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+            if (table.Count != 0)
+            {
+                var rs = ConvertToDTO(table[0]);
+                rs.Details = SelectDetails(rs.Id);
+                return rs;
+            }
+            return null;
         }
 
         public static List<ImportDetail> SelectDetails(int formId)

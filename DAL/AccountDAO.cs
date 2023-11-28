@@ -6,7 +6,7 @@ namespace DAL
 {
     public class AccountDAO : DBConnection
     {
-        private static string dbTableName = "account";
+        private static readonly string dbTableName = "account";
 
         public static Account Login(Account e) //inp (username,pass) out (id,username,role)
         {

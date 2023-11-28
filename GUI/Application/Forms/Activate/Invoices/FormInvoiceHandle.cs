@@ -46,7 +46,7 @@ namespace GUI
         {
             if (e.RowIndex > -1)
             {
-                string sCode = tableSale.Rows[e.RowIndex].Cells["code"].Value.ToString();
+                string sCode = tableSale.Rows[e.RowIndex].Cells["saleCode"].Value.ToString();
                 ImportBUS.Select(sCode);
                 // code here hiện detail nếu có
             }

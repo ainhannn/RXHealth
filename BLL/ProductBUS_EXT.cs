@@ -6,6 +6,9 @@ namespace BLL
 {
     public partial class ProductBUS
     {
+        public static Dictionary<string, int> CountSalesByCate()
+            => ProductDAO.CountSalesByCate();
+
         public static int CountSalesByCate(string cate) 
             => ProductDAO.CountSalesByCate(cate);
 

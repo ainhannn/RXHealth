@@ -76,7 +76,7 @@ namespace GUI
             RefreshTotal();
 
             for (int i = 0; i < table.Rows.Count - 1;)
-                table.Rows[i].Cells["id"].Value = --i;
+                table.Rows[i].Cells["id"].Value = ++i;
         }
 
 
@@ -124,22 +124,38 @@ namespace GUI
                         continue;
                     
 
-                    invoice.AddDetail(new ImportDetail
+                    var item = new ImportDetail
                     {
                         Barcode = table.Rows[i].Cells["code"].Value.ToString(),
                         Name = table.Rows[i].Cells["name"].Value.ToString(),
                         Unit = table.Rows[i].Cells["unit"].Value.ToString(),
                         Number = Convert.ToInt16(table.Rows[i].Cells["number"].Value),
-                        ImportPrice = Convert.ToDouble(table.Rows[i].Cells["price"].Value),
-                        MFGDate = Retreat.DateTime(table.Rows[i].Cells["mfg_date"].Value),
-                        EXPDate = Retreat.DateTime(table.Rows[i].Cells["exp_date"].Value)
-                    });
+                        ImportPrice = Convert.ToDouble(table.Rows[i].Cells["price"].Value)
+                    };
+                    
+                    if (table.Rows[i].Cells["mfg_date"].Value != null && !string.IsNullOrEmpty(table.Rows[i].Cells["mfg_date"].Value.ToString()))
+                    {
+                        if (Retreat.IsDateTime(table.Rows[i].Cells["mfg_date"].Value.ToString()))
+                            item.MFGDate = Retreat.DateTime(table.Rows[i].Cells["mfg_date"].Value.ToString());
+                        else
+                            continue;
+                    }
+                    if (table.Rows[i].Cells["exp_date"].Value != null && !string.IsNullOrEmpty(table.Rows[i].Cells["exp_date"].Value.ToString()))
+                    {
+                        if (Retreat.IsDateTime(table.Rows[i].Cells["exp_date"].Value.ToString()))
+                            item.EXPDate = Retreat.DateTime(table.Rows[i].Cells["exp_date"].Value.ToString());
+                        else
+                            continue;
+                    }
+
+                    invoice.AddDetail(item);
                 } catch { continue; }
             }
 
             var rs = ImportBUS.Insert(invoice);
             if (rs != null)
             {
+                MessageBox.Show("Nhập thành công " + rs.Details.Count + " sản phẩm!");
                 int i = 0;
                 foreach (var item in rs.Details)
                 {
@@ -148,8 +164,6 @@ namespace GUI
                     if (item.Barcode.Contains(table.Rows[i].Cells["code"].Value.ToString()))
                         table.Rows.RemoveAt(i++);
                 }
-
-                MessageBox.Show("Nhập thành công!");
                 ReloadForm();
             }
             else

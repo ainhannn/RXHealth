@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.Components;
 using System;
 using System.Windows.Forms;
 
@@ -253,7 +254,7 @@ namespace GUI
                 txtPoint.Text = FindCustomerTable.Rows[e.RowIndex].Cells["point"].Value.ToString();
 
                 // Lấy giá trị discount
-                int.TryParse(FindCustomerTable.Rows[e.RowIndex].Cells["Point"].Value.ToString(), out int pointValue);
+                int.TryParse(txtPoint.Text, out int pointValue);
                 SaleCombobox.Items.Clear();
                 for (int i = 0; i <= pointValue / 2; i += 5)
                     SaleCombobox.Items.Add(i);

@@ -6,7 +6,7 @@ namespace DAL
 {
     public class CategoryDAO : DBConnection
     {
-        private static string dbTableName = "category";
+        private static readonly string dbTableName = "category";
 
         private static Category ConvertToDTO(List<object> row)
         {

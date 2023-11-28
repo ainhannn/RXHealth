@@ -14,7 +14,7 @@ namespace DAL
             {
                 string sql = string.Format("SELECT COUNT(id) FROM {0}", dbTableName);
                 var rs = ExecuteScalar(sql);
-                return rs != null ? int.TryParse(rs.ToString(), out int c) ? c : 0 : 0;
+                return rs != null ? int.TryParse(rs.ToString(), out int c) ? c-1 : 0 : 0;
             }
         }
 
