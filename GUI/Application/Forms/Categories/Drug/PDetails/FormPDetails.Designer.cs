@@ -233,9 +233,9 @@
             this.label4.Location = new System.Drawing.Point(286, 362);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 25);
+            this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 46;
-            this.label4.Text = "Đơn vị: *";
+            this.label4.Text = "Đơn vị:";
             // 
             // label3
             // 
@@ -352,9 +352,9 @@
             this.label15.Location = new System.Drawing.Point(286, 396);
             this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(131, 25);
+            this.label15.Size = new System.Drawing.Size(144, 25);
             this.label15.TabIndex = 122;
-            this.label15.Text = "Đơn vị bán lẻ:";
+            this.label15.Text = "Đơn vị bán lẻ: *";
             // 
             // rPrice
             // 

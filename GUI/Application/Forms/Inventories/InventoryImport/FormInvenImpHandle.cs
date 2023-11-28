@@ -1,12 +1,7 @@
 ﻿using BLL;
-using DAL;
 using DTO;
-using Google.Protobuf;
 using iText.IO.Codec;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 using System.Windows.Forms;
 
 namespace GUI
@@ -62,10 +57,9 @@ namespace GUI
 
         private void table_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            if (e.RowIndex < 0) return;
-
             // Cap nhat stt
-            table.Rows[e.RowIndex-1].Cells["id"].Value = table.Rows.Count-1;
+            for (int i = 0; i < table.Rows.Count-1;)
+                table.Rows[i].Cells["id"].Value = ++i;
             
             if (table.Rows[e.RowIndex].Cells["number"].Value != null && table.Rows[e.RowIndex].Cells["price"].Value != null)
                 RefreshAmount(e.RowIndex);
@@ -86,10 +80,37 @@ namespace GUI
             // code here
         }
 
+        [Obsolete]
         private void upload_Click(object sender, EventArgs e)
         {
-            // code here
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
+            openFileDialog.Title = "Select an Excel file to upload";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFilePath = openFileDialog.FileName;
 
+                try
+                {
+                    Spire.Xls.Workbook workbook = new Spire.Xls.Workbook();
+                    workbook.LoadFromFile(selectedFilePath);
+
+                    var tb = Retreat.ReadFromSheet(workbook.Worksheets[0]);
+                    if (tb.Count < 1 && tb[0].Count != 9)
+                    {
+                        MessageBox.Show("File không hợp lệ!");
+                        return;
+                    }
+                    foreach (var row in tb)
+                        table.Rows.Add(null, row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]);
+
+                    MessageBox.Show("Tải lên thành công " + tb.Count + " dòng!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -121,8 +142,8 @@ namespace GUI
                         table.Rows[i].Cells["unit"].Value == null ||
                         table.Rows[i].Cells["number"].Value == null ||
                         table.Rows[i].Cells["price"].Value == null)
-                        continue;
-                    
+                        continue; 
+
 
                     var item = new ImportDetail
                     {
@@ -132,7 +153,7 @@ namespace GUI
                         Number = Convert.ToInt16(table.Rows[i].Cells["number"].Value),
                         ImportPrice = Convert.ToDouble(table.Rows[i].Cells["price"].Value)
                     };
-                    
+
                     if (table.Rows[i].Cells["mfg_date"].Value != null && !string.IsNullOrEmpty(table.Rows[i].Cells["mfg_date"].Value.ToString()))
                     {
                         if (Retreat.IsDateTime(table.Rows[i].Cells["mfg_date"].Value.ToString()))
@@ -149,20 +170,23 @@ namespace GUI
                     }
 
                     invoice.AddDetail(item);
-                } catch { continue; }
+
+                }
+                catch { continue; }
             }
 
             var rs = ImportBUS.Insert(invoice);
             if (rs != null)
             {
                 MessageBox.Show("Nhập thành công " + rs.Details.Count + " sản phẩm!");
-                int i = 0;
-                foreach (var item in rs.Details)
+                for (int i = 0; i < table.Rows.Count;)
                 {
-                    while (!item.Barcode.Contains(table.Rows[i].Cells["code"].Value.ToString()))
-                        i++;
-                    if (item.Barcode.Contains(table.Rows[i].Cells["code"].Value.ToString()))
-                        table.Rows.RemoveAt(i++);
+                    foreach (var item in rs.Details) 
+                    { 
+                        if (Convert.ToString(table.Rows[i].Cells["code"].Value).Contains(item.Barcode))
+                            table.Rows.RemoveAt(i);
+                    }
+                    i++;
                 }
                 ReloadForm();
             }

@@ -25,7 +25,7 @@ namespace DAL
             return rs != null ? Convert.ToInt16(rs) : -1;
         }
 
-        private static CateProduct ConvertToCateProduct(List<object> row)
+        public static CateProduct ConvertToCateProduct(List<object> row)
         {
             try
             {

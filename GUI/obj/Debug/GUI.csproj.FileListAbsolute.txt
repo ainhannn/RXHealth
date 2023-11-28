@@ -854,3 +854,6 @@ D:\C#\RXHealth\GUI\obj\Debug\GUI.SDetailsForm.resources
 D:\C#\RXHealth\GUI\obj\Debug\GUI.Application.Forms.Transactions.Sell.CustomerMini.resources
 D:\C#\RXHealth\GUI\obj\Debug\GUI.CustomerMini.resources
 D:\C#\RXHealth\GUI\obj\Debug\GUI.IDetailsForm.resources
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.IDetailsForm.resources
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.SDetailsForm.resources
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.CustomerMini.resources

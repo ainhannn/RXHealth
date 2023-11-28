@@ -39,6 +39,8 @@ namespace BLL
         {
             if (GetId(product.Barcode) > -1)
                 return 0;
+            if (product.Category.Id == 0)
+                product.Category.Id = CategoryDAO.GetId(product.Category.Name);
             return ProductDAO.Insert(product) ? 1 : -1;
         }
 

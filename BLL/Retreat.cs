@@ -1,6 +1,7 @@
-﻿using DAL;
-using Microsoft.SqlServer.Server;
+﻿using DTO;
+using Spire.Xls;
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
@@ -43,7 +44,7 @@ namespace BLL
             if (o == null) return false;
             if (string.IsNullOrEmpty(o.ToString())) return false;
 
-            string[] formats = { "d/M/yyyy", "d-M-yyyy", "d.M.yyyy" };
+            string[] formats = { "d/M/yyyy", "d-M-yyyy", "d.M.yyyy", "M/yyyy" };
 
             return System.DateTime.TryParseExact(o.ToString(), formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out _);
         }
@@ -56,10 +57,35 @@ namespace BLL
             catch { return System.DateTime.Today; }
         }
 
+        [Obsolete]
+        public static List<List<object>> ReadFromSheet(Worksheet sheet)
+        {
+            var list = new List<List<object>>();
+
+            // Bỏ qua dòng title row[0]
+            for (int i = 1; i < sheet.Rows.Length; i++)
+            {
+                var item = new List<object>();
+                var row = sheet.Rows[i];
+                for (var j = 0; j < row.Cells.Length; j++)
+                {
+                    var cell = row.Cells[j];
+                    if (cell.HasFormula)
+                        item.Add(cell.FormulaValue);
+                    else
+                        item.Add(cell.Value2);
+                }
+
+                list.Add(item); 
+            }
+
+            return list;
+        }
+
         public static object GetSetting(string fieldName)
-            => !string.IsNullOrEmpty(fieldName) && "vat rate price point".Contains(fieldName) ? DBConnection.GetSetting(fieldName) : null;
+            => !string.IsNullOrEmpty(fieldName) && "vat rate price point".Contains(fieldName) ? DAL.DBConnection.GetSetting(fieldName) : null;
 
         public static bool Setting(string fieldName, object value)
-            => !string.IsNullOrEmpty(fieldName) && "vat rate price point".Contains(fieldName) ? DBConnection.Setting(fieldName, value) : false;
+            => !string.IsNullOrEmpty(fieldName) && "vat rate price point".Contains(fieldName) && DAL.DBConnection.Setting(fieldName, value);
     }
 }

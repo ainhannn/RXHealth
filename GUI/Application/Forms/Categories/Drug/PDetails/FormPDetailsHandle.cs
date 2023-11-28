@@ -104,7 +104,7 @@ namespace GUI
             if (string.IsNullOrEmpty(inpCode.Text) ||
                 string.IsNullOrEmpty(name.Text) ||
                 string.IsNullOrEmpty(category.Text) ||
-                string.IsNullOrEmpty(unit.Text))
+                string.IsNullOrEmpty(rUnit.Text))
             {
                 MessageBox.Show("Nhập đủ thông tin bắt buộc!");
                 return;
@@ -113,8 +113,8 @@ namespace GUI
 
             double iPrc, sPrc, rPrc;
             iPrc = sPrc = rPrc = -1;
-            if (!double.TryParse(impPrice.Text, out iPrc) ||
-                !double.TryParse(price.Text, out sPrc) ||
+            if ((!double.TryParse(impPrice.Text, out rPrc) && !string.IsNullOrEmpty(impPrice.Text)) ||
+                (!double.TryParse(price.Text, out rPrc) && !string.IsNullOrEmpty(price.Text)) ||
                 (!double.TryParse(rPrice.Text, out rPrc) && !string.IsNullOrEmpty(rPrice.Text)))
             {
                 MessageBox.Show("Sai định dạng tiền tệ!");
