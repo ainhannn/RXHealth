@@ -845,3 +845,12 @@ C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.csproj.CoreComp
 C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.exe
 C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.pdb
+D:\C#\RXHealth\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+D:\C#\RXHealth\GUI\bin\Debug\DTO.dll.config
+D:\C#\RXHealth\GUI\bin\Debug\GLB.dll.config
+D:\C#\RXHealth\GUI\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\C#\RXHealth\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+D:\C#\RXHealth\GUI\obj\Debug\GUI.SDetailsForm.resources
+D:\C#\RXHealth\GUI\obj\Debug\GUI.Application.Forms.Transactions.Sell.CustomerMini.resources
+D:\C#\RXHealth\GUI\obj\Debug\GUI.CustomerMini.resources
+D:\C#\RXHealth\GUI\obj\Debug\GUI.IDetailsForm.resources

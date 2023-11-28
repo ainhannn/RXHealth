@@ -17,5 +17,12 @@
             UnitPrice = unitPrice;
             Number = number;
         }
+        public SaleDetail(string name, string unit, double unitPrice, int number)
+        {
+            Name = name;
+            Unit = unit;
+            UnitPrice = unitPrice;
+            Number = number;
+        }
     }
 }

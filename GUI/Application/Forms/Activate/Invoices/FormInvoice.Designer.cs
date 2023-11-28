@@ -94,7 +94,7 @@
             this.title.Location = new System.Drawing.Point(338, 42);
             this.title.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(335, 46);
+            this.title.Size = new System.Drawing.Size(400, 57);
             this.title.TabIndex = 42;
             this.title.Text = "LỊCH SỬ HÓA ĐƠN";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,6 +138,7 @@
             this.tableImp.Name = "tableImp";
             this.tableImp.ReadOnly = true;
             this.tableImp.RowHeadersVisible = false;
+            this.tableImp.RowHeadersWidth = 51;
             this.tableImp.Size = new System.Drawing.Size(950, 265);
             this.tableImp.TabIndex = 46;
             this.tableImp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableImp_CellClick);
@@ -145,36 +146,42 @@
             // id
             // 
             this.id.HeaderText = "STT";
+            this.id.MinimumWidth = 6;
             this.id.Name = "id";
             this.id.ReadOnly = true;
             // 
             // code
             // 
             this.code.HeaderText = "Mã hóa đơn";
+            this.code.MinimumWidth = 6;
             this.code.Name = "code";
             this.code.ReadOnly = true;
             // 
             // date
             // 
             this.date.HeaderText = "Ngày";
+            this.date.MinimumWidth = 6;
             this.date.Name = "date";
             this.date.ReadOnly = true;
             // 
             // staff
             // 
             this.staff.HeaderText = "Nhân viên";
+            this.staff.MinimumWidth = 6;
             this.staff.Name = "staff";
             this.staff.ReadOnly = true;
             // 
             // supplier
             // 
             this.supplier.HeaderText = "Nhà cung cấp";
+            this.supplier.MinimumWidth = 6;
             this.supplier.Name = "supplier";
             this.supplier.ReadOnly = true;
             // 
             // totalPrice
             // 
             this.totalPrice.HeaderText = "Tổng giá trị";
+            this.totalPrice.MinimumWidth = 6;
             this.totalPrice.Name = "totalPrice";
             this.totalPrice.ReadOnly = true;
             // 
@@ -195,7 +202,7 @@
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(388, 4);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(175, 29);
+            this.label18.Size = new System.Drawing.Size(215, 36);
             this.label18.TabIndex = 10;
             this.label18.Text = "Hóa đơn nhập";
             // 
@@ -237,6 +244,7 @@
             this.tableSale.Name = "tableSale";
             this.tableSale.ReadOnly = true;
             this.tableSale.RowHeadersVisible = false;
+            this.tableSale.RowHeadersWidth = 51;
             this.tableSale.Size = new System.Drawing.Size(950, 265);
             this.tableSale.TabIndex = 46;
             this.tableSale.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableSale_CellClick);
@@ -244,36 +252,42 @@
             // saleId
             // 
             this.saleId.HeaderText = "STT";
+            this.saleId.MinimumWidth = 6;
             this.saleId.Name = "saleId";
             this.saleId.ReadOnly = true;
             // 
             // saleCode
             // 
             this.saleCode.HeaderText = "Mã hóa đơn";
+            this.saleCode.MinimumWidth = 6;
             this.saleCode.Name = "saleCode";
             this.saleCode.ReadOnly = true;
             // 
             // saleDate
             // 
             this.saleDate.HeaderText = "Ngày";
+            this.saleDate.MinimumWidth = 6;
             this.saleDate.Name = "saleDate";
             this.saleDate.ReadOnly = true;
             // 
             // saleStaff
             // 
             this.saleStaff.HeaderText = "Nhân viên";
+            this.saleStaff.MinimumWidth = 6;
             this.saleStaff.Name = "saleStaff";
             this.saleStaff.ReadOnly = true;
             // 
             // customer
             // 
             this.customer.HeaderText = "Khách hàng";
+            this.customer.MinimumWidth = 6;
             this.customer.Name = "customer";
             this.customer.ReadOnly = true;
             // 
             // saleTotalPrice
             // 
             this.saleTotalPrice.HeaderText = "Tổng giá trị";
+            this.saleTotalPrice.MinimumWidth = 6;
             this.saleTotalPrice.Name = "saleTotalPrice";
             this.saleTotalPrice.ReadOnly = true;
             // 
@@ -294,7 +308,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(395, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 29);
+            this.label1.Size = new System.Drawing.Size(197, 36);
             this.label1.TabIndex = 10;
             this.label1.Text = "Hóa đơn bán";
             // 

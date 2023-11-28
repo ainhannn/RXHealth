@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using System;
 using System.Windows.Forms;
 
@@ -27,10 +28,28 @@ namespace GUI
             if (e.RowIndex > -1)
             {
                 string impCode = tableImp.Rows[e.RowIndex].Cells["code"].Value.ToString();
-                ImportBUS.Select(impCode);
-                // code here hiện detail nếu có
+                ImportInvoice imp = ImportBUS.Select(impCode);
+                // Check if details are found
+                try
+                {
+                    MessageBox.Show("Thành công");
+                    // Tạo một đối tượng của form SDetailsForm
+                    IDetailsForm Idetails = new IDetailsForm(imp);
+
+                    // Hiển thị form SDetailsForm
+                    Idetails.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Details not found for the selected sale code.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn hàng");
             }
         }
+        
 
         private void LoadIntoSaleTable()
         {
@@ -47,9 +66,26 @@ namespace GUI
             if (e.RowIndex > -1)
             {
                 string sCode = tableSale.Rows[e.RowIndex].Cells["saleCode"].Value.ToString();
-                ImportBUS.Select(sCode);
-                // code here hiện detail nếu có
+                SaleInvoice inv = SaleBUS.Select(sCode);
+                // Check if details are found
+                try 
+                {
+                    // Tạo một đối tượng của form SDetailsForm
+                    SDetailsForm Sdetails = new SDetailsForm(inv);
+
+                    // Hiển thị form SDetailsForm
+                    Sdetails.Show();
+                }
+                catch (Exception ex) 
+                {
+                    MessageBox.Show("Details not found for the selected sale code.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn hàng");
             }
         }
+
     }
 }

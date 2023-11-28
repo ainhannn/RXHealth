@@ -1,4 +1,6 @@
-﻿using GUI.Handle;
+﻿using BLL;
+using DTO;
+using GUI.Handle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,5 +30,7 @@ namespace GUI
             HandleGUI.ReleaseCapture();
             HandleGUI.SendMessage(Handle, 0x112, 0xf012, 8);
         }
+
+        
     }
 }

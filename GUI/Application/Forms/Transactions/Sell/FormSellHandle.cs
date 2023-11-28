@@ -1,6 +1,5 @@
 ﻿using BLL;
 using DTO;
-using GUI.Components;
 using System;
 using System.Windows.Forms;
 
@@ -278,7 +277,8 @@ namespace GUI
 
         private void NewCustomer_Click(object sender, EventArgs e)
         {
-            // code here
+            CustomerMini mini = new CustomerMini();
+            mini.Show();
         }
 
 

@@ -16,6 +16,9 @@ namespace BLL
         public static Dictionary<int, double> MonthsRevenue()
             => SaleDAO.MonthsRevenue();
 
+        public static SaleInvoice Select(string impCode)
+            => SaleDAO.SelectForm(impCode);
+
         public List<SaleInvoice> OnCustomer(int cusId)
         {
             return SaleDAO.GetOnCustomer(cusId);
