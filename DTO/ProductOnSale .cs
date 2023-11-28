@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DTO
+﻿namespace DTO
 {
     public class ProductOnSale
     {
@@ -14,6 +12,8 @@ namespace DTO
         public double RetailSaleprice { get; set; }
         public int RetailNumber { get; set; }
 
-        public ProductOnSale() { }
+        public override string ToString()
+            => Barcode + Name + Category + Unit + RetailUnit;
+
     }
 }

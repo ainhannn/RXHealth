@@ -6,7 +6,7 @@ namespace DAL
 {
     public class SubstanceDAO : DBConnection
     {
-        private static string dbTableName = "substance";
+        private static readonly string dbTableName = "substance";
         private static Substance ConvertToDTO(List<object> row)
         {
             try { return new Substance(Convert.ToInt16(row[0]), Convert.ToString(row[1])); }

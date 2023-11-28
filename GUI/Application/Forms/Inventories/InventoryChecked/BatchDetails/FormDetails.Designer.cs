@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDetails));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.exit = new System.Windows.Forms.PictureBox();
-            this.login = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mfg_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exp_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,21 +51,20 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.retail_unit = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.avai = new System.Windows.Forms.CheckBox();
+            this.rNum = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
             this.inpCode = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.unit = new System.Windows.Forms.TextBox();
+            this.iNum = new System.Windows.Forms.TextBox();
+            this.eNum = new System.Windows.Forms.TextBox();
+            this.currentNum = new System.Windows.Forms.TextBox();
+            this.inpNum = new System.Windows.Forms.TextBox();
             this.capacity = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.speci = new System.Windows.Forms.Label();
+            this.cate = new System.Windows.Forms.TextBox();
+            this.rUnit = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
@@ -83,7 +81,7 @@
             this.exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.exit.BackColor = System.Drawing.Color.Transparent;
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.exit.Image = global::GUI.Properties.Resources.reject;
+            this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.Location = new System.Drawing.Point(948, 15);
             this.exit.Margin = new System.Windows.Forms.Padding(6);
             this.exit.Name = "exit";
@@ -93,25 +91,26 @@
             this.exit.TabStop = false;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
-            // login
+            // btnExport
             // 
-            this.login.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.login.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.login.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.login.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
-            this.login.FlatAppearance.BorderSize = 0;
-            this.login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumVioletRed;
-            this.login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumVioletRed;
-            this.login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.login.Font = new System.Drawing.Font("Cascadia Code", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login.ForeColor = System.Drawing.Color.White;
-            this.login.Location = new System.Drawing.Point(777, 13);
-            this.login.Margin = new System.Windows.Forms.Padding(6);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(152, 39);
-            this.login.TabIndex = 14;
-            this.login.Text = "Xuất bán lẻ";
-            this.login.UseVisualStyleBackColor = false;
+            this.btnExport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnExport.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExport.FlatAppearance.BorderColor = System.Drawing.Color.Violet;
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnExport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumVioletRed;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Font = new System.Drawing.Font("Cascadia Code", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.Color.White;
+            this.btnExport.Location = new System.Drawing.Point(777, 13);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(6);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(152, 39);
+            this.btnExport.TabIndex = 14;
+            this.btnExport.Text = "Xuất bán lẻ";
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // title
             // 
@@ -149,7 +148,6 @@
             this.code,
             this.mfg_date,
             this.exp_date,
-            this.stock,
             this.number});
             this.table.Location = new System.Drawing.Point(31, 368);
             this.table.Margin = new System.Windows.Forms.Padding(0);
@@ -182,12 +180,6 @@
             this.exp_date.HeaderText = "HSD";
             this.exp_date.Name = "exp_date";
             this.exp_date.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Tồn kho";
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
             // 
             // number
             // 
@@ -279,9 +271,9 @@
             this.label9.Location = new System.Drawing.Point(605, 270);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 25);
+            this.label9.Size = new System.Drawing.Size(123, 25);
             this.label9.TabIndex = 25;
-            this.label9.Text = "Đang bán lẻ";
+            this.label9.Text = "Đang bán lẻ:";
             // 
             // label10
             // 
@@ -305,54 +297,42 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "Số lượng:";
             // 
-            // label12
+            // avai
             // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(782, 270);
-            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(104, 25);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "miếng/hộp";
+            this.avai.AutoSize = true;
+            this.avai.ForeColor = System.Drawing.Color.White;
+            this.avai.Location = new System.Drawing.Point(851, 328);
+            this.avai.Name = "avai";
+            this.avai.Size = new System.Drawing.Size(94, 29);
+            this.avai.TabIndex = 24;
+            this.avai.Text = "Có sẵn";
+            this.avai.UseVisualStyleBackColor = true;
+            this.avai.CheckedChanged += new System.EventHandler(this.avai_CheckedChanged);
             // 
-            // checkBox1
+            // rNum
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(851, 328);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(94, 29);
-            this.checkBox1.TabIndex = 24;
-            this.checkBox1.Text = "Có sẵn";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.rNum.BackColor = System.Drawing.Color.SteelBlue;
+            this.rNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rNum.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rNum.ForeColor = System.Drawing.Color.White;
+            this.rNum.Location = new System.Drawing.Point(783, 272);
+            this.rNum.Name = "rNum";
+            this.rNum.ReadOnly = true;
+            this.rNum.Size = new System.Drawing.Size(63, 23);
+            this.rNum.TabIndex = 29;
+            this.rNum.Text = "0";
             // 
-            // retail_unit
+            // name
             // 
-            this.retail_unit.BackColor = System.Drawing.Color.SteelBlue;
-            this.retail_unit.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.retail_unit.Cursor = System.Windows.Forms.Cursors.Default;
-            this.retail_unit.ForeColor = System.Drawing.Color.White;
-            this.retail_unit.Location = new System.Drawing.Point(720, 270);
-            this.retail_unit.Name = "retail_unit";
-            this.retail_unit.ReadOnly = true;
-            this.retail_unit.Size = new System.Drawing.Size(63, 23);
-            this.retail_unit.TabIndex = 29;
-            this.retail_unit.Text = "10000";
-            this.retail_unit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(236, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(63, 23);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.Text = "10000";
+            this.name.BackColor = System.Drawing.Color.SteelBlue;
+            this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name.Cursor = System.Windows.Forms.Cursors.Default;
+            this.name.ForeColor = System.Drawing.Color.White;
+            this.name.Location = new System.Drawing.Point(236, 152);
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Size = new System.Drawing.Size(63, 23);
+            this.name.TabIndex = 30;
             // 
             // inpCode
             // 
@@ -365,72 +345,70 @@
             this.inpCode.ReadOnly = true;
             this.inpCode.Size = new System.Drawing.Size(63, 23);
             this.inpCode.TabIndex = 31;
-            this.inpCode.Text = "10000";
             // 
-            // textBox4
+            // unit
             // 
-            this.textBox4.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(236, 270);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(63, 23);
-            this.textBox4.TabIndex = 33;
-            this.textBox4.Text = "10000";
+            this.unit.BackColor = System.Drawing.Color.SteelBlue;
+            this.unit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.unit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.unit.ForeColor = System.Drawing.Color.White;
+            this.unit.Location = new System.Drawing.Point(236, 270);
+            this.unit.Name = "unit";
+            this.unit.ReadOnly = true;
+            this.unit.Size = new System.Drawing.Size(63, 23);
+            this.unit.TabIndex = 33;
             // 
-            // textBox5
+            // iNum
             // 
-            this.textBox5.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(783, 95);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(63, 23);
-            this.textBox5.TabIndex = 34;
-            this.textBox5.Text = "10000";
+            this.iNum.BackColor = System.Drawing.Color.SteelBlue;
+            this.iNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.iNum.Cursor = System.Windows.Forms.Cursors.Default;
+            this.iNum.ForeColor = System.Drawing.Color.White;
+            this.iNum.Location = new System.Drawing.Point(783, 95);
+            this.iNum.Name = "iNum";
+            this.iNum.ReadOnly = true;
+            this.iNum.Size = new System.Drawing.Size(63, 23);
+            this.iNum.TabIndex = 34;
+            this.iNum.Text = "0";
             // 
-            // textBox6
+            // eNum
             // 
-            this.textBox6.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox6.ForeColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(783, 152);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(63, 23);
-            this.textBox6.TabIndex = 35;
-            this.textBox6.Text = "10000";
+            this.eNum.BackColor = System.Drawing.Color.SteelBlue;
+            this.eNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.eNum.Cursor = System.Windows.Forms.Cursors.Default;
+            this.eNum.ForeColor = System.Drawing.Color.White;
+            this.eNum.Location = new System.Drawing.Point(783, 152);
+            this.eNum.Name = "eNum";
+            this.eNum.ReadOnly = true;
+            this.eNum.Size = new System.Drawing.Size(63, 23);
+            this.eNum.TabIndex = 35;
+            this.eNum.Text = "0";
             // 
-            // textBox7
+            // currentNum
             // 
-            this.textBox7.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox7.ForeColor = System.Drawing.Color.White;
-            this.textBox7.Location = new System.Drawing.Point(783, 213);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(63, 23);
-            this.textBox7.TabIndex = 36;
-            this.textBox7.Text = "10000";
+            this.currentNum.BackColor = System.Drawing.Color.SteelBlue;
+            this.currentNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.currentNum.Cursor = System.Windows.Forms.Cursors.Default;
+            this.currentNum.ForeColor = System.Drawing.Color.White;
+            this.currentNum.Location = new System.Drawing.Point(783, 213);
+            this.currentNum.Name = "currentNum";
+            this.currentNum.ReadOnly = true;
+            this.currentNum.Size = new System.Drawing.Size(63, 23);
+            this.currentNum.TabIndex = 36;
+            this.currentNum.Text = "0";
             // 
-            // textBox8
+            // inpNum
             // 
-            this.textBox8.BackColor = System.Drawing.Color.RoyalBlue;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox8.ForeColor = System.Drawing.Color.White;
-            this.textBox8.Location = new System.Drawing.Point(591, 22);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(63, 23);
-            this.textBox8.TabIndex = 37;
-            this.textBox8.Text = "0";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.inpNum.BackColor = System.Drawing.Color.RoyalBlue;
+            this.inpNum.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inpNum.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.inpNum.ForeColor = System.Drawing.Color.White;
+            this.inpNum.Location = new System.Drawing.Point(591, 22);
+            this.inpNum.Name = "inpNum";
+            this.inpNum.Size = new System.Drawing.Size(63, 23);
+            this.inpNum.TabIndex = 37;
+            this.inpNum.Text = "0";
+            this.inpNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // capacity
             // 
@@ -448,52 +426,49 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.speci);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.capacity);
-            this.panel1.Controls.Add(this.login);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.btnExport);
+            this.panel1.Controls.Add(this.inpNum);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Location = new System.Drawing.Point(0, 663);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(999, 65);
             this.panel1.TabIndex = 39;
             // 
-            // label8
+            // speci
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(236, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 25);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "miếng/hộp";
+            this.speci.AutoSize = true;
+            this.speci.ForeColor = System.Drawing.Color.White;
+            this.speci.Location = new System.Drawing.Point(236, 20);
+            this.speci.Name = "speci";
+            this.speci.Size = new System.Drawing.Size(0, 25);
+            this.speci.TabIndex = 39;
             // 
-            // textBox3
+            // cate
             // 
-            this.textBox3.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(236, 211);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(259, 23);
-            this.textBox3.TabIndex = 32;
-            this.textBox3.Text = "Thực phẩm chức năng";
+            this.cate.BackColor = System.Drawing.Color.SteelBlue;
+            this.cate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cate.ForeColor = System.Drawing.Color.White;
+            this.cate.Location = new System.Drawing.Point(236, 211);
+            this.cate.Name = "cate";
+            this.cate.ReadOnly = true;
+            this.cate.Size = new System.Drawing.Size(259, 23);
+            this.cate.TabIndex = 32;
             // 
-            // textBox2
+            // rUnit
             // 
-            this.textBox2.BackColor = System.Drawing.Color.SteelBlue;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(236, 321);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(63, 23);
-            this.textBox2.TabIndex = 41;
-            this.textBox2.Text = "10000";
+            this.rUnit.BackColor = System.Drawing.Color.SteelBlue;
+            this.rUnit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rUnit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rUnit.ForeColor = System.Drawing.Color.White;
+            this.rUnit.Location = new System.Drawing.Point(236, 321);
+            this.rUnit.Name = "rUnit";
+            this.rUnit.ReadOnly = true;
+            this.rUnit.Size = new System.Drawing.Size(63, 23);
+            this.rUnit.TabIndex = 41;
             // 
             // label13
             // 
@@ -513,19 +488,18 @@
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(999, 750);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.rUnit);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.currentNum);
+            this.Controls.Add(this.eNum);
+            this.Controls.Add(this.iNum);
+            this.Controls.Add(this.unit);
+            this.Controls.Add(this.cate);
             this.Controls.Add(this.inpCode);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.retail_unit);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.name);
+            this.Controls.Add(this.rNum);
+            this.Controls.Add(this.avai);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -544,6 +518,7 @@
             this.Name = "FormDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDetails";
+            this.Load += new System.EventHandler(this.FormDetails_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormDetails_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
@@ -558,15 +533,9 @@
 
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.PictureBox exit;
-        private System.Windows.Forms.Button login;
+        private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.DataGridView table;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mfg_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn exp_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -577,21 +546,25 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.CheckBox avai;
+        private System.Windows.Forms.TextBox currentNum;
+        private System.Windows.Forms.TextBox eNum;
+        private System.Windows.Forms.TextBox iNum;
+        private System.Windows.Forms.TextBox unit;
         private System.Windows.Forms.TextBox inpCode;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox retail_unit;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.TextBox rNum;
         private System.Windows.Forms.TextBox capacity;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox inpNum;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label speci;
+        private System.Windows.Forms.TextBox cate;
+        private System.Windows.Forms.TextBox rUnit;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mfg_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exp_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
     }
 }

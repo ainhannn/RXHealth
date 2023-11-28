@@ -103,30 +103,17 @@ namespace DAL
             return -1;
         }
 
-		private SqlDataReader ExecuteReader1(string sql, params SqlParameter[] parameters)
-		{
-			string connstring = string.Format("Server={0}; database={1}; UID={2}; password={3}", server, database, user, password);
-			using (SqlConnection connection = new SqlConnection(connstring))
-			{
-				connection.Open();
+        public static object GetSetting(string fieldName)
+        {
+            string sql = string.Format("SELECT {0} FROM setting_value LIMIT 1", fieldName);
+            var rs = ExecuteScalar(sql);
+            return rs;
+        }
 
-				using (SqlCommand command = new SqlCommand(sql, connection))
-				{
-					command.Parameters.AddRange(parameters);
-
-					try
-					{
-						SqlDataReader reader = command.ExecuteReader();
-						return reader;
-					}
-					catch (Exception ex)
-					{
-						// Handle exceptions or log the error
-						Console.WriteLine($"Error executing query: {ex.Message}");
-						throw;
-					}
-				}
-			}
-		}
-	}
+        public static bool Setting(string fieldName, object value)
+        {
+            string sql = string.Format("UPDATE setting_value SET {0} = '{1}'", fieldName, value);
+            return ExecuteNonQuery(sql) != -1;
+        }
+    }
 }

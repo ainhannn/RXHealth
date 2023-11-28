@@ -10,7 +10,7 @@ namespace DTO
         public DateTime EXPDate { get; set; } = DateTime.MaxValue;
         public string Unit { get; set; }
         public int Number { get; set; }
-        public float ImportPrice { get; set; }
+        public double ImportPrice { get; set; }
         public ImportDetail() { }
     }
 }

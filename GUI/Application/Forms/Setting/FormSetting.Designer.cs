@@ -31,16 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.save = new System.Windows.Forms.Button();
-            this.inpCitizenId = new System.Windows.Forms.TextBox();
-            this.inpAccount = new System.Windows.Forms.TextBox();
-            this.inpFullName = new System.Windows.Forms.TextBox();
+            this.rate = new System.Windows.Forms.TextBox();
+            this.vat = new System.Windows.Forms.TextBox();
+            this.price = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.VAT = new System.Windows.Forms.Label();
+            this.lblVAT = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.point = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -100,48 +100,49 @@
             this.save.Text = "Lưu";
             this.save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
-            // inpCitizenId
+            // rate
             // 
-            this.inpCitizenId.AcceptsReturn = true;
-            this.inpCitizenId.AcceptsTab = true;
-            this.inpCitizenId.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpCitizenId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpCitizenId.Location = new System.Drawing.Point(755, 221);
-            this.inpCitizenId.MaximumSize = new System.Drawing.Size(500, 30);
-            this.inpCitizenId.MinimumSize = new System.Drawing.Size(10, 30);
-            this.inpCitizenId.Name = "inpCitizenId";
-            this.inpCitizenId.Size = new System.Drawing.Size(100, 30);
-            this.inpCitizenId.TabIndex = 2;
-            this.inpCitizenId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rate.AcceptsReturn = true;
+            this.rate.AcceptsTab = true;
+            this.rate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.rate.Location = new System.Drawing.Point(755, 221);
+            this.rate.MaximumSize = new System.Drawing.Size(500, 30);
+            this.rate.MinimumSize = new System.Drawing.Size(10, 30);
+            this.rate.Name = "rate";
+            this.rate.Size = new System.Drawing.Size(100, 30);
+            this.rate.TabIndex = 2;
+            this.rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // inpAccount
+            // vat
             // 
-            this.inpAccount.AcceptsReturn = true;
-            this.inpAccount.AcceptsTab = true;
-            this.inpAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpAccount.Location = new System.Drawing.Point(755, 154);
-            this.inpAccount.MaximumSize = new System.Drawing.Size(500, 30);
-            this.inpAccount.MinimumSize = new System.Drawing.Size(10, 30);
-            this.inpAccount.Name = "inpAccount";
-            this.inpAccount.Size = new System.Drawing.Size(100, 30);
-            this.inpAccount.TabIndex = 1;
-            this.inpAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.vat.AcceptsReturn = true;
+            this.vat.AcceptsTab = true;
+            this.vat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.vat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.vat.Location = new System.Drawing.Point(755, 154);
+            this.vat.MaximumSize = new System.Drawing.Size(500, 30);
+            this.vat.MinimumSize = new System.Drawing.Size(10, 30);
+            this.vat.Name = "vat";
+            this.vat.Size = new System.Drawing.Size(100, 30);
+            this.vat.TabIndex = 1;
+            this.vat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // inpFullName
+            // price
             // 
-            this.inpFullName.AcceptsReturn = true;
-            this.inpFullName.AcceptsTab = true;
-            this.inpFullName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inpFullName.Location = new System.Drawing.Point(755, 288);
-            this.inpFullName.MaximumSize = new System.Drawing.Size(500, 30);
-            this.inpFullName.MinimumSize = new System.Drawing.Size(10, 30);
-            this.inpFullName.Name = "inpFullName";
-            this.inpFullName.Size = new System.Drawing.Size(100, 30);
-            this.inpFullName.TabIndex = 3;
-            this.inpFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.price.AcceptsReturn = true;
+            this.price.AcceptsTab = true;
+            this.price.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.price.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.price.Location = new System.Drawing.Point(755, 288);
+            this.price.MaximumSize = new System.Drawing.Size(500, 30);
+            this.price.MinimumSize = new System.Drawing.Size(10, 30);
+            this.price.Name = "price";
+            this.price.Size = new System.Drawing.Size(100, 30);
+            this.price.TabIndex = 3;
+            this.price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -165,16 +166,16 @@
             this.label7.TabIndex = 148;
             this.label7.Text = "Thành viên bạc";
             // 
-            // VAT
+            // lblVAT
             // 
-            this.VAT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.VAT.AutoSize = true;
-            this.VAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.VAT.Location = new System.Drawing.Point(372, 157);
-            this.VAT.Name = "VAT";
-            this.VAT.Size = new System.Drawing.Size(128, 25);
-            this.VAT.TabIndex = 146;
-            this.VAT.Text = "Thuế (VAT)";
+            this.lblVAT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblVAT.AutoSize = true;
+            this.lblVAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.lblVAT.Location = new System.Drawing.Point(372, 157);
+            this.lblVAT.Name = "lblVAT";
+            this.lblVAT.Size = new System.Drawing.Size(128, 25);
+            this.lblVAT.TabIndex = 146;
+            this.lblVAT.Text = "Thuế (VAT)";
             // 
             // label3
             // 
@@ -209,19 +210,19 @@
             this.label4.TabIndex = 166;
             this.label4.Text = "đồng =";
             // 
-            // textBox1
+            // point
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.AcceptsTab = true;
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.textBox1.Location = new System.Drawing.Point(944, 288);
-            this.textBox1.MaximumSize = new System.Drawing.Size(500, 30);
-            this.textBox1.MinimumSize = new System.Drawing.Size(10, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 30);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.point.AcceptsReturn = true;
+            this.point.AcceptsTab = true;
+            this.point.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.point.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.point.Location = new System.Drawing.Point(944, 288);
+            this.point.MaximumSize = new System.Drawing.Size(500, 30);
+            this.point.MinimumSize = new System.Drawing.Size(10, 30);
+            this.point.Name = "point";
+            this.point.Size = new System.Drawing.Size(100, 30);
+            this.point.TabIndex = 4;
+            this.point.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -388,7 +389,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1600, 894);
+            this.ClientSize = new System.Drawing.Size(1444, 894);
             this.ControlBox = false;
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox6);
@@ -403,17 +404,17 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.point);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.save);
-            this.Controls.Add(this.inpCitizenId);
-            this.Controls.Add(this.inpAccount);
-            this.Controls.Add(this.inpFullName);
+            this.Controls.Add(this.rate);
+            this.Controls.Add(this.vat);
+            this.Controls.Add(this.price);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.VAT);
+            this.Controls.Add(this.lblVAT);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -424,6 +425,7 @@
             this.MinimizeBox = false;
             this.Name = "FormSetting";
             this.Text = "FormSetting";
+            this.Load += new System.EventHandler(this.FormSetting_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,16 +436,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button save;
-        private System.Windows.Forms.TextBox inpCitizenId;
-        private System.Windows.Forms.TextBox inpAccount;
-        private System.Windows.Forms.TextBox inpFullName;
+        private System.Windows.Forms.TextBox rate;
+        private System.Windows.Forms.TextBox vat;
+        private System.Windows.Forms.TextBox price;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label VAT;
+        private System.Windows.Forms.Label lblVAT;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox point;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox2;

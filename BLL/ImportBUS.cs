@@ -1,30 +1,36 @@
 ﻿using DAL;
 using DTO;
-using System;
 using System.Collections.Generic;
 
 namespace BLL
 {
     public class ImportBUS
     {
-        //public static List<Supplier> SelectAll()
-        //    => SupplierDAO.SelectAll();
+        public static List<ImportInvoice> SelectAll()
+            => ImportDAO.SelectAllForm();
 
-        //public static Supplier Select(int id)
-        //    => SupplierDAO.Select(id);
+        public static ImportInvoice Select(string impCode)
+            => ImportDAO.SelectForm(impCode);
 
-        //public static List<Supplier> SearchOnName(string name)
-        //    => SupplierDAO.SearchOnName(name);
-
-        //public static List<ImportInvoice> GetExchangeHistory(int supId)
-        //    => ImportDAO.GetOnSupplier(supId);
-
-        public static bool Insert(ImportInvoice invoice)
+        public static ImportInvoice Insert(ImportInvoice invoice)
         {
-            if (invoice == null || invoice.Details.Count < 1) 
-                return false;
-            return ImportDAO.Insert(invoice);
-        }
+            if (invoice == null) return null;
+
+            var newList = new List<ImportDetail>();
+            foreach (var item in invoice.Details)
+            {
+                if (ProductDAO.GetProductId(item.Barcode) != -1)
+                    newList.Add(item);
+            }
             
+            if (newList.Count < 1) { return null; }
+
+            invoice.Details = newList;
+            return ImportDAO.Insert(invoice) ? invoice : null;
+        }
+
+        public static Dictionary<int, double> Expense()
+            => ImportDAO.Expense();
+
     }
 }

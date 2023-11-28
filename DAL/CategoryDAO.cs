@@ -6,7 +6,7 @@ namespace DAL
 {
     public class CategoryDAO : DBConnection
     {
-        private static string dbTableName = "category";
+        private static readonly string dbTableName = "category";
 
         private static Category ConvertToDTO(List<object> row)
         {
@@ -20,6 +20,7 @@ namespace DAL
             var table = ExecuteReader(sql);
             return table.Count != 0 ? Convert.ToInt16(table[0][0]) : 0;
         }
+        
         public static List<Category> SelectAll()
         {
             string sql = string.Format("SELECT * FROM {0}", dbTableName);
@@ -31,12 +32,14 @@ namespace DAL
             }
             return list;
         }
+        
         public static Category Select(int id)
         {
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1}", dbTableName, id);
             var table = ExecuteReader(sql);
             return table.Count != 0 ? ConvertToDTO(table[table.Count - 1]) : null;
         }
+        
         public static bool Insert(Category e)
         {
             string sql = string.Format("INSERT INTO {0}(name) VALUE ('{1}')", dbTableName, e.Name);

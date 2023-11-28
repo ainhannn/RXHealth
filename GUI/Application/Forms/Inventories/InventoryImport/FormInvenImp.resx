@@ -141,7 +141,20 @@
   <metadata name="price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="download.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCh8QECd2sdq4AAAA8ElEQVRIS2NgIAL8//+fDYg7gfgZ
+        ED8F4naQGBFaiVMCNKwDiNFBG3G6iVAFdTm6Bc+I0EqcEiyuBwsRp5sIVaMWEAykoRdEQBfvA+I3QHwY
+        iFfj8gFUDqQGpHYvwaCAKQAqPo3HUFxSp0ixQB5oygsSLHkNVKtMtAUghUANxkD8hQhLvgHVWJBkOFJQ
+        BQE1/8VjyT+gXCRZhiNZUobHglKKDEeyZBoWS+ZQxXBofLAALdiFZMl+IJt69QHUEn6goSehmJ9qrh86
+        BgG97gHEj4lI94SUPAIqcMfwOVAQJEEt8HBALHCnki8eAs1xg/kAAJdgXv3EkqFVAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="upload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1

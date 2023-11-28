@@ -102,7 +102,7 @@ namespace GUI
                 MessageBox.Show("Vui lòng không bỏ trống!");
                 return;
             }
-            if (!Check.IsPhoneNumber(inpContactNumber.Text))
+            if (!Retreat.IsPhoneNumber(inpContactNumber.Text))
             {
                 MessageBox.Show("Sai định dạng số điện thoại!");
                 return;

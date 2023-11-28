@@ -121,22 +121,22 @@
   <data name="search.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
-        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCh8QFhnhimCVAAACFUlEQVRIS62WzYtOYRiHjRjykVLY
-        zH8wG2yISVKGmlnYaDZKSo2PhY3sGBsb5dtIyUI0ZTdRZj3KlA0LmaKwURNKmXxEeFz3ff9e73Nec5xz
-        aq66muZ3f5z34zxnZkEZKaVteB4f41t8j8/wLu7DlWptBoOb8BFW8Q6P4kKNVkPzIfyBnXzCGfzlvxW5
-        h9XvhqYj3t7mNQ7jOrVYzxLcjfcxZxIXq+1fKG7B/JVfx26V54T6Hpy1ZnFZpSIUunDKW4KbKlVCbx9+
-        96mUfmKvSm0Id3o5eInlb3UO6D/jk8EtxW0Ir0XNOaC4Nsyswq8+ndJHXKRSQGD3tmF3yGrFjWAu/9LX
-        Kw4I7KrGjKLGMHs2VjgDigOCb5GnV4oaw+zpWOHsVRwQvIk8fcH6pzKDuRu+IehTHBBMRO5sVdwI5uxQ
-        GvY9rlUcEOQn+Lbi2jCzK0adKcVtCNdg60TaK9iuUiX0rsBpGxQHVSpC4WTUnQ+4UaVS6LHlD2xAPMfi
-        GWhBoRsfWpewL/w4LlVLAfId2Do/xmcs3v+d0GAf1VPrzrAzMoYjeAKvYP6RGPZiBrWj35eVQcNyvIO/
-        sQ4vcINmj3mS0gXs8oVl0LAZx7H1jOnkCR5GfzDyc8DCjKv4/4sYNC1DeyQP4X60W7JH5b+Q2SN/FHPs
-        b0r1Repiy/CSbc64qPL8wdJzsduZVTy/sPgU8k9CGvkDy42WsB+yJosAAAAASUVORK5CYII=
+        MAAA6mAAADqYAAAXcJy6UTwAAAAHdElNRQfnCh8QFhnhimCVAAACB0lEQVRIS6WWu0tcQRSHd4Ou4gNB
+        MDb+BzbRxqCLiGASMIWN2AhBEHwVNmJn1iaN4DtKIKQQQyBdiKC1gSzYaCEGIqiNsGhAcFGDIbr5jsyF
+        s+N9zJoLH3PvzO+c38zcOXc3Fgu4crlcK8zAFhzDKezCZ+iFyqDY0H4Cm+A7RF0nCEbgkbMR4kH445P5
+        nL4M3PiMfXVaDaJhK/iQ5wGo9WbIfQm8gDVLu8lzceBKGGy2Zv6O50TY0hnvgqwyWvDVI4hDWgk/uO4p
+        MUm4NrF/aevvxdLZoZLvhy7Vxxn9GxW/4mewrAR9rrNX76WK+CuT44y2KC8HHXK25ZITUl2ogeiJ0y/9
+        iW0grnJlHpLcGEypXei0DX6bwYP/MJhUBt22wZEZvKR1r0qVhbj3yiBpG2yowZaHrIJ4KUrvPT62DXQF
+        rxZqQNbnaoJpv2Nag8CrSDlJba4maCvghzLoD6rmCSX6xX1jlIlJvq7i9rjPrwFVLAkGvymxvPAxKPUz
+        or8dvPqRsAvIP/92IALZqh1lIrdSI58gBeOwaG2JaGQyL009PAtdOcJy+Ai3llHQ408GGkzyUSOapY1H
+        GT1F9AW8b4xtsE3HENz9BtB2WoK3kSYmsAyhfJJ74BXIkazz2V755C9ZJvKbEr6SqJOkxyUZzFsmc4Xk
+        cNJiMK1Msk5BhYoweA3yJyH1D8uNlrDCJSY+AAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="dataGridViewTextBoxColumn3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="cCode.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -151,7 +151,7 @@
   <metadata name="number.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="dataGridViewCheckBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="remove.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

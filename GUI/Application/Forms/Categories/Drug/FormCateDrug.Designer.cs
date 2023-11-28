@@ -45,12 +45,15 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.retail_unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.retail_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_on_sale = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.is_stopped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectDelete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.insert = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
             this.RecycleBin = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.upload = new System.Windows.Forms.Button();
+            this.download = new System.Windows.Forms.Button();
             this.inpPriceMax = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.inpPriceMin = new System.Windows.Forms.TextBox();
@@ -64,7 +67,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.inpCate = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
-            this.btnAccount = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panel2.SuspendLayout();
@@ -80,7 +83,7 @@
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(0, 0);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(1600, 50);
+            this.pnlSearch.Size = new System.Drawing.Size(1444, 50);
             this.pnlSearch.TabIndex = 113;
             // 
             // search
@@ -94,7 +97,7 @@
             this.search.ForeColor = System.Drawing.Color.White;
             this.search.Image = ((System.Drawing.Image)(resources.GetObject("search.Image")));
             this.search.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.search.Location = new System.Drawing.Point(1548, 0);
+            this.search.Location = new System.Drawing.Point(1392, 0);
             this.search.Margin = new System.Windows.Forms.Padding(5);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(50, 48);
@@ -112,6 +115,7 @@
             this.inpSearch.Name = "inpSearch";
             this.inpSearch.Size = new System.Drawing.Size(1530, 23);
             this.inpSearch.TabIndex = 21;
+            this.inpSearch.TextChanged += new System.EventHandler(this.inpSearch_TextChanged);
             // 
             // table
             // 
@@ -140,7 +144,7 @@
             this.price,
             this.retail_unit,
             this.retail_price,
-            this.is_on_sale,
+            this.is_stopped,
             this.selectDelete});
             this.table.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.table.EnableHeadersVisualStyles = false;
@@ -150,7 +154,7 @@
             this.table.RowHeadersWidth = 51;
             this.table.RowTemplate.Height = 24;
             this.table.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.Size = new System.Drawing.Size(1600, 400);
+            this.table.Size = new System.Drawing.Size(1444, 400);
             this.table.TabIndex = 115;
             this.table.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CellDoubleClick);
             // 
@@ -214,11 +218,13 @@
             this.retail_price.Name = "retail_price";
             this.retail_price.ReadOnly = true;
             // 
-            // is_on_sale
+            // is_stopped
             // 
-            this.is_on_sale.HeaderText = "Bán?";
-            this.is_on_sale.Name = "is_on_sale";
-            this.is_on_sale.ReadOnly = true;
+            this.is_stopped.HeaderText = "Ngừng bán";
+            this.is_stopped.Name = "is_stopped";
+            this.is_stopped.ReadOnly = true;
+            this.is_stopped.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.is_stopped.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // selectDelete
             // 
@@ -229,17 +235,40 @@
             this.selectDelete.HeaderText = "Xóa";
             this.selectDelete.MinimumWidth = 6;
             this.selectDelete.Name = "selectDelete";
+            this.selectDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel2.Controls.Add(this.insert);
             this.panel2.Controls.Add(this.refresh);
             this.panel2.Controls.Add(this.RecycleBin);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 444);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1600, 50);
+            this.panel2.Size = new System.Drawing.Size(1444, 50);
             this.panel2.TabIndex = 116;
+            // 
+            // insert
+            // 
+            this.insert.BackColor = System.Drawing.Color.MidnightBlue;
+            this.insert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.insert.Dock = System.Windows.Forms.DockStyle.Right;
+            this.insert.FlatAppearance.BorderSize = 0;
+            this.insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.insert.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.insert.ForeColor = System.Drawing.Color.White;
+            this.insert.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.insert.Location = new System.Drawing.Point(1344, 0);
+            this.insert.Margin = new System.Windows.Forms.Padding(5);
+            this.insert.Name = "insert";
+            this.insert.Size = new System.Drawing.Size(50, 50);
+            this.insert.TabIndex = 113;
+            this.insert.Tag = "";
+            this.insert.Text = "+";
+            this.insert.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.insert.UseVisualStyleBackColor = false;
+            this.insert.Click += new System.EventHandler(this.insert_Click);
             // 
             // refresh
             // 
@@ -252,7 +281,7 @@
             this.refresh.ForeColor = System.Drawing.Color.White;
             this.refresh.Image = global::GUI.Properties.Resources.save;
             this.refresh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.refresh.Location = new System.Drawing.Point(1550, 0);
+            this.refresh.Location = new System.Drawing.Point(1394, 0);
             this.refresh.Margin = new System.Windows.Forms.Padding(5);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(50, 50);
@@ -260,6 +289,7 @@
             this.refresh.Tag = "";
             this.refresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.refresh.UseVisualStyleBackColor = false;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // RecycleBin
             // 
@@ -285,6 +315,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.upload);
+            this.panel1.Controls.Add(this.download);
             this.panel1.Controls.Add(this.inpPriceMax);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.inpPriceMin);
@@ -298,19 +330,61 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.inpCate);
             this.panel1.Controls.Add(this.lblFilter);
-            this.panel1.Controls.Add(this.btnAccount);
+            this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1600, 394);
+            this.panel1.Size = new System.Drawing.Size(1444, 394);
             this.panel1.TabIndex = 117;
+            // 
+            // upload
+            // 
+            this.upload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.upload.BackColor = System.Drawing.Color.RoyalBlue;
+            this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upload.FlatAppearance.BorderSize = 0;
+            this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upload.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.upload.ForeColor = System.Drawing.Color.White;
+            this.upload.Image = ((System.Drawing.Image)(resources.GetObject("upload.Image")));
+            this.upload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.upload.Location = new System.Drawing.Point(1393, 66);
+            this.upload.Margin = new System.Windows.Forms.Padding(5);
+            this.upload.Name = "upload";
+            this.upload.Size = new System.Drawing.Size(50, 50);
+            this.upload.TabIndex = 133;
+            this.upload.Tag = "";
+            this.upload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.upload.UseVisualStyleBackColor = false;
+            this.upload.Click += new System.EventHandler(this.upload_Click);
+            // 
+            // download
+            // 
+            this.download.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.download.BackColor = System.Drawing.Color.RoyalBlue;
+            this.download.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.download.FlatAppearance.BorderSize = 0;
+            this.download.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.download.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.download.ForeColor = System.Drawing.Color.White;
+            this.download.Image = ((System.Drawing.Image)(resources.GetObject("download.Image")));
+            this.download.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.download.Location = new System.Drawing.Point(1393, 9);
+            this.download.Margin = new System.Windows.Forms.Padding(5);
+            this.download.Name = "download";
+            this.download.Size = new System.Drawing.Size(50, 50);
+            this.download.TabIndex = 118;
+            this.download.Tag = "";
+            this.download.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.download.UseVisualStyleBackColor = false;
+            this.download.Click += new System.EventHandler(this.download_Click);
             // 
             // inpPriceMax
             // 
             this.inpPriceMax.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpPriceMax.Location = new System.Drawing.Point(632, 205);
+            this.inpPriceMax.Location = new System.Drawing.Point(554, 205);
             this.inpPriceMax.Name = "inpPriceMax";
             this.inpPriceMax.Size = new System.Drawing.Size(112, 30);
             this.inpPriceMax.TabIndex = 132;
@@ -321,7 +395,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(580, 208);
+            this.label5.Location = new System.Drawing.Point(502, 208);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 25);
             this.label5.TabIndex = 131;
@@ -330,7 +404,7 @@
             // inpPriceMin
             // 
             this.inpPriceMin.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpPriceMin.Location = new System.Drawing.Point(464, 205);
+            this.inpPriceMin.Location = new System.Drawing.Point(386, 205);
             this.inpPriceMin.Name = "inpPriceMin";
             this.inpPriceMin.Size = new System.Drawing.Size(112, 30);
             this.inpPriceMin.TabIndex = 130;
@@ -341,7 +415,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(308, 208);
+            this.label4.Location = new System.Drawing.Point(230, 208);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(146, 25);
             this.label4.TabIndex = 129;
@@ -353,7 +427,7 @@
             this.isStopped.AutoSize = true;
             this.isStopped.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isStopped.ForeColor = System.Drawing.Color.White;
-            this.isStopped.Location = new System.Drawing.Point(905, 207);
+            this.isStopped.Location = new System.Drawing.Point(827, 207);
             this.isStopped.Name = "isStopped";
             this.isStopped.Size = new System.Drawing.Size(136, 29);
             this.isStopped.TabIndex = 128;
@@ -363,7 +437,7 @@
             // inpRUnit
             // 
             this.inpRUnit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpRUnit.Location = new System.Drawing.Point(1062, 140);
+            this.inpRUnit.Location = new System.Drawing.Point(984, 140);
             this.inpRUnit.Name = "inpRUnit";
             this.inpRUnit.Size = new System.Drawing.Size(230, 30);
             this.inpRUnit.TabIndex = 127;
@@ -374,7 +448,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(900, 143);
+            this.label3.Location = new System.Drawing.Point(822, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 25);
             this.label3.TabIndex = 126;
@@ -383,7 +457,7 @@
             // inpName
             // 
             this.inpName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpName.Location = new System.Drawing.Point(464, 73);
+            this.inpName.Location = new System.Drawing.Point(386, 73);
             this.inpName.Name = "inpName";
             this.inpName.Size = new System.Drawing.Size(230, 30);
             this.inpName.TabIndex = 125;
@@ -394,7 +468,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(308, 76);
+            this.label2.Location = new System.Drawing.Point(230, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 25);
             this.label2.TabIndex = 124;
@@ -403,7 +477,7 @@
             // inpUnit
             // 
             this.inpUnit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.inpUnit.Location = new System.Drawing.Point(464, 140);
+            this.inpUnit.Location = new System.Drawing.Point(386, 140);
             this.inpUnit.Name = "inpUnit";
             this.inpUnit.Size = new System.Drawing.Size(230, 30);
             this.inpUnit.TabIndex = 123;
@@ -414,7 +488,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(308, 143);
+            this.label1.Location = new System.Drawing.Point(230, 143);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 25);
             this.label1.TabIndex = 122;
@@ -426,14 +500,14 @@
             this.inpCate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.inpCate.FormattingEnabled = true;
             this.inpCate.Items.AddRange(new object[] {
+            "",
             "Thuốc kê đơn",
             "Thuốc không kê đơn",
             "Thực phẩm chức năng",
             "Chăm sóc cá nhân",
             "Dụng cụ y tế",
-            "Thiết bị y tế",
-            "Tất cả"});
-            this.inpCate.Location = new System.Drawing.Point(1062, 73);
+            "Thiết bị y tế"});
+            this.inpCate.Location = new System.Drawing.Point(984, 73);
             this.inpCate.Name = "inpCate";
             this.inpCate.Size = new System.Drawing.Size(230, 33);
             this.inpCate.TabIndex = 120;
@@ -444,35 +518,36 @@
             this.lblFilter.AutoSize = true;
             this.lblFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilter.ForeColor = System.Drawing.Color.White;
-            this.lblFilter.Location = new System.Drawing.Point(900, 76);
+            this.lblFilter.Location = new System.Drawing.Point(822, 76);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(129, 25);
             this.lblFilter.TabIndex = 121;
             this.lblFilter.Text = "Ngành hàng";
             // 
-            // btnAccount
+            // btnSearch
             // 
-            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAccount.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAccount.Location = new System.Drawing.Point(738, 272);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(125, 50);
-            this.btnAccount.TabIndex = 107;
-            this.btnAccount.Tag = "";
-            this.btnAccount.Text = "Tìm kiếm";
-            this.btnAccount.UseVisualStyleBackColor = false;
+            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnSearch.Location = new System.Drawing.Point(660, 272);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(125, 50);
+            this.btnSearch.TabIndex = 107;
+            this.btnSearch.Tag = "";
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // FormCateDrug
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
-            this.ClientSize = new System.Drawing.Size(1600, 894);
+            this.ClientSize = new System.Drawing.Size(1444, 894);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -505,19 +580,7 @@
         private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Button RecycleBin;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stack;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn imp_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn retail_unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn retail_price;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn is_on_sale;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn selectDelete;
-        private System.Windows.Forms.Button btnAccount;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox inpCate;
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.TextBox inpUnit;
@@ -531,5 +594,20 @@
         private System.Windows.Forms.TextBox inpPriceMax;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox inpPriceMin;
+        private System.Windows.Forms.Button insert;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imp_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn retail_unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn retail_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn is_stopped;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn selectDelete;
+        private System.Windows.Forms.Button download;
+        private System.Windows.Forms.Button upload;
     }
 }

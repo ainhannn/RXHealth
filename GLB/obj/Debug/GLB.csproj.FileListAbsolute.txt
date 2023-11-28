@@ -52,6 +52,43 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.csproj.Co
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.csproj.CopyComplete
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\GLB\obj\Debug\GLB.pdb
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\GLB.dll.config
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\GLB.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\GLB.pdb
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\DotNetEnv.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\EPPlus.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Sprache.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Buffers.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Memory.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.ValueTuple.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\EPPlus.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\Sprache.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Buffers.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Memory.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\bin\Debug\System.ValueTuple.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\obj\Debug\GLB.csproj.AssemblyReference.cache
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\obj\Debug\GLB.csproj.CoreCompileInputs.cache
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\obj\Debug\GLB.csproj.CopyComplete
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\obj\Debug\GLB.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\GLB\obj\Debug\GLB.pdb
+D:\C#\RXHealth\GLB\bin\Debug\GLB.dll.config
 D:\C#\RXHealth\GLB\bin\Debug\GLB.dll
 D:\C#\RXHealth\GLB\bin\Debug\GLB.pdb
 D:\C#\RXHealth\GLB\bin\Debug\DotNetEnv.dll
@@ -63,17 +100,25 @@ D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.dll
 D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Primitives.dll
 D:\C#\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
 D:\C#\RXHealth\GLB\bin\Debug\Sprache.dll
+D:\C#\RXHealth\GLB\bin\Debug\System.Buffers.dll
 D:\C#\RXHealth\GLB\bin\Debug\System.ComponentModel.Annotations.dll
 D:\C#\RXHealth\GLB\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\C#\RXHealth\GLB\bin\Debug\System.Memory.dll
+D:\C#\RXHealth\GLB\bin\Debug\System.Numerics.Vectors.dll
 D:\C#\RXHealth\GLB\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#\RXHealth\GLB\bin\Debug\System.ValueTuple.dll
 D:\C#\RXHealth\GLB\bin\Debug\EPPlus.xml
 D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.xml
 D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
 D:\C#\RXHealth\GLB\bin\Debug\Microsoft.Extensions.Primitives.xml
 D:\C#\RXHealth\GLB\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 D:\C#\RXHealth\GLB\bin\Debug\Sprache.xml
+D:\C#\RXHealth\GLB\bin\Debug\System.Buffers.xml
 D:\C#\RXHealth\GLB\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\C#\RXHealth\GLB\bin\Debug\System.Memory.xml
+D:\C#\RXHealth\GLB\bin\Debug\System.Numerics.Vectors.xml
 D:\C#\RXHealth\GLB\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#\RXHealth\GLB\bin\Debug\System.ValueTuple.xml
 D:\C#\RXHealth\GLB\obj\Debug\GLB.csproj.AssemblyReference.cache
 D:\C#\RXHealth\GLB\obj\Debug\GLB.csproj.CoreCompileInputs.cache
 D:\C#\RXHealth\GLB\obj\Debug\GLB.csproj.CopyComplete

@@ -15,7 +15,6 @@ namespace GUI
 {
     public partial class FormInvoice : Form
     {
-        SaleBUS SBUS = new SaleBUS();
         public FormInvoice()
         {
             InitializeComponent();
@@ -32,17 +31,6 @@ namespace GUI
             HandleGUI.SendMessage(Handle, 0x112, 0xf012, 8);
         }
 
-		private void LoadDataTable()
-		{
-			BillTable.RowCount = 1;
-			int STT = 1;
-			foreach (SaleInvoice cus in SBUS.getSelectAllForm())
-			{
-				BillTable.Rows.Add(STT, cus.DateInit, cus.StaffNickName, cus.CustomerName, cus.TotalAmount);
-				STT++;
-
-			}
-		}
-
-	}
+        
+    }
 }

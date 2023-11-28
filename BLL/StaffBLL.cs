@@ -15,14 +15,14 @@ namespace BLL
     {
         public static List<Staff> getAllStaff()
         {
-            return StaffDAO.SelectAll() != null ? StaffDAO.SelectAll() : null;
+            return StaffDAO.SelectAll() ?? null;
         } 
         public static Staff getStaff(int id)
         {
             try
             {
                 Staff staff = StaffDAO.Select(id);
-                return staff != null ? staff : null;
+                return staff ?? null;
             }catch(Exception ex) { 
                 Console.WriteLine(ex.Message);
             }

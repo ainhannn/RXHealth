@@ -155,6 +155,69 @@ C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\BLL\bin\Debug\Microsoft.IO.
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\BLL\bin\Debug\System.ComponentModel.Annotations.dll
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\BLL\bin\Debug\EPPlus.xml
 C:\Users\Ngan Ngo\OneDrive\Documents\GitHub\RXHealth\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\BLL.dll.config
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\BLL.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\BLL.pdb
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\DAL.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\DotNetEnv.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\DTO.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\EPPlus.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\GLB.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Microsoft.Extensions.Configuration.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Sprache.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Buffers.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Memory.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.ValueTuple.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\MySql.Data.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Google.Protobuf.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\ZstdSharp.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\DAL.pdb
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\DAL.dll.config
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\DTO.pdb
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\DTO.dll.config
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\GLB.pdb
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\GLB.dll.config
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\EPPlus.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Sprache.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Buffers.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Memory.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.ValueTuple.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\MySql.Data.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Google.Protobuf.pdb
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\Google.Protobuf.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\obj\Debug\BLL.dll
+C:\Users\Calcifer\OneDrive\Tài liệu\Backup\RXHealth2311\BLL\obj\Debug\BLL.pdb
 D:\C#\RXHealth\BLL\bin\Debug\BLL.dll.config
 D:\C#\RXHealth\BLL\bin\Debug\BLL.dll
 D:\C#\RXHealth\BLL\bin\Debug\BLL.pdb
@@ -170,45 +233,49 @@ D:\C#\RXHealth\BLL\bin\Debug\Microsoft.Extensions.Configuration.dll
 D:\C#\RXHealth\BLL\bin\Debug\Microsoft.Extensions.Primitives.dll
 D:\C#\RXHealth\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
 D:\C#\RXHealth\BLL\bin\Debug\Sprache.dll
+D:\C#\RXHealth\BLL\bin\Debug\System.Buffers.dll
 D:\C#\RXHealth\BLL\bin\Debug\System.ComponentModel.Annotations.dll
 D:\C#\RXHealth\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\C#\RXHealth\BLL\bin\Debug\System.Memory.dll
+D:\C#\RXHealth\BLL\bin\Debug\System.Numerics.Vectors.dll
 D:\C#\RXHealth\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\C#\RXHealth\BLL\bin\Debug\System.ValueTuple.dll
 D:\C#\RXHealth\BLL\bin\Debug\MySql.Data.dll
 D:\C#\RXHealth\BLL\bin\Debug\Google.Protobuf.dll
 D:\C#\RXHealth\BLL\bin\Debug\ZstdSharp.dll
 D:\C#\RXHealth\BLL\bin\Debug\K4os.Compression.LZ4.Streams.dll
-D:\C#\RXHealth\BLL\bin\Debug\BouncyCastle.Crypto.dll
-D:\C#\RXHealth\BLL\bin\Debug\System.Memory.dll
+D:\C#\RXHealth\BLL\bin\Debug\BouncyCastle.Cryptography.dll
 D:\C#\RXHealth\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\C#\RXHealth\BLL\bin\Debug\System.Buffers.dll
 D:\C#\RXHealth\BLL\bin\Debug\K4os.Compression.LZ4.dll
 D:\C#\RXHealth\BLL\bin\Debug\System.IO.Pipelines.dll
 D:\C#\RXHealth\BLL\bin\Debug\K4os.Hash.xxHash.dll
-D:\C#\RXHealth\BLL\bin\Debug\System.Numerics.Vectors.dll
 D:\C#\RXHealth\BLL\bin\Debug\DAL.pdb
 D:\C#\RXHealth\BLL\bin\Debug\DAL.dll.config
 D:\C#\RXHealth\BLL\bin\Debug\DTO.pdb
+D:\C#\RXHealth\BLL\bin\Debug\DTO.dll.config
 D:\C#\RXHealth\BLL\bin\Debug\GLB.pdb
+D:\C#\RXHealth\BLL\bin\Debug\GLB.dll.config
 D:\C#\RXHealth\BLL\bin\Debug\EPPlus.xml
 D:\C#\RXHealth\BLL\bin\Debug\Microsoft.Extensions.Configuration.xml
 D:\C#\RXHealth\BLL\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
 D:\C#\RXHealth\BLL\bin\Debug\Microsoft.Extensions.Primitives.xml
 D:\C#\RXHealth\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 D:\C#\RXHealth\BLL\bin\Debug\Sprache.xml
+D:\C#\RXHealth\BLL\bin\Debug\System.Buffers.xml
 D:\C#\RXHealth\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\C#\RXHealth\BLL\bin\Debug\System.Memory.xml
+D:\C#\RXHealth\BLL\bin\Debug\System.Numerics.Vectors.xml
 D:\C#\RXHealth\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\C#\RXHealth\BLL\bin\Debug\System.ValueTuple.xml
 D:\C#\RXHealth\BLL\bin\Debug\MySql.Data.xml
 D:\C#\RXHealth\BLL\bin\Debug\Google.Protobuf.pdb
 D:\C#\RXHealth\BLL\bin\Debug\Google.Protobuf.xml
 D:\C#\RXHealth\BLL\bin\Debug\K4os.Compression.LZ4.Streams.xml
-D:\C#\RXHealth\BLL\bin\Debug\BouncyCastle.Crypto.xml
-D:\C#\RXHealth\BLL\bin\Debug\System.Memory.xml
+D:\C#\RXHealth\BLL\bin\Debug\BouncyCastle.Cryptography.xml
 D:\C#\RXHealth\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\C#\RXHealth\BLL\bin\Debug\System.Buffers.xml
 D:\C#\RXHealth\BLL\bin\Debug\K4os.Compression.LZ4.xml
 D:\C#\RXHealth\BLL\bin\Debug\System.IO.Pipelines.xml
 D:\C#\RXHealth\BLL\bin\Debug\K4os.Hash.xxHash.xml
-D:\C#\RXHealth\BLL\bin\Debug\System.Numerics.Vectors.xml
 D:\C#\RXHealth\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
 D:\C#\RXHealth\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\C#\RXHealth\BLL\obj\Debug\BLL.csproj.CopyComplete

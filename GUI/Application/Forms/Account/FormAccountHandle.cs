@@ -7,7 +7,6 @@ using BLL;
 using System.Linq;
 using GLB;
 using GUI.Handle;
-using iText.Kernel.Geom;
 
 namespace GUI
 {
@@ -48,7 +47,7 @@ namespace GUI
         }
 
         // Sửa tên hiển thị: nickname
-        private void editNickname_Click(object sender, System.EventArgs e)
+        private void editNickname_Click(object sender, EventArgs e)
         {
             if (editNickname.Text == "      Chỉnh sửa")
             {

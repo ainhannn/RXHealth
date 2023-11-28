@@ -51,11 +51,24 @@ namespace DAL
             return list;
         }
 
-        public static SaleInvoice SelectForm(int id)
+        //public static SaleInvoice SelectForm(int id)
+        //{
+        //    string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbViewName, id);
+        //    var table = ExecuteReader(sql);
+        //    return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+        //}
+
+        public static SaleInvoice SelectForm(string code)
         {
-            string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbViewName, id);
+            string sql = string.Format("SELECT * FROM {0} WHERE code = '{1}' LIMIT 1", dbViewName, code);
             var table = ExecuteReader(sql);
-            return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+            if (table.Count != 0)
+            {
+                var rs = ConvertToDTO(table[0]);
+                rs.Details = SelectDetails(rs.Id);
+                return rs;
+            }
+            return null;
         }
 
         public static List<SaleDetail> SelectDetails(int formId)
@@ -72,7 +85,7 @@ namespace DAL
                 {
                     Name = row[0].ToString(),
                     Unit = row[1].ToString(),
-                    UnitPrice = (float)row[2],
+                    UnitPrice = Convert.ToDouble(row[2]),
                     Number = Convert.ToInt16(row[3])
                 };
 
@@ -98,11 +111,12 @@ namespace DAL
                     cmd.Parameters.AddWithValue("@customer_id", e.CustomerId);
                     cmd.Parameters.AddWithValue("@point", e.Point);
                     cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
 
                     cmd.CommandText =
                         "SELECT auto_increment FROM information_schema.tables " +
                         "WHERE table_name='sale_invoice'";
-                    int id = (int)cmd.ExecuteScalar()-1;
+                    int id = Convert.ToInt16(cmd.ExecuteScalar().ToString())-1;
 
                     foreach (var i in e.Details)
                     {
@@ -116,6 +130,7 @@ namespace DAL
                         cmd.Parameters.AddWithValue("@unit_price", i.UnitPrice);
                         cmd.Parameters.AddWithValue("@number", i.Number);
                         cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
                     }
 
                     trans.Commit();

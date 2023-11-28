@@ -1,52 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using DTO;
-using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
-using Org.BouncyCastle.Asn1.Ocsp;
-using Org.BouncyCastle.Crypto.Generators;
 
 namespace DAL
 {
-	public partial class SaleDAO : DBConnection
-	{
-		public static int CountByCustomer(int cusId)
-		{
-			string sql = String.Format(
-			   "SELECT COUNT(id) FROM {0} " +
-			   "WHERE customer_id = {1}", dbViewName, cusId);
-			return Convert.ToInt16(ExecuteScalar(sql));
-		}
+    public partial class SaleDAO : DBConnection
+    {
+        public static Dictionary<string, int> GetCountByMonth()
+        {
+            string sql = String.Format(
+                "SELECT SQL_NO_CACHE DATE_FORMAT(time_init,'%M'), COUNT(1) " +
+                "FROM {0} WHERE YEAR(time_init) = YEAR(CURRENT_DATE) " +
+                "GROUP BY EXTRACT(YEAR_MONTH FROM time_init) " +
+                "ORDER BY  EXTRACT(YEAR_MONTH FROM time_init)", dbTableName);
 
-		public static List<SaleInvoice> GetOnCustomer(int cusId)
-		{
-			string sql = string.Format(
-				"SELECT * FROM {0} " +
-				"WHERE customer_id = {1}", dbViewName, cusId);
-			var table = ExecuteReader(sql);
-			var list = new List<SaleInvoice>();
-			foreach (var row in table)
-			{
-				list.Add(ConvertToDTO(row));
-			}
-			return list;
-		}
+            var rs = new Dictionary<string, int>();
+            foreach (var row in ExecuteReader(sql))
+                rs.Add(row[0].ToString(), int.Parse(row[1].ToString()));
 
-		public static int GetPointOnCustomer2(string cusName)
-		{
-			string sql = string.Format(
-				"SELECT sale_invoice.point FROM {0} " +
-				"INNER JOIN customer ON sale_invoice.customer_id = customer.id " +
-				"WHERE customer.contact_number = {1}", dbTableName, cusName);
-			object result = ExecuteScalar(sql);
-			return result != null ? Convert.ToInt32(result) : -1;
-			//var list = new List<SaleInvoice>();
-			//foreach (var row in table)
-			//{
-			//	list.Add(ConvertToDTO(row));
-			//}
-			//return list;
-		}
-	}
+            return rs;
+        }
+
+        public static Dictionary<int, double> Revenue()
+        {
+            string sql = String.Format(
+                "SELECT SQL_NO_CACHE DATE_FORMAT(time_init,'%d'), SUM(total_amount) " +
+                "FROM {0} " +
+                "WHERE EXTRACT(YEAR_MONTH FROM time_init) = EXTRACT(YEAR_MONTH FROM CURRENT_DATE) " +
+                "GROUP BY DATE(time_init) " +
+                "ORDER BY DATE(time_init)", dbViewName);
+
+            var rs = new Dictionary<int, double>();
+            foreach (var row in ExecuteReader(sql))
+                rs.Add(int.Parse(row[0].ToString()), double.Parse(row[1].ToString()));
+
+            return rs;
+        }
+
+        public static Dictionary<string,int> SumByProduct(int proId)
+        {
+            string sql = String.Format(
+               "SELECT DISTINCT unit, SUM(number) FROM sale_detail " +
+               "WHERE product_id = {1} GROUP BY unit", dbViewName, proId);
+            
+            var rs = new Dictionary<string, int>();
+            foreach (var row in ExecuteReader(sql))
+                rs.Add(row[0].ToString(), int.Parse(row[1].ToString()));
+
+            return rs;
+        }
+
+        public static int CountByCustomer(int cusId)
+        {
+            string sql = String.Format(
+               "SELECT COUNT(id) FROM {0} " +
+               "WHERE customer_id = {1}", dbViewName,cusId);
+            return Convert.ToInt16(ExecuteScalar(sql));
+        }
+
+        public static List<SaleInvoice> GetOnCustomer(int cusId)
+        {
+            string sql = string.Format(
+                "SELECT * FROM {0} " +
+                "WHERE customer_id = {1}", dbViewName,cusId);
+            var table = ExecuteReader(sql);
+            var list = new List<SaleInvoice>();
+            foreach (var row in table)
+            {
+                list.Add(ConvertToDTO(row));
+            }
+            return list;
+        }
+    }
 }

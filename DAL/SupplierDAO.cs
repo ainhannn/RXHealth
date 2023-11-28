@@ -8,6 +8,16 @@ namespace DAL
     public class SupplierDAO : DBConnection
     {
         private static readonly string dbTableName = "supplier";
+        public static int Count
+        {
+            get
+            {
+                string sql = string.Format("SELECT COUNT(id) FROM {0}", dbTableName);
+                var rs = ExecuteScalar(sql);
+                return rs != null ? int.TryParse(rs.ToString(), out int c) ? c : 0 : 0;
+            }
+        }
+
 
         private static Supplier ConvertToDTO(List<object> row)
         {
@@ -42,6 +52,13 @@ namespace DAL
             string sql = string.Format("SELECT * FROM {0} WHERE id = {1} LIMIT 1", dbTableName, id);
             var table = ExecuteReader(sql);
             return table.Count != 0 ? ConvertToDTO(table[0]) : null;
+        }
+
+        public static int GetId(string name)
+        {
+            string sql = string.Format("SELECT * FROM {0} WHERE name = '{1}'", dbTableName, name);
+            var rs = ExecuteScalar(sql);
+            return rs != null ? int.TryParse(rs.ToString(), out int c) ? c : 0 : 0;
         }
 
         public static List<Supplier> SearchOnName(string name)

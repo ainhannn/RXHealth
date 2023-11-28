@@ -522,7 +522,7 @@ namespace GUI
                     excelApp.Quit();
                     MessageBox.Show("Xuất danh sách nhân viên thành công");
                 }
-                catch(Exception ex) {
+                catch {
                     MessageBox.Show("Xuất danh sách nhân viên không thành công");
                 }
             }
@@ -592,7 +592,7 @@ namespace GUI
                 Data(list);
                 comboBoxFilter.SelectedIndex = 2;
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Tài khoản không được tạo thành công, có lẽ nhân viên đã bị xóa");
             }

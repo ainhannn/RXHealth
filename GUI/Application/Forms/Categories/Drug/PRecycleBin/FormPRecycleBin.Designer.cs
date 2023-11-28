@@ -35,18 +35,18 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.exit = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.restore = new System.Windows.Forms.Button();
-            this.delete = new System.Windows.Forms.Button();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.choose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.restore = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // title
@@ -93,57 +93,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(665, 584);
             this.panel2.TabIndex = 68;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.restore);
-            this.panel1.Controls.Add(this.delete);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(665, 50);
-            this.panel1.TabIndex = 47;
-            // 
-            // restore
-            // 
-            this.restore.BackColor = System.Drawing.Color.Transparent;
-            this.restore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.restore.Dock = System.Windows.Forms.DockStyle.Right;
-            this.restore.FlatAppearance.BorderSize = 0;
-            this.restore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.restore.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.restore.ForeColor = System.Drawing.Color.White;
-            this.restore.Image = global::GUI.Properties.Resources.refresh;
-            this.restore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.restore.Location = new System.Drawing.Point(565, 0);
-            this.restore.Margin = new System.Windows.Forms.Padding(5);
-            this.restore.Name = "restore";
-            this.restore.Size = new System.Drawing.Size(50, 50);
-            this.restore.TabIndex = 111;
-            this.restore.Tag = "";
-            this.restore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.restore.UseVisualStyleBackColor = false;
-            // 
-            // delete
-            // 
-            this.delete.BackColor = System.Drawing.Color.Transparent;
-            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.delete.Dock = System.Windows.Forms.DockStyle.Right;
-            this.delete.FlatAppearance.BorderSize = 0;
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.delete.ForeColor = System.Drawing.Color.White;
-            this.delete.Image = global::GUI.Properties.Resources.trash;
-            this.delete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.delete.Location = new System.Drawing.Point(615, 0);
-            this.delete.Margin = new System.Windows.Forms.Padding(5);
-            this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(50, 50);
-            this.delete.TabIndex = 112;
-            this.delete.Tag = "";
-            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.delete.UseVisualStyleBackColor = false;
             // 
             // table
             // 
@@ -197,6 +146,59 @@
             this.choose.HeaderText = "Chọn";
             this.choose.Name = "choose";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.restore);
+            this.panel1.Controls.Add(this.delete);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(665, 50);
+            this.panel1.TabIndex = 47;
+            // 
+            // restore
+            // 
+            this.restore.BackColor = System.Drawing.Color.Transparent;
+            this.restore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.restore.Dock = System.Windows.Forms.DockStyle.Right;
+            this.restore.FlatAppearance.BorderSize = 0;
+            this.restore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restore.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.restore.ForeColor = System.Drawing.Color.White;
+            this.restore.Image = global::GUI.Properties.Resources.refresh;
+            this.restore.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.restore.Location = new System.Drawing.Point(565, 0);
+            this.restore.Margin = new System.Windows.Forms.Padding(5);
+            this.restore.Name = "restore";
+            this.restore.Size = new System.Drawing.Size(50, 50);
+            this.restore.TabIndex = 111;
+            this.restore.Tag = "";
+            this.restore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.restore.UseVisualStyleBackColor = false;
+            this.restore.Click += new System.EventHandler(this.restore_Click);
+            // 
+            // delete
+            // 
+            this.delete.BackColor = System.Drawing.Color.Transparent;
+            this.delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete.Dock = System.Windows.Forms.DockStyle.Right;
+            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.delete.ForeColor = System.Drawing.Color.White;
+            this.delete.Image = global::GUI.Properties.Resources.trash;
+            this.delete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.delete.Location = new System.Drawing.Point(615, 0);
+            this.delete.Margin = new System.Windows.Forms.Padding(5);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(50, 50);
+            this.delete.TabIndex = 112;
+            this.delete.Tag = "";
+            this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
             // FormPRecycleBin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -206,17 +208,18 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.title);
             this.Controls.Add(this.exit);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPRecycleBin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPRecycleBin";
+            this.Load += new System.EventHandler(this.FormPRecycleBin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormPRecycleBin_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

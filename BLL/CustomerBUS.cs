@@ -7,11 +7,19 @@ namespace BLL
 {
     public class CustomerBUS
     {
+        public static int Count { get => CustomerDAO.Count; } 
+
         public static List<Customer> SelectAll()
             => CustomerDAO.SelectAll();
 
         public static Customer Select(int cusId)
             => CustomerDAO.Select(cusId);
+
+        public static int GetId(string contactNumber)
+            => Retreat.IsPhoneNumber(contactNumber) ? CustomerDAO.GetId(contactNumber) : 1;
+
+        public static bool ReducePoint(int cusId, int point)
+            => CustomerDAO.ReducePoint(cusId, point);
 
         public static List<Customer> SearchOnContactNumber(string con)
             => CustomerDAO.SearchOnContactNumber(con);

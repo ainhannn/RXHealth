@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using BLL;
+using System.Windows.Forms;
 
 namespace GUI
 {
