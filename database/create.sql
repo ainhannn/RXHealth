@@ -4,6 +4,13 @@ USE pharmacy;
 
 -- -- -- -- -- TABLES -- -- -- -- --
 CREATE TABLE title (
+	vat DECIMAL(5,4),
+	rate DECIMAL(5,4),
+	price DECIMAL(10,0),
+	point INT
+);
+
+CREATE TABLE title (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(50) NOT NULL
 );
