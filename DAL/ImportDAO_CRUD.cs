@@ -84,7 +84,7 @@ namespace DAL
                     EXPDate = exp,
                     Unit = row[4].ToString(),
                     Number = Convert.ToInt16(row[5]),
-                    ImportPrice = (double)row[3]
+                    ImportPrice = Convert.ToDouble(row[6])
                 };
 
                 list.Add(detail);
