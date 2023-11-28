@@ -208,7 +208,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.title);
             this.Controls.Add(this.exit);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPRecycleBin";

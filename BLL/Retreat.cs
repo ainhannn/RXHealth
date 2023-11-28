@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Server;
+﻿using DAL;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -7,6 +8,30 @@ namespace BLL
 {
     public class Retreat
     {
+        public static bool IsPercentage(string text)
+        {
+            if (string.IsNullOrEmpty(text)) return false;
+            if (double.TryParse(text, out _)) return true;
+            if (text.Contains("%") && double.TryParse(text.Split('%')[0], out _))
+                return true;
+            return false;
+        }
+
+        public static decimal Percentage(string text)
+        {
+            if (!IsPercentage(text)) return 0;
+            try { return decimal.Parse(text); }
+            catch { 
+                try { return decimal.Parse(text.Split('%')[0])/100; }
+                catch { return 0; }
+            }
+        }
+
+        public static string ToPercentage(decimal num)
+        {
+            return Math.Round(num*100,2) + "%";
+        }
+
         public static bool IsPhoneNumber(string text)
         {
             if (string.IsNullOrEmpty(text)) return false;
@@ -23,7 +48,6 @@ namespace BLL
             return System.DateTime.TryParseExact(o.ToString(), formats, CultureInfo.InvariantCulture, DateTimeStyles.None, out _);
         }
 
-
         public static DateTime DateTime(string str)
         {
             string[] formats = { "d/M/yyyy", "d-M-yyyy", "d.M.yyyy", "M/yyyy" };
@@ -31,5 +55,11 @@ namespace BLL
             try { return System.DateTime.ParseExact(str, formats, CultureInfo.InvariantCulture, DateTimeStyles.None); }
             catch { return System.DateTime.Today; }
         }
+
+        public static object GetSetting(string fieldName)
+            => !string.IsNullOrEmpty(fieldName) && "vat rate price point".Contains(fieldName) ? DBConnection.GetSetting(fieldName) : null;
+
+        public static bool Setting(string fieldName, object value)
+            => !string.IsNullOrEmpty(fieldName) && "vat rate price point".Contains(fieldName) ? DBConnection.Setting(fieldName, value) : false;
     }
 }

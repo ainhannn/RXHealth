@@ -115,7 +115,7 @@ namespace GUI
             iPrc = sPrc = rPrc = -1;
             if (!double.TryParse(impPrice.Text, out iPrc) ||
                 !double.TryParse(price.Text, out sPrc) ||
-                !double.TryParse(rPrice.Text, out rPrc))
+                (!double.TryParse(rPrice.Text, out rPrc) && !string.IsNullOrEmpty(rPrice.Text)))
             {
                 MessageBox.Show("Sai định dạng tiền tệ!");
                 return;

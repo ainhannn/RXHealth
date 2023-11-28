@@ -6,7 +6,22 @@ namespace DAL
 {
     public partial class SaleDAO : DBConnection
     {
-        public static Dictionary<int, double> MonthsRevenue()
+        public static Dictionary<string, int> GetCountByMonth()
+        {
+            string sql = String.Format(
+                "SELECT SQL_NO_CACHE DATE_FORMAT(time_init,'%M'), COUNT(1) " +
+                "FROM {0} WHERE YEAR(time_init) = YEAR(CURRENT_DATE) " +
+                "GROUP BY EXTRACT(YEAR_MONTH FROM time_init) " +
+                "ORDER BY  EXTRACT(YEAR_MONTH FROM time_init)", dbTableName);
+
+            var rs = new Dictionary<string, int>();
+            foreach (var row in ExecuteReader(sql))
+                rs.Add(row[0].ToString(), int.Parse(row[1].ToString()));
+
+            return rs;
+        }
+
+        public static Dictionary<int, double> Revenue()
         {
             string sql = String.Format(
                 "SELECT SQL_NO_CACHE DATE_FORMAT(time_init,'%d'), SUM(total_amount) " +

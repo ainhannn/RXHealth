@@ -28,6 +28,9 @@ namespace BLL
             invoice.Details = newList;
             return ImportDAO.Insert(invoice) ? invoice : null;
         }
-            
+
+        public static Dictionary<int, double> Expense()
+            => ImportDAO.Expense();
+
     }
 }
