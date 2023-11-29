@@ -1,8 +1,11 @@
 ﻿using BLL;
+using DAL;
 using DTO;
 using iText.IO.Codec;
+using Spire.Xls;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace GUI
@@ -74,10 +77,44 @@ namespace GUI
             chosen.CurrentCell = null;
         }
 
-        private void print_Click(object sender, System.EventArgs e)
+        private void download_Click(object sender, System.EventArgs e)
         {
-            // code here
+            save("order-drug.xlsx");
+            Xls.Download("order-drug.xlsx");
         }
 
+        private void print_Click(object sender, System.EventArgs e)
+        {
+            save("order-drug.xlsx");
+            Xls.Print("order-drug.xlsx");
+        }
+
+        private void save(string path)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("STT");
+            dt.Columns.Add("Mã vạch");
+            dt.Columns.Add("Tên");
+            dt.Columns.Add("Ngành hàng");
+            dt.Columns.Add("ĐV nhập");
+            dt.Columns.Add("SL đặt");
+
+            for (int i = 0; i < chosen.Rows.Count; i++)
+            {
+                dt.Rows.Add(
+                    chosen.Rows[i].Cells[0].Value,
+                    chosen.Rows[i].Cells[1].Value,
+                    chosen.Rows[i].Cells[2].Value,
+                    chosen.Rows[i].Cells[3].Value,
+                    chosen.Rows[i].Cells[4].Value,
+                    chosen.Rows[i].Cells[5].Value);
+            }
+
+            Workbook workbook = new Workbook();
+            Worksheet sheet = workbook.Worksheets[0];
+
+            sheet.InsertDataTable(dt, true, 1, 1);
+            workbook.SaveToFile(@"..\..\..\documents\" + path, FileFormat.Version2016);
+        }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using BLL;
+using DAL;
 using DTO;
 using Spire.Xls;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 
 namespace GUI
@@ -129,63 +131,40 @@ namespace GUI
 
         private void download_Click(object sender, System.EventArgs e)
         {
-
+            ProductBUS.Save("cate-drug.xlsx");
+            Xls.Download("cate-drug.xlsx");
         }
 
         [Obsolete]
         private void upload_Click(object sender, System.EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
-            openFileDialog.Title = "Select an Excel file to upload";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            var sheet = Xls.Upload(); // get sheet[0] from file user selected 
+            if (sheet == null)
             {
-                string selectedFilePath = openFileDialog.FileName;
-
-                try
-                {
-                    Workbook workbook = new Workbook();
-                    workbook.LoadFromFile(selectedFilePath);
-
-                    var newList = new List<CateProduct>();
-                    var tb = Retreat.ReadFromSheet(workbook.Worksheets[0]);
-                    if (tb == null || tb.Count < 1 || tb[0].Count != 11)
-                    {
-                        MessageBox.Show("File không hợp lệ!");
-                        return;
-                    }
-                    foreach (var row in tb)
-                        try 
-                        {
-                            var item = new CateProduct()
-                            {
-                                Stack = Convert.ToString(row[1]),
-                                Barcode = Convert.ToString(row[2]),
-                                Name = Convert.ToString(row[3]),
-                                Category = new Category() { Name = Convert.ToString(row[4]) },
-                                Unit = Convert.ToString(row[5]),
-                                RetailUnit = Convert.ToString(row[8]),
-                                ExtraInformation = Convert.ToString(row[10])
-                            };
-
-                            try { item.CurrentImportPrice = Convert.ToDouble(row[6]); } catch { }
-                            try { item.Saleprice = Convert.ToDouble(row[7]); } catch { }
-                            try { item.RetailSaleprice = Convert.ToDouble(row[9]); } catch { }
-                            
-                            if (ProductBUS.Insert(item) == 1)
-                                newList.Add(item);
-                        }
-                        catch { }
-
-                    list.AddRange(newList);
-                    MessageBox.Show("Tải lên thành công " + newList.Count + " sản phẩm!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ReloadTable();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Đã xảy ra lỗi!");
+                return;
             }
+             
+            var tb = Retreat.ReadFromSheet(sheet); // get List<List<object>> (matrix object) from sheet
+            MessageBox.Show("row="+tb.Count.ToString() + " col = " + tb[0].Count.ToString());
+            if (tb.Count < 1 || tb[0].Count != 11)
+            {
+                MessageBox.Show("File không hợp lệ!");
+                return;
+            }
+
+            tb.RemoveAt(0); // remove title row
+
+            var newList = ProductBUS.InsertFromObjectTable(tb); // insert to database
+            if (newList.Count <= 0)
+            {
+                MessageBox.Show("Không có sản phẩm hợp lệ!");
+                return;
+            }
+            
+            MessageBox.Show("Tải lên thành công " + newList.Count + " sản phẩm!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            list.AddRange(newList);
+            ReloadTable();
         }
     }
 }

@@ -61,9 +61,11 @@ namespace GUI
             ReloadTable();
         }
 
+        // save data from database to drug.xlsx
         private void download_Click(object sender, EventArgs e)
         {
-            // code here
+            ProductBUS.ExportExcel("drug.xlsx");
+            Xls.Download("drug.xlsx");
         }
     }
 }

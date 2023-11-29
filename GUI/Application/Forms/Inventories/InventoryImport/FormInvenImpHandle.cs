@@ -1,7 +1,8 @@
 ﻿using BLL;
 using DTO;
-using iText.IO.Codec;
+using Spire.Xls;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace GUI
@@ -75,42 +76,69 @@ namespace GUI
 
 
         // Button handle
+        private void reload(string filename)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("STT");
+            dt.Columns.Add("Mã vạch");
+            dt.Columns.Add("Tên");
+            dt.Columns.Add("NXS");
+            dt.Columns.Add("HSD");
+            dt.Columns.Add("Đơn vị");
+            dt.Columns.Add("Số lượng");
+            dt.Columns.Add("Đơn giá");
+            dt.Columns.Add("Thành tiền");
+
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                dt.Rows.Add(
+                    table.Rows[i].Cells[0].Value,
+                    table.Rows[i].Cells[1].Value,
+                    table.Rows[i].Cells[2].Value,
+                    table.Rows[i].Cells[3].Value,
+                    table.Rows[i].Cells[4].Value,
+                    table.Rows[i].Cells[5].Value,
+                    table.Rows[i].Cells[6].Value,
+                    table.Rows[i].Cells[7].Value,
+                    table.Rows[i].Cells[8].Value);
+            }
+
+            Workbook workbook = new Workbook();
+            Worksheet sheet = workbook.Worksheets[0];
+
+            sheet.InsertDataTable(dt, true, 1, 1);
+            workbook.SaveToFile(@"..\..\..\documents\" + filename, FileFormat.Version2016);
+        }
+
         private void download_Click(object sender, EventArgs e)
         {
-            // code here
+            reload("import-drug.xlsx");
+            Xls.Download("import-drug.xlsx");
         }
 
         [Obsolete]
         private void upload_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
-            openFileDialog.Title = "Select an Excel file to upload";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            var sheet = Xls.Upload(); // get sheet[0] from file user selected 
+            if (sheet == null)
             {
-                string selectedFilePath = openFileDialog.FileName;
-
-                try
-                {
-                    Spire.Xls.Workbook workbook = new Spire.Xls.Workbook();
-                    workbook.LoadFromFile(selectedFilePath);
-
-                    var tb = Retreat.ReadFromSheet(workbook.Worksheets[0]);
-                    if (tb.Count < 1 && tb[0].Count != 9)
-                    {
-                        MessageBox.Show("File không hợp lệ!");
-                        return;
-                    }
-                    foreach (var row in tb)
-                        table.Rows.Add(null, row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]);
-
-                    MessageBox.Show("Tải lên thành công " + tb.Count + " dòng!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Đã xảy ra lỗi!");
+                return;
             }
+
+            var tb = Retreat.ReadFromSheet(sheet); // get List<List<object>> (matrix object) from sheet
+            if (tb.Count < 1 || tb[0].Count != 9)
+            {
+                MessageBox.Show("File không hợp lệ!");
+                return;
+            }
+
+            tb.RemoveAt(0); // remove title row
+
+            foreach (var row in tb)
+                table.Rows.Add(null, row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8]);
+
+            MessageBox.Show("Đã tải lên " + tb.Count + " dòng!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void save_Click(object sender, EventArgs e)

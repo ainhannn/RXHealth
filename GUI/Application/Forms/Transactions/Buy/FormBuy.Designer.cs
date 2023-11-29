@@ -29,15 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuy));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.search = new System.Windows.Forms.Button();
             this.inpSearch = new System.Windows.Forms.TextBox();
             this.chosen = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.print = new System.Windows.Forms.Button();
+            this.download = new System.Windows.Forms.Button();
             this.empty = new System.Windows.Forms.Button();
             this.table = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,13 +54,7 @@
             this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imp_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.print = new System.Windows.Forms.Button();
             this.pnlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chosen)).BeginInit();
             this.panel2.SuspendLayout();
@@ -109,14 +110,14 @@
             this.chosen.AllowUserToDeleteRows = false;
             this.chosen.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.chosen.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.chosen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.chosen.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.chosen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.chosen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -138,10 +139,56 @@
             this.chosen.TabIndex = 124;
             this.chosen.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.chosen_CellClick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // cCode
+            // 
+            this.cCode.HeaderText = "Mã vạch";
+            this.cCode.Name = "cCode";
+            this.cCode.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tên";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Ngành hàng";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Đơn vị";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // number
+            // 
+            this.number.HeaderText = "Số lượng";
+            this.number.Name = "number";
+            // 
+            // remove
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.remove.DefaultCellStyle = dataGridViewCellStyle5;
+            this.remove.HeaderText = "Xóa";
+            this.remove.MinimumWidth = 6;
+            this.remove.Name = "remove";
+            this.remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.download);
             this.panel2.Controls.Add(this.print);
             this.panel2.Controls.Add(this.empty);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -150,26 +197,26 @@
             this.panel2.Size = new System.Drawing.Size(1444, 50);
             this.panel2.TabIndex = 125;
             // 
-            // print
+            // download
             // 
-            this.print.BackColor = System.Drawing.Color.Transparent;
-            this.print.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.print.Dock = System.Windows.Forms.DockStyle.Right;
-            this.print.FlatAppearance.BorderSize = 0;
-            this.print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.print.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.print.ForeColor = System.Drawing.Color.White;
-            this.print.Image = global::GUI.Properties.Resources.printing;
-            this.print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.print.Location = new System.Drawing.Point(1342, 0);
-            this.print.Margin = new System.Windows.Forms.Padding(5);
-            this.print.Name = "print";
-            this.print.Size = new System.Drawing.Size(50, 48);
-            this.print.TabIndex = 111;
-            this.print.Tag = "";
-            this.print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.print.UseVisualStyleBackColor = false;
-            this.print.Click += new System.EventHandler(this.print_Click);
+            this.download.BackColor = System.Drawing.Color.Transparent;
+            this.download.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.download.Dock = System.Windows.Forms.DockStyle.Right;
+            this.download.FlatAppearance.BorderSize = 0;
+            this.download.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.download.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.download.ForeColor = System.Drawing.Color.White;
+            this.download.Image = global::GUI.Properties.Resources.download;
+            this.download.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.download.Location = new System.Drawing.Point(1292, 0);
+            this.download.Margin = new System.Windows.Forms.Padding(5);
+            this.download.Name = "download";
+            this.download.Size = new System.Drawing.Size(50, 48);
+            this.download.TabIndex = 113;
+            this.download.Tag = "";
+            this.download.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.download.UseVisualStyleBackColor = false;
+            this.download.Click += new System.EventHandler(this.download_Click);
             // 
             // empty
             // 
@@ -198,14 +245,14 @@
             this.table.AllowUserToDeleteRows = false;
             this.table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.table.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.table.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -270,50 +317,26 @@
             this.stock.Name = "stock";
             this.stock.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn1
+            // print
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // cCode
-            // 
-            this.cCode.HeaderText = "Mã vạch";
-            this.cCode.Name = "cCode";
-            this.cCode.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tên";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Ngành hàng";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Đơn vị";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // number
-            // 
-            this.number.HeaderText = "Số lượng";
-            this.number.Name = "number";
-            // 
-            // remove
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.remove.DefaultCellStyle = dataGridViewCellStyle2;
-            this.remove.HeaderText = "Xóa";
-            this.remove.MinimumWidth = 6;
-            this.remove.Name = "remove";
-            this.remove.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.print.BackColor = System.Drawing.Color.Transparent;
+            this.print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.print.Dock = System.Windows.Forms.DockStyle.Right;
+            this.print.FlatAppearance.BorderSize = 0;
+            this.print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.print.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.print.ForeColor = System.Drawing.Color.White;
+            this.print.Image = global::GUI.Properties.Resources.printing;
+            this.print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.print.Location = new System.Drawing.Point(1342, 0);
+            this.print.Margin = new System.Windows.Forms.Padding(5);
+            this.print.Name = "print";
+            this.print.Size = new System.Drawing.Size(50, 48);
+            this.print.TabIndex = 111;
+            this.print.Tag = "";
+            this.print.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.print.UseVisualStyleBackColor = false;
+            this.print.Click += new System.EventHandler(this.print_Click);
             // 
             // FormBuy
             // 
@@ -344,7 +367,6 @@
         private System.Windows.Forms.TextBox inpSearch;
         private System.Windows.Forms.DataGridView chosen;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button print;
         private System.Windows.Forms.Button empty;
         private System.Windows.Forms.DataGridView table;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -361,5 +383,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewButtonColumn remove;
+        private System.Windows.Forms.Button download;
+        private System.Windows.Forms.Button print;
     }
 }

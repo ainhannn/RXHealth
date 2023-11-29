@@ -69,17 +69,19 @@ namespace DAL
             var list = new List<ProductOnSale>();
             foreach (var row in table)
             {
-                list.Add(new ProductOnSale()
+                if (Convert.ToDouble(row[4]) > 0 && Convert.ToInt16(row[5]) > 0)
                 {
-                    Barcode = row[0].ToString(),
-                    Name = row[1].ToString(),
-                    Category = row[2].ToString(),
-                    Unit = row[3].ToString(),
-                    Saleprice = Convert.ToDouble(row[4]),
-                    Number = Convert.ToInt16(row[5])
-                });
-
-                if (!string.IsNullOrEmpty(row[6].ToString()))
+                    list.Add(new ProductOnSale()
+                    {
+                        Barcode = row[0].ToString(),
+                        Name = row[1].ToString(),
+                        Category = row[2].ToString(),
+                        Unit = row[3].ToString(),
+                        Saleprice = Convert.ToDouble(row[4]),
+                        Number = Convert.ToInt16(row[5])
+                    });
+                }
+                if (Convert.ToDouble(row[7]) > 0 && Convert.ToInt16(row[8]) > 0)
                 {
                     list.Add(new ProductOnSale()
                     {

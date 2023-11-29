@@ -57,18 +57,18 @@ namespace GUI
             }
         }
 
-        public static void Download(string path)
+        public static void Download(string srcName)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
-            saveFileDialog.FileName = path;
+            saveFileDialog.FileName = srcName;
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string savePath = saveFileDialog.FileName;
                 try
                 {
-                    File.Copy(@"..\..\..\documents\DHT.xlsx", savePath, true);
+                    File.Copy(@"..\..\..\documents\"+ srcName, savePath, true);
                     MessageBox.Show("Tải tệp Excel thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -78,29 +78,25 @@ namespace GUI
             }
         }
 
-        public static void Upload(OpenFileDialog openFileDialog)
+        public static Worksheet Upload()
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Excel Files|*.xlsx;*.xls";
             openFileDialog.Title = "Select an Excel file to upload";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedFilePath = openFileDialog.FileName;
-
                 try
                 {
-                    // Xử lý tệp Excel đã chọn ở đây
                     Workbook workbook = new Workbook();
                     workbook.LoadFromFile(selectedFilePath);
 
-                    // Thực hiện xử lý với dữ liệu từ tệp Excel : lấy dữ liệu
-
-                    MessageBox.Show("Tải lên thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (workbook != null && workbook.Worksheets.Count > 0)
+                        return workbook.Worksheets[0];
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                catch { }
             }
+            return null;
         }
     }
 }

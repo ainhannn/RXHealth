@@ -61,24 +61,24 @@ namespace BLL
         public static List<List<object>> ReadFromSheet(Worksheet sheet)
         {
             var list = new List<List<object>>();
-
-            // Bỏ qua dòng title row[0]
-            for (int i = 1; i < sheet.Rows.Length; i++)
+            if (sheet != null)
             {
-                var item = new List<object>();
-                var row = sheet.Rows[i];
-                for (var j = 0; j < row.Cells.Length; j++)
+                for (int i = 0; i < sheet.Rows.Length; i++)
                 {
-                    var cell = row.Cells[j];
-                    if (cell.HasFormula)
-                        item.Add(cell.FormulaValue);
-                    else
-                        item.Add(cell.Value2);
+                    var item = new List<object>();
+                    var row = sheet.Rows[i];
+                    for (var j = 0; j < row.Cells.Length; j++)
+                    {
+                        var cell = row.Cells[j];
+                        if (cell.HasFormula)
+                            item.Add(cell.FormulaValue);
+                        else
+                            item.Add(cell.Value2);
+                    }
+
+                    list.Add(item);
                 }
-
-                list.Add(item); 
             }
-
             return list;
         }
 

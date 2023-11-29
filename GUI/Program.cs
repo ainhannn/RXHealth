@@ -15,5 +15,13 @@ namespace GUI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
         }
+
+
+        [Obsolete]
+        static void SetupData() 
+        {
+            // code here
+
+        }
     }
 }
