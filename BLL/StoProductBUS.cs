@@ -1,9 +1,8 @@
-﻿using DAL;
+﻿using ClosedXML.Excel;
+using DAL;
 using DTO;
-using Spire.Xls;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 
 namespace BLL
 {
@@ -56,11 +55,9 @@ namespace BLL
                 dt.Rows.Add(++i, item.Barcode, item.Name, item.Category.Name, item.Unit, item.ImportNumber, item.NumberSoldOut, item.TotalNumber);
             }
 
-            Workbook workbook = new Workbook();
-            Worksheet sheet = workbook.Worksheets[0];
-
-            sheet.InsertDataTable(dt, true, 1, 1);
-            workbook.SaveToFile(@"..\..\..\documents\" + path, FileFormat.Version2016);
+            XLWorkbook wb = new XLWorkbook();
+            wb.Worksheets.Add(dt, "ImportFail");
+            wb.SaveAs(@"..\..\..\documents\" + path);
         }
     }
 }

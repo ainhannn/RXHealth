@@ -857,3 +857,15 @@ D:\C#\RXHealth\GUI\obj\Debug\GUI.IDetailsForm.resources
 C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.IDetailsForm.resources
 C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.SDetailsForm.resources
 C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\obj\Debug\GUI.CustomerMini.resources
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\ClosedXML.dll
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\ExcelNumberFormat.dll
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\Irony.dll
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\SixLabors.Fonts.dll
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\System.IO.Packaging.dll
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\XLParser.dll
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\ClosedXML.xml
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\ExcelNumberFormat.xml
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\SixLabors.Fonts.xml
+C:\Users\Calcifer\Documents\Workspace\RXHealth\GUI\bin\Debug\System.IO.Packaging.xml

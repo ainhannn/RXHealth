@@ -1,4 +1,5 @@
 ﻿using BLL;
+using ClosedXML.Excel;
 using DTO;
 using Spire.Xls;
 using System;
@@ -103,11 +104,9 @@ namespace GUI
                     table.Rows[i].Cells[8].Value);
             }
 
-            Workbook workbook = new Workbook();
-            Worksheet sheet = workbook.Worksheets[0];
-
-            sheet.InsertDataTable(dt, true, 1, 1);
-            workbook.SaveToFile(@"..\..\..\documents\" + filename, FileFormat.Version2016);
+            XLWorkbook wb = new XLWorkbook();
+            wb.Worksheets.Add(dt, "ImportFail");
+            wb.SaveAs(@"..\..\..\documents\" + filename);
         }
 
         private void download_Click(object sender, EventArgs e)

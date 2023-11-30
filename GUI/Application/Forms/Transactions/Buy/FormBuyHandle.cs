@@ -1,9 +1,6 @@
 ﻿using BLL;
-using DAL;
+using ClosedXML.Excel;
 using DTO;
-using iText.IO.Codec;
-using Spire.Xls;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -110,11 +107,9 @@ namespace GUI
                     chosen.Rows[i].Cells[5].Value);
             }
 
-            Workbook workbook = new Workbook();
-            Worksheet sheet = workbook.Worksheets[0];
-
-            sheet.InsertDataTable(dt, true, 1, 1);
-            workbook.SaveToFile(@"..\..\..\documents\" + path, FileFormat.Version2016);
+            XLWorkbook wb = new XLWorkbook();
+            wb.Worksheets.Add(dt, "ImportFail");
+            wb.SaveAs(@"..\..\..\documents\" + path);
         }
     }
 }
