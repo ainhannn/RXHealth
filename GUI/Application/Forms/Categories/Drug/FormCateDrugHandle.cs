@@ -146,7 +146,6 @@ namespace GUI
             }
              
             var tb = Retreat.ReadFromSheet(sheet); // get List<List<object>> (matrix object) from sheet
-            MessageBox.Show("row="+tb.Count.ToString() + " col = " + tb[0].Count.ToString());
             if (tb.Count < 1 || tb[0].Count != 11)
             {
                 MessageBox.Show("File không hợp lệ!");
