@@ -321,9 +321,18 @@ namespace GUI
                 MessageBox.Show("Chưa nhập thông tin thanh toán!");
                 return;
             }
+			double.TryParse(TextBoxReceive.Text, out var receive);
+			double.TryParse(PayLabel.Text, out var pay);
+			if (receive >= pay)
+				RottenLabel.Text = Convert.ToString(receive - pay);
+			else
+			{
+				MessageBox.Show("Khách chưa đưa đủ tiền");
+				return;
+			}
 
-            // Tạo hóa đơn
-            var invoice = new SaleInvoice()
+			// Tạo hóa đơn
+			var invoice = new SaleInvoice()
             {
                 StaffId = LoginForm.Id,
                 CustomerId = txtCus.Text != "Guest" ? CustomerBUS.GetId(txtCus.Text) : 1,
